@@ -9,7 +9,11 @@ type SkillPageViewProps = {
   next?: WebSkill;
 };
 
-export default function SkillPageView({ skill, prev, next }: SkillPageViewProps) {
+export default function SkillPageView({
+  skill,
+  prev,
+  next,
+}: SkillPageViewProps) {
   return (
     <div className="site-shell">
       <nav className="skill-nav-top">
@@ -43,7 +47,10 @@ export default function SkillPageView({ skill, prev, next }: SkillPageViewProps)
           </Link>
         : <span />}
         {next ?
-          <Link href={`/skills/${next.slug}/`} className="skill-nav-link skill-nav-next">
+          <Link
+            href={`/skills/${next.slug}/`}
+            className="skill-nav-link skill-nav-next"
+          >
             {next.title} →
           </Link>
         : null}

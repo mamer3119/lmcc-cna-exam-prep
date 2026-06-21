@@ -1,0 +1,7 @@
+# Fix Log — lmcc-cna-exam-prep
+
+| # | Title | Files | Invariant / verify |
+|---|-------|-------|-------------------|
+| 1 | URL-encoded dynamic chunk paths | `scripts/fix-export-paths.mjs`, `scripts/verify-export.mjs`, `postbuild` | HTML references `%5Bslug%5D`; `postbuild` mirrors `[slug]` → `%5Bslug%5D` under `out/_next/`. Verify: `pnpm build` passes; skill page script src returns 200 on GitHub Pages. |
+| 2 | Node 22 LTS pin | `.node-version`, `package.json` engines, `.github/workflows/deploy.yml` | CI uses Node 22 (not deprecated 20). Local dev: `scoop install nodejs-lts` or `nvm use 22`. |
+| 3 | Stale dev cache / orphan node | `scripts/clean.mjs`, `dev:clean`, README | `a[d] is not a function` → run `pnpm dev:clean`; kill orphan `node` before `scoop update`. Hard-refresh browser after deploy. |

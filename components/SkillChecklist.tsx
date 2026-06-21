@@ -42,7 +42,11 @@ function readStoredState(storageKey: string): Record<string, boolean> {
       return {};
     }
     const parsed: unknown = JSON.parse(raw);
-    if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
+    if (
+      typeof parsed !== "object" ||
+      parsed === null ||
+      Array.isArray(parsed)
+    ) {
       return {};
     }
     const state: Record<string, boolean> = {};
