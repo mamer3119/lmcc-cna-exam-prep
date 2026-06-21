@@ -112,6 +112,106 @@ body {
   background: var(--panel);
 }
 
+.video-embed {
+  @apply mt-8 overflow-hidden rounded-xl border shadow-sm;
+  border-color: var(--line);
+  background: linear-gradient(
+    165deg,
+    rgba(255, 255, 255, 0.96) 0%,
+    var(--panel) 100%
+  );
+}
+
+.video-embed-toggle {
+  @apply flex w-full items-center justify-between gap-4 border-0 px-4 py-4 text-left md:px-5 md:py-5;
+  background: transparent;
+  cursor: pointer;
+}
+
+.video-embed-toggle:hover {
+  background: rgba(31, 92, 66, 0.04);
+}
+
+.video-embed-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.video-embed-toggle-text {
+  @apply flex min-w-0 flex-col;
+}
+
+.video-embed-kicker {
+  @apply mb-1 block text-[10px] font-bold uppercase tracking-[0.16em];
+  color: var(--accent);
+}
+
+.video-embed-title {
+  font-family: "Source Serif 4", Georgia, serif;
+  @apply block text-lg font-semibold leading-snug md:text-xl;
+  color: var(--ink);
+}
+
+.video-embed-hint {
+  @apply mt-1 text-xs;
+  color: var(--muted);
+}
+
+.video-embed-chevron {
+  @apply shrink-0 text-2xl leading-none transition-transform duration-300;
+  color: var(--accent);
+}
+
+.video-embed-chevron--open {
+  transform: rotate(180deg);
+}
+
+.video-embed-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease;
+  border-top: 1px solid var(--line);
+}
+
+.video-embed-panel--open {
+  grid-template-rows: 1fr;
+}
+
+.video-embed-panel-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.video-embed-frame {
+  @apply relative w-full max-w-full bg-black;
+  aspect-ratio: 16 / 9;
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+  .video-embed-frame {
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+}
+
+.video-embed-frame iframe {
+  @apply absolute inset-0 h-full w-full max-w-full border-0;
+}
+
+.video-embed-fallback {
+  @apply border-t px-4 py-2 text-center text-xs md:px-5;
+  border-color: var(--line);
+}
+
+.video-embed-fallback a {
+  @apply inline-block whitespace-nowrap font-semibold no-underline;
+  color: #1a4f8b;
+}
+
+.video-embed-fallback a:hover {
+  @apply underline;
+}
+
 .video-strip-label {
   @apply mb-1 block text-[10px] font-bold uppercase tracking-widest;
   color: var(--muted);
@@ -152,5 +252,9 @@ body {
 @media print {
   body {
     background: #fff;
+  }
+
+  .video-embed {
+    display: none !important;
   }
 }

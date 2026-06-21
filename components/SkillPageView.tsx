@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import SkillChecklist from "@/components/SkillChecklist";
+import SkillVideoEmbed from "@/components/SkillVideoEmbed";
 import type { WebSkill } from "@/lib/skills";
 
 type SkillPageViewProps = {
@@ -24,21 +25,15 @@ export default function SkillPageView({
 
       <p className="exam-strip">{skill.examCardLabel}</p>
 
-      {skill.rtcVideoUrl ?
-        <div className="video-strip">
-          <span className="video-strip-label">Demonstration video</span>
-          <a href={skill.rtcVideoUrl} target="_blank" rel="noopener noreferrer">
-            {skill.rtcVideoTitle ?? "RTC demonstration"}
-          </a>
-          <span className="video-strip-note"> — open before lab practice</span>
-        </div>
-      : null}
-
       <SkillChecklist
         title={skill.title}
         steps={skill.steps}
         storageKey={skill.storageKey}
       />
+
+      {skill.rtcVideoUrl ?
+        <SkillVideoEmbed videoUrl={skill.rtcVideoUrl} title={skill.title} />
+      : null}
 
       <nav className="skill-nav-bottom" aria-label="Skill navigation">
         {prev ?
