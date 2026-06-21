@@ -1,0 +1,7 @@
+packages:
+  - .
+
+# pnpm v11: allow Next.js optional native dep to run install scripts
+allowBuilds:
+  esbuild: true
+  sharp: true

@@ -1,0 +1,47 @@
+/* Print-only: static ☐ boxes, black text, no strike-through */
+@media print {
+  .skill-checklist .print-header {
+    display: block !important;
+    color: #000 !important;
+  }
+
+  .skill-checklist input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.375rem;
+    vertical-align: middle;
+  }
+
+  .skill-checklist input[type="checkbox"]::before {
+    content: "☐";
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .skill-checklist .step-text--checked,
+  .skill-checklist .substep-text--checked,
+  .skill-checklist .line-through {
+    text-decoration: none !important;
+    color: #000 !important;
+  }
+
+  .skill-checklist .note-text {
+    color: #000 !important;
+    font-style: italic;
+  }
+
+  .skill-checklist .reset-button {
+    display: none !important;
+  }
+
+  .skill-checklist,
+  .skill-checklist * {
+    color: #000 !important;
+  }
+
+  .skill-checklist strong {
+    color: #000 !important;
+  }
+}
