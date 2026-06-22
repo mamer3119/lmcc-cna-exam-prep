@@ -29,6 +29,13 @@ function resolveSourceDir() {
 
 const sourceDir = resolveSourceDir();
 if (!sourceDir) {
+  const destOk = required.every((name) => fs.existsSync(path.join(dest, name)));
+  if (destOk) {
+    console.log(
+      `sync-brand-assets: no external source; using committed ${dest}`,
+    );
+    process.exit(0);
+  }
   console.error("sync-brand-assets: no source folder with all required PNGs.");
   process.exit(1);
 }
