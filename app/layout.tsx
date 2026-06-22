@@ -3,6 +3,8 @@ import { Crimson_Pro, Source_Sans_3 } from "next/font/google";
 
 import { assetPath } from "@/lib/paths";
 
+import { ClientProviders } from "@/components/ClientProviders";
+
 import "./globals.css";
 
 const crimsonPro = Crimson_Pro({
@@ -30,6 +32,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
   themeColor: "#111827",
 };
 
@@ -44,7 +48,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.youtube.com" />
       </head>
       <body className={`${crimsonPro.variable} ${sourceSans.variable}`}>
-        {children}
+        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );

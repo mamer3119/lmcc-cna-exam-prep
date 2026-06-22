@@ -17,6 +17,16 @@ export type ChecklistStep = {
   segment?: StepSegment;
   /** Canonical key or FINAL-PASS composite (e.g. BED_LOW|CALL_LIGHT) */
   boilerplateId?: BoilerplateId | (string & {});
+  /** FINAL-PASS "Detailed Tag Text" — full GWC rubric language */
+  detailedText?: string;
+  /** FINAL-PASS "Tag Category" — Opening | Key Procedure | Core | Closing */
+  tagCategory?: string;
+  /** FINAL-PASS critical tag — hand-hygiene | privacy | bed-call-light */
+  criticalCategory?: string;
+  /** FINAL-PASS exam scorecard strip text on scored steps */
+  examScorecard?: string;
+  /** Override computed phase label (Measure, Secure, …) */
+  phaseWord?: string;
 };
 
 /** S01–S22 imported from FINAL-PASS use ≤6-word cue text in the checklist UI. */

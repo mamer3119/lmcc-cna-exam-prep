@@ -43,6 +43,12 @@ const missing = new Set();
 
 for (const htmlPath of walk(outDir)) {
   const html = fs.readFileSync(htmlPath, "utf8");
+  if (/Internal Server Error/i.test(html)) {
+    console.error(
+      `Export verification failed. Error page HTML: ${path.relative(root, htmlPath)}`,
+    );
+    process.exit(1);
+  }
   for (const ref of assetRefsFromHtml(html)) {
     if (!resolveAssetPath(ref)) {
       missing.add(ref);

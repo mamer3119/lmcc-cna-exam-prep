@@ -1,0 +1,849 @@
+{
+  "manual-blood-pressure": {
+    "confusionGroupLabel": null,
+    "studentFocus": "Cuff on bare skin; cleanse equipment; document both values ±8 mmHg.",
+    "steps": {
+      "1": {
+        "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+        "tagCategory": "Opening",
+        "phaseWord": "Prepare"
+      },
+      "2": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Prepare",
+        "criticalCategory": "hand-hygiene"
+      },
+      "3": {
+        "detailedText": "Cleanse the stethoscope and blood pressure cuff prior to placing on patient skin.",
+        "tagCategory": "Core",
+        "phaseWord": "Prepare"
+      },
+      "4": {
+        "detailedText": "Place the patient in a relaxed seated position. Ask which arm they prefer. Arm supported at heart level.",
+        "tagCategory": "Core",
+        "phaseWord": "Prepare"
+      },
+      "5": {
+        "detailedText": "Remove or rearrange clothing so cuff and stethoscope are on bare skin.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure"
+      },
+      "6": {
+        "detailedText": "Center the cuff bladder over the brachial artery, lower margin 1\" above the antecubital space.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure"
+      },
+      "7": {
+        "detailedText": "Inflate the cuff to 160–180 mmHg.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure",
+        "examScorecard": "Technique: Inflate cuff 160–180 mmHg"
+      },
+      "8": {
+        "detailedText": "Deflate at 2–3 mmHg/second; note the first Korotkoff sound as systolic.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure",
+        "examScorecard": "Technique: Deflate rate 2–3 mmHg/second (systolic)"
+      },
+      "9": {
+        "detailedText": "Continue deflating at 2 mmHg/second; note when sounds disappear as diastolic.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure",
+        "examScorecard": "Technique: Deflate rate 2 mmHg/second (diastolic)"
+      },
+      "10": {
+        "detailedText": "Deflate completely and remove the cuff.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure"
+      },
+      "11": {
+        "detailedText": "Inform the patient of the blood pressure reading.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure"
+      },
+      "12": {
+        "detailedText": "Cleanse the stethoscope and cuff.",
+        "tagCategory": "Core",
+        "phaseWord": "Record"
+      },
+      "13": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Record",
+        "criticalCategory": "hand-hygiene"
+      },
+      "14": {
+        "detailedText": "Document both systolic and diastolic each within ±8 mmHg of evaluator reading.",
+        "tagCategory": "Closing",
+        "phaseWord": "Record",
+        "examScorecard": "Exam tolerance: Document BP ±8 mmHg (systolic AND diastolic)"
+      }
+    }
+  },
+  "weight-ambulatory-client": {
+    "confusionGroupLabel": null,
+    "studentFocus": "Zero scale; nonskid footwear; document ±2 lbs.",
+    "steps": {
+      "1": {
+        "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+        "tagCategory": "Opening",
+        "phaseWord": "Prepare"
+      },
+      "2": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Prepare",
+        "criticalCategory": "hand-hygiene"
+      },
+      "3": {
+        "detailedText": "Verify the patient is wearing nonskid footwear.",
+        "tagCategory": "Core",
+        "phaseWord": "Prepare"
+      },
+      "4": {
+        "detailedText": "Balance (zero) the scale.",
+        "tagCategory": "Core",
+        "phaseWord": "Prepare"
+      },
+      "5": {
+        "detailedText": "Walk the patient to the scale.",
+        "tagCategory": "Core",
+        "phaseWord": "Weigh"
+      },
+      "6": {
+        "detailedText": "Assist the patient to step on the scale.",
+        "tagCategory": "Core",
+        "phaseWord": "Weigh"
+      },
+      "7": {
+        "detailedText": "Check the patient is centered on the scale.",
+        "tagCategory": "Core",
+        "phaseWord": "Weigh"
+      },
+      "8": {
+        "detailedText": "Check that the patient has arms at their side.",
+        "tagCategory": "Core",
+        "phaseWord": "Weigh"
+      },
+      "9": {
+        "detailedText": "Ensure the patient is not holding anything that would alter the weight.",
+        "tagCategory": "Core",
+        "phaseWord": "Weigh"
+      },
+      "10": {
+        "detailedText": "Adjust weights until the scale is in balance.",
+        "tagCategory": "Core",
+        "phaseWord": "Weigh"
+      },
+      "11": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Closing",
+        "phaseWord": "Record"
+      },
+      "12": {
+        "detailedText": "Document weight within plus/minus 2 lbs. or 0.9 kg.",
+        "tagCategory": "Closing",
+        "phaseWord": "Record",
+        "examScorecard": "Exam tolerance: Document weight ±2 lb / 0.9 kg"
+      },
+      "13": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Record",
+        "criticalCategory": "hand-hygiene"
+      }
+    }
+  },
+  "urinary-output-measurement": {
+    "confusionGroupLabel": null,
+    "studentFocus": "Gloves on before pouring; measure at eye level on flat surface; ±25 mL.",
+    "steps": {
+      "1": {
+        "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+        "tagCategory": "Opening",
+        "phaseWord": "Prepare"
+      },
+      "2": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Prepare",
+        "criticalCategory": "hand-hygiene"
+      },
+      "3": {
+        "detailedText": "Don clean, non-sterile gloves.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Prepare"
+      },
+      "4": {
+        "detailedText": "Pour the liquid in the bedpan into a measuring container.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure"
+      },
+      "5": {
+        "detailedText": "Rinse the bedpan and empty into the toilet.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure"
+      },
+      "6": {
+        "detailedText": "Measure at eye level with container on a flat surface.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure"
+      },
+      "7": {
+        "detailedText": "Empty urine into the toilet.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure"
+      },
+      "8": {
+        "detailedText": "Rinse the measuring container and empty into the toilet.",
+        "tagCategory": "Core",
+        "phaseWord": "Measure"
+      },
+      "9": {
+        "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out. Dispose of both gloves without touching the outer surface.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Record"
+      },
+      "10": {
+        "detailedText": "Record volume within ±25 mL of actual.",
+        "tagCategory": "Closing",
+        "phaseWord": "Record",
+        "examScorecard": "Exam tolerance: Record volume ±25 mL"
+      },
+      "11": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Record",
+        "criticalCategory": "hand-hygiene"
+      }
+    }
+  },
+  "position-on-side": {
+    "confusionGroupLabel": null,
+    "studentFocus": "Raise far rail; pillow behind back to prevent rolling; pillow between knees.",
+    "steps": {
+      "1": {
+        "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach"
+      },
+      "2": {
+        "detailedText": "Provide for patient privacy — close the curtain, door, or privacy screen.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach",
+        "criticalCategory": "privacy"
+      },
+      "3": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Approach",
+        "criticalCategory": "hand-hygiene"
+      },
+      "4": {
+        "detailedText": "Position the bed flat.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "5": {
+        "detailedText": "Raise the bed height.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "6": {
+        "detailedText": "Raise the side rail on the side the patient will face.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "7": {
+        "detailedText": "Move to the working side (opposite the raised rail).",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "8": {
+        "detailedText": "Explain you will move them closer before turning on count three.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "9": {
+        "detailedText": "Count to three and move patient toward you.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "10": {
+        "detailedText": "Instruct patient to move arm closest to rail away from body.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "11": {
+        "detailedText": "Raise the patient's near knee to assist turning.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "12": {
+        "detailedText": "Explain you will turn patient toward side rail on count three.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "13": {
+        "detailedText": "Count to three; turn patient toward side rail.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "14": {
+        "detailedText": "Ensure face never comes close to rail or is covered by pillow.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "15": {
+        "detailedText": "Check patient is not lying on bottom arm.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "16": {
+        "detailedText": "Place pillow behind back so patient won't roll supine.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "17": {
+        "detailedText": "Go to bed end; check body alignment.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "18": {
+        "detailedText": "Verify patient is in middle of bed.",
+        "tagCategory": "Core",
+        "phaseWord": "Position"
+      },
+      "19": {
+        "detailedText": "Place pillow between top arm and rib cage; elbow not directly on ribs.",
+        "tagCategory": "Core",
+        "phaseWord": "Secure"
+      },
+      "20": {
+        "detailedText": "Place pillow under top knee; knee not on other knee; ankles not touching.",
+        "tagCategory": "Core",
+        "phaseWord": "Secure"
+      },
+      "21": {
+        "detailedText": "Adjust head pillow for comfort.",
+        "tagCategory": "Core",
+        "phaseWord": "Secure"
+      },
+      "22": {
+        "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+        "tagCategory": "Closing",
+        "phaseWord": "Secure",
+        "criticalCategory": "bed-call-light"
+      },
+      "23": {
+        "detailedText": "Place the call light or signaling device within reach and confirm the patient knows how to use it.",
+        "tagCategory": "Closing",
+        "phaseWord": "Secure",
+        "criticalCategory": "bed-call-light"
+      },
+      "24": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Secure",
+        "criticalCategory": "hand-hygiene"
+      }
+    }
+  },
+  "bed-wheelchair-transfer": {
+    "confusionGroupLabel": "MOVE-2 — also see ambulate-transfer-belt.",
+    "studentFocus": "Strong side toward wheelchair; lock wheelchair brakes; ask about dizziness.",
+    "steps": {
+      "1": {
+        "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach"
+      },
+      "2": {
+        "detailedText": "Provide for patient privacy — close the curtain, door, or privacy screen.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach",
+        "criticalCategory": "privacy"
+      },
+      "3": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Approach",
+        "criticalCategory": "hand-hygiene"
+      },
+      "4": {
+        "detailedText": "Check the brakes on the bed to ensure they are locked.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "5": {
+        "detailedText": "Remove the foot pedals from the wheelchair if needed.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "6": {
+        "detailedText": "Assist patient to seated on side of bed; allow feet to dangle.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "7": {
+        "detailedText": "Assist patient in putting on nonskid footwear.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "8": {
+        "detailedText": "Place the gait belt on the patient.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "9": {
+        "detailedText": "Position wheelchair so patient moves toward it with stronger side. Chair touches bed.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "10": {
+        "detailedText": "Lock the brakes on the wheelchair.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "11": {
+        "detailedText": "Ask the patient if they feel dizzy or light-headed.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "12": {
+        "detailedText": "Face patient; place feet in front of patient's feet to prevent slipping.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "13": {
+        "detailedText": "Instruct patient to push up on bed on count three.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "14": {
+        "detailedText": "Grasp gait belt with both hands, palms and fingertips pointing up.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "15": {
+        "detailedText": "Count to three; assist patient to stand.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "16": {
+        "detailedText": "Assist patient to pivot.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "17": {
+        "detailedText": "Instruct patient to grasp wheelchair arms when knees contact seat.",
+        "tagCategory": "Core",
+        "phaseWord": "Transfer"
+      },
+      "18": {
+        "detailedText": "Assist patient to seated in wheelchair.",
+        "tagCategory": "Core",
+        "phaseWord": "Secure"
+      },
+      "19": {
+        "detailedText": "Remove gait belt gently to avoid skin injury.",
+        "tagCategory": "Core",
+        "phaseWord": "Secure"
+      },
+      "20": {
+        "detailedText": "Release the wheelchair brakes.",
+        "tagCategory": "Core",
+        "phaseWord": "Secure"
+      },
+      "21": {
+        "detailedText": "Place the call light or signaling device within reach and confirm the patient knows how to use it.",
+        "tagCategory": "Closing",
+        "phaseWord": "Secure",
+        "criticalCategory": "bed-call-light"
+      },
+      "22": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Secure",
+        "criticalCategory": "hand-hygiene"
+      }
+    }
+  },
+  "ambulate-transfer-belt": {
+    "confusionGroupLabel": "MOVE-2 — also see bed-wheelchair-transfer.",
+    "studentFocus": "Nonskid footwear; gait belt check; walk 10 feet.",
+    "steps": {
+      "1": {
+        "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach"
+      },
+      "2": {
+        "detailedText": "Provide for patient privacy — close the curtain, door, or privacy screen.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach",
+        "criticalCategory": "privacy"
+      },
+      "3": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Approach",
+        "criticalCategory": "hand-hygiene"
+      },
+      "4": {
+        "detailedText": "Place nonskid footwear on the patient.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "5": {
+        "detailedText": "Adjust the bed to a safe level.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "6": {
+        "detailedText": "Check the brakes of the bed to ensure they are locked.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "7": {
+        "detailedText": "Allow patient to sit and dangle on edge of bed before standing.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "8": {
+        "detailedText": "Ask patient if they feel dizzy or light-headed.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "9": {
+        "detailedText": "Place gait belt around waist; check tightness by slipping fingers underneath.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "10": {
+        "detailedText": "Face patient; place feet in front of patient's feet.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "11": {
+        "detailedText": "Instruct patient to push up on bed on count three.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "12": {
+        "detailedText": "Count to three; assist patient to standing.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "13": {
+        "detailedText": "Move to weak side; hold belt palms and fingertips up.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "14": {
+        "detailedText": "Assist patient in standing position.",
+        "tagCategory": "Core",
+        "phaseWord": "Ambulate"
+      },
+      "15": {
+        "detailedText": "Walk slightly behind patient for 10 feet holding transfer belt.",
+        "tagCategory": "Core",
+        "phaseWord": "Secure"
+      },
+      "16": {
+        "detailedText": "Safely assist patient back to bed; remove transfer belt.",
+        "tagCategory": "Core",
+        "phaseWord": "Secure"
+      },
+      "17": {
+        "detailedText": "Place call light within reach. Lower bed to lowest; brakes locked.",
+        "tagCategory": "Closing",
+        "phaseWord": "Secure",
+        "criticalCategory": "bed-call-light"
+      },
+      "18": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Secure",
+        "criticalCategory": "hand-hygiene"
+      }
+    }
+  },
+  "prom-shoulder": {
+    "confusionGroupLabel": "ROM-2 — also see prom-knee-ankle.",
+    "studentFocus": "Support elbow AND wrist throughout; stop at any resistance.",
+    "steps": {
+      "1": {
+        "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach"
+      },
+      "2": {
+        "detailedText": "Provide for patient privacy — close the curtain, door, or privacy screen.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach",
+        "criticalCategory": "privacy"
+      },
+      "3": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Approach",
+        "criticalCategory": "hand-hygiene"
+      },
+      "4": {
+        "detailedText": "Advise patients to report pain during movement.",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "5": {
+        "detailedText": "Place one hand under the patient's elbow with palm facing up.",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "6": {
+        "detailedText": "Place the other hand under the patient's wrist with palm facing up.",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "7": {
+        "detailedText": "Watch patient for objective signs of pain during movement.",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "8": {
+        "detailedText": "Move arms gently; stop if there is any resistance.",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "9": {
+        "detailedText": "Keeping arm straight, raise up and over head (flexion).",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "10": {
+        "detailedText": "Bring arm back down to side (extension).",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "11": {
+        "detailedText": "Complete flexion/extension per restorative care plan.",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "12": {
+        "detailedText": "Continue supporting elbow and wrist.",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "13": {
+        "detailedText": "Move arm out away from body (abduction).",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "14": {
+        "detailedText": "Move arm gently; stop if resistance.",
+        "tagCategory": "Core",
+        "phaseWord": "Shoulder"
+      },
+      "15": {
+        "detailedText": "Return arm to side (adduction).",
+        "tagCategory": "Core",
+        "phaseWord": "Secure"
+      },
+      "16": {
+        "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+        "tagCategory": "Closing",
+        "phaseWord": "Secure",
+        "criticalCategory": "bed-call-light"
+      },
+      "17": {
+        "detailedText": "Place the call light or signaling device within reach and confirm the patient knows how to use it.",
+        "tagCategory": "Closing",
+        "phaseWord": "Secure",
+        "criticalCategory": "bed-call-light"
+      },
+      "18": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Secure",
+        "criticalCategory": "hand-hygiene"
+      }
+    }
+  },
+  "prom-knee-ankle": {
+    "confusionGroupLabel": "ROM-2 — also see prom-shoulder.",
+    "studentFocus": "Stop ROM if patient reports pain. Support knee AND ankle.",
+    "steps": {
+      "1": {
+        "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach"
+      },
+      "2": {
+        "detailedText": "Provide for patient privacy — close the curtain, door, or privacy screen.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach",
+        "criticalCategory": "privacy"
+      },
+      "3": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Approach",
+        "criticalCategory": "hand-hygiene"
+      },
+      "4": {
+        "detailedText": "Advise patients to report pain during movement.",
+        "tagCategory": "Core",
+        "phaseWord": "Lower"
+      },
+      "5": {
+        "detailedText": "Abduction/Adduction for Hip: move leg away from and back toward body; stop at resistance; support knee and ankle.",
+        "tagCategory": "Core",
+        "phaseWord": "Lower"
+      },
+      "6": {
+        "detailedText": "Flexion/Extension of Knee and Hip: bend knee and hip toward trunk then straighten; stop at resistance.",
+        "tagCategory": "Core",
+        "phaseWord": "Lower"
+      },
+      "7": {
+        "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+        "tagCategory": "Closing",
+        "phaseWord": "Secure",
+        "criticalCategory": "bed-call-light"
+      },
+      "8": {
+        "detailedText": "Place the call light or signaling device within reach and confirm the patient knows how to use it.",
+        "tagCategory": "Closing",
+        "phaseWord": "Secure",
+        "criticalCategory": "bed-call-light"
+      },
+      "9": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Secure",
+        "criticalCategory": "hand-hygiene"
+      }
+    }
+  },
+  "knee-high-stocking": {
+    "confusionGroupLabel": "CLOTH-2 — also see dress-weak-right-arm.",
+    "studentFocus": "Turn stocking inside out to heel; wrinkle-free to knee.",
+    "steps": {
+      "1": {
+        "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach"
+      },
+      "2": {
+        "detailedText": "Provide for patient privacy — close the curtain, door, or privacy screen.",
+        "tagCategory": "Opening",
+        "phaseWord": "Approach",
+        "criticalCategory": "privacy"
+      },
+      "3": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Approach",
+        "criticalCategory": "hand-hygiene"
+      },
+      "4": {
+        "detailedText": "Position patient supine. Expose only the leg being fitted.",
+        "tagCategory": "Core",
+        "phaseWord": "Apply"
+      },
+      "5": {
+        "detailedText": "Turn the stocking inside out to the heel.",
+        "tagCategory": "Core",
+        "phaseWord": "Apply"
+      },
+      "6": {
+        "detailedText": "Place stocking over patient's toes, foot, and heel.",
+        "tagCategory": "Core",
+        "phaseWord": "Apply"
+      },
+      "7": {
+        "detailedText": "Gently pull the stocking up their leg.",
+        "tagCategory": "Core",
+        "phaseWord": "Apply"
+      },
+      "8": {
+        "detailedText": "Move foot and leg gently; avoid force and over-extension.",
+        "tagCategory": "Core",
+        "phaseWord": "Apply"
+      },
+      "9": {
+        "detailedText": "Adjust stocking wrinkle-free to the knee.",
+        "tagCategory": "Core",
+        "phaseWord": "Secure"
+      },
+      "10": {
+        "detailedText": "Place call light within reach. Lower bed; brakes locked.",
+        "tagCategory": "Closing",
+        "phaseWord": "Secure",
+        "criticalCategory": "bed-call-light"
+      },
+      "11": {
+        "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+        "tagCategory": "Key Procedure",
+        "phaseWord": "Secure",
+        "criticalCategory": "hand-hygiene"
+      }
+    }
+  },
+  "bed-bath-face-arm": {
+    "confusionGroupLabel": null,
+    "studentFocus": "Water temp check; gloves; eyes inner-to-outer; no soap on face.",
+    "_importNote": "Step data in FINAL-PASS S14 (28 steps) — paste TSV to generate step-level JSON",
+    "steps": {}
+  },
+  "denture-care": {
+    "confusionGroupLabel": null,
+    "studentFocus": "Line sink; handle over washcloth; rinse with cool water.",
+    "_importNote": "Step data in FINAL-PASS S15 (19 steps) — paste TSV to generate step-level JSON",
+    "steps": {}
+  },
+  "partial-bed-bath": {
+    "confusionGroupLabel": "BATH-2 — also see bed-bath-face-arm.",
+    "studentFocus": "Change water for different body regions.",
+    "_importNote": "Step data in FINAL-PASS S16 (24 steps) — paste TSV to generate step-level JSON",
+    "steps": {}
+  },
+  "foot-care": {
+    "confusionGroupLabel": null,
+    "studentFocus": "Soak 5–10 min; dry between toes; lotion NOT between toes.",
+    "_importNote": "Step data in FINAL-PASS S17 (24 steps) — paste TSV to generate step-level JSON",
+    "steps": {}
+  },
+  "dress-weak-right-arm": {
+    "confusionGroupLabel": "CLOTH-2 — also see knee-high-stocking.",
+    "studentFocus": "Dress affected arm FIRST; undress unaffected arm FIRST.",
+    "_importNote": "Step data in FINAL-PASS S18 (14 steps) — paste TSV to generate step-level JSON",
+    "steps": {}
+  },
+  "hand-and-nail-care": {
+    "confusionGroupLabel": null,
+    "studentFocus": "Soak hands; push back cuticles; dry between fingers.",
+    "_importNote": "Step data in FINAL-PASS S19 (22 steps) — paste TSV to generate step-level JSON",
+    "steps": {}
+  },
+  "oral-care-unconscious": {
+    "confusionGroupLabel": "ORAL-2 — also see denture-care.",
+    "studentFocus": "Turn head to side; padded tongue depressor; keep airway clear.",
+    "_importNote": "Step data in FINAL-PASS S20 (26 steps) — paste TSV to generate step-level JSON",
+    "steps": {}
+  },
+  "perineal-care-female": {
+    "confusionGroupLabel": null,
+    "studentFocus": "41 steps; front-to-back; separate washcloth each stroke.",
+    "_importNote": "Step data in FINAL-PASS S21 (41 steps) — paste TSV to generate step-level JSON",
+    "steps": {}
+  },
+  "catheter-care-female": {
+    "confusionGroupLabel": null,
+    "studentFocus": "Clean 4 inches down catheter; never pull tubing.",
+    "_importNote": "Step data in FINAL-PASS S22 (31 steps) — paste TSV to generate step-level JSON",
+    "steps": {}
+  }
+}

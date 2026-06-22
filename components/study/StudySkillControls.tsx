@@ -91,8 +91,9 @@ export function StudySkillChecklist({
       compact
       hideFooter
       organizerMeta={meta}
-      showSegmentBadges
+      skillSlug={skill.slug}
       showExamScorecards={true}
+      display={{ preset: "studyCompact" }}
     />
   );
 }

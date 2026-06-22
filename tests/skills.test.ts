@@ -57,11 +57,13 @@ describe("skills bundle", () => {
 });
 
 describe("SkillChecklist markup", () => {
-  it("does not hardcode checked styling on sub-step labels", () => {
+  it("nests sub-steps with skill-step-substeps container", () => {
     const src = fs.readFileSync(
       path.join(process.cwd(), "components", "SkillChecklist.tsx"),
       "utf8",
     );
-    expect(src).not.toContain("substep-text--checked");
+    expect(src).toMatch(/skill-step-substeps/);
+    expect(src).toMatch(/subStepCheckedTextClass/);
+    expect(src).not.toMatch(/substep-text--checked skill-step/);
   });
 });

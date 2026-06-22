@@ -33,8 +33,12 @@ describe("SkillExamNumbersSummary (Block D)", () => {
     expect(source).not.toMatch(/±8 mmHg/);
   });
 
-  it("styles summary panel in phase-organizer.css", () => {
+  it("styles summary panel for wrapped mobile values", () => {
     const css = readProjectFile("app/phase-organizer.css");
     expect(css).toMatch(/\.exam-numbers-summary/);
+    expect(css).toMatch(
+      /\.exam-numbers-summary__value[\s\S]*?white-space:\s*normal/,
+    );
+    expect(css).toMatch(/flex-direction:\s*column/);
   });
 });

@@ -162,6 +162,7 @@ const skills = orderedSlugs.map((slug, index) => {
     storageKey: storageKeyFromFile(skill.file),
     stepCount: skill.checklist_step_count,
     steps,
+    studentFocus: skill.student_focus ?? null,
   };
 });
 

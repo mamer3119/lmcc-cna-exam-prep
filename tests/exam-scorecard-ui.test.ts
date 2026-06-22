@@ -31,9 +31,12 @@ describe("exam scorecard UI (Block C)", () => {
     expect(scorecardIdx).toBeLessThan(hiddenIdx);
   });
 
-  it("SkillPageClient always enables exam scorecards", () => {
+  it("SkillPageClient enables exam scorecards via surface config", () => {
     const source = readProjectFile("components/SkillPageClient.tsx");
-    expect(source).toMatch(/showExamScorecards=\{true\}/);
+    expect(source).toMatch(/resolveSkillPageSurfaceConfig/);
+    expect(source).toMatch(
+      /showExamScorecards=\{surface\.showExamScorecards\}/,
+    );
   });
 
   it("styles exam scorecard with gold institutional strip", () => {

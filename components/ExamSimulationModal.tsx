@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 
 import SkillChecklist from "@/components/SkillChecklist";
+import { StudentFocusBanner } from "@/components/StudentFocusBanner";
 import type { WebSkill } from "@/lib/skills";
 
 type ExamSimulationModalProps = {
@@ -88,7 +89,8 @@ export default function ExamSimulationModal({
               Your Simulated Exam — 5 Skills
             </h2>
             <p className="exam-sim-subtitle">
-              Hand Hygiene is locked. Steps are hidden — use Quiz Mode reveals to
+              Hand Hygiene is locked. Steps are hidden — use Hide &amp; reveal
+              on the checklist or the Recall drill to practice from memory. to
               practice recall.
             </p>
           </div>
@@ -104,7 +106,11 @@ export default function ExamSimulationModal({
         </header>
 
         <div className="exam-sim-actions">
-          <button type="button" className="exam-sim-reshuffle" onClick={onReshuffle}>
+          <button
+            type="button"
+            className="exam-sim-reshuffle"
+            onClick={onReshuffle}
+          >
             🔀 Reshuffle (Hand Hygiene stays locked)
           </button>
         </div>
@@ -114,15 +120,24 @@ export default function ExamSimulationModal({
             <section key={skill.slug} className="exam-sim-skill-block">
               <div className="exam-sim-skill-head">
                 <span className="exam-sim-skill-num">Skill {index + 1}</span>
-                <Link href={`/skills/${skill.slug}/`} className="exam-sim-skill-link">
+                <Link
+                  href={`/skills/${skill.slug}/`}
+                  className="exam-sim-skill-link"
+                >
                   Open full checklist →
                 </Link>
               </div>
+              {skill.studentFocus ?
+                <StudentFocusBanner focus={skill.studentFocus} />
+              : null}
               <SkillChecklist
                 title={skill.title}
                 steps={skill.steps}
                 mode="quiz"
+                skillSlug={skill.slug}
                 showCriticalBadges
+                showExamScorecards
+                display={{ preset: "examSim" }}
                 compact
                 hideFooter
                 hideProgress

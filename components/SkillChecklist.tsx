@@ -4,9 +4,22 @@ import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
 
 import type { CurriculumSkillMeta } from "@/data/skillCurriculum";
 import {
-  criticalStepBadgeLabel,
-  isCriticalStepText,
-} from "@/lib/critical-steps";
+  criticalStepBadgeLabelForStep,
+  isStepCritical,
+  resolveStepClinicalNote,
+  resolveStepDetailedText,
+  resolveStepPhaseWord,
+  resolveStepRendersAs,
+  resolveStepSubSteps,
+  resolveStepTagCategory,
+} from "@/lib/skill-step-meta";
+import { getStepPhaseColor, PHASE_COLORS } from "@/lib/step-phase";
+import {
+  resolveChecklistDisplay,
+  type ChecklistDisplayInput,
+  type ChecklistEnrichmentDisplay,
+  type ChecklistMode,
+} from "@/lib/checklist-display";
 import { stepOrganizerAttributes } from "@/hooks/useScrollOrganizers";
 import type { ChecklistStep } from "@/lib/checklist-step";
 import {
@@ -19,16 +32,29 @@ import { StepSegmentBadge } from "@/components/TemplateChip";
 import { PhaseDivider } from "@/components/PhaseDivider";
 import { ExamScorecard } from "@/components/ExamScorecard";
 import {
-  getExamScorecard,
+  getExamScorecardForStep,
   shouldShowInlineExamScorecard,
   skillHasExamScorecards,
 } from "@/lib/exam-scorecard";
+import { useInstructorViewContext } from "@/components/InstructorViewProvider";
+import { StepClinicalNote } from "@/components/StepClinicalNote";
+import { HandHygieneEmbedChip } from "@/components/HandHygieneEmbedChip";
+import { LearnSegmentHeading } from "@/components/LearnSegmentHeading";
+import { StepLearnMeta } from "@/components/StepLearnMeta";
+import { StepMotionItem } from "@/components/StepMotionItem";
+import { isHandHygieneEmbedStep } from "@/lib/learn-mode-display";
+import { getLearnProgressSteps, masteryStepId } from "@/lib/scored-steps";
+import { CHECKLIST_VIEW_LABELS } from "@/lib/practice-labels";
+import {
+  rehydrateMasteryStore,
+  useMasteryStore,
+} from "@/store/useMasteryStore";
+import { selectSkillCheckedSteps } from "@/store/mastery-selectors";
 
 import "./skill-checklist.css";
 
+export type { ChecklistMode } from "@/lib/checklist-display";
 export type { ChecklistStep } from "@/lib/checklist-step";
-
-export type ChecklistMode = "study" | "quiz";
 
 export type SkillChecklistProps = {
   title: string;
@@ -51,6 +77,10 @@ export type SkillChecklistProps = {
   showExamScorecards?: boolean;
   /** Fallback slug when organizerMeta is omitted */
   skillSlug?: string;
+  /** Central enrichment toggles — merges with legacy boolean props */
+  display?: ChecklistDisplayInput;
+  /** Explicit override — used in tests; otherwise read from ?instructor=true via provider */
+  instructorView?: boolean;
 };
 
 function stepSegmentClass(segment: StepSegment): string {
@@ -73,6 +103,10 @@ function stepRevealKey(stepId: number, subIndex?: number): string {
 
 function checkedTextClass(isChecked: boolean): string {
   return isChecked ? "step-text--checked" : "";
+}
+
+function subStepCheckedTextClass(isChecked: boolean): string {
+  return isChecked ? "substep-text--checked" : "";
 }
 
 function readStoredState(storageKey: string): Record<string, boolean> {
@@ -132,32 +166,71 @@ export default function SkillChecklist({
   showSegmentBadges = false,
   showExamScorecards,
   skillSlug,
+  display,
+  instructorView: instructorViewProp,
 }: SkillChecklistProps) {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [hydrated, setHydrated] = useState(false);
   const [revealed, setRevealed] = useState<Record<string, boolean>>({});
+  const instructorCtx = useInstructorViewContext();
+  const instructorViewActive =
+    instructorViewProp ?? instructorCtx.instructorView;
+  const instructorReady =
+    instructorViewProp !== undefined ? true : instructorCtx.ready;
+  const storeHydrated = useMasteryStore((s) => s.isHydrated);
+  const toggleStepInStore = useMasteryStore((s) => s.toggleStep);
+  const resetSkillInStore = useMasteryStore((s) => s.resetSkill);
+  const migrateLegacyChecklist = useMasteryStore(
+    (s) => s.migrateLegacyChecklist,
+  );
+
+  const enrichmentDisplay = useMemo(
+    () =>
+      resolveChecklistDisplay({
+        mode,
+        showSegmentBadges,
+        showCriticalBadges,
+        showExamScorecards,
+        ...display,
+      }),
+    [mode, showSegmentBadges, showCriticalBadges, showExamScorecards, display],
+  );
 
   const allRevealKeys = useMemo(() => {
     const keys: string[] = [];
     for (const step of steps) {
       keys.push(stepRevealKey(step.id));
-      step.subSteps?.forEach((_, index) => {
+      if (!enrichmentDisplay.subSteps) {
+        continue;
+      }
+      resolveStepSubSteps(step)?.forEach((_, index) => {
         keys.push(stepRevealKey(step.id, index));
       });
     }
     return keys;
-  }, [steps]);
+  }, [steps, enrichmentDisplay.subSteps]);
+
+  const resolvedSkillSlug = skillSlug ?? organizerMeta?.slug;
+
+  const progressSteps = useMemo(() => getLearnProgressSteps(steps), [steps]);
 
   const allAriaLabels = useMemo(() => {
     const labels: string[] = [];
     for (const step of steps) {
-      labels.push(mainStepAriaLabel(step));
-      step.subSteps?.forEach((subText) => {
+      labels.push(mainStepAriaLabel(step, resolvedSkillSlug));
+      if (!enrichmentDisplay.subSteps) {
+        continue;
+      }
+      resolveStepSubSteps(step)?.forEach((subText) => {
         labels.push(subStepAriaLabel(step.id, subText));
       });
     }
     return labels;
-  }, [steps]);
+  }, [steps, resolvedSkillSlug, enrichmentDisplay.subSteps]);
+
+  useEffect(() => {
+    rehydrateMasteryStore();
+  }, []);
 
   useEffect(() => {
     if (!storageKey) {
@@ -169,21 +242,58 @@ export default function SkillChecklist({
   }, [storageKey]);
 
   useEffect(() => {
+    if (!resolvedSkillSlug || !storageKey || !hydrated || !storeHydrated) {
+      return;
+    }
+    migrateLegacyChecklist(resolvedSkillSlug, storageKey, steps, (step) =>
+      mainStepAriaLabel(step, resolvedSkillSlug),
+    );
+  }, [
+    resolvedSkillSlug,
+    storageKey,
+    hydrated,
+    storeHydrated,
+    steps,
+    migrateLegacyChecklist,
+  ]);
+
+  useEffect(() => {
     if (!storageKey || !hydrated) {
       return;
     }
     writeStoredState(storageKey, checked);
   }, [checked, storageKey, hydrated]);
 
-  const anyChecked = allAriaLabels.some((label) => checked[label]);
+  const storeCheckedSteps = useMasteryStore((s) =>
+    selectSkillCheckedSteps(s, resolvedSkillSlug),
+  );
 
-  useEffect(() => {
-    onAnyCheckedChange?.(anyChecked);
-  }, [anyChecked, onAnyCheckedChange]);
+  const isMainStepChecked = useCallback(
+    (step: ChecklistStep) => {
+      if (resolvedSkillSlug && storeHydrated) {
+        return storeCheckedSteps.includes(masteryStepId(step));
+      }
+      const label = mainStepAriaLabel(step, resolvedSkillSlug);
+      return Boolean(checked[label]);
+    },
+    [checked, resolvedSkillSlug, storeHydrated, storeCheckedSteps],
+  );
 
   const isChecked = useCallback(
     (ariaLabel: string) => Boolean(checked[ariaLabel]),
     [checked],
+  );
+
+  const toggleMainStep = useCallback(
+    (step: ChecklistStep) => {
+      if (resolvedSkillSlug && storeHydrated) {
+        toggleStepInStore(resolvedSkillSlug, masteryStepId(step));
+        return;
+      }
+      const label = mainStepAriaLabel(step, resolvedSkillSlug);
+      setChecked((prev) => ({ ...prev, [label]: !prev[label] }));
+    },
+    [resolvedSkillSlug, storeHydrated, toggleStepInStore],
   );
 
   const toggle = useCallback((ariaLabel: string) => {
@@ -192,6 +302,9 @@ export default function SkillChecklist({
 
   const resetAll = useCallback(() => {
     setChecked({});
+    if (resolvedSkillSlug && storeHydrated) {
+      resetSkillInStore(resolvedSkillSlug);
+    }
     if (storageKey) {
       try {
         window.localStorage.removeItem(storageKey);
@@ -199,7 +312,7 @@ export default function SkillChecklist({
         // Ignore private-mode errors
       }
     }
-  }, [storageKey]);
+  }, [resolvedSkillSlug, storeHydrated, resetSkillInStore, storageKey]);
 
   const isRevealed = useCallback(
     (key: string) => Boolean(revealed[key]),
@@ -222,24 +335,35 @@ export default function SkillChecklist({
     setRevealed({});
   }, []);
 
-  const totalSteps = allAriaLabels.length;
-  const completedSteps = allAriaLabels.filter((label) =>
-    Boolean(checked[label]),
+  const totalSteps = progressSteps.length;
+  const completedSteps = progressSteps.filter((step) =>
+    isMainStepChecked(step),
   ).length;
   const progressPct =
     totalSteps > 0 ? Math.round((completedSteps / totalSteps) * 100) : 0;
 
+  const anyMainChecked = progressSteps.some((step) => isMainStepChecked(step));
+  const anySubChecked = allAriaLabels
+    .filter((label) => label.includes(" sub-step:"))
+    .some((label) => checked[label]);
+
+  useEffect(() => {
+    onAnyCheckedChange?.(anyMainChecked || anySubChecked);
+  }, [anyMainChecked, anySubChecked, onAnyCheckedChange]);
+
   const isQuiz = mode === "quiz";
-  const resolvedSkillSlug = skillSlug ?? organizerMeta?.slug;
+  const learnPolish = enrichmentDisplay.learnPolish && !isQuiz;
   const showScorecards =
-    showExamScorecards ??
-    (resolvedSkillSlug ? skillHasExamScorecards(resolvedSkillSlug) : false);
+    enrichmentDisplay.examScorecards &&
+    (showExamScorecards ??
+      (resolvedSkillSlug ? skillHasExamScorecards(resolvedSkillSlug) : false));
 
   function renderSegmentBadge(
     stepSegment: StepSegment | null,
     phaseStartBadge: boolean,
+    displayFlags: ChecklistEnrichmentDisplay,
   ) {
-    if (!showSegmentBadges || !stepSegment) {
+    if (!displayFlags.segmentBadges || !stepSegment) {
       return null;
     }
     return (
@@ -249,11 +373,16 @@ export default function SkillChecklist({
     );
   }
 
-  function renderCriticalBadge(text: string, revealedNow: boolean) {
-    if (!showCriticalBadges || !isCriticalStepText(text)) {
+  function renderCriticalBadge(
+    step: ChecklistStep,
+    displayText: string,
+    revealedNow: boolean,
+    displayFlags: ChecklistEnrichmentDisplay,
+  ) {
+    if (!displayFlags.criticalBadges || !isStepCritical(step, displayText)) {
       return null;
     }
-    const label = criticalStepBadgeLabel(text);
+    const label = criticalStepBadgeLabelForStep(step, displayText);
     if (!label) {
       return null;
     }
@@ -266,9 +395,122 @@ export default function SkillChecklist({
     );
   }
 
+  function renderTagCategoryBadge(
+    step: ChecklistStep,
+    displayFlags: ChecklistEnrichmentDisplay,
+  ) {
+    if (!displayFlags.tagCategory) {
+      return null;
+    }
+    const tagCategory = resolveStepTagCategory(step);
+    if (!tagCategory) {
+      return null;
+    }
+    return (
+      <span className="skill-tag-category-badge" title="Tag category">
+        {tagCategory}
+      </span>
+    );
+  }
+
+  function renderStepBodyBadges(
+    step: ChecklistStep,
+    displayText: string,
+    revealedNow: boolean,
+    displayFlags: ChecklistEnrichmentDisplay,
+  ) {
+    const phaseBadge =
+      organizerMeta ?
+        renderPhaseWordBadge(step, organizerMeta, displayFlags)
+      : null;
+    const tagBadge = renderTagCategoryBadge(step, displayFlags);
+    const criticalBadge = renderCriticalBadge(
+      step,
+      displayText,
+      revealedNow,
+      displayFlags,
+    );
+    if (!phaseBadge && !tagBadge && !criticalBadge) {
+      return null;
+    }
+    return (
+      <span className="skill-step-body__badges">
+        {phaseBadge}
+        {tagBadge}
+        {criticalBadge}
+      </span>
+    );
+  }
+
+  function renderPhaseWordBadge(
+    step: ChecklistStep,
+    meta: CurriculumSkillMeta,
+    displayFlags: ChecklistEnrichmentDisplay,
+  ) {
+    if (!displayFlags.phaseWordBadge) {
+      return null;
+    }
+    const phaseLabel = resolveStepPhaseWord(step, meta);
+    if (!phaseLabel) {
+      return null;
+    }
+    const phaseColor =
+      PHASE_COLORS[phaseLabel] ?? getStepPhaseColor(step, meta);
+    return (
+      <span
+        className="step-phase-word-badge"
+        style={{ backgroundColor: phaseColor }}
+        title={`Phase: ${phaseLabel}`}
+      >
+        {phaseLabel}
+      </span>
+    );
+  }
+
+  function renderRendersAsEmoji(
+    step: ChecklistStep,
+    displayFlags: ChecklistEnrichmentDisplay,
+  ) {
+    if (!displayFlags.rendersAsEmoji) {
+      return null;
+    }
+    const emoji = resolveStepRendersAs(step);
+    if (!emoji) {
+      return null;
+    }
+    return (
+      <span className="skill-renders-as-emoji" aria-hidden="true">
+        {emoji}
+      </span>
+    );
+  }
+
+  function renderOfficialWording(
+    step: ChecklistStep,
+    displayText: string,
+    displayFlags: ChecklistEnrichmentDisplay,
+  ) {
+    if (!displayFlags.detailedText) {
+      return null;
+    }
+    const detailedText = resolveStepDetailedText(step);
+    if (!detailedText || detailedText === displayText) {
+      return null;
+    }
+    return (
+      <p
+        className="skill-step-official-wording print:text-black"
+        role="note"
+        aria-label={`Official evaluator wording for step ${step.id}`}
+      >
+        {detailedText}
+      </p>
+    );
+  }
+
   return (
     <article
-      className={`skill-checklist mx-auto max-w-3xl px-4 py-8 print:px-0 print:py-0 print:text-black ${compact ? "skill-checklist--compact" : ""} ${showSegmentBadges ? "skill-checklist--segment-badges" : ""}`.trim()}
+      className={`skill-checklist mx-auto max-w-3xl px-4 py-8 print:px-0 print:py-0 print:text-black ${compact ? "skill-checklist--compact" : ""} ${enrichmentDisplay.segmentBadges ? "skill-checklist--segment-badges" : ""} ${learnPolish ? "skill-checklist--learn-polish" : ""}`.trim()}
     >
       <p className="print-header mb-4 hidden text-sm font-semibold uppercase tracking-wide print:block print:text-black">
         LMCC — California CNA Skills Exam Prep
@@ -279,14 +521,18 @@ export default function SkillChecklist({
       </header>
 
       {showModeToggle ?
-        <div className="skill-mode-toggle print:hidden">
+        <div
+          className="skill-mode-toggle print:hidden"
+          role="group"
+          aria-label={CHECKLIST_VIEW_LABELS.groupAria}
+        >
           <button
             type="button"
             className={`skill-mode-btn ${mode === "study" ? "skill-mode-btn--active" : ""}`}
             onClick={() => onModeChange?.("study")}
             aria-pressed={mode === "study"}
           >
-            📖 Study Mode
+            {CHECKLIST_VIEW_LABELS.full}
           </button>
           <button
             type="button"
@@ -294,7 +540,7 @@ export default function SkillChecklist({
             onClick={() => onModeChange?.("quiz")}
             aria-pressed={mode === "quiz"}
           >
-            🧠 Quiz Mode
+            {CHECKLIST_VIEW_LABELS.reveal}
           </button>
         </div>
       : null}
@@ -327,7 +573,9 @@ export default function SkillChecklist({
             <span>
               {completedSteps} of {totalSteps} steps
             </span>
-            <span className="skill-checklist-progress-pct">{progressPct}%</span>
+            <span className="skill-checklist-progress-pct tnum">
+              {progressPct}%
+            </span>
           </div>
           <div className="skill-checklist-progress-track">
             <div
@@ -343,7 +591,7 @@ export default function SkillChecklist({
           <button
             type="button"
             onClick={resetAll}
-            disabled={!anyChecked}
+            disabled={!anyMainChecked && !anySubChecked}
             className="skill-checklist-reset reset-button print:hidden"
           >
             Reset checklist
@@ -359,7 +607,7 @@ export default function SkillChecklist({
         {steps.map((step, stepIndex) => {
           const checklistSlug = organizerMeta?.slug ?? skillSlug;
           const mainLabel = mainStepAriaLabel(step, checklistSlug);
-          const mainChecked = isChecked(mainLabel);
+          const mainChecked = isMainStepChecked(step);
           const mainKey = stepRevealKey(step.id);
           const mainRevealed = isRevealed(mainKey);
           const showMainText = !isQuiz || mainRevealed;
@@ -386,15 +634,19 @@ export default function SkillChecklist({
               })
             : null;
           const showCoreDivider =
-            showSegmentBadges &&
+            !learnPolish &&
+            enrichmentDisplay.segmentBadges &&
             prevSegment === "open" &&
             stepSegment === "core";
           const showCloseDivider =
-            showSegmentBadges &&
+            !learnPolish &&
+            enrichmentDisplay.segmentBadges &&
             prevSegment === "core" &&
             stepSegment === "close";
+          const showLearnSegmentHeading =
+            learnPolish && stepSegment !== null && stepSegment !== prevSegment;
           const phaseStartBadge =
-            showSegmentBadges &&
+            enrichmentDisplay.segmentBadges &&
             stepSegment !== null &&
             ((stepSegment === "core" && prevSegment === "open") ||
               (stepSegment === "close" && prevSegment === "core"));
@@ -402,7 +654,7 @@ export default function SkillChecklist({
             organizerMeta && stepSegment ?
               stepOrganizerAttributes({
                 meta: organizerMeta,
-                stepNumber: step.id,
+                step,
                 stepSegment,
                 skillName: title,
               })
@@ -410,7 +662,7 @@ export default function SkillChecklist({
 
           const scorecardEntry =
             showScorecards && resolvedSkillSlug ?
-              getExamScorecard(resolvedSkillSlug, step.id)
+              getExamScorecardForStep(resolvedSkillSlug, step)
             : undefined;
           const showInlineScorecard =
             scorecardEntry &&
@@ -420,9 +672,54 @@ export default function SkillChecklist({
               showMainText,
               slug: resolvedSkillSlug,
             });
+          const resolvedSubSteps =
+            enrichmentDisplay.subSteps ? (resolveStepSubSteps(step) ?? []) : [];
+          const detailedText = resolveStepDetailedText(step);
+          const rawClinicalNote = resolveStepClinicalNote(step);
+          const showOfficialWording =
+            enrichmentDisplay.detailedText &&
+            detailedText &&
+            detailedText !== displayText;
+          const detailedTitle =
+            showOfficialWording ? undefined
+            : enrichmentDisplay.detailedText && detailedText ? detailedText
+            : undefined;
+
+          const stepCritical =
+            enrichmentDisplay.criticalBadges &&
+            isStepCritical(step, displayText);
+          const criticalBodyClass =
+            stepCritical ?
+              learnPolish ? "step-critical"
+              : "skill-step--critical"
+            : "";
+
+          if (learnPolish && isHandHygieneEmbedStep(step, checklistSlug)) {
+            return (
+              <Fragment key={step.id}>
+                {showLearnSegmentHeading && stepSegment ?
+                  <LearnSegmentHeading segment={stepSegment} />
+                : null}
+                <StepMotionItem
+                  index={stepIndex}
+                  enabled={learnPolish}
+                  className="skill-step-item"
+                >
+                  <HandHygieneEmbedChip
+                    stepId={step.id}
+                    checked={mainChecked}
+                    onToggle={() => toggleMainStep(step)}
+                  />
+                </StepMotionItem>
+              </Fragment>
+            );
+          }
 
           return (
             <Fragment key={step.id}>
+              {showLearnSegmentHeading && stepSegment ?
+                <LearnSegmentHeading segment={stepSegment} />
+              : null}
               {showCoreDivider ?
                 <li
                   role="presentation"
@@ -439,9 +736,11 @@ export default function SkillChecklist({
                   <PhaseDivider label="Closing Phase Begins" />
                 </li>
               : null}
-              <li
-                className={`space-y-1 ${stepSegment ? stepSegmentClass(stepSegment) : ""}`}
-                {...organizerAttrs}
+              <StepMotionItem
+                index={stepIndex}
+                enabled={learnPolish}
+                className={`skill-step-item space-y-1 ${stepSegment ? stepSegmentClass(stepSegment) : ""}`}
+                dataAttributes={organizerAttrs}
               >
                 {showInlineScorecard ?
                   <ExamScorecard entry={scorecardEntry} />
@@ -453,33 +752,71 @@ export default function SkillChecklist({
                         type="checkbox"
                         aria-label={mainLabel}
                         checked={mainChecked}
-                        onChange={() => toggle(mainLabel)}
+                        onChange={() => toggleMainStep(step)}
                         className="skill-checkbox mt-2 shrink-0 rounded border-gray-400 print:mt-0"
                       />
-                      {renderSegmentBadge(stepSegment, phaseStartBadge)}
+                      {renderSegmentBadge(
+                        stepSegment,
+                        phaseStartBadge,
+                        enrichmentDisplay,
+                      )}
                       <span
-                        className={`skill-step-body leading-relaxed ${checkedTextClass(mainChecked)} ${isCriticalStepText(displayText) ? "skill-step--critical" : ""}`}
+                        className={`skill-step-body leading-relaxed ${checkedTextClass(mainChecked)} ${criticalBodyClass}`}
+                        title={detailedTitle}
                       >
-                        <strong className="skill-checklist-step-num print:text-black">
-                          {step.id}.
-                        </strong>{" "}
-                        {displayText}
-                        {renderCriticalBadge(displayText, showMainText)}
+                        <span className="skill-step-body__cue">
+                          <strong className="skill-checklist-step-num tnum print:text-black">
+                            {step.id}.
+                          </strong>{" "}
+                          {renderRendersAsEmoji(step, enrichmentDisplay)}
+                          {displayText}
+                        </span>
+                        {learnPolish ?
+                          <StepLearnMeta
+                            step={step}
+                            clinicalNote={rawClinicalNote}
+                          />
+                        : null}
+                        {renderStepBodyBadges(
+                          step,
+                          displayText,
+                          showMainText,
+                          enrichmentDisplay,
+                        )}
                       </span>
                     </label>
                   : <div className="skill-step-label flex min-h-[44px] min-w-0 flex-1 flex-col gap-2">
                       <div className="skill-step-row flex min-w-0 items-start gap-2">
-                        {renderSegmentBadge(stepSegment, phaseStartBadge)}
+                        {renderSegmentBadge(
+                          stepSegment,
+                          phaseStartBadge,
+                          enrichmentDisplay,
+                        )}
                         <div className="skill-step-body min-w-0 flex-1">
                           <strong className="skill-checklist-step-num skill-quiz-placeholder print:text-black">
                             {step.id}.
                           </strong>{" "}
                           {showMainText ?
                             <span
-                              className={`leading-relaxed ${isCriticalStepText(displayText) ? "skill-step--critical skill-step--critical-revealed" : ""}`}
+                              className={`leading-relaxed ${enrichmentDisplay.criticalBadges && isStepCritical(step, displayText) ? "skill-step--critical skill-step--critical-revealed" : ""}`}
+                              title={detailedTitle}
                             >
+                              {renderRendersAsEmoji(step, enrichmentDisplay)}
                               {displayText}
-                              {renderCriticalBadge(displayText, true)}
+                              {organizerMeta ?
+                                renderPhaseWordBadge(
+                                  step,
+                                  organizerMeta,
+                                  enrichmentDisplay,
+                                )
+                              : null}
+                              {renderTagCategoryBadge(step, enrichmentDisplay)}
+                              {renderCriticalBadge(
+                                step,
+                                displayText,
+                                true,
+                                enrichmentDisplay,
+                              )}
                             </span>
                           : <span className="skill-quiz-hidden">
                               Step hidden — recall from memory
@@ -500,15 +837,26 @@ export default function SkillChecklist({
                   }
                 </div>
 
-                {step.note && (!isQuiz || mainRevealed) ?
-                  <p className="skill-checklist-note note-text print:text-black">
-                    {step.note}
-                  </p>
+                {(
+                  enrichmentDisplay.clinicalNote &&
+                  rawClinicalNote &&
+                  (!isQuiz || mainRevealed)
+                ) ?
+                  <StepClinicalNote
+                    rawNote={rawClinicalNote}
+                    instructorView={instructorViewActive}
+                    instructorReady={instructorReady}
+                  />
                 : null}
 
-                {step.subSteps && step.subSteps.length > 0 ?
-                  <ul className="ml-6 list-none space-y-2 p-0">
-                    {step.subSteps.map((subText, subIndex) => {
+                {renderOfficialWording(step, displayText, enrichmentDisplay)}
+
+                {resolvedSubSteps.length > 0 ?
+                  <ul
+                    className="skill-step-substeps print:text-black"
+                    aria-label={`Sub-steps for step ${step.id}`}
+                  >
+                    {resolvedSubSteps.map((subText, subIndex) => {
                       const subLabel = subStepAriaLabel(step.id, subText);
                       const subChecked = isChecked(subLabel);
                       const subKey = stepRevealKey(step.id, subIndex);
@@ -516,30 +864,40 @@ export default function SkillChecklist({
                       const showSubText = !isQuiz || subRevealed;
 
                       return (
-                        <li key={subLabel}>
+                        <li key={subLabel} className="skill-step-substep">
                           {!isQuiz ?
-                            <label className="flex min-h-[44px] cursor-pointer items-start gap-2">
+                            <label className="skill-step-substep-label">
                               <input
                                 type="checkbox"
                                 aria-label={subLabel}
                                 checked={subChecked}
                                 onChange={() => toggle(subLabel)}
-                                className="skill-checkbox mt-2 shrink-0 rounded border-gray-400"
+                                className="skill-substep-checkbox rounded border-gray-400"
                               />
                               <span
-                                className={`text-sm leading-relaxed ${checkedTextClass(subChecked)} ${isCriticalStepText(subText) ? "skill-step--critical" : ""}`}
+                                className={`skill-step-substep-text leading-relaxed ${subStepCheckedTextClass(subChecked)} ${enrichmentDisplay.criticalBadges && isStepCritical(step, subText) ? "skill-step--critical" : ""}`}
                               >
                                 {subText}
-                                {renderCriticalBadge(subText, true)}
+                                {renderCriticalBadge(
+                                  step,
+                                  subText,
+                                  true,
+                                  enrichmentDisplay,
+                                )}
                               </span>
                             </label>
-                          : <div className="flex min-h-[44px] flex-col gap-2">
+                          : <div className="skill-step-substep-quiz flex min-h-[44px] flex-col gap-2">
                               {showSubText ?
                                 <span
-                                  className={`text-sm leading-relaxed ${isCriticalStepText(subText) ? "skill-step--critical skill-step--critical-revealed" : ""}`}
+                                  className={`skill-step-substep-text leading-relaxed ${enrichmentDisplay.criticalBadges && isStepCritical(step, subText) ? "skill-step--critical skill-step--critical-revealed" : ""}`}
                                 >
-                                  • {subText}
-                                  {renderCriticalBadge(subText, true)}
+                                  {subText}
+                                  {renderCriticalBadge(
+                                    step,
+                                    subText,
+                                    true,
+                                    enrichmentDisplay,
+                                  )}
                                 </span>
                               : <span className="skill-quiz-hidden text-sm">
                                   Sub-step hidden
@@ -551,7 +909,7 @@ export default function SkillChecklist({
                                   className="skill-reveal-btn"
                                   onClick={() => revealOne(subKey)}
                                 >
-                                  Reveal Step
+                                  Reveal sub-step
                                 </button>
                               : null}
                             </div>
@@ -561,7 +919,7 @@ export default function SkillChecklist({
                     })}
                   </ul>
                 : null}
-              </li>
+              </StepMotionItem>
             </Fragment>
           );
         })}
