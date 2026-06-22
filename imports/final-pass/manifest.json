@@ -1,0 +1,162 @@
+{
+  "generatedAt": "2026-06-22T09:06:56.108Z",
+  "sourcePath": "C:\\Users\\moham\\Desktop\\22 Skills TXT\\LMCC CNA Skills - Student Study Guide 6-21-2026\\Perplexity Prompts\\0",
+  "skills": [
+    {
+      "sourceSection": "S01",
+      "slug": "hand-hygiene",
+      "stepCount": 11,
+      "thread": "D",
+      "file": "thread-D/S01-hand-hygiene.json"
+    },
+    {
+      "sourceSection": "S02",
+      "slug": "ppe-gown-gloves",
+      "stepCount": 16,
+      "thread": "D",
+      "file": "thread-D/S02-ppe-gown-gloves.json"
+    },
+    {
+      "sourceSection": "S03",
+      "slug": "radial-pulse-60-seconds",
+      "stepCount": 6,
+      "thread": "D",
+      "file": "thread-D/S03-radial-pulse-60-seconds.json"
+    },
+    {
+      "sourceSection": "S04",
+      "slug": "respirations-60-seconds",
+      "stepCount": 5,
+      "thread": "D",
+      "file": "thread-D/S04-respirations-60-seconds.json"
+    },
+    {
+      "sourceSection": "S05",
+      "slug": "manual-blood-pressure",
+      "stepCount": 14,
+      "thread": "A",
+      "file": "thread-A/S05-manual-blood-pressure.json"
+    },
+    {
+      "sourceSection": "S06",
+      "slug": "weight-ambulatory-client",
+      "stepCount": 13,
+      "thread": "A",
+      "file": "thread-A/S06-weight-ambulatory-client.json"
+    },
+    {
+      "sourceSection": "S07",
+      "slug": "urinary-output-measurement",
+      "stepCount": 11,
+      "thread": "A",
+      "file": "thread-A/S07-urinary-output-measurement.json"
+    },
+    {
+      "sourceSection": "S08",
+      "slug": "position-on-side",
+      "stepCount": 24,
+      "thread": "A",
+      "file": "thread-A/S08-position-on-side.json"
+    },
+    {
+      "sourceSection": "S09",
+      "slug": "bed-wheelchair-transfer",
+      "stepCount": 22,
+      "thread": "A",
+      "file": "thread-A/S09-bed-wheelchair-transfer.json"
+    },
+    {
+      "sourceSection": "S10",
+      "slug": "ambulate-transfer-belt",
+      "stepCount": 18,
+      "thread": "A",
+      "file": "thread-A/S10-ambulate-transfer-belt.json"
+    },
+    {
+      "sourceSection": "S11",
+      "slug": "prom-shoulder",
+      "stepCount": 18,
+      "thread": "B",
+      "file": "thread-B/S11-prom-shoulder.json"
+    },
+    {
+      "sourceSection": "S12",
+      "slug": "prom-knee-ankle",
+      "stepCount": 9,
+      "thread": "B",
+      "file": "thread-B/S12-prom-knee-ankle.json"
+    },
+    {
+      "sourceSection": "S13",
+      "slug": "knee-high-stocking",
+      "stepCount": 11,
+      "thread": "B",
+      "file": "thread-B/S13-knee-high-stocking.json"
+    },
+    {
+      "sourceSection": "S14",
+      "slug": "modified-bed-bath",
+      "stepCount": 28,
+      "thread": "B",
+      "file": "thread-B/S14-modified-bed-bath.json"
+    },
+    {
+      "sourceSection": "S15",
+      "slug": "mouth-care",
+      "stepCount": 24,
+      "thread": "B",
+      "file": "thread-B/S15-mouth-care.json"
+    },
+    {
+      "sourceSection": "S16",
+      "slug": "denture-cleaning",
+      "stepCount": 19,
+      "thread": "B",
+      "file": "thread-B/S16-denture-cleaning.json"
+    },
+    {
+      "sourceSection": "S17",
+      "slug": "foot-care-one-foot",
+      "stepCount": 24,
+      "thread": "B",
+      "file": "thread-B/S17-foot-care-one-foot.json"
+    },
+    {
+      "sourceSection": "S18",
+      "slug": "dress-weak-right-arm",
+      "stepCount": 14,
+      "thread": "C",
+      "file": "thread-C/S18-dress-weak-right-arm.json"
+    },
+    {
+      "sourceSection": "S19",
+      "slug": "feed-client-dependence",
+      "stepCount": 22,
+      "thread": "C",
+      "file": "thread-C/S19-feed-client-dependence.json"
+    },
+    {
+      "sourceSection": "S20",
+      "slug": "bedpan-assist",
+      "stepCount": 26,
+      "thread": "C",
+      "file": "thread-C/S20-bedpan-assist.json"
+    },
+    {
+      "sourceSection": "S21",
+      "slug": "perineal-care-female",
+      "stepCount": 41,
+      "thread": "C",
+      "file": "thread-C/S21-perineal-care-female.json"
+    },
+    {
+      "sourceSection": "S22",
+      "slug": "catheter-care-female",
+      "stepCount": 31,
+      "thread": "C",
+      "file": "thread-C/S22-catheter-care-female.json"
+    }
+  ],
+  "mismatches": [],
+  "examScorecardCount": 25
+}

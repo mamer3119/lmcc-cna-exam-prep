@@ -1,0 +1,168 @@
+/*
+  LMCC Exam Prep — clean study UI
+  Shield watermark only from catalog reference.
+*/
+
+:root {
+  --primary: #111827;
+  --primary-accent: #1e40af;
+  --emphasis: #7f1d1d;
+  --gold: #b45309;
+  --muted: #64748b;
+  --rule: #e2e8f0;
+  --panel: #f8fafc;
+
+  --font-serif: var(--font-crimson), "Crimson Pro", Georgia, serif;
+  --font-sans: var(--font-source), "Source Sans 3", "Segoe UI", sans-serif;
+
+  --watermark-opacity: 0.04;
+
+  /* Legacy bridges */
+  --ink: var(--primary);
+  --line: var(--rule);
+  --accent: var(--primary);
+  --accent-soft: var(--panel);
+  --warm: var(--gold);
+}
+
+.lmcc-cover-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+.lmcc-cover-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  margin: 0 0 0.5rem;
+}
+
+.lmcc-cover-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.lmcc-pathway {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 32rem;
+  margin: 0 auto 2rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.index-study-link {
+  margin: -1rem auto 1.5rem;
+}
+
+.index-study-link__anchor {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.index-study-link__anchor:hover {
+  border-bottom-color: var(--primary-accent);
+}
+
+.lmcc-section-head {
+  margin-bottom: 1rem;
+}
+
+.lmcc-section-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.lmcc-section-rationale {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
+  max-width: 42rem;
+}
+
+.lmcc-skill-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  background: #fff;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--primary);
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.lmcc-skill-card:hover {
+  border-color: var(--primary);
+  border-left-color: var(--gold);
+  box-shadow: 0 6px 20px rgba(17, 24, 39, 0.08);
+}
+
+.lmcc-skill-card:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.lmcc-skill-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.lmcc-skill-card-meta {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.lmcc-skill-page-section {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+@media print {
+  .lmcc-cover-watermark {
+    display: none !important;
+  }
+}

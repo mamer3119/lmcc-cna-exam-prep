@@ -1,6 +1,6 @@
 import skillsBundle from "@/data/skills.json";
 
-import type { ChecklistStep } from "@/components/SkillChecklist";
+import type { ChecklistStep } from "@/lib/checklist-step";
 
 export type WebSkill = {
   slug: string;
@@ -10,6 +10,7 @@ export type WebSkill = {
   examCardLabel: string;
   title: string;
   section: string;
+  pedagogicalReason: string;
   rtcVideoUrl: string | null;
   rtcVideoTitle: string | null;
   prevSlug: string | null;
@@ -19,35 +20,62 @@ export type WebSkill = {
   steps: ChecklistStep[];
 };
 
+export type SectionMeta = {
+  title: string;
+  rationale: string;
+};
+
 export type SkillsBundle = {
   generatedAt: string;
+  pathwayTagline: string;
+  sections: SectionMeta[];
   skills: WebSkill[];
 };
 
 const bundle = skillsBundle as SkillsBundle;
 
+export function getPathwayTagline(): string {
+  return bundle.pathwayTagline;
+}
+
+export function getSectionMeta(): SectionMeta[] {
+  return bundle.sections;
+}
+
 export function getAllSkills(): WebSkill[] {
-  return bundle.skills;
+  return [...bundle.skills].sort((a, b) => a.studyOrder - b.studyOrder);
 }
 
 export function getSkillBySlug(slug: string): WebSkill | undefined {
   return bundle.skills.find((skill) => skill.slug === slug);
 }
 
-export function getSections(): { section: string; skills: WebSkill[] }[] {
-  const order: string[] = [];
-  const map = new Map<string, WebSkill[]>();
+export function getSections(): {
+  section: string;
+  sectionIndex: number;
+  rationale: string;
+  skills: WebSkill[];
+}[] {
+  const sectionMeta = new Map(
+    bundle.sections.map((entry, index) => [
+      entry.title,
+      { ...entry, sectionIndex: index + 1 },
+    ]),
+  );
 
-  for (const skill of bundle.skills) {
-    if (!map.has(skill.section)) {
-      map.set(skill.section, []);
-      order.push(skill.section);
+  const grouped = new Map<string, WebSkill[]>();
+
+  for (const skill of getAllSkills()) {
+    if (!grouped.has(skill.section)) {
+      grouped.set(skill.section, []);
     }
-    map.get(skill.section)!.push(skill);
+    grouped.get(skill.section)!.push(skill);
   }
 
-  return order.map((section) => ({
-    section,
-    skills: map.get(section)!,
+  return bundle.sections.map((entry, index) => ({
+    section: entry.title,
+    sectionIndex: index + 1,
+    rationale: entry.rationale,
+    skills: grouped.get(entry.title) ?? [],
   }));
 }

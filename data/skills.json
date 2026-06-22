@@ -1,5 +1,36 @@
 {
-  "generatedAt": "2026-06-21T05:15:25.627Z",
+  "generatedAt": "2026-06-22T09:01:19.729Z",
+  "pathwayTagline": "Protect → observe → move → restore → clean → feed → eliminate",
+  "sections": [
+    {
+      "title": "Infection Control",
+      "rationale": "Every clinical skill begins and ends with infection control. Students must internalize this as muscle memory before touching a patient."
+    },
+    {
+      "title": "Measurement and Recording",
+      "rationale": "Observation-only skills with no physical intervention. They train precision and documentation before students are trusted to act."
+    },
+    {
+      "title": "Mobility and Positioning",
+      "rationale": "Before personal care, students must move patients safely. Positioning and transfers prevent injury during bathing, dressing, and elimination."
+    },
+    {
+      "title": "Restorative and Support",
+      "rationale": "Once mobility is established, students learn to maintain and restore function — preventing deterioration, not just assisting movement."
+    },
+    {
+      "title": "Personal Care",
+      "rationale": "The core of daily CNA work. Mobility skills are prerequisites for bathing, grooming, and dressing with dignity."
+    },
+    {
+      "title": "Feeding and Nutrition",
+      "rationale": "Feeding follows hygiene and positioning. It is cognitively distinct — swallowing observation, aspiration risk, and dignity at the table."
+    },
+    {
+      "title": "Elimination and Peri Care",
+      "rationale": "The most intimate care. Full confidence in infection control, mobility, and personal care comes first — then elimination."
+    }
+  ],
   "skills": [
     {
       "slug": "hand-hygiene",
@@ -8,7 +39,8 @@
       "examSkillNumber": 1,
       "examCardLabel": "California Skills Exam — Skill 1",
       "title": "Hand Hygiene (Hand Washing)",
-      "section": "Infection Control & Safety",
+      "section": "Infection Control",
+      "pedagogicalReason": "The single universal act. Teaches the before-and-after mindset — nothing happens without it.",
       "rtcVideoUrl": "https://www.youtube.com/watch?v=yGwleUa_itw",
       "rtcVideoTitle": "01 Washes Hands",
       "prevSlug": null,
@@ -18,57 +50,74 @@
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and identify the patient."
+          "text": "Introduce and identify the patient",
+          "segment": "open",
+          "boilerplateId": "INTRO_IDENTIFY"
         },
         {
           "id": 2,
-          "text": "Turn on the water and adjust the flow so that the water is warm."
+          "text": "Turn on warm water",
+          "segment": "core"
         },
         {
           "id": 3,
-          "text": "Wet hands thoroughly, keeping hands and forearms lower than elbows.",
-          "note": "Avoid splashing water on uniform."
+          "text": "Wet hands below elbows",
+          "segment": "core",
+          "note": "Avoid splashing on uniform; keep forearms and wrists lower than elbows."
         },
         {
           "id": 4,
-          "text": "Apply a palm-sized amount of hand soap."
+          "text": "Apply palm-sized soap",
+          "segment": "core"
         },
         {
           "id": 5,
-          "text": "Perform hand hygiene using plenty of lather and friction for at least 20 seconds:",
+          "text": "Lather twenty seconds minimum",
+          "segment": "core",
           "subSteps": [
             "Rub hands palm to palm",
             "Rub back of right and left hand (fingers interlaced)",
-            "Rub palm to palm with fingers interlaced.",
-            "Perform rotational rubbing of left and right thumbs.",
-            "Rub fingertips against the palm of the opposite hand.",
-            "Rub wrists.",
+            "Rub palm to palm with fingers interlaced",
+            "Perform rotational rubbing of left and right thumbs",
+            "Rub fingertips against palm of opposite hand",
+            "Rub wrists",
             "Repeat sequence at least two times"
           ]
         },
         {
           "id": 6,
-          "text": "Keep fingertips pointing downward throughout"
+          "text": "Keep fingertips pointing down",
+          "segment": "core",
+          "note": "Credentia absorbs this into Steps 5 & 7 — GWC scores it as a standalone observable action. Students must demonstrate it explicitly."
         },
         {
           "id": 7,
-          "text": "Clean under fingernails"
+          "text": "Clean under fingernails",
+          "segment": "core",
+          "subSteps": [
+            "Rub fingertips against palm of opposite hand"
+          ]
         },
         {
           "id": 8,
-          "text": "Rinse hands with water, keeping fingertips pointing down so water runs off fingertips. Do not shake water from your hands."
+          "text": "Rinse fingertips pointing down",
+          "segment": "core"
         },
         {
           "id": 9,
-          "text": "Dry hands thoroughly from fingers to wrists with a paper towel or air dryer. Dispose of the paper towel(s)."
+          "text": "Dry fingertips-to-wrists; dispose towel",
+          "segment": "core"
         },
         {
           "id": 10,
-          "text": "Use a new paper towel to turn off the water. Dispose of the paper towel."
+          "text": "Turn off water with towel",
+          "segment": "core",
+          "note": "GWC: paper towel only. Credentia also allows knee/foot control — GWC governs on exam."
         },
         {
           "id": 11,
-          "text": "Do not lean against the sink or touch the inside of the sink during the hand-washing process."
+          "text": "Never lean on or touch sink",
+          "segment": "core"
         }
       ]
     },
@@ -79,216 +128,308 @@
       "examSkillNumber": 8,
       "examCardLabel": "California Skills Exam — Skill 8",
       "title": "Donning and Removing PPE (Gown and Gloves)",
-      "section": "Infection Control & Safety",
+      "section": "Infection Control",
+      "pedagogicalReason": "Builds on hand hygiene: wash before donning and after removing. The sequence is the lesson.",
       "rtcVideoUrl": "https://www.youtube.com/watch?v=vE8eifbBJBE",
       "rtcVideoTitle": "08 Dons Gown and Gloves",
       "prevSlug": "hand-hygiene",
-      "nextSlug": "respirations-60-seconds",
+      "nextSlug": "radial-pulse-60-seconds",
       "storageKey": "checklist-02-ppe-gown-gloves",
       "stepCount": 16,
       "steps": [
         {
           "id": 1,
-          "text": "Face the back opening of the gown."
+          "text": "Face gown's back opening",
+          "segment": "open"
         },
         {
           "id": 2,
-          "text": "Unfold the gown."
+          "text": "Unfold the gown",
+          "segment": "core"
         },
         {
           "id": 3,
-          "text": "Put arms into the sleeves."
+          "text": "Put arms into sleeves",
+          "segment": "core"
         },
         {
           "id": 4,
-          "text": "Secure the neck opening at the back of neck."
+          "text": "Secure neck ties at back",
+          "segment": "core"
         },
         {
           "id": 5,
-          "text": "Secure the waist, making sure that the back flaps overlap each other and covering clothing as completely as possible."
+          "text": "Secure waist; cover back fully",
+          "segment": "core"
         },
         {
           "id": 6,
-          "text": "Put on gloves."
+          "text": "Don clean gloves",
+          "segment": "core",
+          "note": "Use clean, non-sterile gloves for isolation care.",
+          "boilerplateId": "GLOVE_DON"
         },
         {
           "id": 7,
-          "text": "Ensure the gloves overlap the gown sleeves at the wrist."
+          "text": "Overlap gloves over gown cuffs",
+          "segment": "core"
         },
         {
           "id": 8,
-          "text": "When the care is complete and before leaving the room, remove the gloves BEFORE removing the gown."
+          "text": "Remove gloves before the gown",
+          "segment": "core",
+          "note": "Sequence matters: gloves off before gown, before leaving the room — evaluator watches for this order."
         },
         {
           "id": 9,
-          "text": "Remove the gloves, turning them inside out."
+          "text": "Remove gloves inside out",
+          "segment": "core",
+          "subSteps": [
+            "Grasp outside of first glove at palm; peel off",
+            "Slide fingers of bare hand under cuff of remaining glove at wrist; peel off turning inside out"
+          ],
+          "boilerplateId": "GLOVE_REMOVE"
         },
         {
           "id": 10,
-          "text": "Dispose of the gloves in the appropriate container."
+          "text": "Dispose gloves in waste container",
+          "segment": "core"
         },
         {
           "id": 11,
-          "text": "Perform hand hygiene."
+          "text": "Perform hand hygiene now",
+          "segment": "core",
+          "note": "⚠️ VIDEO WARNING: This step is missing from the reference video — video performs hand hygiene only after gown disposal. GWC requires it HERE, between glove removal and gown unfastening.",
+          "boilerplateId": "HAND_HYGIENE|VIDEO_WARNING"
         },
         {
           "id": 12,
-          "text": "Unfasten the gown at the neck."
+          "text": "Unfasten gown at neck",
+          "segment": "core"
         },
         {
           "id": 13,
-          "text": "Unfasten the gown at the waist."
+          "text": "Unfasten gown at waist",
+          "segment": "core"
         },
         {
           "id": 14,
-          "text": "Remove the gown starting at the top of the shoulders, turning it inside out and folding the soiled area to soiled area."
+          "text": "Remove gown; soiled side inward",
+          "segment": "core",
+          "subSteps": [
+            "Start at shoulders; pull down",
+            "Turn inside out as you remove",
+            "Fold soiled area to soiled area",
+            "Hold away from body; do not touch floor"
+          ]
         },
         {
           "id": 15,
-          "text": "Dispose of the gown in an appropriate container."
+          "text": "Dispose gown in waste container",
+          "segment": "core"
         },
         {
           "id": 16,
-          "text": "Perform hand hygiene."
-        }
-      ]
-    },
-    {
-      "slug": "respirations-60-seconds",
-      "file": "03-respirations-60-seconds.md",
-      "studyOrder": 3,
-      "examSkillNumber": 7,
-      "examCardLabel": "California Skills Exam — Skill 7",
-      "title": "Counts and Records Respirations",
-      "section": "Vital Signs & Measurements",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=y1mNipCbq6w",
-      "rtcVideoTitle": "07 Counts Respirations",
-      "prevSlug": "ppe-gown-gloves",
-      "nextSlug": "radial-pulse-60-seconds",
-      "storageKey": "checklist-03-respirations-60-seconds",
-      "stepCount": 5,
-      "steps": [
-        {
-          "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
-        },
-        {
-          "id": 2,
-          "text": "Count respirations for 60 seconds."
-        },
-        {
-          "id": 3,
-          "text": "Place the call light or signaling device within reach of the patient."
-        },
-        {
-          "id": 4,
-          "text": "Perform hand hygiene."
-        },
-        {
-          "id": 5,
-          "text": "Document respiratory rate within plus or minus 4 of the evaluator’s result."
+          "text": "Perform final hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         }
       ]
     },
     {
       "slug": "radial-pulse-60-seconds",
       "file": "04-radial-pulse-60-seconds.md",
-      "studyOrder": 4,
+      "studyOrder": 3,
       "examSkillNumber": 6,
       "examCardLabel": "California Skills Exam — Skill 6",
       "title": "Counts and Records Radial Pulse",
-      "section": "Vital Signs & Measurements",
+      "section": "Measurement and Recording",
+      "pedagogicalReason": "Simplest vital sign — one finger location, one count, one unit (bpm). Introduces the count-then-record loop.",
       "rtcVideoUrl": "https://www.youtube.com/watch?v=XpFVuPwbMso",
       "rtcVideoTitle": "06 Counts Radial Pulse",
-      "prevSlug": "respirations-60-seconds",
-      "nextSlug": "urinary-output-measurement",
+      "prevSlug": "ppe-gown-gloves",
+      "nextSlug": "respirations-60-seconds",
       "storageKey": "checklist-04-radial-pulse-60-seconds",
       "stepCount": 6,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
+          "text": "Introduce and explain",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
           "id": 2,
-          "text": "Locate the radial pulse by placing the tips of fingers on the side of the patient’s wrist."
+          "text": "Locate radial pulse",
+          "segment": "core"
         },
         {
           "id": 3,
-          "text": "Count the pulse for 60 seconds."
+          "text": "Count pulse 60 seconds",
+          "segment": "core",
+          "note": "Start on a whole number on the watch, then count"
         },
         {
           "id": 4,
-          "text": "Place the call light or signaling device within reach of the patient."
+          "text": "Call light within reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
         },
         {
           "id": 5,
-          "text": "Perform hand hygiene."
+          "text": "Wash hands",
+          "segment": "close",
+          "note": "Wash before documenting",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 6,
-          "text": "Document pulse within plus or minus 4 of the evaluator’s result."
+          "text": "Document the rate",
+          "segment": "close"
         }
       ]
     },
     {
-      "slug": "urinary-output-measurement",
-      "file": "05-urinary-output-measurement.md",
-      "studyOrder": 5,
-      "examSkillNumber": 12,
-      "examCardLabel": "California Skills Exam — Skill 12",
-      "title": "Measures and Records Urinary Output",
-      "section": "Vital Signs & Measurements",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=M6NuknszPcw",
-      "rtcVideoTitle": "14 Measures and Records Urinary Output",
+      "slug": "respirations-60-seconds",
+      "file": "03-respirations-60-seconds.md",
+      "studyOrder": 4,
+      "examSkillNumber": 7,
+      "examCardLabel": "California Skills Exam — Skill 7",
+      "title": "Counts and Records Respirations",
+      "section": "Measurement and Recording",
+      "pedagogicalReason": "Taught immediately after pulse because they share a 60-second window. Observe without alerting the patient.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=y1mNipCbq6w",
+      "rtcVideoTitle": "07 Counts Respirations",
       "prevSlug": "radial-pulse-60-seconds",
-      "nextSlug": "weight-ambulatory-client",
-      "storageKey": "checklist-05-urinary-output-measurement",
-      "stepCount": 11,
+      "nextSlug": "manual-blood-pressure",
+      "storageKey": "checklist-03-respirations-60-seconds",
+      "stepCount": 5,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and explain the procedure the patient."
+          "text": "Introduce and explain",
+          "segment": "open",
+          "note": "Say \"for testing purposes.\" In real practice, never tell the patient you're counting respirations — it changes the rate.",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
           "id": 2,
-          "text": "Perform hand hygiene"
+          "text": "Count respirations 60 seconds",
+          "segment": "core",
+          "note": "Start on a whole number on the watch, then count."
         },
         {
           "id": 3,
-          "text": "Put on clean gloves"
+          "text": "Call light within reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
         },
         {
           "id": 4,
-          "text": "Pour the liquid in the bedpan into a measuring container."
+          "text": "Wash hands",
+          "segment": "close",
+          "note": "Wash before documenting.",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 5,
-          "text": "Rinse the bedpan and empty the water into the toilet."
+          "text": "Document the rate",
+          "segment": "close"
+        }
+      ]
+    },
+    {
+      "slug": "manual-blood-pressure",
+      "file": "07-manual-blood-pressure.md",
+      "studyOrder": 5,
+      "examSkillNumber": 22,
+      "examCardLabel": "California Skills Exam — Skill 22",
+      "title": "Measures and Records Manual Blood Pressure",
+      "section": "Measurement and Recording",
+      "pedagogicalReason": "Most complex vital sign — equipment, two values, and interpretation. Builds on pulse and respiration rhythm.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=HBRN4kZpNgo",
+      "rtcVideoTitle": "13 Measures and Records Blood Pressure",
+      "prevSlug": "respirations-60-seconds",
+      "nextSlug": "weight-ambulatory-client",
+      "storageKey": "checklist-07-manual-blood-pressure",
+      "stepCount": 14,
+      "steps": [
+        {
+          "id": 1,
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
+        },
+        {
+          "id": 2,
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 3,
+          "text": "Cleanse stethoscope and cuff",
+          "segment": "core"
+        },
+        {
+          "id": 4,
+          "text": "Position patient; arm at heart level",
+          "segment": "core",
+          "note": "Ask which arm the patient prefers."
+        },
+        {
+          "id": 5,
+          "text": "Bare skin under cuff",
+          "segment": "core"
         },
         {
           "id": 6,
-          "text": "Measure the amount of urine at the eye level with the container on flat surface"
+          "text": "Center cuff over brachial artery",
+          "segment": "core",
+          "note": "Lower cuff margin sits 1″ above the elbow bend."
         },
         {
           "id": 7,
-          "text": "Empty the urine into the toilet."
+          "text": "Inflate cuff 160–180 mmHg",
+          "segment": "core",
+          "note": "If a beat is heard immediately on deflation, fully deflate, wait 1 min, reinflate to no more than 200."
         },
         {
           "id": 8,
-          "text": "Rinse the measuring container with water and empty it to the toilet"
+          "text": "Deflate slowly; note systolic",
+          "segment": "core"
         },
         {
           "id": 9,
-          "text": "Remove gloves"
+          "text": "Continue deflating; note diastolic",
+          "segment": "core"
         },
         {
           "id": 10,
-          "text": "Record the volume within plus or minus 25 mL of the actual volume"
+          "text": "Deflate fully; remove cuff",
+          "segment": "core"
         },
         {
           "id": 11,
-          "text": "Perform hand hygiene."
+          "text": "Tell patient the reading",
+          "segment": "core"
+        },
+        {
+          "id": 12,
+          "text": "Cleanse stethoscope and cuff",
+          "segment": "core"
+        },
+        {
+          "id": 13,
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 14,
+          "text": "Document BP within ±8 mmHg",
+          "segment": "close",
+          "note": "Both numbers must each be within ±8 mmHg."
         }
       ]
     },
@@ -298,198 +439,737 @@
       "studyOrder": 6,
       "examSkillNumber": 13,
       "examCardLabel": "California Skills Exam — Skill 13",
-      "title": "Measures and Records Weight (Ambulatory Client)",
-      "section": "Vital Signs & Measurements",
+      "title": "Measures and Records Weight of Ambulatory Client",
+      "section": "Measurement and Recording",
+      "pedagogicalReason": "Requires the patient to be upright and cooperative. Bridges measurement toward mobility.",
       "rtcVideoUrl": "https://www.youtube.com/watch?v=vOV7_zjUIbo",
       "rtcVideoTitle": "15 Measures and Records Weight",
-      "prevSlug": "urinary-output-measurement",
-      "nextSlug": "manual-blood-pressure",
+      "prevSlug": "manual-blood-pressure",
+      "nextSlug": "urinary-output-measurement",
       "storageKey": "checklist-06-weight-ambulatory-client",
       "stepCount": 13,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
           "id": 2,
-          "text": "Perform hand hygiene"
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 3,
-          "text": "Verify the patient is wearing nonskid footwear."
+          "text": "Verify nonskid footwear on patient",
+          "segment": "core"
         },
         {
           "id": 4,
-          "text": "Balance (or zero) scale."
+          "text": "Balance (zero) the scale",
+          "segment": "core"
         },
         {
           "id": 5,
-          "text": "Walk the patient to the scale."
+          "text": "Walk patient to the scale",
+          "segment": "core"
         },
         {
           "id": 6,
-          "text": "Assist the patient to step on the scale."
+          "text": "Assist patient onto the scale",
+          "segment": "core"
         },
         {
           "id": 7,
-          "text": "Check that the patient is centered on the scale."
+          "text": "Check patient centered on scale",
+          "segment": "core"
         },
         {
           "id": 8,
-          "text": "Check that the patient has their arms at their side."
+          "text": "Check arms at patient's side",
+          "segment": "core"
         },
         {
           "id": 9,
-          "text": "Ensure the patient is not holding on to anything that would alter the reading of the weight."
+          "text": "Ensure patient holds nothing extra",
+          "segment": "core"
         },
         {
           "id": 10,
-          "text": "Adjust the weights until the scale is in balance or read analog scale."
+          "text": "Adjust weights; balance the scale",
+          "segment": "core"
         },
         {
           "id": 11,
-          "text": "Perform hand hygiene."
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 12,
-          "text": "Document weight (plus/minus 2 lbs. or 0.9 kg)"
+          "text": "Document weight within ±2 lb",
+          "segment": "close",
+          "note": "Tolerance: record weight within ±2 lb / 0.9 kg of actual."
         },
         {
           "id": 13,
-          "text": "Perform hand hygiene"
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         }
       ]
     },
     {
-      "slug": "manual-blood-pressure",
-      "file": "07-manual-blood-pressure.md",
+      "slug": "urinary-output-measurement",
+      "file": "05-urinary-output-measurement.md",
       "studyOrder": 7,
-      "examSkillNumber": 22,
-      "examCardLabel": "California Skills Exam — Skill 22",
-      "title": "Measures and Records Manual Blood Pressure",
-      "section": "Vital Signs & Measurements",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=HBRN4kZpNgo",
-      "rtcVideoTitle": "13 Measures and Records Blood Pressure",
+      "examSkillNumber": 12,
+      "examCardLabel": "California Skills Exam — Skill 12",
+      "title": "Measures and Records Urinary Output",
+      "section": "Measurement and Recording",
+      "pedagogicalReason": "The only measurement tied to a bodily output. Bridge skill into the elimination section.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=M6NuknszPcw",
+      "rtcVideoTitle": "14 Measures and Records Urinary Output",
       "prevSlug": "weight-ambulatory-client",
-      "nextSlug": "prom-knee-ankle",
-      "storageKey": "checklist-07-manual-blood-pressure",
-      "stepCount": 14,
+      "nextSlug": "position-on-side",
+      "storageKey": "checklist-05-urinary-output-measurement",
+      "stepCount": 11,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
           "id": 2,
-          "text": "Perform hand hygiene."
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 3,
-          "text": "Cleanse the stethoscope and blood pressure cuff prior to placing it on the patient’s skin."
+          "text": "Don clean gloves",
+          "segment": "core",
+          "boilerplateId": "GLOVE_DON"
         },
         {
           "id": 4,
-          "text": "Place the patient in a relaxed reclining or sitting position. The patient should be seated quietly for at least five minutes in a chair prior to blood pressure measurement. Ask the patient which arm they prefer to use. Both feet should be on the floor and the arm should be supported at heart level."
+          "text": "Pour bedpan liquid into container",
+          "segment": "core"
         },
         {
           "id": 5,
-          "text": "Remove or rearrange clothing so the cuff and the stethoscope are on bare skin."
+          "text": "Rinse bedpan; empty into toilet",
+          "segment": "core"
         },
         {
           "id": 6,
-          "text": "Center the bladder of the blood pressure cuff over the brachial artery with the lower margin 1″ above the antecubital space. Fit the cuff evenly and snugly. Palpate the brachial artery in the antecubital space."
+          "text": "Measure urine at eye level",
+          "segment": "core"
         },
         {
           "id": 7,
-          "text": "Inflate the cuff to 160-180 mmHg."
+          "text": "Empty urine into toilet",
+          "segment": "core"
         },
         {
           "id": 8,
-          "text": "Deflate the cuff gradually at a constant rate by opening the valve on the bulb (2-3 mm Hg/second) until the first Korotkoff sound is heard. Note the systolic pressure."
+          "text": "Rinse container; empty into toilet",
+          "segment": "core"
         },
         {
           "id": 9,
-          "text": "Continue to deflate the cuff slowly at 2 mm Hg/second. Note the point at which Korotkoff sounds disappear completely as the diastolic pressure."
+          "text": "Remove gloves inside out",
+          "segment": "core",
+          "boilerplateId": "GLOVE_REMOVE"
         },
         {
           "id": 10,
-          "text": "Deflate the cuff completely and remove the cuff from the patient’s arm."
+          "text": "Record volume ±25 mL",
+          "segment": "close",
+          "note": "Tolerance: record urine volume within ±25 mL of actual."
         },
         {
           "id": 11,
-          "text": "Inform the patient of the blood pressure reading."
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
+        }
+      ]
+    },
+    {
+      "slug": "position-on-side",
+      "file": "14-position-on-side.md",
+      "studyOrder": 8,
+      "examSkillNumber": 16,
+      "examCardLabel": "California Skills Exam — Skill 16",
+      "title": "Positions on Side",
+      "section": "Mobility and Positioning",
+      "pedagogicalReason": "Bed-based, lowest-risk movement. No equipment. Teaches body mechanics, alignment, and patient comfort.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=TD3ayzYhGAs",
+      "rtcVideoTitle": "18 Positions on Side",
+      "prevSlug": "urinary-output-measurement",
+      "nextSlug": "bed-wheelchair-transfer",
+      "storageKey": "checklist-14-position-on-side",
+      "stepCount": 24,
+      "steps": [
+        {
+          "id": 1,
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
+        },
+        {
+          "id": 2,
+          "text": "Provide for privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
+        },
+        {
+          "id": 3,
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 4,
+          "text": "Position bed flat",
+          "segment": "core"
+        },
+        {
+          "id": 5,
+          "text": "Raise bed to working height",
+          "segment": "core"
+        },
+        {
+          "id": 6,
+          "text": "Raise far side rail for safety",
+          "segment": "core"
+        },
+        {
+          "id": 7,
+          "text": "Move to working side of bed",
+          "segment": "core"
+        },
+        {
+          "id": 8,
+          "text": "Explain move toward you on three",
+          "segment": "core"
+        },
+        {
+          "id": 9,
+          "text": "Count three; move patient toward you",
+          "segment": "core"
+        },
+        {
+          "id": 10,
+          "text": "Instruct patient to move near arm",
+          "segment": "core"
+        },
+        {
+          "id": 11,
+          "text": "Raise patient's near knee to assist",
+          "segment": "core"
         },
         {
           "id": 12,
-          "text": "Cleanse the stethoscope and blood pressure cuff."
+          "text": "Explain turning toward rail on three",
+          "segment": "core"
         },
         {
           "id": 13,
-          "text": "Perform proper hand hygiene."
+          "text": "Count three; turn toward side rail",
+          "segment": "core"
         },
         {
           "id": 14,
-          "text": "Document both systolic and diastolic pressures each within plus or minus 8 mm hg of the evaluator’s reading."
+          "text": "Guard face from rail and pillow",
+          "segment": "core"
+        },
+        {
+          "id": 15,
+          "text": "Check patient not on bottom arm",
+          "segment": "core"
+        },
+        {
+          "id": 16,
+          "text": "Place pillow behind patient's back",
+          "segment": "core"
+        },
+        {
+          "id": 17,
+          "text": "Check body alignment from bed end",
+          "segment": "core"
+        },
+        {
+          "id": 18,
+          "text": "Verify patient centered in bed",
+          "segment": "core"
+        },
+        {
+          "id": 19,
+          "text": "Pillow under top arm; protect ribs",
+          "segment": "core"
+        },
+        {
+          "id": 20,
+          "text": "Pillow under top knee; protect ankles",
+          "segment": "core"
+        },
+        {
+          "id": 21,
+          "text": "Adjust head pillow for comfort",
+          "segment": "core"
+        },
+        {
+          "id": 22,
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
+        },
+        {
+          "id": 23,
+          "text": "Place call light in reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
+        },
+        {
+          "id": 24,
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
+        }
+      ]
+    },
+    {
+      "slug": "bed-wheelchair-transfer",
+      "file": "13-bed-wheelchair-transfer.md",
+      "studyOrder": 9,
+      "examSkillNumber": 21,
+      "examCardLabel": "California Skills Exam — Skill 21",
+      "title": "Transfers from Bed to Wheelchair Using Transfer Belt",
+      "section": "Mobility and Positioning",
+      "pedagogicalReason": "The patient leaves the bed. Requires belt, coordination, and two-point communication.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=pb987AGCRAA",
+      "rtcVideoTitle": "24 Transfer to Wheel Chair",
+      "prevSlug": "position-on-side",
+      "nextSlug": "ambulate-transfer-belt",
+      "storageKey": "checklist-13-bed-wheelchair-transfer",
+      "stepCount": 22,
+      "steps": [
+        {
+          "id": 1,
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
+        },
+        {
+          "id": 2,
+          "text": "Provide for privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
+        },
+        {
+          "id": 3,
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 4,
+          "text": "Check bed brakes are locked",
+          "segment": "core"
+        },
+        {
+          "id": 5,
+          "text": "Remove wheelchair foot pedals if needed",
+          "segment": "core"
+        },
+        {
+          "id": 6,
+          "text": "Assist patient to sit; dangle feet",
+          "segment": "core"
+        },
+        {
+          "id": 7,
+          "text": "Apply nonskid footwear to patient",
+          "segment": "core"
+        },
+        {
+          "id": 8,
+          "text": "Apply gait belt to patient",
+          "segment": "core"
+        },
+        {
+          "id": 9,
+          "text": "Position wheelchair; strong side toward it",
+          "segment": "core"
+        },
+        {
+          "id": 10,
+          "text": "Lock wheelchair brakes",
+          "segment": "core"
+        },
+        {
+          "id": 11,
+          "text": "Ask if patient feels dizzy",
+          "segment": "core"
+        },
+        {
+          "id": 12,
+          "text": "Block patient's feet with yours",
+          "segment": "core"
+        },
+        {
+          "id": 13,
+          "text": "Patient pushes up on three",
+          "segment": "core"
+        },
+        {
+          "id": 14,
+          "text": "Grasp gait belt; palms up",
+          "segment": "core"
+        },
+        {
+          "id": 15,
+          "text": "Count three; assist patient to stand",
+          "segment": "core"
+        },
+        {
+          "id": 16,
+          "text": "Assist patient to pivot",
+          "segment": "core"
+        },
+        {
+          "id": 17,
+          "text": "Instruct patient to grasp wheelchair arms",
+          "segment": "core"
+        },
+        {
+          "id": 18,
+          "text": "Assist patient to seated in wheelchair",
+          "segment": "core"
+        },
+        {
+          "id": 19,
+          "text": "Remove gait belt gently",
+          "segment": "core"
+        },
+        {
+          "id": 20,
+          "text": "Release wheelchair brakes",
+          "segment": "core"
+        },
+        {
+          "id": 21,
+          "text": "Place call light in reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
+        },
+        {
+          "id": 22,
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
+        }
+      ]
+    },
+    {
+      "slug": "ambulate-transfer-belt",
+      "file": "11-ambulate-transfer-belt.md",
+      "studyOrder": 10,
+      "examSkillNumber": 3,
+      "examCardLabel": "California Skills Exam — Skill 3",
+      "title": "Assists to Ambulate Using Transfer Belt",
+      "section": "Mobility and Positioning",
+      "pedagogicalReason": "Most demanding mobility skill — patient fully upright and moving. Gait, balance, and fall prevention all apply.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=N7WcZOV6lVw",
+      "rtcVideoTitle": "03 Ambulates Using Belt",
+      "prevSlug": "bed-wheelchair-transfer",
+      "nextSlug": "prom-shoulder",
+      "storageKey": "checklist-11-ambulate-transfer-belt",
+      "stepCount": 18,
+      "steps": [
+        {
+          "id": 1,
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
+        },
+        {
+          "id": 2,
+          "text": "Provide for patient privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
+        },
+        {
+          "id": 3,
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 4,
+          "text": "Place nonskid footwear on patient",
+          "segment": "core"
+        },
+        {
+          "id": 5,
+          "text": "Adjust bed to safe level",
+          "segment": "core"
+        },
+        {
+          "id": 6,
+          "text": "Check bed brakes are locked",
+          "segment": "core"
+        },
+        {
+          "id": 7,
+          "text": "Dangle patient on bed edge",
+          "segment": "core"
+        },
+        {
+          "id": 8,
+          "text": "Ask if dizzy or light-headed",
+          "segment": "core"
+        },
+        {
+          "id": 9,
+          "text": "Apply gait belt; check tightness",
+          "segment": "core"
+        },
+        {
+          "id": 10,
+          "text": "Face patient; block patient's feet",
+          "segment": "core"
+        },
+        {
+          "id": 11,
+          "text": "Instruct patient to push up",
+          "segment": "core"
+        },
+        {
+          "id": 12,
+          "text": "Count three; assist to standing",
+          "segment": "core"
+        },
+        {
+          "id": 13,
+          "text": "Move to weak side; hold belt",
+          "segment": "core"
+        },
+        {
+          "id": 14,
+          "text": "Assist patient in standing position",
+          "segment": "core"
+        },
+        {
+          "id": 15,
+          "text": "Walk behind; hold belt 10 ft",
+          "segment": "core"
+        },
+        {
+          "id": 16,
+          "text": "Assist back to bed; remove belt",
+          "segment": "core"
+        },
+        {
+          "id": 17,
+          "text": "Call light; bed low and locked",
+          "segment": "close",
+          "boilerplateId": "BED_LOW|CALL_LIGHT"
+        },
+        {
+          "id": 18,
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
+        }
+      ]
+    },
+    {
+      "slug": "prom-shoulder",
+      "file": "12-prom-shoulder.md",
+      "studyOrder": 11,
+      "examSkillNumber": 15,
+      "examCardLabel": "California Skills Exam — Skill 15",
+      "title": "Performs Modified PROM for One Shoulder",
+      "section": "Restorative and Support",
+      "pedagogicalReason": "Upper body first. Larger joint, more intuitive range of motion. Introduces PROM mechanics.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=7JphjwdfseI",
+      "rtcVideoTitle": "17 Range of Motion - Shoulder",
+      "prevSlug": "ambulate-transfer-belt",
+      "nextSlug": "prom-knee-ankle",
+      "storageKey": "checklist-12-prom-shoulder",
+      "stepCount": 18,
+      "steps": [
+        {
+          "id": 1,
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
+        },
+        {
+          "id": 2,
+          "text": "Provide for patient privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
+        },
+        {
+          "id": 3,
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 4,
+          "text": "Advise patient to report pain",
+          "segment": "core"
+        },
+        {
+          "id": 5,
+          "text": "Place hand under patient's elbow",
+          "segment": "core"
+        },
+        {
+          "id": 6,
+          "text": "Place hand under patient's wrist",
+          "segment": "core"
+        },
+        {
+          "id": 7,
+          "text": "Watch for signs of pain",
+          "segment": "core"
+        },
+        {
+          "id": 8,
+          "text": "Move arm gently; stop resistance",
+          "segment": "core"
+        },
+        {
+          "id": 9,
+          "text": "Raise arm overhead (flexion)",
+          "segment": "core"
+        },
+        {
+          "id": 10,
+          "text": "Return arm to side (extension)",
+          "segment": "core"
+        },
+        {
+          "id": 11,
+          "text": "Complete flexion/extension per care plan",
+          "segment": "core"
+        },
+        {
+          "id": 12,
+          "text": "Continue supporting elbow and wrist",
+          "segment": "core"
+        },
+        {
+          "id": 13,
+          "text": "Move arm away from body (abduction)",
+          "segment": "core"
+        },
+        {
+          "id": 14,
+          "text": "Move arm gently; stop resistance",
+          "segment": "core"
+        },
+        {
+          "id": 15,
+          "text": "Return arm to side (adduction)",
+          "segment": "core"
+        },
+        {
+          "id": 16,
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
+        },
+        {
+          "id": 17,
+          "text": "Place call light in reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
+        },
+        {
+          "id": 18,
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         }
       ]
     },
     {
       "slug": "prom-knee-ankle",
       "file": "08-prom-knee-ankle.md",
-      "studyOrder": 8,
+      "studyOrder": 12,
       "examSkillNumber": 14,
       "examCardLabel": "California Skills Exam — Skill 14",
-      "title": "Modified PROM — One Knee and One Ankle",
-      "section": "Safe Mobility & Positioning",
+      "title": "Performs Modified PROM for One Knee and One Ankle",
+      "section": "Restorative and Support",
+      "pedagogicalReason": "Lower body, two joints. More complex; builds on the shoulder movement pattern already learned.",
       "rtcVideoUrl": "https://www.youtube.com/watch?v=8HbzT018Vt0",
       "rtcVideoTitle": "16 Passive Range of Motion One Knee",
-      "prevSlug": "manual-blood-pressure",
+      "prevSlug": "prom-shoulder",
       "nextSlug": "knee-high-stocking",
       "storageKey": "checklist-08-prom-knee-ankle",
       "stepCount": 9,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
           "id": 2,
-          "text": "Provide privacy."
+          "text": "Provide for patient privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
         },
         {
           "id": 3,
-          "text": "Perform hand hygiene."
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 4,
-          "text": "Advise patients to report pain during movement."
+          "text": "Advise patient to report pain",
+          "segment": "core"
         },
         {
           "id": 5,
-          "text": "Abduction/Adduction for Hip:",
+          "text": "Hip abduction and adduction",
+          "segment": "core",
           "subSteps": [
-            "Keeping the patient’s leg straight, gently move their entire leg away from their",
+            "Keeping the patient's leg straight, gently move their entire leg away from their",
             "body (i.e., abduction).",
             "Move their legs gently and stop if there is any resistance.",
             "Ask the patient if they are experiencing any pain during movement.",
             "Stop the ROM movement if the patient reports pain or displays objective signs",
             "of pain.",
-            "Keeping the patient’s leg straight, move their entire leg toward their body (i.e.,",
+            "Keeping the patient's leg straight, move their entire leg toward their body (i.e.,",
             "adduction).",
             "Complete abduction and adduction movements of the hip according to the",
             "order in their restorative care plan.",
-            "Continue to correctly support joints by keeping one hand under the patient’s",
-            "knee and the other hand under the patient’s ankle."
+            "Continue to correctly support joints by keeping one hand under the patient's",
+            "knee and the other hand under the patient's ankle."
           ]
         },
         {
           "id": 6,
-          "text": "Flexion/Extension of Knee and Hip:",
+          "text": "Knee and hip flexion/extension",
+          "segment": "core",
           "subSteps": [
-            "Bend the patient’s knee and hip up toward the patient’s trunk (i.e., flexion of",
+            "Bend the patient's knee and hip up toward the patient's trunk (i.e., flexion of",
             "hip and knee at the same time).",
-            "Move the patient’s leg gently and stop if there is any resistance.",
+            "Move the patient's leg gently and stop if there is any resistance.",
             "Ask the patient if they are experiencing any pain during movement.",
             "Stop the ROM movement if the patient reports pain or displays objective signs",
             "of pain.",
@@ -500,1541 +1180,1481 @@
         },
         {
           "id": 7,
-          "text": "Ensure the bed is low and locked."
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
         },
         {
           "id": 8,
-          "text": "Place the call light or signaling device within reach of the patient."
+          "text": "Place call light in reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
         },
         {
           "id": 9,
-          "text": "Perform hand hygiene."
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         }
       ]
     },
     {
       "slug": "knee-high-stocking",
       "file": "09-knee-high-stocking.md",
-      "studyOrder": 9,
+      "studyOrder": 13,
       "examSkillNumber": 2,
       "examCardLabel": "California Skills Exam — Skill 2",
       "title": "Applies One Knee-High Elastic Stocking",
-      "section": "Safe Mobility & Positioning",
+      "section": "Restorative and Support",
+      "pedagogicalReason": "Applied after PROM — supports the same lower-extremity circulation PROM exercises protect. Same goal, different tool.",
       "rtcVideoUrl": "https://www.youtube.com/watch?v=sITUfZy8iuM",
       "rtcVideoTitle": "02 Knee High Stocking",
       "prevSlug": "prom-knee-ankle",
-      "nextSlug": "dress-weak-right-arm",
+      "nextSlug": "modified-bed-bath",
       "storageKey": "checklist-09-knee-high-stocking",
       "stepCount": 11,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
           "id": 2,
-          "text": "Provide privacy."
+          "text": "Provide for patient privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
         },
         {
           "id": 3,
-          "text": "Perform hand hygiene."
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 4,
-          "text": "Position the patient in the supine position. Expose only the leg the candidate will be placing the stocking on."
+          "text": "Position patient supine; expose leg",
+          "segment": "core"
         },
         {
           "id": 5,
-          "text": "Gather supplies and turn the stocking inside out to the heel."
+          "text": "Turn stocking inside out to heel",
+          "segment": "core"
         },
         {
           "id": 6,
-          "text": "Place the stocking over the patient’s toes, foot, and heel."
+          "text": "Place stocking over toes and heel",
+          "segment": "core"
         },
         {
           "id": 7,
-          "text": "Gently pull the stocking up their leg."
+          "text": "Pull stocking up the leg",
+          "segment": "core"
         },
         {
           "id": 8,
-          "text": "Moves foot and leg gently and naturally, avoiding force and over-extension of limb and joints."
+          "text": "Move foot/leg gently; avoid force",
+          "segment": "core"
         },
         {
           "id": 9,
-          "text": "Adjust stocking; stocking should be wrinkle-free to the knee."
+          "text": "Adjust stocking wrinkle-free to knee",
+          "segment": "core"
         },
         {
           "id": 10,
-          "text": "Place the call light or signaling device within reach of the patient. Ensure the bed is low and locked."
+          "text": "Call light; bed low and locked",
+          "segment": "close",
+          "boilerplateId": "BED_LOW|CALL_LIGHT"
         },
         {
           "id": 11,
-          "text": "Perform hand hygiene."
-        }
-      ]
-    },
-    {
-      "slug": "dress-weak-right-arm",
-      "file": "10-dress-weak-right-arm.md",
-      "studyOrder": 10,
-      "examSkillNumber": 9,
-      "examCardLabel": "California Skills Exam — Skill 9",
-      "title": "Dresses Client — Affected (Weak) Right Arm",
-      "section": "Safe Mobility & Positioning",
-      "rtcVideoUrl": null,
-      "rtcVideoTitle": "No video in playlist",
-      "prevSlug": "knee-high-stocking",
-      "nextSlug": "ambulate-transfer-belt",
-      "storageKey": "checklist-10-dress-weak-right-arm",
-      "stepCount": 14,
-      "steps": [
-        {
-          "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
-        },
-        {
-          "id": 2,
-          "text": "Provide privacy."
-        },
-        {
-          "id": 3,
-          "text": "Perform hand hygiene"
-        },
-        {
-          "id": 4,
-          "text": "Raise the height of the bed to a safe level."
-        },
-        {
-          "id": 5,
-          "text": "Keep the patient covered while removing their gown."
-        },
-        {
-          "id": 6,
-          "text": "Remove the gown from the left side first."
-        },
-        {
-          "id": 7,
-          "text": "Place the used gown in a designated laundry hamper."
-        },
-        {
-          "id": 8,
-          "text": "Ask the patient about their preferences for desired clothing."
-        },
-        {
-          "id": 9,
-          "text": "Start dressing them on their right side first. Insert their hand through the sleeve of their shirt and grasp the hand of the patient to guide it through the sleeve."
-        },
-        {
-          "id": 10,
-          "text": "Place their unaffected arm in the shirt sleeve, grasping the hand of the patient. Finish putting on their shirt by buttoning."
-        },
-        {
-          "id": 11,
-          "text": "Return the patient to lying on their back."
-        },
-        {
-          "id": 12,
-          "text": "Ensure the bed is low and locked."
-        },
-        {
-          "id": 13,
-          "text": "Place the call light or signaling device within reach of the patient."
-        },
-        {
-          "id": 14,
-          "text": "Perform hand hygiene."
-        }
-      ]
-    },
-    {
-      "slug": "ambulate-transfer-belt",
-      "file": "11-ambulate-transfer-belt.md",
-      "studyOrder": 11,
-      "examSkillNumber": 3,
-      "examCardLabel": "California Skills Exam — Skill 3",
-      "title": "Assists to Ambulate Using Transfer Belt",
-      "section": "Safe Mobility & Positioning",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=N7WcZOV6lVw",
-      "rtcVideoTitle": "03 Ambulates Using Belt",
-      "prevSlug": "dress-weak-right-arm",
-      "nextSlug": "prom-shoulder",
-      "storageKey": "checklist-11-ambulate-transfer-belt",
-      "stepCount": 18,
-      "steps": [
-        {
-          "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
-        },
-        {
-          "id": 2,
-          "text": "Provide privacy."
-        },
-        {
-          "id": 3,
-          "text": "Perform hand hygiene."
-        },
-        {
-          "id": 4,
-          "text": "Place nonskid footwear on the patient"
-        },
-        {
-          "id": 5,
-          "text": "Adjust the bed to a safe level."
-        },
-        {
-          "id": 6,
-          "text": "Check the brakes of the bed to ensure they are locked."
-        },
-        {
-          "id": 7,
-          "text": "Allow the patient to sit and dangle on the edge of the bed before standing to ambulate"
-        },
-        {
-          "id": 8,
-          "text": "Ask the patient if they feel dizzy or light-headed."
-        },
-        {
-          "id": 9,
-          "text": "Properly place the gait belt around the patient’s waist and check the gait belt for tightness by slipping fingers between the gait belt and the patient."
-        },
-        {
-          "id": 10,
-          "text": "Face the patient and place each of the feet in front of the patient’s feet to prevent them from slipping."
-        },
-        {
-          "id": 11,
-          "text": "Instruct the patient to push up on the bed on the count of three to assist with standing."
-        },
-        {
-          "id": 12,
-          "text": "Count to three and assist the patient to a standing position."
-        },
-        {
-          "id": 13,
-          "text": "Move to the weak side of the patient, slightly behind them. Hold the gait belt with palms and fingertips pointing upwards."
-        },
-        {
-          "id": 14,
-          "text": "Assist the patient in a standing position."
-        },
-        {
-          "id": 15,
-          "text": "Walk slightly behind the patient for a distance of 10 feet while safely holding the transfer belt."
-        },
-        {
-          "id": 16,
-          "text": "Safely assist the client back to bed and remove the transfer belt."
-        },
-        {
-          "id": 17,
-          "text": "Call lights within reach and bed in low position."
-        },
-        {
-          "id": 18,
-          "text": "Perform hand hygiene."
-        }
-      ]
-    },
-    {
-      "slug": "prom-shoulder",
-      "file": "12-prom-shoulder.md",
-      "studyOrder": 12,
-      "examSkillNumber": 15,
-      "examCardLabel": "California Skills Exam — Skill 15",
-      "title": "Modified PROM — One Shoulder",
-      "section": "Safe Mobility & Positioning",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=7JphjwdfseI",
-      "rtcVideoTitle": "17 Range of Motion - Shoulder",
-      "prevSlug": "ambulate-transfer-belt",
-      "nextSlug": "bed-wheelchair-transfer",
-      "storageKey": "checklist-12-prom-shoulder",
-      "stepCount": 18,
-      "steps": [
-        {
-          "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
-        },
-        {
-          "id": 2,
-          "text": "Provide for privacy."
-        },
-        {
-          "id": 3,
-          "text": "Perform hand hygiene."
-        },
-        {
-          "id": 4,
-          "text": "Advise patients to report pain during movement."
-        },
-        {
-          "id": 5,
-          "text": "Place one of hands under the patient’s elbow with palm facing up."
-        },
-        {
-          "id": 6,
-          "text": "Place the other hand under the patient’s wrist with palm facing up."
-        },
-        {
-          "id": 7,
-          "text": "Watch the patient for objective signs of pain during movement."
-        },
-        {
-          "id": 8,
-          "text": "Move their arms gently and stop if there is any resistance."
-        },
-        {
-          "id": 9,
-          "text": "While keeping the patient’s arm straight, raise their arm up and over their head (i.e., flexion)."
-        },
-        {
-          "id": 10,
-          "text": "Bring the patient’s arm back down to their side (i.e., extension)."
-        },
-        {
-          "id": 11,
-          "text": "Complete flexion and extension movements of the shoulder according to the order in the restorative care plan."
-        },
-        {
-          "id": 12,
-          "text": "Continue to support the elbow and wrist of the patient."
-        },
-        {
-          "id": 13,
-          "text": "Keeping the patient’s arm straight, move their entire arm out away from the body (i.e., abduction)."
-        },
-        {
-          "id": 14,
-          "text": "Move their arms gently and stop if there is any resistance."
-        },
-        {
-          "id": 15,
-          "text": "Return the patient’s arm to their side (adduction)."
-        },
-        {
-          "id": 16,
-          "text": "Ensure the bed is low and locked."
-        },
-        {
-          "id": 17,
-          "text": "Place the call light or signaling device within reach of the patient."
-        },
-        {
-          "id": 18,
-          "text": "Perform hand hygiene."
-        }
-      ]
-    },
-    {
-      "slug": "bed-wheelchair-transfer",
-      "file": "13-bed-wheelchair-transfer.md",
-      "studyOrder": 13,
-      "examSkillNumber": 21,
-      "examCardLabel": "California Skills Exam — Skill 21",
-      "title": "Transfers Bed to Wheelchair (Transfer Belt)",
-      "section": "Safe Mobility & Positioning",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=pb987AGCRAA",
-      "rtcVideoTitle": "24 Transfer to Wheel Chair",
-      "prevSlug": "prom-shoulder",
-      "nextSlug": "position-on-side",
-      "storageKey": "checklist-13-bed-wheelchair-transfer",
-      "stepCount": 22,
-      "steps": [
-        {
-          "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
-        },
-        {
-          "id": 2,
-          "text": "Provide privacy."
-        },
-        {
-          "id": 3,
-          "text": "Perform hand hygiene."
-        },
-        {
-          "id": 4,
-          "text": "Check the brakes on the bed to ensure they are locked."
-        },
-        {
-          "id": 5,
-          "text": "Remove the foot pedals from the wheelchair if needed."
-        },
-        {
-          "id": 6,
-          "text": "Assist the patient to a seated position on the side of the bed with their feet on the floor; allow them to dangle their feet for a few minutes."
-        },
-        {
-          "id": 7,
-          "text": "Assist the patient in putting on nonskid footwear."
-        },
-        {
-          "id": 8,
-          "text": "Place the gait belt on the patient."
-        },
-        {
-          "id": 9,
-          "text": "Position the wheelchair at the head or foot of the bed so the patient will move towards the wheelchair with the stronger side of their body. The wheelchair should touch the side of the bed."
-        },
-        {
-          "id": 10,
-          "text": "Lock the brakes on the wheelchair."
-        },
-        {
-          "id": 11,
-          "text": "Ask the patient if they feel dizzy or light-headed."
-        },
-        {
-          "id": 12,
-          "text": "Face the patient and place each of feet in front of the patient’s feet to prevent them from slipping."
-        },
-        {
-          "id": 13,
-          "text": "Instruct the patient to push up on the bed to aid in standing on the count of three."
-        },
-        {
-          "id": 14,
-          "text": "Grasp the gait belt with both hands, with palms and fingertips pointing up."
-        },
-        {
-          "id": 15,
-          "text": "Count to three and assist the patient to stand."
-        },
-        {
-          "id": 16,
-          "text": "Assist the patient to pivot."
-        },
-        {
-          "id": 17,
-          "text": "Instruct the patient to grasp the arms of the wheelchair when they can feel the back of their knees are in contact with the wheelchair seat."
-        },
-        {
-          "id": 18,
-          "text": "Assist the patient to a seated position in the wheelchair."
-        },
-        {
-          "id": 19,
-          "text": "Remove the gait belt gently to avoid skin injury."
-        },
-        {
-          "id": 20,
-          "text": "Release the wheelchair brakes."
-        },
-        {
-          "id": 21,
-          "text": "Place the call light or signaling device within reach of the patient."
-        },
-        {
-          "id": 22,
-          "text": "Perform hand hygiene."
-        }
-      ]
-    },
-    {
-      "slug": "position-on-side",
-      "file": "14-position-on-side.md",
-      "studyOrder": 14,
-      "examSkillNumber": 16,
-      "examCardLabel": "California Skills Exam — Skill 16",
-      "title": "Positions Resident on Side",
-      "section": "Safe Mobility & Positioning",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=TD3ayzYhGAs",
-      "rtcVideoTitle": "18 Positions on Side",
-      "prevSlug": "bed-wheelchair-transfer",
-      "nextSlug": "denture-cleaning",
-      "storageKey": "checklist-14-position-on-side",
-      "stepCount": 24,
-      "steps": [
-        {
-          "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
-        },
-        {
-          "id": 2,
-          "text": "Provide privacy."
-        },
-        {
-          "id": 3,
-          "text": "Perform hand hygiene"
-        },
-        {
-          "id": 4,
-          "text": "Position the bed flat."
-        },
-        {
-          "id": 5,
-          "text": "Raise the bed height."
-        },
-        {
-          "id": 6,
-          "text": "Raise the side rail on the side of the bed the patient will be facing after repositioning for safety."
-        },
-        {
-          "id": 7,
-          "text": "Move to the working side of the bed, which is opposite the side rail that was raised."
-        },
-        {
-          "id": 8,
-          "text": "Explain to the patient that the candidate will move them closer to the candidate before turning on the count of three."
-        },
-        {
-          "id": 9,
-          "text": "From the working side of the bed count to three and move the patient towards you."
-        },
-        {
-          "id": 10,
-          "text": "Instruct the patient to move their arm closest to the raised side rail away from their body. If able, the patient should grasp the side rail with the hand closest to you, reaching across their own body."
-        },
-        {
-          "id": 11,
-          "text": "Raise the patient’s knee that is closest to the candidate to assist in turning."
-        },
-        {
-          "id": 12,
-          "text": "Explain that the candidate will turn the patient towards the side rail on count three."
-        },
-        {
-          "id": 13,
-          "text": "Count to three to turn the patient towards the raised side rail."
-        },
-        {
-          "id": 14,
-          "text": "Ensure that the patient’s face never comes close to the side rail or becomes covered by the pillow."
-        },
-        {
-          "id": 15,
-          "text": "Check that the patient is not lying on their bottom arm."
-        },
-        {
-          "id": 16,
-          "text": "Place a pillow behind the patient’s back, ensuring they will not roll back to the supine position."
-        },
-        {
-          "id": 17,
-          "text": "Move to the end of the bed and check that the patient is in correct body alignment."
-        },
-        {
-          "id": 18,
-          "text": "Verify that the patient is in the middle of the bed."
-        },
-        {
-          "id": 19,
-          "text": "Place a pillow between the patient’s top arm and their rib cage or the bed, ensuring the elbow is not directly on their ribs."
-        },
-        {
-          "id": 20,
-          "text": "Place a pillow under the top knee, ensuring the knee is not resting directly on the other knee or the ankle is not on top of the other ankle."
-        },
-        {
-          "id": 21,
-          "text": "Adjust the pillow under the patient’s head for comfort."
-        },
-        {
-          "id": 22,
-          "text": "Ensure the bed is low and locked."
-        },
-        {
-          "id": 23,
-          "text": "Place the call light or signaling device within reach of the patient."
-        },
-        {
-          "id": 24,
-          "text": "Perform hand hygiene."
-        }
-      ]
-    },
-    {
-      "slug": "denture-cleaning",
-      "file": "15-denture-cleaning.md",
-      "studyOrder": 15,
-      "examSkillNumber": 5,
-      "examCardLabel": "California Skills Exam — Skill 5",
-      "title": "Cleans Upper or Lower Denture",
-      "section": "Personal Hygiene & Comfort",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=2Gg89IL_qD8",
-      "rtcVideoTitle": "05 Cleans Dentures",
-      "prevSlug": "position-on-side",
-      "nextSlug": "mouth-care",
-      "storageKey": "checklist-15-denture-cleaning",
-      "stepCount": 19,
-      "steps": [
-        {
-          "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
-        },
-        {
-          "id": 2,
-          "text": "Perform hand hygiene"
-        },
-        {
-          "id": 3,
-          "text": "Put on gloves."
-        },
-        {
-          "id": 4,
-          "text": "Place all supplies on a barrier."
-        },
-        {
-          "id": 5,
-          "text": "Place a clothing protector on the patient."
-        },
-        {
-          "id": 6,
-          "text": "Line the sink with a washcloth or paper towel."
-        },
-        {
-          "id": 7,
-          "text": "Ask the patient to remove dentures and place them in the cup."
-        },
-        {
-          "id": 8,
-          "text": "Handle the dentures carefully to avoid damage or contamination."
-        },
-        {
-          "id": 9,
-          "text": "Wet the denture brush and apply denture toothpaste if available. Water alone is acceptable to clean dentures if toothpaste is not available."
-        },
-        {
-          "id": 10,
-          "text": "Thoroughly brush the inner, outer, and chewing surfaces of each denture."
-        },
-        {
-          "id": 11,
-          "text": "Rinse the dentures using clean, cool water and place them on a clean barrier or in an emesis basin."
-        },
-        {
-          "id": 12,
-          "text": "Rinse the denture cup."
-        },
-        {
-          "id": 13,
-          "text": "Place the dentures in a rinsed cup."
-        },
-        {
-          "id": 14,
-          "text": "Put a denture cleansing tablet in the cup, if desired."
-        },
-        {
-          "id": 15,
-          "text": "Rinse the equipment (denture brush and emesis basin)."
-        },
-        {
-          "id": 16,
-          "text": "Return the equipment to storage."
-        },
-        {
-          "id": 17,
-          "text": "Discard the protective lining in an appropriate container."
-        },
-        {
-          "id": 18,
-          "text": "Remove the gloves, turning them inside out."
-        },
-        {
-          "id": 19,
-          "text": "Perform hand hygiene"
-        }
-      ]
-    },
-    {
-      "slug": "mouth-care",
-      "file": "16-mouth-care.md",
-      "studyOrder": 16,
-      "examSkillNumber": 19,
-      "examCardLabel": "California Skills Exam — Skill 19",
-      "title": "Provides Mouth Care",
-      "section": "Personal Hygiene & Comfort",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=hz2R9snpf5k",
-      "rtcVideoTitle": "22 Mouth Care",
-      "prevSlug": "denture-cleaning",
-      "nextSlug": "modified-bed-bath",
-      "storageKey": "checklist-16-mouth-care",
-      "stepCount": 24,
-      "steps": [
-        {
-          "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
-        },
-        {
-          "id": 2,
-          "text": "Provide privacy."
-        },
-        {
-          "id": 3,
-          "text": "Perform hand hygiene"
-        },
-        {
-          "id": 4,
-          "text": "Place all supplies on a barrier."
-        },
-        {
-          "id": 5,
-          "text": "Put on gloves."
-        },
-        {
-          "id": 6,
-          "text": "If the patient is in bed, elevate the head of the bed if it is permissible per the care plan."
-        },
-        {
-          "id": 7,
-          "text": "Cover the patient’s chest with a towel to keep their clothing or gown clean."
-        },
-        {
-          "id": 8,
-          "text": "Wet the toothbrush in the sink or in a cup of water."
-        },
-        {
-          "id": 9,
-          "text": "Apply a small amount of toothpaste to the toothbrush."
-        },
-        {
-          "id": 10,
-          "text": "Brush the patient’s teeth, including the inner, outer, and chewing surfaces of all upper and lower teeth."
-        },
-        {
-          "id": 11,
-          "text": "After each quadrant of the mouth (i.e., lower right, lower left, upper right, or upper left), allow the patient to rinse with water and spit into an emesis basin."
-        },
-        {
-          "id": 12,
-          "text": "Clean the patient’s tongue, being careful not to cause the patient to gag."
-        },
-        {
-          "id": 13,
-          "text": "Assist the patient in rinsing their mouth."
-        },
-        {
-          "id": 14,
-          "text": "Wipe the patient’s mouth with the towel on their chest."
-        },
-        {
-          "id": 15,
-          "text": "Remove the towel and place it in a linen bag."
-        },
-        {
-          "id": 16,
-          "text": "Empty the emesis basin."
-        },
-        {
-          "id": 17,
-          "text": "Rinse the emesis basin."
-        },
-        {
-          "id": 18,
-          "text": "Dry the emesis basin."
-        },
-        {
-          "id": 19,
-          "text": "Rinse the toothbrush."
-        },
-        {
-          "id": 20,
-          "text": "Remove the gloves, turning them inside out."
-        },
-        {
-          "id": 21,
-          "text": "Dispose of the gloves in an appropriate container."
-        },
-        {
-          "id": 22,
-          "text": "Ensure the bed is low and locked."
-        },
-        {
-          "id": 23,
-          "text": "Place the call light or signaling device within reach of the patient."
-        },
-        {
-          "id": 24,
-          "text": "Perform hand hygiene."
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         }
       ]
     },
     {
       "slug": "modified-bed-bath",
       "file": "17-modified-bed-bath.md",
-      "studyOrder": 17,
+      "studyOrder": 14,
       "examSkillNumber": 11,
       "examCardLabel": "California Skills Exam — Skill 11",
-      "title": "Gives Modified Bed Bath (Face, Arm, Hand, Underarm)",
-      "section": "Personal Hygiene & Comfort",
+      "title": "Gives Modified Bed Bath (Face and One Arm, Hand and Underarm)",
+      "section": "Personal Care",
+      "pedagogicalReason": "Largest task — the body itself. Sets the standard for privacy, temperature, and patient dignity.",
       "rtcVideoUrl": "https://www.youtube.com/watch?v=tlAPiOhgAPA",
       "rtcVideoTitle": "11 Modified Bed Bath",
-      "prevSlug": "mouth-care",
-      "nextSlug": "catheter-care-female",
+      "prevSlug": "knee-high-stocking",
+      "nextSlug": "mouth-care",
       "storageKey": "checklist-17-modified-bed-bath",
       "stepCount": 28,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce self and explain the procedure to the patient."
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
           "id": 2,
-          "text": "Provide privacy."
+          "text": "Provide for patient privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
         },
         {
           "id": 3,
-          "text": "Perform hand hygiene."
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 4,
-          "text": "Check water temperature for safety."
+          "text": "Check water temperature for safety",
+          "segment": "core"
         },
         {
           "id": 5,
-          "text": "Fill the basin with warm water and place it on a flat surface with a barrier underneath. Have the patient check the water temperature by placing their hand in the basin or putting a wet washcloth on the back of their hand."
+          "text": "Fill basin; patient checks temperature",
+          "segment": "core"
         },
         {
           "id": 6,
-          "text": "Raise the height of the bed to safe level."
+          "text": "Raise bed to safe level",
+          "segment": "core"
         },
         {
           "id": 7,
-          "text": "Put on clean gloves"
+          "text": "Don clean gloves",
+          "segment": "core",
+          "boilerplateId": "GLOVE_DON"
         },
         {
           "id": 8,
-          "text": "Remove gown patient and place in designated hamper"
+          "text": "Remove gown; place in hamper",
+          "segment": "core"
         },
         {
           "id": 9,
-          "text": "Cover patient with bath blanket or towel for privacy."
+          "text": "Cover patient with bath blanket",
+          "segment": "core"
         },
         {
           "id": 10,
-          "text": "Beginning with eyes, using a damp washcloth without soup, clean the eyes from inner to outer aspect using different sides of the washcloth."
+          "text": "Clean eyes inner to outer",
+          "segment": "core"
         },
         {
           "id": 11,
-          "text": "Wash the face using a damp washcloth without soaps using different sides of the washcloth."
+          "text": "Wash face without soap",
+          "segment": "core"
         },
         {
           "id": 12,
-          "text": "Pat dry the face."
+          "text": "Pat dry the face",
+          "segment": "core"
         },
         {
           "id": 13,
-          "text": "Proceed to the arm, expose one arm and place dry towel underneath"
+          "text": "Expose arm; place towel underneath",
+          "segment": "core"
         },
         {
           "id": 14,
-          "text": "Gather wet washcloth and apply soap."
+          "text": "Wet washcloth; apply soap",
+          "segment": "core"
         },
         {
           "id": 15,
-          "text": "Clean the arm and pat dry."
+          "text": "Clean arm and pat dry",
+          "segment": "core"
         },
         {
           "id": 16,
-          "text": "Wash hands, fingers, and fingernails and pat dry."
+          "text": "Wash hands, fingers, fingernails; pat dry",
+          "segment": "core"
         },
         {
           "id": 17,
-          "text": "Wash and clean underarm with soap and pat dry."
+          "text": "Wash and dry underarm",
+          "segment": "core"
         },
         {
           "id": 18,
-          "text": "Dispose of the gown and used linens into the linen bag or laundry hamper."
+          "text": "Dispose gown and used linens",
+          "segment": "core"
         },
         {
           "id": 19,
-          "text": "Assist the patient to put on a clean gown"
+          "text": "Assist patient with clean gown",
+          "segment": "core"
         },
         {
           "id": 20,
-          "text": "While wearing gloves, empty the equipment."
+          "text": "Empty equipment while wearing gloves",
+          "segment": "core"
         },
         {
           "id": 21,
-          "text": "Rinse the equipment."
+          "text": "Rinse the equipment",
+          "segment": "core"
         },
         {
           "id": 22,
-          "text": "Dry the basin."
+          "text": "Dry the basin",
+          "segment": "core"
         },
         {
           "id": 23,
-          "text": "Return the equipment to storage."
+          "text": "Return equipment to storage",
+          "segment": "core"
         },
         {
           "id": 24,
-          "text": "Dispose of soiled linen in the designated laundry hamper."
+          "text": "Dispose soiled linen in hamper",
+          "segment": "core"
         },
         {
           "id": 25,
-          "text": "Remove the gloves, turning them inside out."
+          "text": "Remove gloves inside out",
+          "segment": "core",
+          "boilerplateId": "GLOVE_REMOVE"
         },
         {
           "id": 26,
-          "text": "Ensure the bed is low and locked."
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
         },
         {
           "id": 27,
-          "text": "Place the call light or signaling device within reach of the patient."
+          "text": "Place call light in reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
         },
         {
           "id": 28,
-          "text": "Perform hand hygiene"
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         }
       ]
     },
     {
-      "slug": "catheter-care-female",
-      "file": "18-catheter-care-female.md",
-      "studyOrder": 18,
-      "examSkillNumber": 17,
-      "examCardLabel": "California Skills Exam — Skill 17",
-      "title": "Provides Catheter Care — Female",
-      "section": "Personal Hygiene & Comfort",
-      "rtcVideoUrl": null,
-      "rtcVideoTitle": "No video in playlist",
+      "slug": "mouth-care",
+      "file": "16-mouth-care.md",
+      "studyOrder": 15,
+      "examSkillNumber": 19,
+      "examCardLabel": "California Skills Exam — Skill 19",
+      "title": "Provides Mouth Care",
+      "section": "Personal Care",
+      "pedagogicalReason": "Moves to the face and head after the bath. Natural clinical sequence — mouth care follows or accompanies bath.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=hz2R9snpf5k",
+      "rtcVideoTitle": "22 Mouth Care",
       "prevSlug": "modified-bed-bath",
-      "nextSlug": "foot-care-one-foot",
-      "storageKey": "checklist-18-catheter-care-female",
-      "stepCount": 31,
+      "nextSlug": "denture-cleaning",
+      "storageKey": "checklist-16-mouth-care",
+      "stepCount": 24,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
           "id": 2,
-          "text": "Provide privacy."
+          "text": "Provide for patient privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
         },
         {
           "id": 3,
-          "text": "Perform hand hygiene"
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 4,
-          "text": "Get water and check water temperature for safety."
+          "text": "Place all supplies on a barrier",
+          "segment": "core"
         },
         {
           "id": 5,
-          "text": "Put on gloves."
+          "text": "Don clean gloves",
+          "segment": "core",
+          "boilerplateId": "GLOVE_DON"
         },
         {
           "id": 6,
-          "text": "Fill the basin with warm water and place it on a flat surface with a barrier underneath. Have the patient check the water temperature by placing their hand in the basin or putting a wet washcloth on the back of their hand."
+          "text": "Elevate head of bed",
+          "segment": "core"
         },
         {
           "id": 7,
-          "text": "Raise the bed height to a working height."
+          "text": "Cover chest with towel",
+          "segment": "core"
         },
         {
           "id": 8,
-          "text": "Expose only the urethra and catheter."
+          "text": "Wet toothbrush in water",
+          "segment": "core"
         },
         {
           "id": 9,
-          "text": "Follow the tubing from the patient toward the drainage bag, ensuring that the tubing is at a lower level as it goes toward the bag. Be sure no kinks or elevation can cause backflow to the bladder."
+          "text": "Apply toothpaste to toothbrush",
+          "segment": "core"
         },
         {
           "id": 10,
-          "text": "Turn the patient or raise their hips and place a barrier (e.g., a towel, waterproof soaker pad, or disposable pad) under their buttocks."
+          "text": "Brush all tooth surfaces",
+          "segment": "core"
         },
         {
           "id": 11,
-          "text": "Use the first washcloth with soap and water to carefully wash around the catheter where it exits the urethra."
+          "text": "Rinse each quadrant; spit basin",
+          "segment": "core"
         },
         {
           "id": 12,
-          "text": "Hold the catheter where it exits the urethra with one hand."
+          "text": "Clean patient's tongue gently",
+          "segment": "core"
         },
         {
           "id": 13,
-          "text": "While holding the catheter, clean 4 inches down the catheter tube."
+          "text": "Assist patient to rinse mouth",
+          "segment": "core"
         },
         {
           "id": 14,
-          "text": "Clean with strokes moving away from the urethra."
+          "text": "Wipe mouth with towel",
+          "segment": "core"
         },
         {
           "id": 15,
-          "text": "Use a clean portion of washcloth for each stroke."
+          "text": "Remove towel; place in linen bag",
+          "segment": "core"
         },
         {
           "id": 16,
-          "text": "Put the soiled first washcloth in the linen bag."
+          "text": "Empty the emesis basin",
+          "segment": "core"
         },
         {
           "id": 17,
-          "text": "Wet the second washcloth and rinse, using strokes only away from the urethra while continuing to hold the catheter where it exits the urethra."
+          "text": "Rinse the emesis basin",
+          "segment": "core"
         },
         {
           "id": 18,
-          "text": "Rinse using a clean portion of washcloth for each stroke."
+          "text": "Dry the emesis basin",
+          "segment": "core"
         },
         {
           "id": 19,
-          "text": "Put the soiled second washcloth in the linen bag."
+          "text": "Rinse the toothbrush",
+          "segment": "core"
         },
         {
           "id": 20,
-          "text": "Pat dry with a towel."
+          "text": "Remove gloves inside out",
+          "segment": "core",
+          "boilerplateId": "GLOVE_REMOVE"
         },
         {
           "id": 21,
-          "text": "Do not allow the tube to be pulled at any time during the procedure."
+          "text": "Dispose gloves in waste container",
+          "segment": "core"
         },
         {
           "id": 22,
-          "text": "Replace the gown over the patient’s perineal area."
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
         },
         {
           "id": 23,
-          "text": "While wearing gloves, empty the basin."
+          "text": "Place call light in reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
         },
         {
           "id": 24,
-          "text": "Rinse the basin."
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
+        }
+      ]
+    },
+    {
+      "slug": "denture-cleaning",
+      "file": "15-denture-cleaning.md",
+      "studyOrder": 16,
+      "examSkillNumber": 5,
+      "examCardLabel": "California Skills Exam — Skill 5",
+      "title": "Cleans Upper or Lower Denture",
+      "section": "Personal Care",
+      "pedagogicalReason": "Extension of mouth care — same skill with an added device. Follows directly.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=2Gg89IL_qD8",
+      "rtcVideoTitle": "05 Cleans Dentures",
+      "prevSlug": "mouth-care",
+      "nextSlug": "foot-care-one-foot",
+      "storageKey": "checklist-15-denture-cleaning",
+      "stepCount": 19,
+      "steps": [
+        {
+          "id": 1,
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
-          "id": 25,
-          "text": "Dry the basin."
+          "id": 2,
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
-          "id": 26,
-          "text": "Return the equipment to storage."
+          "id": 3,
+          "text": "Don clean gloves",
+          "segment": "core",
+          "boilerplateId": "GLOVE_DON"
         },
         {
-          "id": 27,
-          "text": "Dispose of soiled linen in a designated laundry hamper."
+          "id": 4,
+          "text": "Place all supplies on a barrier",
+          "segment": "core"
         },
         {
-          "id": 28,
-          "text": "Remove the gloves, turning them inside out."
+          "id": 5,
+          "text": "Place clothing protector on patient",
+          "segment": "core"
         },
         {
-          "id": 29,
-          "text": "Ensure the bed is low and locked."
+          "id": 6,
+          "text": "Line sink with washcloth",
+          "segment": "core"
         },
         {
-          "id": 30,
-          "text": "Place the call light or signaling device within reach of the patient."
+          "id": 7,
+          "text": "Patient removes dentures to cup",
+          "segment": "core"
         },
         {
-          "id": 31,
-          "text": "Perform hand hygiene."
+          "id": 8,
+          "text": "Handle dentures carefully",
+          "segment": "core"
+        },
+        {
+          "id": 9,
+          "text": "Wet brush; apply denture paste",
+          "segment": "core"
+        },
+        {
+          "id": 10,
+          "text": "Brush all denture surfaces",
+          "segment": "core"
+        },
+        {
+          "id": 11,
+          "text": "Rinse dentures; place on barrier",
+          "segment": "core"
+        },
+        {
+          "id": 12,
+          "text": "Rinse the denture cup",
+          "segment": "core"
+        },
+        {
+          "id": 13,
+          "text": "Place dentures in rinsed cup",
+          "segment": "core"
+        },
+        {
+          "id": 14,
+          "text": "Add cleansing tablet if desired",
+          "segment": "core"
+        },
+        {
+          "id": 15,
+          "text": "Rinse brush and emesis basin",
+          "segment": "core"
+        },
+        {
+          "id": 16,
+          "text": "Return equipment to storage",
+          "segment": "core"
+        },
+        {
+          "id": 17,
+          "text": "Discard protective lining appropriately",
+          "segment": "core"
+        },
+        {
+          "id": 18,
+          "text": "Remove gloves inside out",
+          "segment": "core",
+          "boilerplateId": "GLOVE_REMOVE"
+        },
+        {
+          "id": 19,
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         }
       ]
     },
     {
       "slug": "foot-care-one-foot",
       "file": "19-foot-care-one-foot.md",
-      "studyOrder": 19,
+      "studyOrder": 17,
       "examSkillNumber": 18,
       "examCardLabel": "California Skills Exam — Skill 18",
-      "title": "Provides Foot Care — One Foot",
-      "section": "Personal Hygiene & Comfort",
+      "title": "Provides Foot Care on One Foot",
+      "section": "Personal Care",
+      "pedagogicalReason": "Bottom of the body. Mirrors the lower-extremity focus from PROM. Introduces skin integrity inspection.",
       "rtcVideoUrl": "https://www.youtube.com/watch?v=pkvkBVXdqsE",
       "rtcVideoTitle": "21 Provides Foot Care",
-      "prevSlug": "catheter-care-female",
-      "nextSlug": "perineal-care-female",
+      "prevSlug": "denture-cleaning",
+      "nextSlug": "dress-weak-right-arm",
       "storageKey": "checklist-19-foot-care-one-foot",
       "stepCount": 24,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
           "id": 2,
-          "text": "Provide privacy."
+          "text": "Provide for patient privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
         },
         {
           "id": 3,
-          "text": "Perform hand hygiene"
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 4,
-          "text": "Get water and check water temperature for safety."
+          "text": "Get water; check temperature",
+          "segment": "open",
+          "note": "Safe range 105–110°F / 40–43°C.",
+          "boilerplateId": "WATER_CHECK"
         },
         {
           "id": 5,
-          "text": "Put on gloves."
+          "text": "Don clean gloves",
+          "segment": "open",
+          "boilerplateId": "GLOVE_DON"
         },
         {
           "id": 6,
-          "text": "Fill a foot basin with warm water and place it on a flat surface with a barrier underneath. Have the patient check the water temperature by placing their hand in the basin or putting a wet washcloth on the back of their hand."
+          "text": "Fill basin; patient checks temp",
+          "segment": "core"
         },
         {
           "id": 7,
-          "text": "Remove their socks."
+          "text": "Remove patient's socks",
+          "segment": "core"
         },
         {
           "id": 8,
-          "text": "Immerse their feet in warm water for 5 to 20 minutes."
+          "text": "Soak feet 5 to 20 minutes",
+          "segment": "core"
         },
         {
           "id": 9,
-          "text": "Use water and a soapy washcloth."
+          "text": "Use soapy washcloth",
+          "segment": "core"
         },
         {
           "id": 10,
-          "text": "Wash each foot and between the toes."
+          "text": "Wash foot and between toes",
+          "segment": "core"
         },
         {
           "id": 11,
-          "text": "Rinse the entire foot with the wet washcloth, including between the toes."
+          "text": "Rinse foot including between toes",
+          "segment": "core"
         },
         {
           "id": 12,
-          "text": "Dry the foot thoroughly, including between the toes."
+          "text": "Dry foot thoroughly; between toes",
+          "segment": "core"
         },
         {
           "id": 13,
-          "text": "Ask the patient if they would like lotion. If applying lotion, wear gloves."
+          "text": "Offer lotion; don gloves",
+          "segment": "core"
         },
         {
           "id": 14,
-          "text": "Massage the lotion over the foot but avoid applying any lotion between the toes."
+          "text": "Massage lotion; avoid between toes",
+          "segment": "core"
         },
         {
           "id": 15,
-          "text": "Wipe off any excess lotion with a dry towel."
+          "text": "Wipe off excess lotion",
+          "segment": "core"
         },
         {
           "id": 16,
-          "text": "Replace the socks or preferred footwear."
+          "text": "Replace socks or footwear",
+          "segment": "core"
         },
         {
           "id": 17,
-          "text": "While wearing gloves, empty the equipment."
+          "text": "Empty equipment with gloves on",
+          "segment": "core"
         },
         {
           "id": 18,
-          "text": "Rinse the equipment."
+          "text": "Rinse the equipment",
+          "segment": "core"
         },
         {
           "id": 19,
-          "text": "Dry the basin."
+          "text": "Dry the basin",
+          "segment": "core"
         },
         {
           "id": 20,
-          "text": "Dispose of soiled linen in a laundry hamper."
+          "text": "Dispose soiled linen in hamper",
+          "segment": "core"
         },
         {
           "id": 21,
-          "text": "Remove the gloves, turning them inside out."
+          "text": "Remove gloves inside out",
+          "segment": "core",
+          "boilerplateId": "GLOVE_REMOVE"
         },
         {
           "id": 22,
-          "text": "Ensure the bed is low and locked."
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
         },
         {
           "id": 23,
-          "text": "Place the call light or signaling device within reach of the patient."
+          "text": "Place call light in reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
         },
         {
           "id": 24,
-          "text": "Perform hand hygiene."
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         }
       ]
     },
     {
-      "slug": "perineal-care-female",
-      "file": "20-perineal-care-female.md",
-      "studyOrder": 20,
-      "examSkillNumber": 20,
-      "examCardLabel": "California Skills Exam — Skill 20",
-      "title": "Provides Perineal Care (Peri-Care) — Female",
-      "section": "Personal Hygiene & Comfort",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=JGgzTJtzaqc",
-      "rtcVideoTitle": "23 Perineal Care",
+      "slug": "dress-weak-right-arm",
+      "file": "10-dress-weak-right-arm.md",
+      "studyOrder": 18,
+      "examSkillNumber": 9,
+      "examCardLabel": "California Skills Exam — Skill 9",
+      "title": "Dresses Client with Affected (Weak) Right Arm",
+      "section": "Personal Care",
+      "pedagogicalReason": "Last in personal care — requires positioning, affected-side awareness, and sequencing. Most cognitively complex personal care skill.",
+      "rtcVideoUrl": null,
+      "rtcVideoTitle": "No video in playlist",
       "prevSlug": "foot-care-one-foot",
-      "nextSlug": "bedpan-assist",
-      "storageKey": "checklist-20-perineal-care-female",
-      "stepCount": 41,
-      "steps": [
-        {
-          "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
-        },
-        {
-          "id": 2,
-          "text": "Provide privacy."
-        },
-        {
-          "id": 3,
-          "text": "Perform hand hygiene"
-        },
-        {
-          "id": 4,
-          "text": "Check water for safe temperature"
-        },
-        {
-          "id": 5,
-          "text": "Raise one side rail of the bed after checking the patient’s mobility and their preferred side to lie on."
-        },
-        {
-          "id": 6,
-          "text": "Put on gloves."
-        },
-        {
-          "id": 7,
-          "text": "Raise the bed height if needed."
-        },
-        {
-          "id": 8,
-          "text": "Fill the basin with warm water and place it on a flat surface with a barrier underneath. Have the patient check the water temperature by placing their hand in the basin or putting a wet washcloth on the back of their hand."
-        },
-        {
-          "id": 9,
-          "text": "Turn the patient or raise their hips and place a barrier (a towel, waterproof soaker pad, disposable pad, etc.) under their buttocks."
-        },
-        {
-          "id": 10,
-          "text": "Expose their perineum only."
-        },
-        {
-          "id": 11,
-          "text": "Separate the labia."
-        },
-        {
-          "id": 12,
-          "text": "Use water and a soapy washcloth."
-        },
-        {
-          "id": 13,
-          "text": "Clean one side of the labia from top to bottom."
-        },
-        {
-          "id": 14,
-          "text": "Using a clean portion of the first washcloth, clean the other side of the labia from top to bottom."
-        },
-        {
-          "id": 15,
-          "text": "Using a clean portion of the first washcloth, clean the perineal area from top to bottom."
-        },
-        {
-          "id": 16,
-          "text": "Put the first washcloth in the linen bag."
-        },
-        {
-          "id": 17,
-          "text": "Using the second clean washcloth, rinse one side of the labia from top to bottom."
-        },
-        {
-          "id": 18,
-          "text": "Using a clean portion of the second washcloth, rinse the other side of the labia from top to bottom."
-        },
-        {
-          "id": 19,
-          "text": "Using a clean portion of the second washcloth, rinse the perineal area from top to bottom."
-        },
-        {
-          "id": 20,
-          "text": "Put the second washcloth in the linen bag."
-        },
-        {
-          "id": 21,
-          "text": "Pat dry."
-        },
-        {
-          "id": 22,
-          "text": "Assist the patient to turn onto their side facing away from the candidate and ask the patient to hold onto the raised side rail."
-        },
-        {
-          "id": 23,
-          "text": "Using the third clean washcloth, apply water and soap."
-        },
-        {
-          "id": 24,
-          "text": "Using a clean portion of the third washcloth, clean one side of the buttock, wiping away from perineal area."
-        },
-        {
-          "id": 25,
-          "text": "Using a clean portion of the third washcloth, clean the other side of the buttock, wiping away from the perineal area."
-        },
-        {
-          "id": 26,
-          "text": "Using a clean portion of the third washcloth, clean the rectal area wiping away from the perineal area."
-        },
-        {
-          "id": 27,
-          "text": "Put the third washcloth in the linen bag."
-        },
-        {
-          "id": 28,
-          "text": "Using the fourth washcloth, rinse one side of the buttock wiping away from the perineal area."
-        },
-        {
-          "id": 29,
-          "text": "Using a clean portion of the fourth washcloth, rinse the other side of the buttock wiping away from the perineal area."
-        },
-        {
-          "id": 30,
-          "text": "Using a clean portion of the fourth washcloth, rinse the rectal area wiping away from perineal area."
-        },
-        {
-          "id": 31,
-          "text": "Put the fourth washcloth in the linen bag."
-        },
-        {
-          "id": 32,
-          "text": "Pat dry."
-        },
-        {
-          "id": 33,
-          "text": "Safely remove the waterproof pad from under the buttocks."
-        },
-        {
-          "id": 34,
-          "text": "Remove the gloves, turning them inside out."
-        },
-        {
-          "id": 35,
-          "text": "Perform hand hygiene."
-        },
-        {
-          "id": 36,
-          "text": "Position the patient on her back."
-        },
-        {
-          "id": 37,
-          "text": "Put on clean gloves."
-        },
-        {
-          "id": 38,
-          "text": "Dispose of soiled linen in the designated laundry hamper."
-        },
-        {
-          "id": 39,
-          "text": "Ensure the bed is low and locked."
-        },
-        {
-          "id": 40,
-          "text": "Place the call light or signaling device within reach of the patient."
-        },
-        {
-          "id": 41,
-          "text": "Perform hand hygiene."
-        }
-      ]
-    },
-    {
-      "slug": "bedpan-assist",
-      "file": "21-bedpan-assist.md",
-      "studyOrder": 21,
-      "examSkillNumber": 4,
-      "examCardLabel": "California Skills Exam — Skill 4",
-      "title": "Assists With Use of Bedpan",
-      "section": "Elimination & Toileting",
-      "rtcVideoUrl": "https://www.youtube.com/watch?v=PJX0C17vj3Y",
-      "rtcVideoTitle": "04 Assists with Bedpan",
-      "prevSlug": "perineal-care-female",
       "nextSlug": "feed-client-dependence",
-      "storageKey": "checklist-21-bedpan-assist",
-      "stepCount": 26,
+      "storageKey": "checklist-10-dress-weak-right-arm",
+      "stepCount": 14,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and explain the procedure to the patient."
+          "text": "Introduce and explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
         },
         {
           "id": 2,
-          "text": "Provide privacy."
+          "text": "Provide for patient privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
         },
         {
           "id": 3,
-          "text": "Lower the head of the bed."
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 4,
-          "text": "Perform Hand hygiene"
+          "text": "Raise bed to safe height",
+          "segment": "core"
         },
         {
           "id": 5,
-          "text": "Put on clean gloves."
+          "text": "Keep patient covered; remove gown",
+          "segment": "core"
         },
         {
           "id": 6,
-          "text": "Turn the patient and place a barrier (e.g., a towel, waterproof soaker pad, disposable pad) under their buttocks."
+          "text": "Remove gown from left side first",
+          "segment": "core"
         },
         {
           "id": 7,
-          "text": "Position the patient on the bedpan correctly. The deeper portion of the bedpan should be directed toward their toes, and the patient should be centered on the bedpan."
+          "text": "Place gown in laundry hamper",
+          "segment": "core"
         },
         {
           "id": 8,
-          "text": "Remove the gloves and perform hand hygiene."
+          "text": "Ask patient clothing preference",
+          "segment": "core"
         },
         {
           "id": 9,
-          "text": "Raise the head of the bed to a comfortable level."
+          "text": "Dress right (affected) arm first",
+          "segment": "core",
+          "note": "Affected side dressed first; unaffected side last."
         },
         {
           "id": 10,
-          "text": "Cover the patient with linens or a bath blanket."
+          "text": "Dress left arm; button shirt",
+          "segment": "core"
         },
         {
           "id": 11,
-          "text": "Leave toilet tissue or wipes within reach of the patient."
+          "text": "Return patient to supine position",
+          "segment": "core"
         },
         {
           "id": 12,
-          "text": "Leave the call light within reach of the patient."
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
         },
         {
           "id": 13,
-          "text": "Wait nearby allowing for patient privacy"
+          "text": "Place call light in reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
         },
         {
           "id": 14,
-          "text": "When the patient signals, return and assists the patient to perform hand hygiene in bed."
-        },
-        {
-          "id": 15,
-          "text": "Perform hand hygiene"
-        },
-        {
-          "id": 16,
-          "text": "Lower the head of the bed to a comfortable level."
-        },
-        {
-          "id": 17,
-          "text": "Put on clean gloves."
-        },
-        {
-          "id": 18,
-          "text": "Gently remove the bed pan."
-        },
-        {
-          "id": 19,
-          "text": "Discard the soiled linen in the designated laundry hamper."
-        },
-        {
-          "id": 20,
-          "text": "Assist with perineal care."
-        },
-        {
-          "id": 21,
-          "text": "Empty the bedpan into the toilet."
-        },
-        {
-          "id": 22,
-          "text": "Rinse the equipment used and empty the rinse water into the toilet."
-        },
-        {
-          "id": 23,
-          "text": "Remove the gloves, turning them inside out."
-        },
-        {
-          "id": 24,
-          "text": "Ensure the bed is low and locked."
-        },
-        {
-          "id": 25,
-          "text": "Place the call light or signaling device within reach of the patient."
-        },
-        {
-          "id": 26,
-          "text": "Perform hand hygiene"
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         }
       ]
     },
     {
       "slug": "feed-client-dependence",
       "file": "22-feed-client-dependence.md",
-      "studyOrder": 22,
+      "studyOrder": 19,
       "examSkillNumber": 10,
       "examCardLabel": "California Skills Exam — Skill 10",
       "title": "Feeds Client Who Cannot Feed Self",
-      "section": "Nutrition & Feeding",
+      "section": "Feeding and Nutrition",
+      "pedagogicalReason": "Patient must be clean, dressed, and upright. Mirrors the care shift routine — hygiene before feeding.",
       "rtcVideoUrl": "https://www.youtube.com/watch?v=HB1THCh-q7A",
       "rtcVideoTitle": "10 Feeds Client",
-      "prevSlug": "bedpan-assist",
-      "nextSlug": null,
+      "prevSlug": "dress-weak-right-arm",
+      "nextSlug": "bedpan-assist",
       "storageKey": "checklist-22-feed-client-dependence",
       "stepCount": 22,
       "steps": [
         {
           "id": 1,
-          "text": "Introduce yourself and identify the patient."
+          "text": "Introduce self; verify patient identity",
+          "segment": "open",
+          "boilerplateId": "INTRO_IDENTIFY"
         },
         {
           "id": 2,
-          "text": "Explain the procedure to the patient."
+          "text": "Explain procedure to patient",
+          "segment": "open"
         },
         {
           "id": 3,
-          "text": "Perform hand hygiene."
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
         },
         {
           "id": 4,
-          "text": "Verify the name on the diet card matches the patient."
+          "text": "Verify diet card matches patient",
+          "segment": "core"
         },
         {
           "id": 5,
-          "text": "Verify the diet, diet texture, and liquid consistency matches the diet card."
+          "text": "Verify diet, texture, liquid consistency",
+          "segment": "core"
         },
         {
           "id": 6,
-          "text": "Position the patient in an upright position, at least 45 degrees."
+          "text": "Position patient upright; 45 degrees",
+          "segment": "core"
         },
         {
           "id": 7,
-          "text": "Place a clothing protector on the patient if desired (e.g., a paper or cloth towel or a large napkin)."
+          "text": "Place clothing protector on patient",
+          "segment": "core"
         },
         {
           "id": 8,
-          "text": "Ask the patient if they would like mouth care before eating."
+          "text": "Ask about mouth care before eating",
+          "segment": "core"
         },
         {
           "id": 9,
-          "text": "Assist the patient to clean their hands before feeding using sanitizer or soapy and wet washcloths."
+          "text": "Assist patient to clean their hands",
+          "segment": "core"
         },
         {
           "id": 10,
-          "text": "Position self in a chair at eye level facing the patient."
+          "text": "Sit at eye level facing patient",
+          "segment": "core"
         },
         {
           "id": 11,
-          "text": "Describe the foods and fluids being offered to the patient."
+          "text": "Describe foods and fluids offered",
+          "segment": "core"
         },
         {
           "id": 12,
-          "text": "Offer small amounts of food at a reasonable rate."
+          "text": "Offer small amounts at reasonable rate",
+          "segment": "core"
         },
         {
           "id": 13,
-          "text": "Offer fluids frequently."
+          "text": "Offer fluids frequently",
+          "segment": "core"
         },
         {
           "id": 14,
-          "text": "Allow the patient time to chew and swallow."
+          "text": "Allow time to chew and swallow",
+          "segment": "core"
         },
         {
           "id": 15,
-          "text": "Wipe the patient’s face whenever necessary."
+          "text": "Wipe face whenever necessary",
+          "segment": "core"
         },
         {
           "id": 16,
-          "text": "Continue to alternate foods and fluids until the patient indicates they are full."
+          "text": "Alternate foods and fluids until full",
+          "segment": "core"
         },
         {
           "id": 17,
-          "text": "Clean the patient’s face and hands."
+          "text": "Clean patient's face and hands",
+          "segment": "core"
         },
         {
           "id": 18,
-          "text": "Ask the patient if they would like mouth care."
+          "text": "Ask about mouth care after eating",
+          "segment": "core"
         },
         {
           "id": 19,
-          "text": "Leave the patient with their head elevated at least 30 degrees."
+          "text": "Elevate head at least 30 degrees",
+          "segment": "core"
         },
         {
           "id": 20,
-          "text": "Ensure the bed is low and locked."
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
         },
         {
           "id": 21,
-          "text": "Place the call light or signaling device within reach of the patient."
+          "text": "Place call light within reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
         },
         {
           "id": 22,
-          "text": "Perform hand hygiene"
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
+        }
+      ]
+    },
+    {
+      "slug": "bedpan-assist",
+      "file": "21-bedpan-assist.md",
+      "studyOrder": 20,
+      "examSkillNumber": 4,
+      "examCardLabel": "California Skills Exam — Skill 4",
+      "title": "Assists With Use of Bedpan",
+      "section": "Elimination and Peri Care",
+      "pedagogicalReason": "Most basic elimination assist — no indwelling device. Teaches privacy, positioning, and cleanup sequence.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=PJX0C17vj3Y",
+      "rtcVideoTitle": "04 Assists with Bedpan",
+      "prevSlug": "feed-client-dependence",
+      "nextSlug": "perineal-care-female",
+      "storageKey": "checklist-21-bedpan-assist",
+      "stepCount": 26,
+      "steps": [
+        {
+          "id": 1,
+          "text": "Introduce self; explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
+        },
+        {
+          "id": 2,
+          "text": "Provide for privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
+        },
+        {
+          "id": 3,
+          "text": "Lower head of bed",
+          "segment": "open"
+        },
+        {
+          "id": 4,
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 5,
+          "text": "Don clean gloves",
+          "segment": "core",
+          "boilerplateId": "GLOVE_DON"
+        },
+        {
+          "id": 6,
+          "text": "Turn patient; place barrier under buttocks",
+          "segment": "core"
+        },
+        {
+          "id": 7,
+          "text": "Position patient on bedpan correctly",
+          "segment": "core"
+        },
+        {
+          "id": 8,
+          "text": "Remove gloves; perform hand hygiene",
+          "segment": "core",
+          "boilerplateId": "GLOVE_REMOVE_THEN_HH"
+        },
+        {
+          "id": 9,
+          "text": "Raise head of bed",
+          "segment": "core"
+        },
+        {
+          "id": 10,
+          "text": "Cover patient with linens",
+          "segment": "core"
+        },
+        {
+          "id": 11,
+          "text": "Leave toilet tissue within reach",
+          "segment": "core"
+        },
+        {
+          "id": 12,
+          "text": "Place call light within reach",
+          "segment": "core",
+          "boilerplateId": "CALL_LIGHT"
+        },
+        {
+          "id": 13,
+          "text": "Wait nearby; allow patient privacy",
+          "segment": "core"
+        },
+        {
+          "id": 14,
+          "text": "Return; assist patient hand hygiene",
+          "segment": "core"
+        },
+        {
+          "id": 15,
+          "text": "Perform hand hygiene",
+          "segment": "core",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 16,
+          "text": "Lower head of bed",
+          "segment": "core"
+        },
+        {
+          "id": 17,
+          "text": "Don clean gloves",
+          "segment": "core",
+          "boilerplateId": "GLOVE_DON"
+        },
+        {
+          "id": 18,
+          "text": "Gently remove the bedpan",
+          "segment": "core"
+        },
+        {
+          "id": 19,
+          "text": "Discard soiled linen in hamper",
+          "segment": "core"
+        },
+        {
+          "id": 20,
+          "text": "Assist with perineal care",
+          "segment": "core"
+        },
+        {
+          "id": 21,
+          "text": "Empty bedpan into toilet",
+          "segment": "core"
+        },
+        {
+          "id": 22,
+          "text": "Rinse equipment; empty rinse water",
+          "segment": "core"
+        },
+        {
+          "id": 23,
+          "text": "Remove gloves inside out",
+          "segment": "core",
+          "boilerplateId": "GLOVE_REMOVE"
+        },
+        {
+          "id": 24,
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
+        },
+        {
+          "id": 25,
+          "text": "Place call light within reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
+        },
+        {
+          "id": 26,
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
+        }
+      ]
+    },
+    {
+      "slug": "perineal-care-female",
+      "file": "20-perineal-care-female.md",
+      "studyOrder": 21,
+      "examSkillNumber": 20,
+      "examCardLabel": "California Skills Exam — Skill 20",
+      "title": "Provides Perineal Care (Peri-Care) for Female",
+      "section": "Elimination and Peri Care",
+      "pedagogicalReason": "Post-elimination hygiene step. Completes the loop: assist, clean, document.",
+      "rtcVideoUrl": "https://www.youtube.com/watch?v=JGgzTJtzaqc",
+      "rtcVideoTitle": "23 Perineal Care",
+      "prevSlug": "bedpan-assist",
+      "nextSlug": "catheter-care-female",
+      "storageKey": "checklist-20-perineal-care-female",
+      "stepCount": 41,
+      "steps": [
+        {
+          "id": 1,
+          "text": "Introduce self; explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
+        },
+        {
+          "id": 2,
+          "text": "Provide for privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
+        },
+        {
+          "id": 3,
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 4,
+          "text": "Check water for safe temperature",
+          "segment": "open",
+          "boilerplateId": "WATER_CHECK"
+        },
+        {
+          "id": 5,
+          "text": "Raise one side rail",
+          "segment": "core"
+        },
+        {
+          "id": 6,
+          "text": "Don clean gloves",
+          "segment": "core",
+          "boilerplateId": "GLOVE_DON"
+        },
+        {
+          "id": 7,
+          "text": "Raise bed height if needed",
+          "segment": "core"
+        },
+        {
+          "id": 8,
+          "text": "Fill basin; patient checks temperature",
+          "segment": "core"
+        },
+        {
+          "id": 9,
+          "text": "Place barrier under buttocks",
+          "segment": "core"
+        },
+        {
+          "id": 10,
+          "text": "Expose perineum only",
+          "segment": "core"
+        },
+        {
+          "id": 11,
+          "text": "Separate the labia",
+          "segment": "core"
+        },
+        {
+          "id": 12,
+          "text": "Use water and soapy washcloth",
+          "segment": "core"
+        },
+        {
+          "id": 13,
+          "text": "Clean one labia side, top-bottom",
+          "segment": "core"
+        },
+        {
+          "id": 14,
+          "text": "Clean other labia side; clean portion",
+          "segment": "core"
+        },
+        {
+          "id": 15,
+          "text": "Clean perineal area top to bottom",
+          "segment": "core"
+        },
+        {
+          "id": 16,
+          "text": "Put first washcloth in linen bag",
+          "segment": "core"
+        },
+        {
+          "id": 17,
+          "text": "Rinse one labia side, top-bottom",
+          "segment": "core"
+        },
+        {
+          "id": 18,
+          "text": "Rinse other labia side; clean portion",
+          "segment": "core"
+        },
+        {
+          "id": 19,
+          "text": "Rinse perineal area top to bottom",
+          "segment": "core"
+        },
+        {
+          "id": 20,
+          "text": "Put second washcloth in linen bag",
+          "segment": "core"
+        },
+        {
+          "id": 21,
+          "text": "Pat dry",
+          "segment": "core"
+        },
+        {
+          "id": 22,
+          "text": "Turn patient; grasp raised side rail",
+          "segment": "core"
+        },
+        {
+          "id": 23,
+          "text": "Apply water and soap; third washcloth",
+          "segment": "core"
+        },
+        {
+          "id": 24,
+          "text": "Clean one buttock side; wipe away",
+          "segment": "core"
+        },
+        {
+          "id": 25,
+          "text": "Clean other buttock side; wipe away",
+          "segment": "core"
+        },
+        {
+          "id": 26,
+          "text": "Clean rectal area; wipe away",
+          "segment": "core"
+        },
+        {
+          "id": 27,
+          "text": "Put third washcloth in linen bag",
+          "segment": "core"
+        },
+        {
+          "id": 28,
+          "text": "Rinse one buttock side; wipe away",
+          "segment": "core"
+        },
+        {
+          "id": 29,
+          "text": "Rinse other buttock side; wipe away",
+          "segment": "core"
+        },
+        {
+          "id": 30,
+          "text": "Rinse rectal area; wipe away",
+          "segment": "core"
+        },
+        {
+          "id": 31,
+          "text": "Put fourth washcloth in linen bag",
+          "segment": "core"
+        },
+        {
+          "id": 32,
+          "text": "Pat dry",
+          "segment": "core"
+        },
+        {
+          "id": 33,
+          "text": "Remove waterproof pad safely",
+          "segment": "core"
+        },
+        {
+          "id": 34,
+          "text": "Remove gloves inside out",
+          "segment": "core",
+          "boilerplateId": "GLOVE_REMOVE"
+        },
+        {
+          "id": 35,
+          "text": "Perform hand hygiene",
+          "segment": "core",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 36,
+          "text": "Position patient on her back",
+          "segment": "core"
+        },
+        {
+          "id": 37,
+          "text": "Don clean gloves",
+          "segment": "core",
+          "boilerplateId": "GLOVE_DON"
+        },
+        {
+          "id": 38,
+          "text": "Dispose soiled linen in hamper",
+          "segment": "core"
+        },
+        {
+          "id": 39,
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
+        },
+        {
+          "id": 40,
+          "text": "Place call light within reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
+        },
+        {
+          "id": 41,
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
+        }
+      ]
+    },
+    {
+      "slug": "catheter-care-female",
+      "file": "18-catheter-care-female.md",
+      "studyOrder": 22,
+      "examSkillNumber": 17,
+      "examCardLabel": "California Skills Exam — Skill 17",
+      "title": "Provides Catheter Care for Female",
+      "section": "Elimination and Peri Care",
+      "pedagogicalReason": "Last skill in the entire list. Requires infection control, perineal anatomy, and documentation. Most invasive and highest-consequence skill.",
+      "rtcVideoUrl": null,
+      "rtcVideoTitle": "No video in playlist",
+      "prevSlug": "perineal-care-female",
+      "nextSlug": null,
+      "storageKey": "checklist-18-catheter-care-female",
+      "stepCount": 31,
+      "steps": [
+        {
+          "id": 1,
+          "text": "Introduce self; explain procedure",
+          "segment": "open",
+          "boilerplateId": "INTRO_EXPLAIN"
+        },
+        {
+          "id": 2,
+          "text": "Provide for privacy",
+          "segment": "open",
+          "boilerplateId": "PRIVACY"
+        },
+        {
+          "id": 3,
+          "text": "Perform hand hygiene",
+          "segment": "open",
+          "boilerplateId": "HAND_HYGIENE"
+        },
+        {
+          "id": 4,
+          "text": "Get water; check temperature",
+          "segment": "open",
+          "boilerplateId": "WATER_CHECK"
+        },
+        {
+          "id": 5,
+          "text": "Don clean gloves",
+          "segment": "open",
+          "boilerplateId": "GLOVE_DON"
+        },
+        {
+          "id": 6,
+          "text": "Fill basin; patient checks temperature",
+          "segment": "core"
+        },
+        {
+          "id": 7,
+          "text": "Raise bed to working height",
+          "segment": "core"
+        },
+        {
+          "id": 8,
+          "text": "Expose urethra and catheter only",
+          "segment": "core"
+        },
+        {
+          "id": 9,
+          "text": "Check tubing; ensure no backflow",
+          "segment": "core"
+        },
+        {
+          "id": 10,
+          "text": "Place barrier under buttocks",
+          "segment": "core"
+        },
+        {
+          "id": 11,
+          "text": "Wash around catheter at urethra",
+          "segment": "core"
+        },
+        {
+          "id": 12,
+          "text": "Hold catheter at urethra exit",
+          "segment": "core"
+        },
+        {
+          "id": 13,
+          "text": "Clean 4 inches down catheter",
+          "segment": "core"
+        },
+        {
+          "id": 14,
+          "text": "Clean strokes away from urethra",
+          "segment": "core"
+        },
+        {
+          "id": 15,
+          "text": "Use clean washcloth portion each stroke",
+          "segment": "core"
+        },
+        {
+          "id": 16,
+          "text": "Put first washcloth in linen bag",
+          "segment": "core"
+        },
+        {
+          "id": 17,
+          "text": "Rinse; strokes away from urethra",
+          "segment": "core"
+        },
+        {
+          "id": 18,
+          "text": "Rinse; clean portion each stroke",
+          "segment": "core"
+        },
+        {
+          "id": 19,
+          "text": "Put second washcloth in linen bag",
+          "segment": "core"
+        },
+        {
+          "id": 20,
+          "text": "Pat dry with towel",
+          "segment": "core"
+        },
+        {
+          "id": 21,
+          "text": "Never pull the catheter tube",
+          "segment": "core"
+        },
+        {
+          "id": 22,
+          "text": "Replace gown over perineal area",
+          "segment": "core"
+        },
+        {
+          "id": 23,
+          "text": "Empty basin while wearing gloves",
+          "segment": "core"
+        },
+        {
+          "id": 24,
+          "text": "Rinse the basin",
+          "segment": "core"
+        },
+        {
+          "id": 25,
+          "text": "Dry the basin",
+          "segment": "core"
+        },
+        {
+          "id": 26,
+          "text": "Return equipment to storage",
+          "segment": "core"
+        },
+        {
+          "id": 27,
+          "text": "Dispose soiled linen in hamper",
+          "segment": "core"
+        },
+        {
+          "id": 28,
+          "text": "Remove gloves inside out",
+          "segment": "core",
+          "boilerplateId": "GLOVE_REMOVE"
+        },
+        {
+          "id": 29,
+          "text": "Lower bed; lock brakes",
+          "segment": "close",
+          "boilerplateId": "BED_LOW"
+        },
+        {
+          "id": 30,
+          "text": "Place call light within reach",
+          "segment": "close",
+          "boilerplateId": "CALL_LIGHT"
+        },
+        {
+          "id": 31,
+          "text": "Perform hand hygiene",
+          "segment": "close",
+          "boilerplateId": "HAND_HYGIENE"
         }
       ]
     }

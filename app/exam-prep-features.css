@@ -1,0 +1,534 @@
+/* Exam prep features — banner, simulation, progress, quiz mode, badges */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Sticky exam reality banner ── */
+.exam-reality-banner {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  border-bottom: 1px solid var(--rule);
+  background: #fffbeb;
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.06);
+}
+
+.exam-reality-banner-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+
+.exam-reality-banner-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0 0 0.35rem;
+}
+
+.exam-reality-banner-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--primary);
+}
+
+.exam-reality-banner-dismiss {
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--muted);
+}
+
+.exam-reality-banner-dismiss:hover {
+  background: var(--panel);
+}
+
+/* ── Index progress + toolbar ── */
+.index-progress-overview {
+  margin-bottom: 1rem;
+}
+
+.index-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
+.index-progress-track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.index-progress-fill {
+  height: 100%;
+  background: #15803d;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.index-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .index-toolbar {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.index-search-label {
+  flex: 1;
+}
+
+.index-search-input {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.625rem 0.875rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--primary);
+}
+
+.index-simulate-btn,
+.index-reset-progress,
+.index-section-jump-btn,
+.exam-sim-reshuffle,
+.skill-mode-btn,
+.skill-quiz-action,
+.skill-reveal-btn,
+.skill-mark-reviewed {
+  min-height: 44px;
+  min-width: 44px;
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+.index-simulate-btn {
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.625rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.index-simulate-btn:hover {
+  background: #0f172a;
+}
+
+.index-section-jump {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0 0.75rem;
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--rule);
+  -webkit-overflow-scrolling: touch;
+}
+
+.exam-reality-banner ~ .site-shell .index-section-jump {
+  top: 0;
+}
+
+.index-section-jump-btn {
+  flex-shrink: 0;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.index-section-jump-btn:hover {
+  border-color: var(--primary);
+  background: var(--panel);
+}
+
+.index-section-anchor {
+  scroll-margin-top: 5.5rem;
+}
+
+.index-no-results {
+  text-align: center;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  padding: 2rem 0;
+}
+
+.index-reset-progress {
+  margin-top: 0.75rem;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.8125rem;
+  color: var(--emphasis);
+}
+
+/* ── Skill cards: badges + tint ── */
+.lmcc-skill-card-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.lmcc-skill-card--always-tested {
+  background: #fffbeb;
+  border-color: #fcd34d;
+  border-left-color: var(--gold);
+}
+
+.lmcc-skill-card--measurement {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+  border-left-color: var(--primary-accent);
+}
+
+.skill-exam-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  line-height: 1.3;
+}
+
+.skill-exam-badge--always-tested {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.skill-exam-badge--measurement-pool {
+  background: #e0f2fe;
+  color: #1e40af;
+  border: 1px solid #bae6fd;
+}
+
+.skill-progress-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.skill-progress-badge--not-started {
+  background: var(--panel);
+  color: var(--muted);
+}
+
+.skill-progress-badge--in-progress {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.skill-progress-badge--reviewed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* ── Skill page meta ── */
+.skill-page-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.skill-reviewed-row {
+  margin: 0.5rem 0 1rem;
+  text-align: right;
+}
+
+.skill-mark-reviewed {
+  border: 1px solid #15803d;
+  border-radius: 6px;
+  background: #fff;
+  color: #15803d;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.skill-mark-reviewed:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* ── Quiz / study mode ── */
+.skill-mode-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.skill-mode-btn {
+  flex: 1;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.skill-mode-btn--active {
+  border-color: var(--primary);
+  background: var(--panel);
+  color: var(--primary);
+}
+
+.skill-quiz-toolbar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.skill-quiz-action,
+.skill-reveal-btn {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.skill-quiz-hidden {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.skill-quiz-placeholder {
+  min-width: 1.5rem;
+}
+
+.skill-step--critical {
+  border-left: 3px solid #fca5a5;
+  padding-left: 0.35rem;
+}
+
+.skill-step--critical-revealed {
+  background: #fef2f2;
+  padding: 0.25rem 0.35rem;
+  border-radius: 4px;
+}
+
+.skill-critical-badge {
+  display: inline-block;
+  margin-left: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #b91c1c;
+  vertical-align: middle;
+}
+
+.skill-critical-badge--revealed {
+  background: #fee2e2;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+}
+
+.skill-checkbox {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+}
+
+.skill-checklist--compact {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.skill-checklist--compact .skill-checklist-header {
+  margin-bottom: 0.5rem;
+}
+
+.skill-checklist--compact .skill-checklist-title {
+  font-size: 1.125rem;
+}
+
+/* ── Exam simulation modal ── */
+.exam-sim-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(17, 24, 39, 0.55);
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.exam-sim-modal {
+  max-width: 48rem;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(17, 24, 39, 0.2);
+  padding: 1rem 1rem 1.5rem;
+}
+
+.exam-sim-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.exam-sim-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--primary);
+}
+
+.exam-sim-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin: 0.25rem 0 0;
+}
+
+.exam-sim-close {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.exam-sim-reshuffle {
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--primary);
+  padding: 0.5rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.exam-sim-skill-block {
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.exam-sim-skill-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--panel);
+  border-bottom: 1px solid var(--rule);
+}
+
+.exam-sim-skill-num {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+.exam-sim-skill-link {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--primary-accent);
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 375px) {
+  .skill-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .site-shell {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+}
+
+@media print {
+  .exam-reality-banner,
+  .index-toolbar,
+  .index-section-jump,
+  .index-progress-overview,
+  .index-reset-progress,
+  .exam-sim-overlay,
+  .skill-mode-toggle,
+  .skill-quiz-toolbar,
+  .skill-reveal-btn,
+  .skill-mark-reviewed,
+  .skill-reviewed-row,
+  .skill-progress-badge,
+  .skill-exam-badge,
+  .lmcc-skill-card-badges {
+    display: none !important;
+  }
+}

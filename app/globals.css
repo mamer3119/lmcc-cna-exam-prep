@@ -1,125 +1,65 @@
+@import "./lmcc-institutional.css";
+@import "./exam-prep-features.css";
+@import "./phase-organizer.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --ink: #14201a;
-  --muted: #4a5c52;
-  --line: #c8d4cc;
-  --panel: #f7faf8;
-  --accent: #1f5c42;
-  --accent-soft: #e8f3ec;
-  --warm: #8a5a2b;
-}
-
 body {
   @apply antialiased;
-  font-family: "DM Sans", "Segoe UI", sans-serif;
+  position: relative;
+  font-family: var(--font-sans);
   color: var(--ink);
-  background:
-    radial-gradient(circle at 12% 8%, #eef6f0 0%, transparent 42%),
-    radial-gradient(circle at 88% 0%, #f4efe6 0%, transparent 36%),
-    linear-gradient(180deg, #fbfcfb 0%, #f3f6f4 100%);
+  background: #fff;
   min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("/lmcc-cna-exam-prep/images/shield_watermark.png");
+  background-repeat: no-repeat;
+  background-position: center 38%;
+  background-size: min(82%, 560px);
+  opacity: var(--watermark-opacity);
+}
+
+main {
+  position: relative;
+  z-index: 1;
 }
 
 .site-shell {
   @apply mx-auto max-w-4xl px-4 py-8 md:px-6 md:py-10;
 }
 
-.site-hero {
-  @apply mb-10 border-b-2 pb-6;
-  border-color: var(--accent);
-}
-
-.site-kicker {
-  @apply mb-2 text-xs font-semibold uppercase tracking-[0.14em];
-  color: var(--accent);
-}
-
-.site-title {
-  font-family: "Source Serif 4", Georgia, serif;
-  @apply mb-3 text-3xl font-semibold leading-tight md:text-4xl;
-  color: var(--ink);
-}
-
-.site-lead {
-  @apply max-w-2xl text-base leading-relaxed;
-  color: var(--muted);
+.site-intro {
+  @apply mb-10 text-center;
 }
 
 .site-section-block {
   @apply mb-10;
 }
 
-.site-section-title {
-  font-family: "Source Serif 4", Georgia, serif;
-  @apply mb-4 border-b pb-2 text-xl font-semibold;
-  border-color: var(--line);
-  color: var(--ink);
-}
-
 .skill-grid {
   @apply grid list-none gap-3 p-0 sm:grid-cols-2;
-}
-
-.skill-card {
-  @apply flex h-full flex-col rounded-lg border bg-white/80 p-4 no-underline shadow-sm transition;
-  border-color: var(--line);
-  color: var(--ink);
-}
-
-.skill-card:hover {
-  @apply -translate-y-0.5 shadow-md;
-  border-color: var(--accent);
-  background: var(--accent-soft);
-}
-
-.skill-card-order {
-  @apply text-[11px] font-bold uppercase tracking-wider;
-  color: var(--accent);
-}
-
-.skill-card-exam {
-  @apply mt-1 text-xs;
-  color: var(--muted);
-}
-
-.skill-card-title {
-  font-family: "Source Serif 4", Georgia, serif;
-  @apply mt-2 text-lg font-semibold leading-snug;
-}
-
-.skill-card-meta {
-  @apply mt-auto pt-3 text-xs;
-  color: var(--muted);
 }
 
 .site-footer {
   @apply border-t pt-4 text-xs;
   border-color: var(--line);
   color: var(--muted);
-}
-
-.exam-strip {
-  @apply mb-4 text-xs font-semibold uppercase tracking-wide;
-  color: var(--accent);
-}
-
-.video-strip {
-  @apply mb-6 rounded-md border px-4 py-3 text-sm;
-  border-color: var(--line);
-  background: var(--panel);
+  font-family: var(--font-sans);
 }
 
 .video-embed {
-  @apply mt-8 overflow-hidden rounded-xl border shadow-sm;
+  @apply mt-8 overflow-hidden rounded-lg border shadow-sm;
   border-color: var(--line);
-  background: linear-gradient(
-    165deg,
-    rgba(255, 255, 255, 0.96) 0%,
-    var(--panel) 100%
-  );
+  background: #fff;
 }
 
 .video-embed-toggle {
@@ -129,11 +69,11 @@ body {
 }
 
 .video-embed-toggle:hover {
-  background: rgba(31, 92, 66, 0.04);
+  background: rgba(17, 24, 39, 0.03);
 }
 
 .video-embed-toggle:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
@@ -143,11 +83,12 @@ body {
 
 .video-embed-kicker {
   @apply mb-1 block text-[10px] font-bold uppercase tracking-[0.16em];
-  color: var(--accent);
+  color: var(--gold);
+  font-family: var(--font-sans);
 }
 
 .video-embed-title {
-  font-family: "Source Serif 4", Georgia, serif;
+  font-family: var(--font-serif);
   @apply block text-lg font-semibold leading-snug md:text-xl;
   color: var(--ink);
 }
@@ -155,11 +96,12 @@ body {
 .video-embed-hint {
   @apply mt-1 text-xs;
   color: var(--muted);
+  font-family: var(--font-sans);
 }
 
 .video-embed-chevron {
   @apply shrink-0 text-2xl leading-none transition-transform duration-300;
-  color: var(--accent);
+  color: var(--primary);
 }
 
 .video-embed-chevron--open {
@@ -205,25 +147,12 @@ body {
 
 .video-embed-fallback a {
   @apply inline-block whitespace-nowrap font-semibold no-underline;
-  color: #1a4f8b;
+  color: var(--primary-accent);
+  font-family: var(--font-sans);
 }
 
 .video-embed-fallback a:hover {
   @apply underline;
-}
-
-.video-strip-label {
-  @apply mb-1 block text-[10px] font-bold uppercase tracking-widest;
-  color: var(--muted);
-}
-
-.video-strip a {
-  @apply font-semibold underline;
-  color: #1a4f8b;
-}
-
-.video-strip-note {
-  color: var(--muted);
 }
 
 .skill-nav-top {
@@ -232,7 +161,12 @@ body {
 
 .skill-nav-home {
   @apply text-sm font-medium no-underline;
-  color: var(--accent);
+  color: var(--primary);
+  font-family: var(--font-sans);
+}
+
+.skill-nav-home:hover {
+  text-decoration: underline;
 }
 
 .skill-nav-bottom {
@@ -242,11 +176,38 @@ body {
 
 .skill-nav-link {
   @apply max-w-[45%] font-medium no-underline;
-  color: var(--accent);
+  color: var(--primary);
+  font-family: var(--font-sans);
+}
+
+.skill-nav-link:hover {
+  text-decoration: underline;
 }
 
 .skill-nav-next {
   @apply text-right;
+}
+
+.skill-exam-reference {
+  margin-top: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  padding: 0.75rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.skill-exam-reference summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.skill-exam-reference p {
+  margin: 0.75rem 0 0;
 }
 
 @media print {
@@ -254,6 +215,7 @@ body {
     background: #fff;
   }
 
+  body::before,
   .video-embed {
     display: none !important;
   }
