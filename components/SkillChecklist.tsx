@@ -706,8 +706,7 @@ export default function SkillChecklist({
 
           const registryTokenId = resolveRegistryTokenId(step.boilerplateId);
           const showBoilerplateChip =
-            registryTokenId &&
-            shouldRenderBoilerplateChip(step, checklistSlug);
+            registryTokenId && shouldRenderBoilerplateChip(step, checklistSlug);
 
           return (
             <Fragment key={step.id}>
@@ -844,7 +843,11 @@ export default function SkillChecklist({
                                   enrichmentDisplay,
                                 )
                               : null}
-                              {renderTagCategoryBadge(step, enrichmentDisplay)}
+                              {renderTagCategoryBadge(
+                                step,
+                                enrichmentDisplay,
+                                stepSegment,
+                              )}
                               {renderCriticalBadge(
                                 step,
                                 displayText,
