@@ -38,13 +38,15 @@ import {
 } from "@/lib/exam-scorecard";
 import { useInstructorViewContext } from "@/components/InstructorViewProvider";
 import { StepClinicalNote } from "@/components/StepClinicalNote";
-import { HandHygieneEmbedChip } from "@/components/HandHygieneEmbedChip";
+import { BoilerplateTokenChip } from "@/components/BoilerplateTokenChip";
 import { LearnSegmentHeading } from "@/components/LearnSegmentHeading";
 import { StepLearnMeta } from "@/components/StepLearnMeta";
 import { StepMotionItem } from "@/components/StepMotionItem";
-import { isHandHygieneEmbedStep } from "@/lib/learn-mode-display";
+import {
+  resolveRegistryTokenId,
+  shouldRenderBoilerplateChip,
+} from "@/lib/boilerplate-tokens";
 import { getLearnProgressSteps, masteryStepId } from "@/lib/scored-steps";
-import { CHECKLIST_VIEW_LABELS } from "@/lib/practice-labels";
 import {
   filterStepsBySegment,
   type SegmentFilterMode,
@@ -368,6 +370,7 @@ export default function SkillChecklist({
 
   const isQuiz = mode === "quiz";
   const learnPolish = enrichmentDisplay.learnPolish && !isQuiz;
+  const scriptRows = enrichmentDisplay.scriptRows && !isQuiz;
   const showScorecards =
     enrichmentDisplay.examScorecards &&
     (showExamScorecards ??
@@ -504,8 +507,9 @@ export default function SkillChecklist({
     step: ChecklistStep,
     displayText: string,
     displayFlags: ChecklistEnrichmentDisplay,
+    skipWhenScriptRows = false,
   ) {
-    if (!displayFlags.detailedText) {
+    if (skipWhenScriptRows || !displayFlags.detailedText) {
       return null;
     }
     const detailedText = resolveStepDetailedText(step);
@@ -525,7 +529,7 @@ export default function SkillChecklist({
 
   return (
     <article
-      className={`skill-checklist mx-auto max-w-3xl px-4 py-8 print:px-0 print:py-0 print:text-black ${compact ? "skill-checklist--compact" : ""} ${enrichmentDisplay.segmentBadges ? "skill-checklist--segment-badges" : ""} ${learnPolish ? "skill-checklist--learn-polish" : ""}`.trim()}
+      className={`skill-checklist mx-auto max-w-3xl px-4 py-8 print:px-0 print:py-0 print:text-black ${compact ? "skill-checklist--compact" : ""} ${enrichmentDisplay.segmentBadges ? "skill-checklist--segment-badges" : ""} ${learnPolish ? "skill-checklist--learn-polish" : ""} ${scriptRows ? "skill-checklist--script-rows" : ""}`.trim()}
     >
       <p className="print-header mb-4 hidden text-sm font-semibold uppercase tracking-wide print:block print:text-black">
         LMCC — California CNA Skills Exam Prep
@@ -534,31 +538,6 @@ export default function SkillChecklist({
       <header className="skill-checklist-header print:border-black">
         <h1 className="skill-checklist-title print:text-black">{title}</h1>
       </header>
-
-      {showModeToggle ?
-        <div
-          className="skill-mode-toggle print:hidden"
-          role="group"
-          aria-label={CHECKLIST_VIEW_LABELS.groupAria}
-        >
-          <button
-            type="button"
-            className={`skill-mode-btn ${mode === "study" ? "skill-mode-btn--active" : ""}`}
-            onClick={() => onModeChange?.("study")}
-            aria-pressed={mode === "study"}
-          >
-            {CHECKLIST_VIEW_LABELS.full}
-          </button>
-          <button
-            type="button"
-            className={`skill-mode-btn ${mode === "quiz" ? "skill-mode-btn--active" : ""}`}
-            onClick={() => onModeChange?.("quiz")}
-            aria-pressed={mode === "quiz"}
-          >
-            {CHECKLIST_VIEW_LABELS.reveal}
-          </button>
-        </div>
-      : null}
 
       {isQuiz ?
         <div className="skill-quiz-toolbar print:hidden">
@@ -709,26 +688,10 @@ export default function SkillChecklist({
               : "skill-step--critical"
             : "";
 
-          if (learnPolish && isHandHygieneEmbedStep(step, checklistSlug)) {
-            return (
-              <Fragment key={step.id}>
-                {showLearnSegmentHeading && stepSegment ?
-                  <LearnSegmentHeading segment={stepSegment} />
-                : null}
-                <StepMotionItem
-                  index={stepIndex}
-                  enabled={learnPolish}
-                  className="skill-step-item"
-                >
-                  <HandHygieneEmbedChip
-                    stepId={step.id}
-                    checked={mainChecked}
-                    onToggle={() => toggleMainStep(step)}
-                  />
-                </StepMotionItem>
-              </Fragment>
-            );
-          }
+          const registryTokenId = resolveRegistryTokenId(step.boilerplateId);
+          const showBoilerplateChip =
+            registryTokenId &&
+            shouldRenderBoilerplateChip(step, checklistSlug);
 
           return (
             <Fragment key={step.id}>
@@ -770,35 +733,73 @@ export default function SkillChecklist({
                         onChange={() => toggleMainStep(step)}
                         className="skill-checkbox mt-2 shrink-0 rounded border-gray-400 print:mt-0"
                       />
-                      {renderSegmentBadge(
-                        stepSegment,
-                        phaseStartBadge,
-                        enrichmentDisplay,
-                      )}
-                      <span
-                        className={`skill-step-body leading-relaxed ${checkedTextClass(mainChecked)} ${criticalBodyClass}`}
-                        title={detailedTitle}
-                      >
-                        <span className="skill-step-body__cue">
-                          <strong className="skill-checklist-step-num tnum print:text-black">
-                            {step.id}.
-                          </strong>{" "}
-                          {renderRendersAsEmoji(step, enrichmentDisplay)}
-                          {displayText}
+                      {scriptRows ?
+                        <span
+                          className={`skill-step-script ${checkedTextClass(mainChecked)} ${criticalBodyClass}`}
+                        >
+                          <span className="skill-step-script__primary">
+                            <strong className="skill-checklist-step-num tnum print:text-black">
+                              {step.id}.
+                            </strong>{" "}
+                            {showBoilerplateChip && registryTokenId ?
+                              <BoilerplateTokenChip tokenId={registryTokenId} />
+                            : null}
+                            <span className="skill-step-script__wording">
+                              {displayText}
+                            </span>
+                          </span>
+                          <span className="skill-step-script__secondary">
+                            {renderSegmentBadge(
+                              stepSegment,
+                              phaseStartBadge,
+                              enrichmentDisplay,
+                            )}
+                            {renderStepBodyBadges(
+                              step,
+                              displayText,
+                              showMainText,
+                              enrichmentDisplay,
+                            )}
+                            {learnPolish ?
+                              <StepLearnMeta
+                                step={step}
+                                clinicalNote={rawClinicalNote}
+                              />
+                            : null}
+                          </span>
                         </span>
-                        {learnPolish ?
-                          <StepLearnMeta
-                            step={step}
-                            clinicalNote={rawClinicalNote}
-                          />
-                        : null}
-                        {renderStepBodyBadges(
-                          step,
-                          displayText,
-                          showMainText,
-                          enrichmentDisplay,
-                        )}
-                      </span>
+                      : <>
+                          {renderSegmentBadge(
+                            stepSegment,
+                            phaseStartBadge,
+                            enrichmentDisplay,
+                          )}
+                          <span
+                            className={`skill-step-body leading-relaxed ${checkedTextClass(mainChecked)} ${criticalBodyClass}`}
+                            title={detailedTitle}
+                          >
+                            <span className="skill-step-body__cue">
+                              <strong className="skill-checklist-step-num tnum print:text-black">
+                                {step.id}.
+                              </strong>{" "}
+                              {renderRendersAsEmoji(step, enrichmentDisplay)}
+                              {displayText}
+                            </span>
+                            {learnPolish ?
+                              <StepLearnMeta
+                                step={step}
+                                clinicalNote={rawClinicalNote}
+                              />
+                            : null}
+                            {renderStepBodyBadges(
+                              step,
+                              displayText,
+                              showMainText,
+                              enrichmentDisplay,
+                            )}
+                          </span>
+                        </>
+                      }
                     </label>
                   : <div className="skill-step-label flex min-h-[44px] min-w-0 flex-1 flex-col gap-2">
                       <div className="skill-step-row flex min-w-0 items-start gap-2">
@@ -864,7 +865,12 @@ export default function SkillChecklist({
                   />
                 : null}
 
-                {renderOfficialWording(step, displayText, enrichmentDisplay)}
+                {renderOfficialWording(
+                  step,
+                  displayText,
+                  enrichmentDisplay,
+                  scriptRows,
+                )}
 
                 {resolvedSubSteps.length > 0 ?
                   <ul

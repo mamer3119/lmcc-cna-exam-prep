@@ -560,6 +560,33 @@
   overflow-wrap: anywhere;
 }
 
+.exam-numbers-summary--slim {
+  margin-bottom: 1rem;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+.exam-numbers-summary--slim .exam-numbers-summary__header {
+  padding: 0.65rem 1rem 0.5rem;
+}
+
+.exam-numbers-summary--slim .exam-numbers-summary__title {
+  font-size: 1rem;
+  margin-top: 0.15rem;
+}
+
+.exam-numbers-summary--slim .exam-numbers-summary__lead {
+  display: none;
+}
+
+.exam-numbers-summary--slim .exam-numbers-summary__grid {
+  gap: 0;
+}
+
+.exam-numbers-summary--slim .exam-numbers-summary__row {
+  padding: 0.5rem 1rem;
+}
+
 /* ── Study page chrome ── */
 .study-page-header {
   margin-bottom: 2.5rem;

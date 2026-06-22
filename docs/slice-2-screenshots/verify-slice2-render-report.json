@@ -1,0 +1,12 @@
+{
+  "branch": "feat/slice-2-mode-consolidation",
+  "baseUrl": "http://127.0.0.1:3854/lmcc-cna-exam-prep",
+  "passedAt": "2026-06-22T18:08:35.618Z",
+  "checks": [
+    "urinary: single mode control, no legacy toggles",
+    "urinary: inline phase-colored chips on tagged steps",
+    "hand-hygiene: step 1 shows NO chip (wording mismatch guardrail)",
+    "375px: mode control + rail bottom sheet intact",
+    "375px: urinary skill page layout holds"
+  ]
+}

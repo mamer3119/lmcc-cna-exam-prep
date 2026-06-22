@@ -638,3 +638,126 @@
   font-size: 0.875rem;
   line-height: 1.45;
 }
+
+/* ── Slice-2: unified mode selector ── */
+.skill-view-mode-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 auto 1rem;
+  max-width: 48rem;
+  padding: 0 1rem;
+}
+
+.skill-view-mode-selector__btn {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--rule, var(--border));
+  background: #fff;
+  color: var(--primary, var(--text));
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.skill-view-mode-selector__btn--active {
+  background: var(--primary, #111827);
+  border-color: var(--primary, #111827);
+  color: #fff;
+}
+
+@media (max-width: 375px) {
+  .skill-view-mode-selector {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+
+  .skill-view-mode-selector__btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ── Slice-2: script rows + boilerplate chips ── */
+.skill-checklist--script-rows .skill-step-script {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.skill-step-script__primary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--text, var(--primary));
+}
+
+.skill-step-script__wording {
+  flex: 1;
+  min-width: 0;
+}
+
+.skill-step-script__secondary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  padding-left: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--text-muted, var(--muted));
+}
+
+.skill-step-script__secondary .skill-step-segment-col,
+.skill-step-script__secondary .skill-step-body__badges,
+.skill-step-script__secondary .step-learn-meta {
+  opacity: 0.92;
+}
+
+.boilerplate-token-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-chip, 999px);
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.boilerplate-token-chip--open {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.boilerplate-token-chip--core {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.boilerplate-token-chip--close {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.boilerplate-token-chip__emoji {
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+@media (max-width: 375px) {
+  .skill-step-script__primary {
+    font-size: 0.875rem;
+  }
+}
