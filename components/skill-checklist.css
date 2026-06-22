@@ -68,6 +68,10 @@
   color: var(--muted);
 }
 
+.skill-checklist--compact .skill-checklist-section-label {
+  display: none;
+}
+
 .skill-checklist-step-num {
   color: var(--emphasis);
 }
@@ -94,6 +98,101 @@
   min-width: 0;
 }
 
+.skill-step-body__cue {
+  display: inline;
+}
+
+.skill-step-body__badges {
+  display: inline;
+}
+
+.skill-step-body__badges .step-phase-word-badge,
+.skill-step-body__badges .skill-tag-category-badge,
+.skill-step-body__badges .skill-critical-badge {
+  margin-left: 0.35rem;
+}
+
+.step-phase-word-badge {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  vertical-align: middle;
+  line-height: 1.3;
+}
+
+.skill-tag-category-badge {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: var(--panel);
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  vertical-align: middle;
+  line-height: 1.3;
+}
+
+.skill-step-official-wording {
+  margin: 0.35rem 0 0 1.5rem;
+  padding-left: 0.65rem;
+  border-left: 2px solid color-mix(in srgb, var(--gold) 55%, var(--rule));
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+/* Align nested content with step body (after checkbox + optional segment column) */
+.skill-step-substeps {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0.25rem 0 0.25rem 0.75rem;
+  border-left: 2px solid color-mix(in srgb, var(--primary) 18%, var(--rule));
+  margin-left: calc(1.25rem + 0.5rem);
+}
+
+.skill-step-substep + .skill-step-substep {
+  margin-top: 0.35rem;
+}
+
+.skill-step-substep-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-height: 2.25rem;
+  cursor: pointer;
+}
+
+.skill-substep-checkbox {
+  margin-top: 0.2rem;
+  flex: 0 0 auto;
+  width: 0.875rem;
+  height: 0.875rem;
+  accent-color: var(--primary);
+}
+
+.skill-step-substep-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.skill-checklist--segment-badges .skill-step-official-wording,
+.skill-checklist--segment-badges .skill-step-substeps {
+  margin-left: calc(1.25rem + 0.5rem + 3.25rem + 0.5rem);
+}
+
 .skill-checklist--segment-badges .skill-checklist-note {
   margin-left: 0;
   padding-left: calc(1.25rem + 0.5rem + 3.25rem + 0.5rem);
@@ -104,6 +203,22 @@
   font-size: 0.875rem;
   font-style: italic;
   color: var(--gold);
+}
+
+.skill-source-chip,
+.skill-instructor-source-chip {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted, #6b6862);
+  background: var(--surface-sunken, #f4f3ee);
+  border-radius: 999px;
+  vertical-align: middle;
 }
 
 .skill-checklist-reset {
@@ -131,6 +246,41 @@
 
 .skill-checklist .skill-checkbox {
   accent-color: var(--primary);
+}
+
+@media (max-width: 767px) {
+  .skill-step-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .skill-step-body__badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.35rem;
+    align-items: center;
+  }
+
+  .skill-step-body__badges .step-phase-word-badge,
+  .skill-step-body__badges .skill-tag-category-badge,
+  .skill-step-body__badges .skill-critical-badge {
+    margin-left: 0;
+  }
+
+  .skill-checklist.skill-checklist--segment-badges .skill-step-official-wording,
+  .skill-checklist.skill-checklist--segment-badges .skill-step-substeps {
+    margin-left: calc(1.25rem + 0.5rem);
+  }
+
+  .skill-checklist.skill-checklist--segment-badges .skill-checklist-note {
+    padding-left: calc(1.25rem + 0.5rem);
+  }
+
+  .skill-checklist--segment-badges .skill-step-segment-col {
+    flex: 0 0 2.5rem;
+  }
 }
 
 .skill-checklist-footer {

@@ -51,17 +51,22 @@ Open http://localhost:3005/lmcc-cna-exam-prep/
 
 ### Fix `a[d] is not a function` (Webpack runtime)
 
-This almost always means **stale dev cache**, **orphan `node` processes**, or
-**Node 26** while the project pins **Node 22**.
+This almost always means **stale dev cache** (production `.next` reused after
+`pnpm build`), **orphan `node` processes**, or **wrong Node major** (project
+pins **Node 24 LTS** via `.node-version`).
 
 ```powershell
 pnpm dev:clean
 ```
 
-`predev` now kills port 3005 automatically. Use **`pnpm dev:clean`** (not plain
-`pnpm dev`) after any `pnpm build` or if you see `./153.js` / `a[d]` errors.
+`predev` kills port 3005 and clears stale `.next` when `out/` or a production
+webpack cache is detected. Use **`pnpm dev:clean`** after any `pnpm build` or if
+you see `./153.js` / `a[d] is not a function`.
 
-Hard-refresh the browser (Ctrl+Shift+R).
+Hard-refresh the browser (**Ctrl+Shift+R**) — old chunk hashes in cache also
+trigger this error even when the server is fixed.
+
+Never run `pnpm build` while `pnpm dev` is still running.
 
 **Production:** after push, run `pnpm verify:live` to confirm GitHub Pages
 serves all `_next` chunks (especially `%5Bslug%5D`).

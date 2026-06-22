@@ -17,6 +17,7 @@ import {
   reshuffleExamSimulation,
 } from "@/lib/exam-simulation";
 import { getAllSkills } from "@/lib/skills";
+import { resolveStepSubSteps } from "@/lib/skill-step-meta";
 import {
   countReviewedSkills,
   getSkillProgressStatus,
@@ -163,7 +164,10 @@ describe("critical steps across all 22 skills", () => {
       skill.steps.every(
         (step) =>
           !isCriticalStepText(step.text) &&
-          !(step.subSteps?.some((sub) => isCriticalStepText(sub)) ?? false),
+          !(
+            resolveStepSubSteps(step)?.some((sub) => isCriticalStepText(sub)) ??
+            false
+          ),
       ),
     );
     expect(withoutCritical.map((s) => s.slug)).toEqual([]);

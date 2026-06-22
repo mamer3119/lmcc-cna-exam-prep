@@ -5,10 +5,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import {
   curriculumModules,
   getCurriculumMeta,
-  getPhaseWordForStep,
   type CurriculumSkillMeta,
 } from "@/data/skillCurriculum";
 import { resolveOrganizerDensity } from "@/lib/organizer-density";
+import type { ChecklistStep } from "@/lib/checklist-step";
+import { resolveStepPhaseWord } from "@/lib/skill-step-meta";
 import type { StepSegment } from "@/lib/skill-templates";
 
 export type ScrollOrganizerState = {
@@ -46,7 +47,10 @@ type UseScrollOrganizersOptions = {
   enabled?: boolean;
 };
 
-function phaseHintFor(meta: CurriculumSkillMeta, stepNumber: number): string | null {
+function phaseHintFor(
+  meta: CurriculumSkillMeta,
+  stepNumber: number,
+): string | null {
   const phase = meta.phases.find(
     (p) => stepNumber >= p.fromStep && stepNumber <= p.toStep,
   );
@@ -72,7 +76,9 @@ export function useScrollOrganizers({
     }
 
     const centerY = window.innerHeight * 0.4;
-    const stepEls = document.querySelectorAll<HTMLElement>("[data-organizer-step]");
+    const stepEls = document.querySelectorAll<HTMLElement>(
+      "[data-organizer-step]",
+    );
     let focusedStep: HTMLElement | null = null;
     let bestDist = Infinity;
 
@@ -80,7 +86,11 @@ export function useScrollOrganizers({
       const rect = el.getBoundingClientRect();
       const mid = rect.top + rect.height / 2;
       const dist = Math.abs(mid - centerY);
-      if (dist < bestDist && rect.top < window.innerHeight * 0.85 && rect.bottom > window.innerHeight * 0.1) {
+      if (
+        dist < bestDist &&
+        rect.top < window.innerHeight * 0.85 &&
+        rect.bottom > window.innerHeight * 0.1
+      ) {
         bestDist = dist;
         focusedStep = el;
       }
@@ -112,7 +122,8 @@ export function useScrollOrganizers({
         phaseHint = phaseHintFor(meta, stepNum);
       }
     } else {
-      const skillBlocks = document.querySelectorAll<HTMLElement>("[data-study-skill]");
+      const skillBlocks =
+        document.querySelectorAll<HTMLElement>("[data-study-skill]");
       skillBlocks.forEach((block) => {
         const rect = block.getBoundingClientRect();
         if (rect.top <= centerY && rect.bottom >= centerY) {
@@ -227,17 +238,17 @@ export function useScrollOrganizers({
 
 export function stepOrganizerAttributes(input: {
   meta: CurriculumSkillMeta;
-  stepNumber: number;
+  step: ChecklistStep;
   stepSegment: StepSegment;
   skillName: string;
 }): Record<string, string> {
   return {
     "data-organizer-step": "true",
-    "data-phase-word": getPhaseWordForStep(input.meta, input.stepNumber),
+    "data-phase-word": resolveStepPhaseWord(input.step, input.meta),
     "data-skill-slug": input.meta.slug,
     "data-skill-name": input.skillName,
     "data-template-id": input.meta.template,
-    "data-step-number": String(input.stepNumber),
+    "data-step-number": String(input.step.id),
     "data-step-segment": input.stepSegment,
   };
 }

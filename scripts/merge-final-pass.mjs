@@ -46,6 +46,31 @@ export function mapStagingStepToChecklist(stagingStep) {
     out.boilerplateId = bpId;
   }
 
+  const detailedText = stagingStep.detailedTagText?.trim();
+  if (detailedText) {
+    out.detailedText = detailedText;
+  }
+
+  const tagCategory = stagingStep.tagCategory?.trim();
+  if (tagCategory) {
+    out.tagCategory = tagCategory;
+  }
+
+  const criticalCategory = stagingStep.criticalCategory?.trim();
+  if (criticalCategory) {
+    out.criticalCategory = criticalCategory;
+  }
+
+  const examScorecard = stagingStep.examScorecard?.trim();
+  if (examScorecard) {
+    out.examScorecard = examScorecard;
+  }
+
+  const phaseWord = stagingStep.phaseWord?.trim();
+  if (phaseWord) {
+    out.phaseWord = phaseWord;
+  }
+
   return out;
 }
 

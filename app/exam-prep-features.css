@@ -65,6 +65,34 @@
   background: var(--panel);
 }
 
+/* ── Per-skill student focus (from master DB via sync) ── */
+.student-focus-banner {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  background: #fffbeb;
+}
+
+.student-focus-banner__label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.student-focus-banner__text {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--primary);
+}
+
 /* ── Index progress + toolbar ── */
 .index-progress-overview {
   margin-bottom: 1rem;
@@ -511,6 +539,36 @@
   .site-shell {
     padding-left: 0.875rem;
     padding-right: 0.875rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .skill-page-meta {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .skill-nav-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .skill-nav-link {
+    max-width: none;
+  }
+
+  .skill-nav-next {
+    text-align: left;
+  }
+
+  .skill-checklist.skill-checklist--segment-badges .skill-step-segment-col {
+    flex: 0 0 2.75rem;
+  }
+
+  .skill-checklist.skill-checklist--segment-badges .skill-step-substeps,
+  .skill-checklist.skill-checklist--segment-badges .skill-step-official-wording,
+  .skill-checklist.skill-checklist--segment-badges .skill-checklist-note {
+    margin-left: calc(1.25rem + 0.5rem + 2.75rem + 0.35rem);
   }
 }
 

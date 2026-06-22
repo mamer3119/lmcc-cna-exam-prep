@@ -2,6 +2,8 @@
 @import "./exam-prep-features.css";
 @import "./phase-organizer.css";
 
+@import "./learn-mode.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

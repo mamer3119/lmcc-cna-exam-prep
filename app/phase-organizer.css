@@ -483,18 +483,27 @@
 
 @media (min-width: 640px) {
   .exam-numbers-summary__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 .exam-numbers-summary__row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 0.75rem 1.25rem;
-  align-items: baseline;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.4rem;
   padding: 0.9rem 1.35rem;
   border-top: 1px solid var(--rule);
   margin: 0;
+  min-width: 0;
+}
+
+@media (max-width: 639px) {
+  .exam-numbers-summary__header,
+  .exam-numbers-summary__row {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 @media (min-width: 640px) {
@@ -541,13 +550,14 @@
 .exam-numbers-summary__value {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   color: var(--primary-accent);
-  line-height: 1.25;
-  text-align: right;
-  white-space: nowrap;
+  line-height: 1.35;
+  text-align: left;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 /* ── Study page chrome ── */
@@ -713,6 +723,65 @@
 
   .verb-spine-rail__count {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .study-organizer-hud {
+    display: none;
+  }
+
+  .study-page-shell {
+    padding-top: 3.25rem;
+  }
+
+  .study-module-section {
+    scroll-margin-top: 3.5rem;
+  }
+
+  .study-skill-block {
+    scroll-margin-top: 3.75rem;
+  }
+
+  .study-page-header {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .study-state-bar {
+    justify-content: flex-start;
+    gap: 0.75rem 1rem;
+  }
+
+  .study-skill-head {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .study-skill-head__title-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .study-mastered-btn {
+    align-self: flex-start;
+  }
+
+  .study-skill-block .skill-checklist {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .study-skill-block .skill-checklist-toolbar {
+    justify-content: stretch;
+  }
+
+  .study-skill-block .skill-checklist-reset {
+    width: 100%;
+    text-align: center;
   }
 }
 

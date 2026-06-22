@@ -1,0 +1,640 @@
+/* M2 Learn Mode — design tokens + step anatomy (spec §2–3) */
+
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --surface-sunken: #f4f3ee;
+  --border: #e5e3dc;
+  --text: #1a1a17;
+  --text-muted: #6b6862;
+  --text-faint: #9c988f;
+
+  --phase-protect: #b4452f;
+  --phase-observe: #2f6fb4;
+  --phase-move: #2f8f6b;
+  --phase-restore: #7a5cb4;
+  --phase-clean: #2fa3b4;
+  --phase-feed: #c08a2f;
+  --phase-eliminate: #b42f7a;
+
+  --critical: #c2371f;
+  --critical-bg: #fbeeec;
+  --core: #2f6fb4;
+  --success: #2f8f6b;
+  --success-bg: #ecf6f1;
+  --error: #c2371f;
+  --mastered: #1e7a52;
+
+  --radius-card: 14px;
+  --radius-chip: 999px;
+  --radius-btn: 10px;
+}
+
+.card-shadow {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Phase section labels (OPENING / CORE / CLOSING) ── */
+.learn-segment-heading {
+  list-style: none;
+  margin: 1rem 0 0.5rem;
+  padding: 0;
+}
+
+.learn-segment-heading__label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.learn-segment-heading--open .learn-segment-heading__label {
+  color: var(--text-muted);
+}
+
+.learn-segment-heading--core {
+  margin-top: 1.25rem;
+  padding: 0.5rem 0 0.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.learn-segment-heading--core .learn-segment-heading__label {
+  color: var(--core);
+}
+
+.learn-segment-heading--close .learn-segment-heading__label {
+  color: var(--text-muted);
+}
+
+/* ── Critical step (spec .step-critical) ── */
+.skill-checklist--learn-polish .step-critical {
+  display: block;
+  background: var(--critical-bg);
+  border-left: 3px solid var(--critical);
+  border-radius: 0 8px 8px 0;
+  padding: 0.35rem 0.5rem 0.35rem 0.65rem;
+  margin-left: -0.35rem;
+}
+
+.skill-checklist--learn-polish .skill-step--critical {
+  background: var(--critical-bg);
+  border-left: 3px solid var(--critical);
+  border-radius: 0 8px 8px 0;
+  padding-left: 0.5rem;
+}
+
+/* ── failRule chip ── */
+.step-fail-rule-chip {
+  display: inline-block;
+  margin-top: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text-muted);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+/* ── Coaching note ── */
+.step-coaching-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin: 0.35rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--text-muted);
+}
+
+.step-coach-tag {
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 0.05rem 0.35rem;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  background: var(--surface-sunken);
+  border-radius: 3px;
+}
+
+/* ── Exam authority badge ── */
+.exam-authority-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.35rem;
+  padding: 0.15rem 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  border-radius: 4px;
+}
+
+.exam-authority-badge--gwc {
+  color: #fff;
+  background: var(--core);
+}
+
+.exam-authority-badge--credentia {
+  color: var(--core);
+  background: transparent;
+  border: 1px solid var(--core);
+}
+
+/* ── Hand hygiene embed chip ── */
+.skill-hh-embed {
+  list-style: none;
+}
+
+.skill-hh-embed__row {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.skill-hh-embed__label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  min-height: 44px;
+  width: 100%;
+}
+
+.skill-hh-embed__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-chip);
+}
+
+.skill-hh-embed__link {
+  color: var(--core);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skill-hh-embed__link:hover {
+  text-decoration: underline;
+}
+
+.skill-hh-embed__icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* ── Student focus — sunken surface (M2) ── */
+.student-focus-banner {
+  background: var(--surface-sunken) !important;
+  border-left-color: var(--phase-feed);
+  border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+
+@media print {
+  .learn-segment-heading,
+  .step-fail-rule-chip,
+  .step-coaching-note,
+  .exam-authority-badge,
+  .skill-hh-embed,
+  .skill-practice-toggle,
+  .sequence-drill {
+    display: none !important;
+  }
+}
+
+/* ── M3 Learn / Test Yourself toggle ── */
+.skill-practice-toggle {
+  display: flex;
+  gap: 0.25rem;
+  margin: 0 0 1rem;
+  padding: 0.25rem;
+  border-radius: var(--radius-btn);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+}
+
+.skill-practice-toggle__btn {
+  flex: 1;
+  position: relative;
+  min-height: 44px;
+  border: none;
+  border-radius: calc(var(--radius-btn) - 2px);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.skill-practice-toggle__btn--active {
+  background: var(--surface);
+  color: var(--core);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* ── M3 Sequence drill ── */
+.sequence-drill {
+  margin-bottom: 1.5rem;
+}
+
+.sequence-drill-title {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+  color: var(--text);
+}
+
+.sequence-drill-lead {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.sequence-drill-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sequence-drill-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  background: var(--surface);
+}
+
+.sequence-drill-row--dragging {
+  scale: 1.02;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 1;
+}
+
+.sequence-drill-row--correct {
+  background: var(--success-bg);
+  border-color: var(--success);
+}
+
+.sequence-drill-row--misplaced {
+  background: #fef2f2;
+  border-color: var(--error);
+}
+
+.sequence-drill-row--critical-misplaced {
+  border-left: 3px solid var(--critical);
+}
+
+.sequence-drill-row--locked {
+  opacity: 0.85;
+}
+
+.sequence-drill-handle {
+  flex-shrink: 0;
+  min-width: 44px;
+  min-height: 44px;
+  border: none;
+  background: var(--surface-sunken);
+  border-radius: 6px;
+  cursor: grab;
+  font-size: 1.125rem;
+  line-height: 1;
+  color: var(--text-muted);
+}
+
+.sequence-drill-handle:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.sequence-drill-row__body {
+  flex: 1;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.sequence-drill-row__num {
+  font-weight: 600;
+  color: var(--text-faint);
+}
+
+.sequence-drill-row__ok {
+  color: var(--success);
+  font-weight: 700;
+}
+
+.sequence-drill-row__critical-note {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  color: var(--critical);
+}
+
+.sequence-drill-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.sequence-drill-btn {
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--core);
+  background: var(--core);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.sequence-drill-btn--secondary {
+  background: var(--surface);
+  color: var(--core);
+}
+
+.sequence-drill-result {
+  margin: 0.75rem 0 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* ── M4 drill type picker ── */
+.drill-type-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 1rem;
+}
+
+.drill-type-picker__btn {
+  min-height: 40px;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  background: var(--surface);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.drill-type-picker__btn--active {
+  border-color: var(--core);
+  color: var(--core);
+  background: color-mix(in srgb, var(--core) 8%, var(--surface));
+}
+
+.drill-type-picker__btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.skill-drill-panel {
+  margin-bottom: 1.5rem;
+}
+
+/* ── M4 Tolerance drill ── */
+.tolerance-drill {
+  margin-bottom: 1.5rem;
+}
+
+.tolerance-card {
+  perspective: 800px;
+  margin-bottom: 1rem;
+}
+
+.tolerance-card__inner {
+  position: relative;
+  min-height: 220px;
+}
+
+.tolerance-card__front,
+.tolerance-card__back {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+  backface-visibility: hidden;
+}
+
+.tolerance-card__back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+.tolerance-card--correct .tolerance-card__back {
+  background: var(--success-bg);
+  border-color: var(--success);
+}
+
+.tolerance-card--wrong .tolerance-card__back {
+  background: #fef2f2;
+  border-color: var(--error);
+}
+
+.tolerance-card__step {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tolerance-card__prompt {
+  margin: 0 0 1rem;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.tolerance-card__options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tolerance-card__option {
+  width: 100%;
+  min-height: 44px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  background: var(--surface-sunken);
+  text-align: left;
+  font-size: 0.9375rem;
+  cursor: pointer;
+}
+
+.tolerance-card__option:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.tolerance-card__result {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.tolerance-card__official {
+  margin: 0 0 0.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.tolerance-card__why {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--critical);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tolerance-card__inner {
+    transform: none !important;
+  }
+
+  .tolerance-card:not(.tolerance-card--flipped) .tolerance-card__back {
+    display: none;
+  }
+
+  .tolerance-card--flipped .tolerance-card__front {
+    display: none;
+  }
+
+  .tolerance-card--flipped .tolerance-card__back {
+    position: static;
+    transform: none;
+  }
+}
+
+/* ── M4 Free recall drill ── */
+.recall-drill {
+  margin-bottom: 1.5rem;
+}
+
+.recall-card {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+
+.recall-card__cue {
+  margin: 0 0 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.recall-card__answer {
+  margin: 0 0 1rem;
+  padding: 0.75rem;
+  border-radius: var(--radius-btn);
+  background: var(--surface-sunken);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+}
+
+.recall-card__reveal {
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--core);
+  border-radius: var(--radius-btn);
+  background: var(--surface);
+  color: var(--core);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.recall-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.recall-card__btn {
+  min-height: 44px;
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-btn);
+  border: 1px solid var(--border);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.recall-card__btn--got {
+  background: var(--success-bg);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.recall-card__btn--missed {
+  background: #fef2f2;
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.recall-drill-tray {
+  position: sticky;
+  bottom: 0;
+  margin-top: 1rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--error);
+  border-radius: var(--radius-btn);
+  background: #fef2f2;
+}
+
+.recall-drill-tray__label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--error);
+}
+
+.recall-drill__missed-list {
+  margin: 0.75rem 0;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.45;
+}

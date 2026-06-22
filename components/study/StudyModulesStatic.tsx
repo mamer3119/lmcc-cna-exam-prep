@@ -1,4 +1,5 @@
 import TemplateChip, { TemplateTeachingNote } from "@/components/TemplateChip";
+import { StudentFocusBanner } from "@/components/StudentFocusBanner";
 import {
   StudySkillChecklist,
   StudySkillDivergence,
@@ -92,6 +93,9 @@ export default function StudyModulesStatic({
                   <StudySkillMasteredButton meta={meta} />
                 </div>
                 <TemplateTeachingNote templateId={meta.template} />
+                {skill.studentFocus ?
+                  <StudentFocusBanner focus={skill.studentFocus} />
+                : null}
                 <StudySkillChecklist skill={skill} meta={meta} />
               </article>
             );

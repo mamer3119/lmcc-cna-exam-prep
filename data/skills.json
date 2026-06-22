@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T09:01:19.729Z",
+  "generatedAt": "2026-06-22T16:27:08.171Z",
   "pathwayTagline": "Protect → observe → move → restore → clean → feed → eliminate",
   "sections": [
     {
@@ -52,23 +52,35 @@
           "id": 1,
           "text": "Introduce and identify the patient",
           "segment": "open",
-          "boilerplateId": "INTRO_IDENTIFY"
+          "boilerplateId": "INTRO_IDENTIFY",
+          "detailedText": "Introduce yourself and identify the patient.",
+          "tagCategory": "Opening",
+          "phaseWord": "Identify"
         },
         {
           "id": 2,
           "text": "Turn on warm water",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Turn on the water and adjust the flow so that the water is warm.",
+          "tagCategory": "Core",
+          "phaseWord": "Wash"
         },
         {
           "id": 3,
           "text": "Wet hands below elbows",
           "segment": "core",
-          "note": "Avoid splashing on uniform; keep forearms and wrists lower than elbows."
+          "note": "Avoid splashing on uniform; keep forearms and wrists lower than elbows.",
+          "detailedText": "Wet hands thoroughly, keeping hands and forearms lower than elbows. Avoid splashing water on uniform.",
+          "tagCategory": "Core",
+          "phaseWord": "Wash"
         },
         {
           "id": 4,
           "text": "Apply palm-sized soap",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Apply a palm-sized amount of hand soap.",
+          "tagCategory": "Core",
+          "phaseWord": "Wash"
         },
         {
           "id": 5,
@@ -82,13 +94,22 @@
             "Rub fingertips against palm of opposite hand",
             "Rub wrists",
             "Repeat sequence at least two times"
-          ]
+          ],
+          "detailedText": "Perform hand hygiene using plenty of lather and friction for at least 20 seconds.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Lather all surfaces ≥20 sec; repeat full sequence ≥2×",
+          "phaseWord": "Wash"
         },
         {
           "id": 6,
           "text": "Keep fingertips pointing down",
           "segment": "core",
-          "note": "Credentia absorbs this into Steps 5 & 7 — GWC scores it as a standalone observable action. Students must demonstrate it explicitly."
+          "note": "Credentia absorbs this into Steps 5 & 7 — GWC scores it as a standalone observable action. Students must demonstrate it explicitly.",
+          "detailedText": "Keep fingertips pointing downward throughout the entire handwashing process.",
+          "tagCategory": "Core",
+          "criticalCategory": "hand-hygiene",
+          "examScorecard": "Technique: Fingertips down throughout entire wash",
+          "phaseWord": "Wash"
         },
         {
           "id": 7,
@@ -96,30 +117,51 @@
           "segment": "core",
           "subSteps": [
             "Rub fingertips against palm of opposite hand"
-          ]
+          ],
+          "detailedText": "Clean under fingernails.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Clean under all fingernails",
+          "phaseWord": "Wash"
         },
         {
           "id": 8,
           "text": "Rinse fingertips pointing down",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse hands with water, keeping fingertips pointing down so water runs off fingertips. Do not shake water from your hands.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Rinse fingertips-down; do not shake water from hands",
+          "phaseWord": "Wash"
         },
         {
           "id": 9,
           "text": "Dry fingertips-to-wrists; dispose towel",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dry hands thoroughly from fingers to wrists with a paper towel or air dryer. Dispose of the paper towel(s).",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Dry fingertip-to-wrist; use paper towel or air dryer",
+          "phaseWord": "Wash"
         },
         {
           "id": 10,
           "text": "Turn off water with towel",
           "segment": "core",
-          "note": "GWC: paper towel only. Credentia also allows knee/foot control — GWC governs on exam."
+          "note": "GWC: paper towel only. Credentia also allows knee/foot control — GWC governs on exam.",
+          "detailedText": "Use a new paper towel to turn off the water. Dispose of the paper towel.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Turn off faucet with clean paper towel; dispose immediately",
+          "phaseWord": "Finish"
         },
         {
           "id": 11,
           "text": "Never lean on or touch sink",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Do not lean against the sink or touch the inside of the sink during the handwashing process.",
+          "tagCategory": "Core",
+          "examScorecard": "Safety: No contact with sink at any time (lean or touch)",
+          "phaseWord": "Finish"
         }
-      ]
+      ],
+      "studentFocus": "First skill on many CA exam lists; required before all patient contact."
     },
     {
       "slug": "ppe-gown-gloves",
@@ -140,45 +182,72 @@
         {
           "id": 1,
           "text": "Face gown's back opening",
-          "segment": "open"
+          "segment": "open",
+          "detailedText": "Face the back opening of the gown.",
+          "tagCategory": "Opening",
+          "phaseWord": "Don"
         },
         {
           "id": 2,
           "text": "Unfold the gown",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Unfold the gown.",
+          "tagCategory": "Core",
+          "phaseWord": "Don"
         },
         {
           "id": 3,
           "text": "Put arms into sleeves",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Put arms into the sleeves.",
+          "tagCategory": "Core",
+          "phaseWord": "Don"
         },
         {
           "id": 4,
           "text": "Secure neck ties at back",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Secure the neck opening at the back of neck.",
+          "tagCategory": "Core",
+          "phaseWord": "Don"
         },
         {
           "id": 5,
           "text": "Secure waist; cover back fully",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Secure the waist, making sure that the back flaps overlap each other and cover clothing as completely as possible.",
+          "tagCategory": "Core",
+          "phaseWord": "Don"
         },
         {
           "id": 6,
           "text": "Don clean gloves",
           "segment": "core",
           "note": "Use clean, non-sterile gloves for isolation care.",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Don"
         },
         {
           "id": 7,
           "text": "Overlap gloves over gown cuffs",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Ensure the gloves overlap the gown sleeves at the wrist.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Gloves overlap gown cuffs at wrist",
+          "phaseWord": "Don"
         },
         {
           "id": 8,
           "text": "Remove gloves before the gown",
           "segment": "core",
-          "note": "Sequence matters: gloves off before gown, before leaving the room — evaluator watches for this order."
+          "note": "Sequence matters: gloves off before gown, before leaving the room — evaluator watches for this order.",
+          "detailedText": "When the care is complete and before leaving the room, remove the gloves BEFORE removing the gown.",
+          "tagCategory": "Core",
+          "criticalCategory": "hand-hygiene",
+          "examScorecard": "Safety: Remove gloves BEFORE gown; BEFORE leaving room",
+          "phaseWord": "Doff"
         },
         {
           "id": 9,
@@ -188,29 +257,50 @@
             "Grasp outside of first glove at palm; peel off",
             "Slide fingers of bare hand under cuff of remaining glove at wrist; peel off turning inside out"
           ],
-          "boilerplateId": "GLOVE_REMOVE"
+          "boilerplateId": "GLOVE_REMOVE",
+          "detailedText": "Remove the gloves, turning them inside out.",
+          "tagCategory": "Key Procedure",
+          "examScorecard": "Technique: Both gloves removed inside out",
+          "phaseWord": "Doff"
         },
         {
           "id": 10,
           "text": "Dispose gloves in waste container",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dispose of the gloves in the appropriate container.",
+          "tagCategory": "Core",
+          "examScorecard": "Safety: Dispose without touching outer glove surface",
+          "phaseWord": "Doff"
         },
         {
           "id": 11,
           "text": "Perform hand hygiene now",
           "segment": "core",
           "note": "⚠️ VIDEO WARNING: This step is missing from the reference video — video performs hand hygiene only after gown disposal. GWC requires it HERE, between glove removal and gown unfastening.",
-          "boilerplateId": "HAND_HYGIENE|VIDEO_WARNING"
+          "boilerplateId": "HAND_HYGIENE|VIDEO_WARNING",
+          "detailedText": "Perform hand hygiene.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "examScorecard": "Safety: Hand hygiene between gloves-off and gown-off",
+          "phaseWord": "Doff"
         },
         {
           "id": 12,
           "text": "Unfasten gown at neck",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Unfasten the gown at the neck.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Unfasten neck before removing gown",
+          "phaseWord": "Doff"
         },
         {
           "id": 13,
           "text": "Unfasten gown at waist",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Unfasten the gown at the waist.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Unfasten waist separately from neck",
+          "phaseWord": "Doff"
         },
         {
           "id": 14,
@@ -221,20 +311,33 @@
             "Turn inside out as you remove",
             "Fold soiled area to soiled area",
             "Hold away from body; do not touch floor"
-          ]
+          ],
+          "detailedText": "Remove the gown starting at the top of the shoulders, turning it inside out and folding the soiled area to soiled area.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Remove from shoulders; inside out; soiled-to-soiled",
+          "phaseWord": "Doff"
         },
         {
           "id": 15,
           "text": "Dispose gown in waste container",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dispose of the gown in an appropriate container.",
+          "tagCategory": "Core",
+          "examScorecard": "Safety: Dispose without contaminating self",
+          "phaseWord": "Doff"
         },
         {
           "id": 16,
           "text": "Perform final hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene.",
+          "tagCategory": "Closing",
+          "examScorecard": "Safety: Final hand hygiene after full PPE removal",
+          "phaseWord": "Doff"
         }
-      ]
+      ],
+      "studentFocus": "Isolation skill — no patient intro; gloves off before gown at exit."
     },
     {
       "slug": "radial-pulse-60-seconds",
@@ -256,38 +359,60 @@
           "id": 1,
           "text": "Introduce and explain",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title; explain the procedure clearly, slowly, and directly, maintaining face-to-face contact.",
+          "tagCategory": "Opening",
+          "phaseWord": "Introduce"
         },
         {
           "id": 2,
           "text": "Locate radial pulse",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place the tips of three fingers on the thumb side of the patient's wrist.",
+          "tagCategory": "Core",
+          "phaseWord": "Count"
         },
         {
           "id": 3,
           "text": "Count pulse 60 seconds",
           "segment": "core",
-          "note": "Start on a whole number on the watch, then count"
+          "note": "Start on a whole number on the watch, then count",
+          "detailedText": "Count beats for a full 60 seconds.",
+          "tagCategory": "Core",
+          "phaseWord": "Count"
         },
         {
           "id": 4,
           "text": "Call light within reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach and confirm the patient can use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Record"
         },
         {
           "id": 5,
           "text": "Wash hands",
           "segment": "close",
           "note": "Wash before documenting",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene (20 sec soap and water, or alcohol rub if hands not visibly soiled).",
+          "tagCategory": "Closing",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Record"
         },
         {
           "id": 6,
           "text": "Document the rate",
-          "segment": "close"
+          "segment": "close",
+          "detailedText": "Record the pulse rate accurately.",
+          "tagCategory": "Closing",
+          "examScorecard": "Tolerance: ±4 beats/min vs evaluator",
+          "phaseWord": "Record"
         }
-      ]
+      ],
+      "studentFocus": "Full 60 seconds at radial artery; document ±4."
     },
     {
       "slug": "respirations-60-seconds",
@@ -310,33 +435,52 @@
           "text": "Introduce and explain",
           "segment": "open",
           "note": "Say \"for testing purposes.\" In real practice, never tell the patient you're counting respirations — it changes the rate.",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title; explain the procedure clearly, slowly, and directly, maintaining face-to-face contact.",
+          "tagCategory": "Opening",
+          "phaseWord": "Introduce"
         },
         {
           "id": 2,
           "text": "Count respirations 60 seconds",
           "segment": "core",
-          "note": "Start on a whole number on the watch, then count."
+          "note": "Start on a whole number on the watch, then count.",
+          "detailedText": "Observe the rise and fall of the chest for a full 60 seconds.",
+          "tagCategory": "Core",
+          "phaseWord": "Count"
         },
         {
           "id": 3,
           "text": "Call light within reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach and confirm the patient can use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Record"
         },
         {
           "id": 4,
           "text": "Wash hands",
           "segment": "close",
           "note": "Wash before documenting.",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene (20 sec soap and water, or alcohol rub if hands not visibly soiled).",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Record"
         },
         {
           "id": 5,
           "text": "Document the rate",
-          "segment": "close"
+          "segment": "close",
+          "detailedText": "Record the respiratory rate accurately.",
+          "tagCategory": "Closing",
+          "examScorecard": "Tolerance: ±4 breaths/min vs evaluator",
+          "phaseWord": "Record"
         }
-      ]
+      ],
+      "studentFocus": "Do not tell the patient you are counting respirations."
     },
     {
       "slug": "manual-blood-pressure",
@@ -358,80 +502,129 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Prepare"
         },
         {
           "id": 2,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Prepare"
         },
         {
           "id": 3,
           "text": "Cleanse stethoscope and cuff",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Cleanse the stethoscope and blood pressure cuff prior to placing it on the patient's skin.",
+          "tagCategory": "Core",
+          "phaseWord": "Prepare"
         },
         {
           "id": 4,
           "text": "Position patient; arm at heart level",
           "segment": "core",
-          "note": "Ask which arm the patient prefers."
+          "note": "Ask which arm the patient prefers.",
+          "detailedText": "Place the patient in a relaxed reclining or sitting position. The patient should be seated quietly for at least five minutes in a chair prior to blood pressure measurement. Ask the patient which arm they prefer to use. Both feet should be on the floor and the arm should be supported at heart level.",
+          "tagCategory": "Core",
+          "phaseWord": "Prepare"
         },
         {
           "id": 5,
           "text": "Bare skin under cuff",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Remove or rearrange clothing so the cuff and the stethoscope are on bare skin.",
+          "tagCategory": "Core",
+          "phaseWord": "Measure"
         },
         {
           "id": 6,
           "text": "Center cuff over brachial artery",
           "segment": "core",
-          "note": "Lower cuff margin sits 1″ above the elbow bend."
+          "note": "Lower cuff margin sits 1″ above the elbow bend.",
+          "detailedText": "Center the bladder of the blood pressure cuff over the brachial artery with the lower margin 1″ above the antecubital space. Fit the cuff evenly and snugly. Palpate the brachial artery in the antecubital space.",
+          "tagCategory": "Core",
+          "phaseWord": "Measure"
         },
         {
           "id": 7,
           "text": "Inflate cuff 160–180 mmHg",
           "segment": "core",
-          "note": "If a beat is heard immediately on deflation, fully deflate, wait 1 min, reinflate to no more than 200."
+          "note": "If a beat is heard immediately on deflation, fully deflate, wait 1 min, reinflate to no more than 200.",
+          "detailedText": "Inflate the cuff to 160-180 mmHg.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Inflate cuff 160–180 mmHg",
+          "phaseWord": "Measure"
         },
         {
           "id": 8,
           "text": "Deflate slowly; note systolic",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Deflate the cuff gradually at a constant rate by opening the valve on the bulb (2-3 mm Hg/second) until the first Korotkoff sound is heard. Note the systolic pressure.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Deflate rate 2–3 mm Hg/second (systolic)",
+          "phaseWord": "Measure"
         },
         {
           "id": 9,
           "text": "Continue deflating; note diastolic",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Continue to deflate the cuff slowly at 2 mm Hg/second. Note the point at which Korotkoff sounds disappear completely as the diastolic pressure.",
+          "tagCategory": "Core",
+          "examScorecard": "Technique: Deflate rate 2 mm Hg/second (diastolic)",
+          "phaseWord": "Measure"
         },
         {
           "id": 10,
           "text": "Deflate fully; remove cuff",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Deflate the cuff completely and remove the cuff from the patient's arm.",
+          "tagCategory": "Core",
+          "phaseWord": "Measure"
         },
         {
           "id": 11,
           "text": "Tell patient the reading",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Inform the patient of the blood pressure reading.",
+          "tagCategory": "Core",
+          "phaseWord": "Measure"
         },
         {
           "id": 12,
           "text": "Cleanse stethoscope and cuff",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Cleanse the stethoscope and blood pressure cuff.",
+          "tagCategory": "Core",
+          "phaseWord": "Record"
         },
         {
           "id": 13,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Record"
         },
         {
           "id": 14,
           "text": "Document BP within ±8 mmHg",
           "segment": "close",
-          "note": "Both numbers must each be within ±8 mmHg."
+          "note": "Both numbers must each be within ±8 mmHg.",
+          "detailedText": "Document both systolic and diastolic pressures each within plus or minus 8 mmHg of the evaluator's reading.",
+          "tagCategory": "Closing",
+          "examScorecard": "Exam tolerance: Document BP ±8 mmHg (systolic AND diastolic)",
+          "phaseWord": "Record"
         }
-      ]
+      ],
+      "studentFocus": "Cuff on bare skin; cleanse equipment; document ±8 mmHg."
     },
     {
       "slug": "weight-ambulatory-client",
@@ -453,73 +646,116 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Prepare"
         },
         {
           "id": 2,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Prepare"
         },
         {
           "id": 3,
           "text": "Verify nonskid footwear on patient",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Verify the patient is wearing nonskid footwear.",
+          "tagCategory": "Core",
+          "phaseWord": "Prepare"
         },
         {
           "id": 4,
           "text": "Balance (zero) the scale",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Balance (or zero) scale.",
+          "tagCategory": "Core",
+          "phaseWord": "Prepare"
         },
         {
           "id": 5,
           "text": "Walk patient to the scale",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Walk the patient to the scale.",
+          "tagCategory": "Core",
+          "phaseWord": "Weigh"
         },
         {
           "id": 6,
           "text": "Assist patient onto the scale",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist the patient to step on the scale.",
+          "tagCategory": "Core",
+          "phaseWord": "Weigh"
         },
         {
           "id": 7,
           "text": "Check patient centered on scale",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Check that the patient is centered on the scale.",
+          "tagCategory": "Core",
+          "phaseWord": "Weigh"
         },
         {
           "id": 8,
           "text": "Check arms at patient's side",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Check that the patient has their arms at their side.",
+          "tagCategory": "Core",
+          "phaseWord": "Weigh"
         },
         {
           "id": 9,
           "text": "Ensure patient holds nothing extra",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Ensure the patient is not holding on to anything that would alter the reading of the weight.",
+          "tagCategory": "Core",
+          "phaseWord": "Weigh"
         },
         {
           "id": 10,
           "text": "Adjust weights; balance the scale",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Adjust the weights until the scale is in balance or read analog scale.",
+          "tagCategory": "Core",
+          "phaseWord": "Weigh"
         },
         {
           "id": 11,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Closing",
+          "phaseWord": "Record"
         },
         {
           "id": 12,
           "text": "Document weight within ±2 lb",
           "segment": "close",
-          "note": "Tolerance: record weight within ±2 lb / 0.9 kg of actual."
+          "note": "Tolerance: record weight within ±2 lb / 0.9 kg of actual.",
+          "detailedText": "Document weight (plus/minus 2 lbs. or 0.9 kg).",
+          "tagCategory": "Closing",
+          "examScorecard": "Exam tolerance: Document weight ±2 lb / 0.9 kg",
+          "phaseWord": "Record"
         },
         {
           "id": 13,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Record"
         }
-      ]
+      ],
+      "studentFocus": "Zero scale; nonskid footwear; document ±2 lbs."
     },
     {
       "slug": "urinary-output-measurement",
@@ -541,64 +777,101 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Prepare"
         },
         {
           "id": 2,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Prepare"
         },
         {
           "id": 3,
           "text": "Don clean gloves",
           "segment": "core",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Prepare"
         },
         {
           "id": 4,
           "text": "Pour bedpan liquid into container",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Pour the liquid in the bedpan into a measuring container.",
+          "tagCategory": "Core",
+          "phaseWord": "Measure"
         },
         {
           "id": 5,
           "text": "Rinse bedpan; empty into toilet",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the bedpan and empty the water into the toilet.",
+          "tagCategory": "Core",
+          "phaseWord": "Measure"
         },
         {
           "id": 6,
           "text": "Measure urine at eye level",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Measure the amount of urine at eye level with the container on a flat surface.",
+          "tagCategory": "Core",
+          "phaseWord": "Measure"
         },
         {
           "id": 7,
           "text": "Empty urine into toilet",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Empty the urine into the toilet.",
+          "tagCategory": "Core",
+          "phaseWord": "Measure"
         },
         {
           "id": 8,
           "text": "Rinse container; empty into toilet",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the measuring container with water and empty it into the toilet.",
+          "tagCategory": "Core",
+          "phaseWord": "Measure"
         },
         {
           "id": 9,
           "text": "Remove gloves inside out",
           "segment": "core",
-          "boilerplateId": "GLOVE_REMOVE"
+          "boilerplateId": "GLOVE_REMOVE",
+          "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out. Dispose of both gloves in the appropriate waste container without touching the outer surface.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Record"
         },
         {
           "id": 10,
           "text": "Record volume ±25 mL",
           "segment": "close",
-          "note": "Tolerance: record urine volume within ±25 mL of actual."
+          "note": "Tolerance: record urine volume within ±25 mL of actual.",
+          "detailedText": "Record the volume within plus or minus 25 mL of the actual volume.",
+          "tagCategory": "Closing",
+          "examScorecard": "Exam tolerance: Record volume ±25 mL",
+          "phaseWord": "Record"
         },
         {
           "id": 11,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Record"
         }
-      ]
+      ],
+      "studentFocus": "Measure in container — not the same as full bedpan skill."
     },
     {
       "slug": "position-on-side",
@@ -620,129 +893,207 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Position bed flat",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Position the bed flat.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 5,
           "text": "Raise bed to working height",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Raise the bed height.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 6,
           "text": "Raise far side rail for safety",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Raise the side rail on the side of the bed the patient will be facing after repositioning for safety.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 7,
           "text": "Move to working side of bed",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Move to the working side of the bed, which is opposite the side rail that was raised.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 8,
           "text": "Explain move toward you on three",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Explain to the patient that the candidate will move them closer to the candidate before turning on the count of three.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 9,
           "text": "Count three; move patient toward you",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "From the working side of the bed count to three and move the patient towards you.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 10,
           "text": "Instruct patient to move near arm",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Instruct the patient to move their arm closest to the raised side rail away from their body. If able, the patient should grasp the side rail with the hand closest to you, reaching across their own body.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 11,
           "text": "Raise patient's near knee to assist",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Raise the patient's knee that is closest to the candidate to assist in turning.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 12,
           "text": "Explain turning toward rail on three",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Explain that the candidate will turn the patient towards the side rail on count three.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 13,
           "text": "Count three; turn toward side rail",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Count to three to turn the patient towards the raised side rail.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 14,
           "text": "Guard face from rail and pillow",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Ensure that the patient's face never comes close to the side rail or becomes covered by the pillow.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 15,
           "text": "Check patient not on bottom arm",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Check that the patient is not lying on their bottom arm.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 16,
           "text": "Place pillow behind patient's back",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place a pillow behind the patient's back, ensuring they will not roll back to the supine position.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 17,
           "text": "Check body alignment from bed end",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Move to the end of the bed and check that the patient is in correct body alignment.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 18,
           "text": "Verify patient centered in bed",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Verify that the patient is in the middle of the bed.",
+          "tagCategory": "Core",
+          "phaseWord": "Position"
         },
         {
           "id": 19,
           "text": "Pillow under top arm; protect ribs",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place a pillow between the patient's top arm and their rib cage or the bed, ensuring the elbow is not directly on their ribs.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 20,
           "text": "Pillow under top knee; protect ankles",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place a pillow under the top knee, ensuring the knee is not resting directly on the other knee or the ankle is not on top of the other ankle.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 21,
           "text": "Adjust head pillow for comfort",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Adjust the pillow under the patient's head for comfort.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 22,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 23,
           "text": "Place call light in reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 24,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Pillows for alignment; face not against side rail."
     },
     {
       "slug": "bed-wheelchair-transfer",
@@ -764,118 +1115,189 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Check bed brakes are locked",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Check the brakes on the bed to ensure they are locked.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 5,
           "text": "Remove wheelchair foot pedals if needed",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Remove the foot pedals from the wheelchair if needed.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 6,
           "text": "Assist patient to sit; dangle feet",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist the patient to a seated position on the side of the bed with their feet on the floor; allow them to dangle their feet for a few minutes.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 7,
           "text": "Apply nonskid footwear to patient",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist the patient in putting on nonskid footwear.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 8,
           "text": "Apply gait belt to patient",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place the gait belt on the patient.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 9,
           "text": "Position wheelchair; strong side toward it",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Position the wheelchair at the head or foot of the bed so the patient will move towards the wheelchair with the stronger side of their body. The wheelchair should touch the side of the bed.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 10,
           "text": "Lock wheelchair brakes",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Lock the brakes on the wheelchair.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 11,
           "text": "Ask if patient feels dizzy",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Ask the patient if they feel dizzy or light-headed.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 12,
           "text": "Block patient's feet with yours",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Face the patient and place each of feet in front of the patient's feet to prevent them from slipping.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 13,
           "text": "Patient pushes up on three",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Instruct the patient to push up on the bed to aid in standing on the count of three.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 14,
           "text": "Grasp gait belt; palms up",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Grasp the gait belt with both hands, with palms and fingertips pointing up.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 15,
           "text": "Count three; assist patient to stand",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Count to three and assist the patient to stand.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 16,
           "text": "Assist patient to pivot",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist the patient to pivot.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 17,
           "text": "Instruct patient to grasp wheelchair arms",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Instruct the patient to grasp the arms of the wheelchair when they can feel the back of their knees are in contact with the wheelchair seat.",
+          "tagCategory": "Core",
+          "phaseWord": "Transfer"
         },
         {
           "id": 18,
           "text": "Assist patient to seated in wheelchair",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist the patient to a seated position in the wheelchair.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 19,
           "text": "Remove gait belt gently",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Remove the gait belt gently to avoid skin injury.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 20,
           "text": "Release wheelchair brakes",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Release the wheelchair brakes.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 21,
           "text": "Place call light in reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 22,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Lock bed and wheelchair brakes; ask dizzy; pivot."
     },
     {
       "slug": "ambulate-transfer-belt",
@@ -897,98 +1319,157 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for patient privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Place nonskid footwear on patient",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place nonskid footwear on the patient.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 5,
           "text": "Adjust bed to safe level",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Adjust the bed to a safe level.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 6,
           "text": "Check bed brakes are locked",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Check the brakes of the bed to ensure they are locked.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 7,
           "text": "Dangle patient on bed edge",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Allow the patient to sit and dangle on the edge of the bed before standing to ambulate.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 8,
           "text": "Ask if dizzy or light-headed",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Ask the patient if they feel dizzy or light-headed.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 9,
           "text": "Apply gait belt; check tightness",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Properly place the gait belt around the patient's waist and check the gait belt for tightness by slipping fingers between the gait belt and the patient.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 10,
           "text": "Face patient; block patient's feet",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Face the patient and place each of the feet in front of the patient's feet to prevent them from slipping.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 11,
           "text": "Instruct patient to push up",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Instruct the patient to push up on the bed on the count of three to assist with standing.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 12,
           "text": "Count three; assist to standing",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Count to three and assist the patient to a standing position.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 13,
           "text": "Move to weak side; hold belt",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Move to the weak side of the patient, slightly behind them. Hold the gait belt with palms and fingertips pointing upwards.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 14,
           "text": "Assist patient in standing position",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist the patient in a standing position.",
+          "tagCategory": "Core",
+          "phaseWord": "Ambulate"
         },
         {
           "id": 15,
           "text": "Walk behind; hold belt 10 ft",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Walk slightly behind the patient for a distance of 10 feet while safely holding the transfer belt.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 16,
           "text": "Assist back to bed; remove belt",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Safely assist the client back to bed and remove the transfer belt.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 17,
           "text": "Call light; bed low and locked",
           "segment": "close",
-          "boilerplateId": "BED_LOW|CALL_LIGHT"
+          "boilerplateId": "BED_LOW|CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient. Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 18,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Nonskid footwear; gait belt; ask about dizziness."
     },
     {
       "slug": "prom-shoulder",
@@ -1010,99 +1491,159 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for patient privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Advise patient to report pain",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Advise patients to report pain during movement.",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 5,
           "text": "Place hand under patient's elbow",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place one hand under the patient's elbow with palm facing up.",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 6,
           "text": "Place hand under patient's wrist",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place the other hand under the patient's wrist with palm facing up.",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 7,
           "text": "Watch for signs of pain",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Watch the patient for objective signs of pain during movement.",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 8,
           "text": "Move arm gently; stop resistance",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Move their arms gently and stop if there is any resistance.",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 9,
           "text": "Raise arm overhead (flexion)",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "While keeping the patient's arm straight, raise their arm up and over their head (i.e., flexion).",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 10,
           "text": "Return arm to side (extension)",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Bring the patient's arm back down to their side (i.e., extension).",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 11,
           "text": "Complete flexion/extension per care plan",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Complete flexion and extension movements of the shoulder according to the order in the restorative care plan.",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 12,
           "text": "Continue supporting elbow and wrist",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Continue to support the elbow and wrist of the patient.",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 13,
           "text": "Move arm away from body (abduction)",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Keeping the patient's arm straight, move their entire arm out away from the body (i.e., abduction).",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 14,
           "text": "Move arm gently; stop resistance",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Move their arms gently and stop if there is any resistance.",
+          "tagCategory": "Core",
+          "phaseWord": "Shoulder"
         },
         {
           "id": 15,
           "text": "Return arm to side (adduction)",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Return the patient's arm to their side (adduction).",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 16,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 17,
           "text": "Place call light in reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 18,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Same pain rules as knee/ankle PROM."
     },
     {
       "slug": "prom-knee-ankle",
@@ -1124,24 +1665,38 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for patient privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Advise patient to report pain",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Advise patients to report pain during movement.",
+          "tagCategory": "Core",
+          "phaseWord": "Lower"
         },
         {
           "id": 5,
@@ -1160,7 +1715,10 @@
             "order in their restorative care plan.",
             "Continue to correctly support joints by keeping one hand under the patient's",
             "knee and the other hand under the patient's ankle."
-          ]
+          ],
+          "detailedText": "Abduction/Adduction for Hip:",
+          "tagCategory": "Core",
+          "phaseWord": "Lower"
         },
         {
           "id": 6,
@@ -1176,27 +1734,43 @@
             "Straighten their knee and hip (i.e., extension of knee and hip at the same time).",
             "Complete flexion and extension movements of the knee and hip according to",
             "the order in the restorative care plan."
-          ]
+          ],
+          "detailedText": "Flexion/Extension of Knee and Hip:",
+          "tagCategory": "Core",
+          "phaseWord": "Lower"
         },
         {
           "id": 7,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 8,
           "text": "Place call light in reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 9,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Stop ROM if patient reports pain."
     },
     {
       "slug": "knee-high-stocking",
@@ -1218,63 +1792,101 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for patient privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Position patient supine; expose leg",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Position the patient in the supine position. Expose only the leg the candidate will be placing the stocking on.",
+          "tagCategory": "Core",
+          "phaseWord": "Apply"
         },
         {
           "id": 5,
           "text": "Turn stocking inside out to heel",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Gather supplies and turn the stocking inside out to the heel.",
+          "tagCategory": "Core",
+          "phaseWord": "Apply"
         },
         {
           "id": 6,
           "text": "Place stocking over toes and heel",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place the stocking over the patient's toes, foot, and heel.",
+          "tagCategory": "Core",
+          "phaseWord": "Apply"
         },
         {
           "id": 7,
           "text": "Pull stocking up the leg",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Gently pull the stocking up their leg.",
+          "tagCategory": "Core",
+          "phaseWord": "Apply"
         },
         {
           "id": 8,
           "text": "Move foot/leg gently; avoid force",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Move foot and leg gently and naturally, avoiding force and over-extension of limb and joints.",
+          "tagCategory": "Core",
+          "phaseWord": "Apply"
         },
         {
           "id": 9,
           "text": "Adjust stocking wrinkle-free to knee",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Adjust stocking; stocking should be wrinkle-free to the knee.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 10,
           "text": "Call light; bed low and locked",
           "segment": "close",
-          "boilerplateId": "BED_LOW|CALL_LIGHT"
+          "boilerplateId": "BED_LOW|CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient. Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 11,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Turn stocking inside out to heel."
     },
     {
       "slug": "modified-bed-bath",
@@ -1296,151 +1908,241 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for patient privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Check water temperature for safety",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Check water temperature for safety.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 5,
           "text": "Fill basin; patient checks temperature",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Fill the basin with warm water and place it on a flat surface with a barrier underneath. Have the patient check the water temperature by placing their hand in the basin or putting a wet washcloth on the back of their hand.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 6,
           "text": "Raise bed to safe level",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Raise the height of the bed to safe level.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 7,
           "text": "Don clean gloves",
           "segment": "core",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Bathe"
         },
         {
           "id": 8,
           "text": "Remove gown; place in hamper",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Remove gown from the patient and place in the designated hamper.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 9,
           "text": "Cover patient with bath blanket",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Cover patient with bath blanket or towel for privacy.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 10,
           "text": "Clean eyes inner to outer",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Beginning with eyes, using a damp washcloth without soap, clean the eyes from inner to outer aspect using different sides of the washcloth.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 11,
           "text": "Wash face without soap",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wash the face using a damp washcloth without soaps using different sides of the washcloth.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 12,
           "text": "Pat dry the face",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Pat dry the face.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 13,
           "text": "Expose arm; place towel underneath",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Proceed to the arm, expose one arm and place a dry towel underneath.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 14,
           "text": "Wet washcloth; apply soap",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Gather wet washcloth and apply soap.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 15,
           "text": "Clean arm and pat dry",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Clean the arm and pat dry.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 16,
           "text": "Wash hands, fingers, fingernails; pat dry",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wash hands, fingers, and fingernails and pat dry.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 17,
           "text": "Wash and dry underarm",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wash and clean underarm with soap and pat dry.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 18,
           "text": "Dispose gown and used linens",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dispose of the gown and used linens into the linen bag or laundry hamper.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 19,
           "text": "Assist patient with clean gown",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist the patient to put on a clean gown.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 20,
           "text": "Empty equipment while wearing gloves",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "While wearing gloves, empty the equipment.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 21,
           "text": "Rinse the equipment",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the equipment.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 22,
           "text": "Dry the basin",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dry the basin.",
+          "tagCategory": "Core",
+          "phaseWord": "Bathe"
         },
         {
           "id": 23,
           "text": "Return equipment to storage",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Return the equipment to storage.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 24,
           "text": "Dispose soiled linen in hamper",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dispose of soiled linen in the designated laundry hamper.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 25,
           "text": "Remove gloves inside out",
           "segment": "core",
-          "boilerplateId": "GLOVE_REMOVE"
+          "boilerplateId": "GLOVE_REMOVE",
+          "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out. Dispose of both gloves in the appropriate waste container without touching the outer surface.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Secure"
         },
         {
           "id": 26,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 27,
           "text": "Place call light in reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 28,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Patient checks water temperature."
     },
     {
       "slug": "mouth-care",
@@ -1462,131 +2164,209 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for patient privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Place all supplies on a barrier",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place all supplies on a barrier.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 5,
           "text": "Don clean gloves",
           "segment": "core",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Mouth"
         },
         {
           "id": 6,
           "text": "Elevate head of bed",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "If the patient is in bed, elevate the head of the bed if it is permissible per the care plan.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 7,
           "text": "Cover chest with towel",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Cover the patient's chest with a towel to keep their clothing or gown clean.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 8,
           "text": "Wet toothbrush in water",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wet the toothbrush in the sink or in a cup of water.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 9,
           "text": "Apply toothpaste to toothbrush",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Apply a small amount of toothpaste to the toothbrush.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 10,
           "text": "Brush all tooth surfaces",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Brush the patient's teeth, including the inner, outer, and chewing surfaces of all upper and lower teeth.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 11,
           "text": "Rinse each quadrant; spit basin",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "After each quadrant of the mouth (i.e., lower right, lower left, upper right, or upper left), allow the patient to rinse with water and spit into an emesis basin.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 12,
           "text": "Clean patient's tongue gently",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Clean the patient's tongue, being careful not to cause the patient to gag.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 13,
           "text": "Assist patient to rinse mouth",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist the patient in rinsing their mouth.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 14,
           "text": "Wipe mouth with towel",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wipe the patient's mouth with the towel on their chest.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 15,
           "text": "Remove towel; place in linen bag",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Remove the towel and place it in a linen bag.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 16,
           "text": "Empty the emesis basin",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Empty the emesis basin.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 17,
           "text": "Rinse the emesis basin",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the emesis basin.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 18,
           "text": "Dry the emesis basin",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dry the emesis basin.",
+          "tagCategory": "Core",
+          "phaseWord": "Mouth"
         },
         {
           "id": 19,
           "text": "Rinse the toothbrush",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the toothbrush.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 20,
           "text": "Remove gloves inside out",
           "segment": "core",
-          "boilerplateId": "GLOVE_REMOVE"
+          "boilerplateId": "GLOVE_REMOVE",
+          "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Secure"
         },
         {
           "id": 21,
           "text": "Dispose gloves in waste container",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dispose of the gloves in an appropriate container.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 22,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 23,
           "text": "Place call light in reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 24,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Barrier under supplies; not a full basin bath."
     },
     {
       "slug": "denture-cleaning",
@@ -1608,103 +2388,163 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Don clean gloves",
           "segment": "core",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Clean"
         },
         {
           "id": 4,
           "text": "Place all supplies on a barrier",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place all supplies on a barrier.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 5,
           "text": "Place clothing protector on patient",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place a clothing protector on the patient.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 6,
           "text": "Line sink with washcloth",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Line the sink with a washcloth or paper towel.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 7,
           "text": "Patient removes dentures to cup",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Ask the patient to remove dentures and place them in the cup.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 8,
           "text": "Handle dentures carefully",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Handle the dentures carefully to avoid damage or contamination.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 9,
           "text": "Wet brush; apply denture paste",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wet the denture brush and apply denture toothpaste if available. Water alone is acceptable to clean dentures if toothpaste is not available.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 10,
           "text": "Brush all denture surfaces",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Thoroughly brush the inner, outer, and chewing surfaces of each denture.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 11,
           "text": "Rinse dentures; place on barrier",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the dentures using clean, cool water and place them on a clean barrier or in an emesis basin.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 12,
           "text": "Rinse the denture cup",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the denture cup.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 13,
           "text": "Place dentures in rinsed cup",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place the dentures in a rinsed cup.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 14,
           "text": "Add cleansing tablet if desired",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Put a denture cleansing tablet in the cup, if desired.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 15,
           "text": "Rinse brush and emesis basin",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the equipment (denture brush and emesis basin).",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 16,
           "text": "Return equipment to storage",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Return the equipment to storage.",
+          "tagCategory": "Core",
+          "phaseWord": "Finish"
         },
         {
           "id": 17,
           "text": "Discard protective lining appropriately",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Discard the protective lining in an appropriate container.",
+          "tagCategory": "Core",
+          "phaseWord": "Finish"
         },
         {
           "id": 18,
           "text": "Remove gloves inside out",
           "segment": "core",
-          "boilerplateId": "GLOVE_REMOVE"
+          "boilerplateId": "GLOVE_REMOVE",
+          "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out. Dispose of both gloves in the appropriate waste container without touching the outer surface.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Finish"
         },
         {
           "id": 19,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Finish"
         }
-      ]
+      ],
+      "studentFocus": "Line sink; rinse over basin."
     },
     {
       "slug": "foot-care-one-foot",
@@ -1726,133 +2566,211 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for patient privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Get water; check temperature",
           "segment": "open",
           "note": "Safe range 105–110°F / 40–43°C.",
-          "boilerplateId": "WATER_CHECK"
+          "boilerplateId": "WATER_CHECK",
+          "detailedText": "Fill the basin with warm water. Verify the temperature is safe and comfortable (approximately 105–110°F / 40–43°C) using a thermometer or by having the patient test with their hand or a wet washcloth placed on the back of their hand.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 5,
           "text": "Don clean gloves",
           "segment": "open",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Approach"
         },
         {
           "id": 6,
           "text": "Fill basin; patient checks temp",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Fill a foot basin with warm water and place it on a flat surface with a barrier underneath. Have the patient check the water temperature by placing their hand in the basin or putting a wet washcloth on the back of their hand.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 7,
           "text": "Remove patient's socks",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Remove their socks.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 8,
           "text": "Soak feet 5 to 20 minutes",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Immerse their feet in warm water for 5 to 20 minutes.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 9,
           "text": "Use soapy washcloth",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Use water and a soapy washcloth.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 10,
           "text": "Wash foot and between toes",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wash each foot and between the toes.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 11,
           "text": "Rinse foot including between toes",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the entire foot with the wet washcloth, including between the toes.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 12,
           "text": "Dry foot thoroughly; between toes",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dry the foot thoroughly, including between the toes.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 13,
           "text": "Offer lotion; don gloves",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Ask the patient if they would like lotion. If applying lotion, wear gloves.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 14,
           "text": "Massage lotion; avoid between toes",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Massage the lotion over the foot but avoid applying any lotion between the toes.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 15,
           "text": "Wipe off excess lotion",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wipe off any excess lotion with a dry towel.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 16,
           "text": "Replace socks or footwear",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Replace the socks or preferred footwear.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 17,
           "text": "Empty equipment with gloves on",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "While wearing gloves, empty the equipment.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 18,
           "text": "Rinse the equipment",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the equipment.",
+          "tagCategory": "Core",
+          "phaseWord": "Foot"
         },
         {
           "id": 19,
           "text": "Dry the basin",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dry the basin.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 20,
           "text": "Dispose soiled linen in hamper",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dispose of soiled linen in a laundry hamper.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 21,
           "text": "Remove gloves inside out",
           "segment": "core",
-          "boilerplateId": "GLOVE_REMOVE"
+          "boilerplateId": "GLOVE_REMOVE",
+          "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out. Dispose of both gloves in the appropriate waste container without touching the outer surface.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Secure"
         },
         {
           "id": 22,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 23,
           "text": "Place call light in reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 24,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Soak 5–20 min; no lotion between toes."
     },
     {
       "slug": "dress-weak-right-arm",
@@ -1874,80 +2792,128 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for patient privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Raise bed to safe height",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Raise the height of the bed to a safe level.",
+          "tagCategory": "Core",
+          "phaseWord": "Dress"
         },
         {
           "id": 5,
           "text": "Keep patient covered; remove gown",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Keep the patient covered while removing their gown.",
+          "tagCategory": "Core",
+          "phaseWord": "Dress"
         },
         {
           "id": 6,
           "text": "Remove gown from left side first",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Remove the gown from the left side first.",
+          "tagCategory": "Core",
+          "phaseWord": "Dress"
         },
         {
           "id": 7,
           "text": "Place gown in laundry hamper",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place the used gown in a designated laundry hamper.",
+          "tagCategory": "Core",
+          "phaseWord": "Dress"
         },
         {
           "id": 8,
           "text": "Ask patient clothing preference",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Ask the patient about their preferences for desired clothing.",
+          "tagCategory": "Core",
+          "phaseWord": "Dress"
         },
         {
           "id": 9,
           "text": "Dress right (affected) arm first",
           "segment": "core",
-          "note": "Affected side dressed first; unaffected side last."
+          "note": "Affected side dressed first; unaffected side last.",
+          "detailedText": "Start dressing them on their right side first. Insert their hand through the sleeve of their shirt and grasp the hand of the patient to guide it through the sleeve.",
+          "tagCategory": "Core",
+          "phaseWord": "Dress"
         },
         {
           "id": 10,
           "text": "Dress left arm; button shirt",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place their unaffected arm in the shirt sleeve, grasping the hand of the patient. Finish putting on their shirt by buttoning.",
+          "tagCategory": "Core",
+          "phaseWord": "Dress"
         },
         {
           "id": 11,
           "text": "Return patient to supine position",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Return the patient to lying on their back.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 12,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 13,
           "text": "Place call light in reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 14,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Dress weak/affected arm first."
     },
     {
       "slug": "feed-client-dependence",
@@ -1969,118 +2935,190 @@
           "id": 1,
           "text": "Introduce self; verify patient identity",
           "segment": "open",
-          "boilerplateId": "INTRO_IDENTIFY"
+          "boilerplateId": "INTRO_IDENTIFY",
+          "detailedText": "Introduce yourself by name and title, and verify the patient's identity using two identifiers (name and date of birth or wristband ID).",
+          "tagCategory": "Opening",
+          "criticalCategory": "identification",
+          "phaseWord": "Identify"
         },
         {
           "id": 2,
           "text": "Explain procedure to patient",
-          "segment": "open"
+          "segment": "open",
+          "detailedText": "Explain the procedure to the patient.",
+          "tagCategory": "Opening",
+          "phaseWord": "Identify"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Feed"
         },
         {
           "id": 4,
           "text": "Verify diet card matches patient",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Verify the name on the diet card matches the patient.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 5,
           "text": "Verify diet, texture, liquid consistency",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Verify the diet, diet texture, and liquid consistency matches the diet card.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 6,
           "text": "Position patient upright; 45 degrees",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Position the patient in an upright position, at least 45 degrees.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 7,
           "text": "Place clothing protector on patient",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Place a clothing protector on the patient if desired (e.g., a paper or cloth towel or a large napkin).",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 8,
           "text": "Ask about mouth care before eating",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Ask the patient if they would like mouth care before eating.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 9,
           "text": "Assist patient to clean their hands",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist the patient to clean their hands before feeding using sanitizer or soapy and wet washcloths.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 10,
           "text": "Sit at eye level facing patient",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Position self in a chair at eye level facing the patient.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 11,
           "text": "Describe foods and fluids offered",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Describe the foods and fluids being offered to the patient.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 12,
           "text": "Offer small amounts at reasonable rate",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Offer small amounts of food at a reasonable rate.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 13,
           "text": "Offer fluids frequently",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Offer fluids frequently.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 14,
           "text": "Allow time to chew and swallow",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Allow the patient time to chew and swallow.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 15,
           "text": "Wipe face whenever necessary",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wipe the patient's face whenever necessary.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 16,
           "text": "Alternate foods and fluids until full",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Continue to alternate foods and fluids until the patient indicates they are full.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 17,
           "text": "Clean patient's face and hands",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Clean the patient's face and hands.",
+          "tagCategory": "Core",
+          "phaseWord": "Feed"
         },
         {
           "id": 18,
           "text": "Ask about mouth care after eating",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Ask the patient if they would like mouth care.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 19,
           "text": "Elevate head at least 30 degrees",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Leave the patient with their head elevated at least 30 degrees.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 20,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 21,
           "text": "Place call light within reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 22,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Identify then explain; verify diet card name, texture, liquids."
     },
     {
       "slug": "bedpan-assist",
@@ -2102,145 +3140,231 @@
           "id": 1,
           "text": "Introduce self; explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Lower head of bed",
-          "segment": "open"
+          "segment": "open",
+          "detailedText": "Lower the head of the bed.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 5,
           "text": "Don clean gloves",
           "segment": "core",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Assist"
         },
         {
           "id": 6,
           "text": "Turn patient; place barrier under buttocks",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Turn the patient and place a barrier (e.g., a towel, waterproof soaker pad, disposable pad) under their buttocks.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 7,
           "text": "Position patient on bedpan correctly",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Position the patient on the bedpan correctly. The deeper portion of the bedpan should be directed toward their toes, and the patient should be centered on the bedpan.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 8,
           "text": "Remove gloves; perform hand hygiene",
           "segment": "core",
-          "boilerplateId": "GLOVE_REMOVE_THEN_HH"
+          "boilerplateId": "GLOVE_REMOVE_THEN_HH",
+          "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out. Dispose of both gloves in the appropriate waste container without touching the outer surface. Then perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Assist"
         },
         {
           "id": 9,
           "text": "Raise head of bed",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Raise the head of the bed to a comfortable level.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 10,
           "text": "Cover patient with linens",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Cover the patient with linens or a bath blanket.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 11,
           "text": "Leave toilet tissue within reach",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Leave toilet tissue or wipes within reach of the patient.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 12,
           "text": "Place call light within reach",
           "segment": "core",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Assist"
         },
         {
           "id": 13,
           "text": "Wait nearby; allow patient privacy",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wait nearby allowing for patient privacy.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 14,
           "text": "Return; assist patient hand hygiene",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "When the patient signals, return and assists the patient to perform hand hygiene in bed.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 15,
           "text": "Perform hand hygiene",
           "segment": "core",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Assist"
         },
         {
           "id": 16,
           "text": "Lower head of bed",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Lower the head of the bed to a comfortable level.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 17,
           "text": "Don clean gloves",
           "segment": "core",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Assist"
         },
         {
           "id": 18,
           "text": "Gently remove the bedpan",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Gently remove the bed pan.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 19,
           "text": "Discard soiled linen in hamper",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Discard the soiled linen in the designated laundry hamper.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 20,
           "text": "Assist with perineal care",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist with perineal care.",
+          "tagCategory": "Core",
+          "phaseWord": "Assist"
         },
         {
           "id": 21,
           "text": "Empty bedpan into toilet",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Empty the bedpan into the toilet.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 22,
           "text": "Rinse equipment; empty rinse water",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the equipment used and empty the rinse water into the toilet.",
+          "tagCategory": "Core",
+          "phaseWord": "Clean"
         },
         {
           "id": 23,
           "text": "Remove gloves inside out",
           "segment": "core",
-          "boilerplateId": "GLOVE_REMOVE"
+          "boilerplateId": "GLOVE_REMOVE",
+          "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out. Dispose of both gloves in the appropriate waste container without touching the outer surface.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Clean"
         },
         {
           "id": 24,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Clean"
         },
         {
           "id": 25,
           "text": "Place call light within reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Clean"
         },
         {
           "id": 26,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Clean"
         }
-      ]
+      ],
+      "studentFocus": "Five hand-hygiene points; wait for patient privacy."
     },
     {
       "slug": "perineal-care-female",
@@ -2262,219 +3386,349 @@
           "id": 1,
           "text": "Introduce self; explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Check water for safe temperature",
           "segment": "open",
-          "boilerplateId": "WATER_CHECK"
+          "boilerplateId": "WATER_CHECK",
+          "detailedText": "Fill the basin with warm water. Verify the temperature is safe and comfortable (approximately 105–110°F / 40–43°C) using a thermometer or by having the patient test with their hand or a wet washcloth placed on the back of their hand.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 5,
           "text": "Raise one side rail",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Raise one side rail of the bed after checking the patient's mobility and their preferred side to lie on.",
+          "tagCategory": "Core",
+          "phaseWord": "Approach"
         },
         {
           "id": 6,
           "text": "Don clean gloves",
           "segment": "core",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Peri"
         },
         {
           "id": 7,
           "text": "Raise bed height if needed",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Raise the bed height if needed.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 8,
           "text": "Fill basin; patient checks temperature",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Fill the basin with warm water and place it on a flat surface with a barrier underneath. Have the patient check the water temperature by placing their hand in the basin or putting a wet washcloth on the back of their hand.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 9,
           "text": "Place barrier under buttocks",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Turn the patient or raise their hips and place a barrier (a towel, waterproof soaker pad, disposable pad, etc.) under their buttocks.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 10,
           "text": "Expose perineum only",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Expose their perineum only.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 11,
           "text": "Separate the labia",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Separate the labia.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 12,
           "text": "Use water and soapy washcloth",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Use water and a soapy washcloth.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 13,
           "text": "Clean one labia side, top-bottom",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Clean one side of the labia from top to bottom.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 14,
           "text": "Clean other labia side; clean portion",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using a clean portion of the first washcloth, clean the other side of the labia from top to bottom.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 15,
           "text": "Clean perineal area top to bottom",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using a clean portion of the first washcloth, clean the perineal area from top to bottom.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 16,
           "text": "Put first washcloth in linen bag",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Put the first washcloth in the linen bag.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 17,
           "text": "Rinse one labia side, top-bottom",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using the second clean washcloth, rinse one side of the labia from top to bottom.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 18,
           "text": "Rinse other labia side; clean portion",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using a clean portion of the second washcloth, rinse the other side of the labia from top to bottom.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 19,
           "text": "Rinse perineal area top to bottom",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using a clean portion of the second washcloth, rinse the perineal area from top to bottom.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 20,
           "text": "Put second washcloth in linen bag",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Put the second washcloth in the linen bag.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 21,
           "text": "Pat dry",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Pat dry.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 22,
           "text": "Turn patient; grasp raised side rail",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Assist the patient to turn onto their side facing away from the candidate and ask the patient to hold onto the raised side rail.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 23,
           "text": "Apply water and soap; third washcloth",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using the third clean washcloth, apply water and soap.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 24,
           "text": "Clean one buttock side; wipe away",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using a clean portion of the third washcloth, clean one side of the buttock, wiping away from perineal area.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 25,
           "text": "Clean other buttock side; wipe away",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using a clean portion of the third washcloth, clean the other side of the buttock, wiping away from the perineal area.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 26,
           "text": "Clean rectal area; wipe away",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using a clean portion of the third washcloth, clean the rectal area wiping away from the perineal area.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 27,
           "text": "Put third washcloth in linen bag",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Put the third washcloth in the linen bag.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 28,
           "text": "Rinse one buttock side; wipe away",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using the fourth washcloth, rinse one side of the buttock wiping away from the perineal area.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 29,
           "text": "Rinse other buttock side; wipe away",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using a clean portion of the fourth washcloth, rinse the other side of the buttock wiping away from the perineal area.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 30,
           "text": "Rinse rectal area; wipe away",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Using a clean portion of the fourth washcloth, rinse the rectal area wiping away from perineal area.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 31,
           "text": "Put fourth washcloth in linen bag",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Put the fourth washcloth in the linen bag.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 32,
           "text": "Pat dry",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Pat dry.",
+          "tagCategory": "Core",
+          "phaseWord": "Peri"
         },
         {
           "id": 33,
           "text": "Remove waterproof pad safely",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Safely remove the waterproof pad from under the buttocks.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 34,
           "text": "Remove gloves inside out",
           "segment": "core",
-          "boilerplateId": "GLOVE_REMOVE"
+          "boilerplateId": "GLOVE_REMOVE",
+          "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out. Dispose of both gloves in the appropriate waste container without touching the outer surface.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Secure"
         },
         {
           "id": 35,
           "text": "Perform hand hygiene",
           "segment": "core",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         },
         {
           "id": 36,
           "text": "Position patient on her back",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Position the patient on her back.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 37,
           "text": "Don clean gloves",
           "segment": "core",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Secure"
         },
         {
           "id": 38,
           "text": "Dispose soiled linen in hamper",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dispose of soiled linen in the designated laundry hamper.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 39,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 40,
           "text": "Place call light within reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 41,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Longest skill; front-to-back; wipe away from perineum."
     },
     {
       "slug": "catheter-care-female",
@@ -2496,167 +3750,266 @@
           "id": 1,
           "text": "Introduce self; explain procedure",
           "segment": "open",
-          "boilerplateId": "INTRO_EXPLAIN"
+          "boilerplateId": "INTRO_EXPLAIN",
+          "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 2,
           "text": "Provide for privacy",
           "segment": "open",
-          "boilerplateId": "PRIVACY"
+          "boilerplateId": "PRIVACY",
+          "detailedText": "Provide for patient privacy (close the curtain, door, or privacy screen).",
+          "tagCategory": "Opening",
+          "criticalCategory": "privacy",
+          "phaseWord": "Approach"
         },
         {
           "id": 3,
           "text": "Perform hand hygiene",
           "segment": "open",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Approach"
         },
         {
           "id": 4,
           "text": "Get water; check temperature",
           "segment": "open",
-          "boilerplateId": "WATER_CHECK"
+          "boilerplateId": "WATER_CHECK",
+          "detailedText": "Fill the basin with warm water. Verify the temperature is safe and comfortable (approximately 105–110°F / 40–43°C) using a thermometer or by having the patient test with their hand or a wet washcloth placed on the back of their hand.",
+          "tagCategory": "Opening",
+          "phaseWord": "Approach"
         },
         {
           "id": 5,
           "text": "Don clean gloves",
           "segment": "open",
-          "boilerplateId": "GLOVE_DON"
+          "boilerplateId": "GLOVE_DON",
+          "detailedText": "Don clean, non-sterile gloves.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Approach"
         },
         {
           "id": 6,
           "text": "Fill basin; patient checks temperature",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Fill the basin with warm water and place it on a flat surface with a barrier underneath. Have the patient check the water temperature by placing their hand in the basin or putting a wet washcloth on the back of their hand.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 7,
           "text": "Raise bed to working height",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Raise the bed height to a working height.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 8,
           "text": "Expose urethra and catheter only",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Expose only the urethra and catheter.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 9,
           "text": "Check tubing; ensure no backflow",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Follow the tubing from the patient toward the drainage bag, ensuring that the tubing is at a lower level as it goes toward the bag. Be sure no kinks or elevation can cause backflow to the bladder.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 10,
           "text": "Place barrier under buttocks",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Turn the patient or raise their hips and place a barrier (e.g., a towel, waterproof soaker pad, or disposable pad) under their buttocks.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 11,
           "text": "Wash around catheter at urethra",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Use the first washcloth with soap and water to carefully wash around the catheter where it exits the urethra.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 12,
           "text": "Hold catheter at urethra exit",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Hold the catheter where it exits the urethra with one hand.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 13,
           "text": "Clean 4 inches down catheter",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "While holding the catheter, clean 4 inches down the catheter tube.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 14,
           "text": "Clean strokes away from urethra",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Clean with strokes moving away from the urethra.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 15,
           "text": "Use clean washcloth portion each stroke",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Use a clean portion of washcloth for each stroke.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 16,
           "text": "Put first washcloth in linen bag",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Put the soiled first washcloth in the linen bag.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 17,
           "text": "Rinse; strokes away from urethra",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Wet the second washcloth and rinse, using strokes only away from the urethra while continuing to hold the catheter where it exits the urethra.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 18,
           "text": "Rinse; clean portion each stroke",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse using a clean portion of washcloth for each stroke.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 19,
           "text": "Put second washcloth in linen bag",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Put the soiled second washcloth in the linen bag.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 20,
           "text": "Pat dry with towel",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Pat dry with a towel.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 21,
           "text": "Never pull the catheter tube",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Do not allow the tube to be pulled at any time during the procedure.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 22,
           "text": "Replace gown over perineal area",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Replace the gown over the patient's perineal area.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 23,
           "text": "Empty basin while wearing gloves",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "While wearing gloves, empty the basin.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 24,
           "text": "Rinse the basin",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Rinse the basin.",
+          "tagCategory": "Core",
+          "phaseWord": "Catheter"
         },
         {
           "id": 25,
           "text": "Dry the basin",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dry the basin.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 26,
           "text": "Return equipment to storage",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Return the equipment to storage.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 27,
           "text": "Dispose soiled linen in hamper",
-          "segment": "core"
+          "segment": "core",
+          "detailedText": "Dispose of soiled linen in a designated laundry hamper.",
+          "tagCategory": "Core",
+          "phaseWord": "Secure"
         },
         {
           "id": 28,
           "text": "Remove gloves inside out",
           "segment": "core",
-          "boilerplateId": "GLOVE_REMOVE"
+          "boilerplateId": "GLOVE_REMOVE",
+          "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out. Dispose of both gloves in the appropriate waste container without touching the outer surface.",
+          "tagCategory": "Key Procedure",
+          "phaseWord": "Secure"
         },
         {
           "id": 29,
           "text": "Lower bed; lock brakes",
           "segment": "close",
-          "boilerplateId": "BED_LOW"
+          "boilerplateId": "BED_LOW",
+          "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 30,
           "text": "Place call light within reach",
           "segment": "close",
-          "boilerplateId": "CALL_LIGHT"
+          "boilerplateId": "CALL_LIGHT",
+          "detailedText": "Place the call light (or signaling device) within reach of the patient and confirm the patient knows how to use it.",
+          "tagCategory": "Closing",
+          "criticalCategory": "bed-call-light",
+          "phaseWord": "Secure"
         },
         {
           "id": 31,
           "text": "Perform hand hygiene",
           "segment": "close",
-          "boilerplateId": "HAND_HYGIENE"
+          "boilerplateId": "HAND_HYGIENE",
+          "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
+          "tagCategory": "Key Procedure",
+          "criticalCategory": "hand-hygiene",
+          "phaseWord": "Secure"
         }
-      ]
+      ],
+      "studentFocus": "Hold catheter at urethra; strokes away; tubing downhill; never pull."
     }
   ]
 }

@@ -18,6 +18,8 @@ export type WebSkill = {
   storageKey: string;
   stepCount: number;
   steps: ChecklistStep[];
+  /** One-line student focus from master_course_database */
+  studentFocus?: string | null;
 };
 
 export type SectionMeta = {

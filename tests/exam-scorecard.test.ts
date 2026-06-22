@@ -17,7 +17,7 @@ const SCORECARD_SLUGS = [
 ] as const;
 
 describe("exam-scorecard", () => {
-  it("defines 15 entries total across 6 measurement / technique slugs", () => {
+  it("defines scorecard entries from skills.json for measurement and technique slugs", () => {
     const slugs = [
       "hand-hygiene",
       "manual-blood-pressure",
@@ -27,8 +27,10 @@ describe("exam-scorecard", () => {
       "urinary-output-measurement",
     ] as const;
     const all = slugs.flatMap((slug) => getExamScorecardsForSkill(slug));
-    expect(all).toHaveLength(15);
-    expect(new Set(all.map((e) => `${e.slug}:${e.stepId}`)).size).toBe(15);
+    expect(all.length).toBeGreaterThanOrEqual(15);
+    expect(new Set(all.map((e) => `${e.slug}:${e.stepId}`)).size).toBe(
+      all.length,
+    );
   });
 
   it("returns BP step 14 tolerance with systolic and diastolic detail", () => {
@@ -78,8 +80,12 @@ describe("exam-scorecard", () => {
     expect(bp.map((e) => e.stepId)).toEqual([7, 8, 9, 14]);
   });
 
-  it("reports skillHasExamScorecards only for seeded slugs", () => {
-    const seeded = ["hand-hygiene", ...SCORECARD_SLUGS] as const;
+  it("reports skillHasExamScorecards for skills with examScorecard in skills.json", () => {
+    const seeded = [
+      "hand-hygiene",
+      "ppe-gown-gloves",
+      ...SCORECARD_SLUGS,
+    ] as const;
     for (const slug of seeded) {
       expect(skillHasExamScorecards(slug)).toBe(true);
     }
