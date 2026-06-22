@@ -12,27 +12,31 @@ const masterDbPath = path.join(
   "Educator_Mastermind",
   "master_course_database.json",
 );
+const hasMasterDb = fs.existsSync(masterDbPath);
 
 /**
  * Cross-check invariants from utlize-review.md against live skills.json.
  * Documents accepted vs rejected review recommendations with Headmaster authority.
  */
 describe("utlize-review cross-check", () => {
-  it("master DB stores explicit segment for peri step 5 and 6 (not code override)", () => {
-    const db = JSON.parse(fs.readFileSync(masterDbPath, "utf8")) as {
-      skills: Array<{
-        slug: string;
-        checklist_steps: Array<{ number: number; segment?: string }>;
-      }>;
-    };
-    const peri = db.skills.find((s) => s.slug === "perineal-care-female")!;
-    expect(peri.checklist_steps.find((s) => s.number === 5)?.segment).toBe(
-      "core",
-    );
-    expect(peri.checklist_steps.find((s) => s.number === 6)?.segment).toBe(
-      "core",
-    );
-  });
+  it.skipIf(!hasMasterDb)(
+    "master DB stores explicit segment for peri step 5 and 6 (not code override)",
+    () => {
+      const db = JSON.parse(fs.readFileSync(masterDbPath, "utf8")) as {
+        skills: Array<{
+          slug: string;
+          checklist_steps: Array<{ number: number; segment?: string }>;
+        }>;
+      };
+      const peri = db.skills.find((s) => s.slug === "perineal-care-female")!;
+      expect(peri.checklist_steps.find((s) => s.number === 5)?.segment).toBe(
+        "core",
+      );
+      expect(peri.checklist_steps.find((s) => s.number === 6)?.segment).toBe(
+        "core",
+      );
+    },
+  );
 
   it("P1: peri step 5 side rail is CORE and step 6 gloves is CORE (official order outlier)", () => {
     const peri = getAllSkills().find((s) => s.slug === "perineal-care-female")!;
