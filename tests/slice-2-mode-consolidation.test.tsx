@@ -85,6 +85,20 @@ describe("Slice-2 boilerplate token chips", () => {
     ).toBe(true);
   });
 
+  it("script rows omit duplicate CORE/OPENING row badges on hand-hygiene", () => {
+    renderSkillPage("hand-hygiene");
+    const secondary = document.querySelectorAll(".skill-step-script__secondary");
+    expect(secondary.length).toBeGreaterThan(0);
+    for (const row of secondary) {
+      const segmentBadges = row.querySelectorAll(".step-segment-badge");
+      expect(segmentBadges.length).toBe(0);
+      const tagBadges = row.querySelectorAll(".skill-tag-category-badge");
+      for (const badge of tagBadges) {
+        expect(badge.textContent?.toUpperCase()).not.toMatch(/^(OPENING|CORE|CLOSING)$/);
+      }
+    }
+  });
+
   it("does not render chip on hand-hygiene INTRO_IDENTIFY — wording mismatch", () => {
     const skill = getSkillBySlug("hand-hygiene")!;
     const step = skill.steps.find((s) => s.boilerplateId === "INTRO_IDENTIFY")!;

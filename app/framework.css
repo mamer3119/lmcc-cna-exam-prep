@@ -337,14 +337,20 @@
 /* Skill page layout + rail */
 .skill-page-layout {
   display: block;
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: clamp(0.5rem, 2vw, 1.25rem);
 }
 
 @media (min-width: 768px) {
   .skill-page-layout {
     display: grid;
-    grid-template-columns: minmax(11rem, 14rem) minmax(0, 1fr);
+    grid-template-columns: minmax(12.5rem, 15rem) minmax(0, 1fr);
     gap: 0;
-    align-items: start;
+    align-items: stretch;
+    min-height: 100vh;
+    padding-inline: clamp(0.75rem, 2.5vw, 1.5rem);
   }
 }
 
@@ -354,13 +360,20 @@
 
 @media (min-width: 768px) {
   .skill-page-layout__rail--desktop {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: sticky;
     top: 0;
+    align-self: stretch;
+    min-height: 100vh;
     max-height: 100vh;
     overflow-y: auto;
     border-right: 1px solid var(--rule);
     background: var(--panel);
+  }
+
+  .skill-page-layout__rail--desktop .skill-pathway-rail {
+    flex: 1;
   }
 }
 
@@ -369,7 +382,11 @@
 }
 
 .skill-pathway-rail {
-  padding: 1rem 0.75rem 1.5rem;
+  padding: 1rem 0.5rem 1.5rem;
+}
+
+.skill-pathway-rail__inner {
+  min-width: 0;
 }
 
 .skill-pathway-rail__kicker {
@@ -507,15 +524,23 @@
 
 .skill-page-layout .site-shell {
   max-width: none;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin-inline: 0;
+  padding-left: clamp(0.75rem, 2vw, 1.25rem);
+  padding-right: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+/* Skill page: use full main column — not max-w-3xl (~48rem) centered box */
+.skill-page-layout .skill-checklist {
+  max-width: none;
+  margin-inline: 0;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .skill-page-layout .site-shell {
-    max-width: 42rem;
-    margin: 0;
-    padding-left: 1.5rem;
-    padding-right: 2rem;
+    max-width: none;
+    margin-inline: 0;
+    padding-left: clamp(1rem, 2.5vw, 1.75rem);
+    padding-right: clamp(1rem, 3vw, 2rem);
   }
 }

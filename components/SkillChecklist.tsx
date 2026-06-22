@@ -46,6 +46,10 @@ import {
   resolveRegistryTokenId,
   shouldRenderBoilerplateChip,
 } from "@/lib/boilerplate-tokens";
+import {
+  isTagCategoryRedundantWithSegment,
+  shouldShowRowSegmentBadge,
+} from "@/lib/script-row-badges";
 import { getLearnProgressSteps, masteryStepId } from "@/lib/scored-steps";
 import {
   filterStepsBySegment,
@@ -381,7 +385,14 @@ export default function SkillChecklist({
     phaseStartBadge: boolean,
     displayFlags: ChecklistEnrichmentDisplay,
   ) {
-    if (!displayFlags.segmentBadges || !stepSegment) {
+    if (
+      !shouldShowRowSegmentBadge({
+        scriptRows,
+        learnPolish,
+        segmentBadges: displayFlags.segmentBadges,
+      }) ||
+      !stepSegment
+    ) {
       return null;
     }
     return (
@@ -416,12 +427,16 @@ export default function SkillChecklist({
   function renderTagCategoryBadge(
     step: ChecklistStep,
     displayFlags: ChecklistEnrichmentDisplay,
+    stepSegment: StepSegment | null,
   ) {
     if (!displayFlags.tagCategory) {
       return null;
     }
     const tagCategory = resolveStepTagCategory(step);
     if (!tagCategory) {
+      return null;
+    }
+    if (isTagCategoryRedundantWithSegment(tagCategory, stepSegment)) {
       return null;
     }
     return (
@@ -436,12 +451,13 @@ export default function SkillChecklist({
     displayText: string,
     revealedNow: boolean,
     displayFlags: ChecklistEnrichmentDisplay,
+    stepSegment: StepSegment | null,
   ) {
     const phaseBadge =
       organizerMeta ?
         renderPhaseWordBadge(step, organizerMeta, displayFlags)
       : null;
-    const tagBadge = renderTagCategoryBadge(step, displayFlags);
+    const tagBadge = renderTagCategoryBadge(step, displayFlags, stepSegment);
     const criticalBadge = renderCriticalBadge(
       step,
       displayText,
@@ -690,8 +706,7 @@ export default function SkillChecklist({
 
           const registryTokenId = resolveRegistryTokenId(step.boilerplateId);
           const showBoilerplateChip =
-            registryTokenId &&
-            shouldRenderBoilerplateChip(step, checklistSlug);
+            registryTokenId && shouldRenderBoilerplateChip(step, checklistSlug);
 
           return (
             <Fragment key={step.id}>
@@ -759,6 +774,7 @@ export default function SkillChecklist({
                               displayText,
                               showMainText,
                               enrichmentDisplay,
+                              stepSegment,
                             )}
                             {learnPolish ?
                               <StepLearnMeta
@@ -796,6 +812,7 @@ export default function SkillChecklist({
                               displayText,
                               showMainText,
                               enrichmentDisplay,
+                              stepSegment,
                             )}
                           </span>
                         </>
@@ -826,7 +843,11 @@ export default function SkillChecklist({
                                   enrichmentDisplay,
                                 )
                               : null}
-                              {renderTagCategoryBadge(step, enrichmentDisplay)}
+                              {renderTagCategoryBadge(
+                                step,
+                                enrichmentDisplay,
+                                stepSegment,
+                              )}
                               {renderCriticalBadge(
                                 step,
                                 displayText,
