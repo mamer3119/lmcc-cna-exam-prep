@@ -1,0 +1,729 @@
+/*
+  Phase-organizer layers — verb spine, phase word, template chip, divergence.
+  One loud organizer per scroll depth; everything else ambient.
+*/
+
+.study-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.study-page-shell {
+  padding-top: 4.5rem;
+}
+
+/* ── Layer 1: Verb-spine rail ── */
+.verb-spine-rail {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.35rem 0.5rem;
+}
+
+.verb-spine-rail__list {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.15rem;
+  list-style: none;
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.verb-spine-rail__list::-webkit-scrollbar {
+  display: none;
+}
+
+.verb-spine-rail__item {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.verb-spine-rail__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 100%;
+  padding: 0.25rem 0.35rem;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: background 0.15s ease;
+}
+
+.verb-spine-rail__btn:hover {
+  background: rgba(17, 24, 39, 0.04);
+}
+
+.verb-spine-rail__btn--active {
+  background: rgba(30, 64, 175, 0.08);
+}
+
+.verb-spine-rail__btn--active .verb-spine-rail__verb {
+  color: var(--primary-accent);
+  font-weight: 700;
+}
+
+.verb-spine-rail__verb {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.verb-spine-rail__count {
+  font-size: 0.5625rem;
+  color: var(--gold);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Layer 2+3: Unified organizer HUD (module → phase → pattern) ── */
+.study-organizer-hud {
+  position: fixed;
+  top: 3.25rem;
+  left: clamp(0.75rem, 3vw, 2rem);
+  z-index: 5;
+  pointer-events: none;
+  user-select: none;
+  max-width: min(20rem, 42vw);
+  transition: opacity 0.3s ease;
+}
+
+.study-organizer-hud--focused {
+  opacity: 0.72;
+}
+
+.study-organizer-hud__module {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0 0 0.15rem;
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.study-organizer-hud__module-label,
+.study-organizer-hud__phase-label,
+.study-organizer-hud__pattern-label {
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+
+.study-organizer-hud__connector {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.study-organizer-hud__phase-stack {
+  position: relative;
+  min-height: 2.5em;
+}
+
+.study-organizer-hud__phase {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2.75rem, 9vw, 5.5rem);
+  font-weight: 300;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  color: var(--primary);
+}
+
+.study-organizer-hud__phase--in {
+  animation: phase-word-in 0.48s ease forwards;
+}
+
+.study-organizer-hud__phase--out {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: phase-word-out 0.48s ease forwards;
+}
+
+@keyframes phase-word-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: inherit;
+    transform: translateY(0);
+  }
+}
+
+@keyframes phase-word-out {
+  from {
+    opacity: inherit;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.study-organizer-hud__hint {
+  margin: 0.2rem 0 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  line-height: 1.35;
+  color: var(--muted);
+  max-width: 16rem;
+}
+
+.study-organizer-hud__chip {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.15rem;
+  transition: opacity 0.35s ease;
+}
+
+.study-organizer-hud__pattern-label {
+  font-size: 0.5625rem;
+}
+
+/* Legacy phase backdrop — replaced by HUD */
+.phase-word-backdrop {
+  display: none;
+}
+
+.study-template-chip-slot {
+  display: none;
+}
+
+.template-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.06);
+  border: 1px solid var(--rule);
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  transition: opacity 0.35s ease;
+}
+
+.template-chip--prominent {
+  background: rgba(30, 64, 175, 0.08);
+  border-color: rgba(30, 64, 175, 0.25);
+  font-size: 0.75rem;
+  padding: 0.35rem 0.75rem;
+}
+
+.template-teaching-note {
+  margin: 0 0 0.75rem;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  line-height: 1.45;
+  color: var(--muted);
+  background: var(--panel);
+  border-left: 3px solid var(--primary-accent);
+  border-radius: 0 4px 4px 0;
+}
+
+.template-teaching-note strong {
+  color: var(--primary-accent);
+}
+
+.step-segment-badge {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0.1rem 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+.step-segment-badge--open {
+  background: rgba(100, 116, 139, 0.15);
+  color: var(--muted);
+}
+
+.step-segment-badge--core {
+  background: rgba(30, 64, 175, 0.12);
+  color: var(--primary-accent);
+}
+
+.step-segment-badge--close {
+  background: rgba(100, 116, 139, 0.12);
+  color: var(--muted);
+}
+
+.step-segment-badge--core-start {
+  background: rgba(37, 99, 235, 0.18);
+  color: #1d4ed8;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.35);
+}
+
+.step-segment-badge--close-start {
+  background: rgba(249, 115, 22, 0.18);
+  color: #c2410c;
+  box-shadow: 0 0 0 1px rgba(249, 115, 22, 0.35);
+}
+
+.phase-divider-wrap {
+  list-style: none;
+  margin: 0.75rem 0;
+  padding: 0;
+}
+
+.phase-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+  color: var(--muted);
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.phase-divider__rule {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(100, 116, 139, 0.35),
+    transparent
+  );
+}
+
+.phase-divider__label {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.study-skill-head__title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.template-chip--muted {
+  transform: scale(0.96);
+}
+
+.template-chip__id {
+  font-weight: 700;
+  color: var(--primary-accent);
+  letter-spacing: 0.04em;
+}
+
+.template-chip__sep {
+  color: var(--muted);
+}
+
+.template-chip__label {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.template-chip__skill {
+  color: var(--muted);
+  max-width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Layer 4: Divergence marker ── */
+.divergence-marker {
+  margin: 1.25rem 0;
+  padding: 0.65rem 0.85rem;
+  border-left: 3px solid var(--gold);
+  background: rgba(180, 83, 9, 0.06);
+  border-radius: 0 6px 6px 0;
+}
+
+.divergence-marker__copy {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--emphasis);
+  font-style: italic;
+}
+
+/* ── Exam scorecard — quiz-only inline recall (hidden step text) ── */
+.exam-scorecard {
+  margin: 0 0 0.65rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(180, 83, 9, 0.28);
+  border-left: 3px solid var(--gold);
+  border-radius: 6px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 251, 245, 0.95) 0%,
+    rgba(248, 250, 252, 0.98) 100%
+  );
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.04);
+}
+
+.exam-scorecard__eyebrow {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  line-height: 1.35;
+}
+
+.exam-scorecard__value {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--primary);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+@media print {
+  .exam-scorecard {
+    opacity: 1 !important;
+    background: transparent;
+    border-left-color: #000;
+  }
+
+  .exam-scorecard__eyebrow,
+  .exam-scorecard__value {
+    color: #000;
+  }
+
+  .exam-numbers-summary {
+    border-color: #000;
+  }
+}
+
+/* ── Skill-level exam numbers summary (BP pilot — editorial spec sheet) ── */
+.exam-numbers-summary {
+  margin: 0 0 1.75rem;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow:
+    0 1px 2px rgba(17, 24, 39, 0.04),
+    0 8px 24px rgba(17, 24, 39, 0.06);
+  overflow: hidden;
+}
+
+.exam-numbers-summary__header {
+  padding: 1.15rem 1.35rem 1rem;
+  border-bottom: 1px solid var(--rule);
+  background: linear-gradient(180deg, #fff 0%, var(--panel) 100%);
+}
+
+.exam-numbers-summary__eyebrow {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.exam-numbers-summary__title {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.exam-numbers-summary__lead {
+  margin: 0.5rem 0 0;
+  max-width: 42rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.exam-numbers-summary__grid {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .exam-numbers-summary__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.exam-numbers-summary__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem 1.25rem;
+  align-items: baseline;
+  padding: 0.9rem 1.35rem;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+
+@media (min-width: 640px) {
+  .exam-numbers-summary__row:nth-child(odd) {
+    border-right: 1px solid var(--rule);
+  }
+
+  .exam-numbers-summary__row:nth-child(-n + 2) {
+    border-top: none;
+  }
+}
+
+.exam-numbers-summary__term {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.exam-numbers-summary__step {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.exam-numbers-summary__label {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  line-height: 1.3;
+}
+
+.exam-numbers-summary__kind {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.exam-numbers-summary__value {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--primary-accent);
+  line-height: 1.25;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ── Study page chrome ── */
+.study-page-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.study-state-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  margin-top: 1.25rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.study-state-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.study-state-stat__label {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.study-state-stat__value {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.study-state-stat__value--band {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  text-transform: capitalize;
+}
+
+.study-exam-date {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.study-exam-date input {
+  font-size: 0.8125rem;
+  padding: 0.25rem 0.4rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+}
+
+.study-module-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 4rem;
+}
+
+.study-module-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.study-module-verb {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 0.35rem;
+}
+
+.study-skill-block {
+  margin-bottom: 2.5rem;
+  scroll-margin-top: 5rem;
+}
+
+.study-skill-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.study-skill-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+}
+
+.study-mastered-btn {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--rule);
+  background: #fff;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.study-mastered-btn:hover {
+  border-color: var(--primary-accent);
+  color: var(--primary-accent);
+}
+
+.study-mastered-btn--on {
+  background: rgba(30, 64, 175, 0.08);
+  border-color: var(--primary-accent);
+  color: var(--primary-accent);
+}
+
+/* Template step weighting — equal contrast; CORE anchor via weight */
+.skill-step-segment--open .leading-relaxed,
+.skill-step-segment--open .text-sm,
+.skill-step-segment--close .leading-relaxed,
+.skill-step-segment--close .text-sm {
+  opacity: 1;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.skill-step-segment--core .leading-relaxed,
+.skill-step-segment--core .text-sm {
+  opacity: 1;
+  font-weight: 500;
+}
+
+.study-skill-block .skill-checklist {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.study-skill-block .skill-checklist-title {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .template-chip__skill {
+    display: none;
+  }
+
+  .verb-spine-rail__count {
+    display: none;
+  }
+}
+
+@media print {
+  .verb-spine-rail,
+  .study-organizer-hud,
+  .study-state-bar,
+  .study-mastered-btn,
+  .divergence-marker,
+  .template-teaching-note,
+  .step-segment-badge {
+    display: none !important;
+  }
+}

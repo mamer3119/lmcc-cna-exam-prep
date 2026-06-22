@@ -1,0 +1,190 @@
+{
+  "pathwayTagline": "Protect → observe → move → restore → clean → feed → eliminate",
+  "studentFacingPrinciple": "Evaluators call skills by official name aloud — not by exam card number. Numbers are reference-only on the skill detail page.",
+  "sections": [
+    {
+      "title": "Infection Control",
+      "rationale": "Every clinical skill begins and ends with infection control. Students must internalize this as muscle memory before touching a patient."
+    },
+    {
+      "title": "Measurement and Recording",
+      "rationale": "Observation-only skills with no physical intervention. They train precision and documentation before students are trusted to act."
+    },
+    {
+      "title": "Mobility and Positioning",
+      "rationale": "Before personal care, students must move patients safely. Positioning and transfers prevent injury during bathing, dressing, and elimination."
+    },
+    {
+      "title": "Restorative and Support",
+      "rationale": "Once mobility is established, students learn to maintain and restore function — preventing deterioration, not just assisting movement."
+    },
+    {
+      "title": "Personal Care",
+      "rationale": "The core of daily CNA work. Mobility skills are prerequisites for bathing, grooming, and dressing with dignity."
+    },
+    {
+      "title": "Feeding and Nutrition",
+      "rationale": "Feeding follows hygiene and positioning. It is cognitively distinct — swallowing observation, aspiration risk, and dignity at the table."
+    },
+    {
+      "title": "Elimination and Peri Care",
+      "rationale": "The most intimate care. Full confidence in infection control, mobility, and personal care comes first — then elimination."
+    }
+  ],
+  "skills": [
+    {
+      "slug": "hand-hygiene",
+      "studyOrder": 1,
+      "section": "Infection Control",
+      "officialTitle": "Hand Hygiene (Hand Washing)",
+      "reasoning": "The single universal act. Teaches the before-and-after mindset — nothing happens without it."
+    },
+    {
+      "slug": "ppe-gown-gloves",
+      "studyOrder": 2,
+      "section": "Infection Control",
+      "officialTitle": "Donning and Removing PPE (Gown and Gloves)",
+      "reasoning": "Builds on hand hygiene: wash before donning and after removing. The sequence is the lesson."
+    },
+    {
+      "slug": "radial-pulse-60-seconds",
+      "studyOrder": 3,
+      "section": "Measurement and Recording",
+      "officialTitle": "Counts and Records Radial Pulse",
+      "reasoning": "Simplest vital sign — one finger location, one count, one unit (bpm). Introduces the count-then-record loop."
+    },
+    {
+      "slug": "respirations-60-seconds",
+      "studyOrder": 4,
+      "section": "Measurement and Recording",
+      "officialTitle": "Counts and Records Respirations",
+      "reasoning": "Taught immediately after pulse because they share a 60-second window. Observe without alerting the patient."
+    },
+    {
+      "slug": "manual-blood-pressure",
+      "studyOrder": 5,
+      "section": "Measurement and Recording",
+      "officialTitle": "Measures and Records Manual Blood Pressure",
+      "reasoning": "Most complex vital sign — equipment, two values, and interpretation. Builds on pulse and respiration rhythm."
+    },
+    {
+      "slug": "weight-ambulatory-client",
+      "studyOrder": 6,
+      "section": "Measurement and Recording",
+      "officialTitle": "Measures and Records Weight of Ambulatory Client",
+      "reasoning": "Requires the patient to be upright and cooperative. Bridges measurement toward mobility."
+    },
+    {
+      "slug": "urinary-output-measurement",
+      "studyOrder": 7,
+      "section": "Measurement and Recording",
+      "officialTitle": "Measures and Records Urinary Output",
+      "reasoning": "The only measurement tied to a bodily output. Bridge skill into the elimination section."
+    },
+    {
+      "slug": "position-on-side",
+      "studyOrder": 8,
+      "section": "Mobility and Positioning",
+      "officialTitle": "Positions on Side",
+      "reasoning": "Bed-based, lowest-risk movement. No equipment. Teaches body mechanics, alignment, and patient comfort."
+    },
+    {
+      "slug": "bed-wheelchair-transfer",
+      "studyOrder": 9,
+      "section": "Mobility and Positioning",
+      "officialTitle": "Transfers from Bed to Wheelchair Using Transfer Belt",
+      "reasoning": "The patient leaves the bed. Requires belt, coordination, and two-point communication."
+    },
+    {
+      "slug": "ambulate-transfer-belt",
+      "studyOrder": 10,
+      "section": "Mobility and Positioning",
+      "officialTitle": "Assists to Ambulate Using Transfer Belt",
+      "reasoning": "Most demanding mobility skill — patient fully upright and moving. Gait, balance, and fall prevention all apply."
+    },
+    {
+      "slug": "prom-shoulder",
+      "studyOrder": 11,
+      "section": "Restorative and Support",
+      "officialTitle": "Performs Modified PROM for One Shoulder",
+      "reasoning": "Upper body first. Larger joint, more intuitive range of motion. Introduces PROM mechanics."
+    },
+    {
+      "slug": "prom-knee-ankle",
+      "studyOrder": 12,
+      "section": "Restorative and Support",
+      "officialTitle": "Performs Modified PROM for One Knee and One Ankle",
+      "reasoning": "Lower body, two joints. More complex; builds on the shoulder movement pattern already learned."
+    },
+    {
+      "slug": "knee-high-stocking",
+      "studyOrder": 13,
+      "section": "Restorative and Support",
+      "officialTitle": "Applies One Knee-High Elastic Stocking",
+      "reasoning": "Applied after PROM — supports the same lower-extremity circulation PROM exercises protect. Same goal, different tool."
+    },
+    {
+      "slug": "modified-bed-bath",
+      "studyOrder": 14,
+      "section": "Personal Care",
+      "officialTitle": "Gives Modified Bed Bath (Face and One Arm, Hand and Underarm)",
+      "reasoning": "Largest task — the body itself. Sets the standard for privacy, temperature, and patient dignity."
+    },
+    {
+      "slug": "mouth-care",
+      "studyOrder": 15,
+      "section": "Personal Care",
+      "officialTitle": "Provides Mouth Care",
+      "reasoning": "Moves to the face and head after the bath. Natural clinical sequence — mouth care follows or accompanies bath."
+    },
+    {
+      "slug": "denture-cleaning",
+      "studyOrder": 16,
+      "section": "Personal Care",
+      "officialTitle": "Cleans Upper or Lower Denture",
+      "reasoning": "Extension of mouth care — same skill with an added device. Follows directly."
+    },
+    {
+      "slug": "foot-care-one-foot",
+      "studyOrder": 17,
+      "section": "Personal Care",
+      "officialTitle": "Provides Foot Care on One Foot",
+      "reasoning": "Bottom of the body. Mirrors the lower-extremity focus from PROM. Introduces skin integrity inspection."
+    },
+    {
+      "slug": "dress-weak-right-arm",
+      "studyOrder": 18,
+      "section": "Personal Care",
+      "officialTitle": "Dresses Client with Affected (Weak) Right Arm",
+      "reasoning": "Last in personal care — requires positioning, affected-side awareness, and sequencing. Most cognitively complex personal care skill."
+    },
+    {
+      "slug": "feed-client-dependence",
+      "studyOrder": 19,
+      "section": "Feeding and Nutrition",
+      "officialTitle": "Feeds Client Who Cannot Feed Self",
+      "reasoning": "Patient must be clean, dressed, and upright. Mirrors the care shift routine — hygiene before feeding."
+    },
+    {
+      "slug": "bedpan-assist",
+      "studyOrder": 20,
+      "section": "Elimination and Peri Care",
+      "officialTitle": "Assists With Use of Bedpan",
+      "reasoning": "Most basic elimination assist — no indwelling device. Teaches privacy, positioning, and cleanup sequence."
+    },
+    {
+      "slug": "perineal-care-female",
+      "studyOrder": 21,
+      "section": "Elimination and Peri Care",
+      "officialTitle": "Provides Perineal Care (Peri-Care) for Female",
+      "reasoning": "Post-elimination hygiene step. Completes the loop: assist, clean, document."
+    },
+    {
+      "slug": "catheter-care-female",
+      "studyOrder": 22,
+      "section": "Elimination and Peri Care",
+      "officialTitle": "Provides Catheter Care for Female",
+      "reasoning": "Last skill in the entire list. Requires infection control, perineal anatomy, and documentation. Most invasive and highest-consequence skill."
+    }
+  ]
+}

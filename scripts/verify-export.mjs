@@ -53,7 +53,12 @@ for (const htmlPath of walk(outDir)) {
 if (missing.size > 0) {
   console.error("Export verification failed. Missing assets:");
   for (const item of missing) console.error(`  - ${item}`);
+  console.error(
+    "\nTip: run `pnpm build` (postbuild runs fix-export-paths). On GitHub Pages, deploy must include mirrored %5Bslug%5D folders.",
+  );
   process.exit(1);
 }
 
-console.log(`Export OK — ${walk(outDir).length} HTML files, all _next assets present.`);
+console.log(
+  `Export OK — ${walk(outDir).length} HTML files, all _next assets present.`,
+);

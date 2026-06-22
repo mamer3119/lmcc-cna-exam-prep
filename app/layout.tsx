@@ -1,11 +1,36 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Crimson_Pro, Source_Sans_3 } from "next/font/google";
+
+import { assetPath } from "@/lib/paths";
 
 import "./globals.css";
+
+const crimsonPro = Crimson_Pro({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700"],
+  variable: "--font-crimson",
+  display: "swap",
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-source",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "LMCC CNA Skills Exam Prep — Interactive Checklists",
   description:
     "California CNA state exam skill checklists with official step wording, video links, and saved lab progress.",
+  icons: {
+    icon: assetPath("images/shield_watermark.png"),
+    apple: assetPath("images/shield_watermark.png"),
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#111827",
 };
 
 export default function RootLayout({
@@ -14,22 +39,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${crimsonPro.variable} ${sourceSans.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link rel="preconnect" href="https://www.youtube-nocookie.com" />
         <link rel="preconnect" href="https://www.youtube.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;0,8..60,700;1,8..60,400&display=swap"
-          rel="stylesheet"
-        />
       </head>
-      <body>{children}</body>
+      <body className={`${crimsonPro.variable} ${sourceSans.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

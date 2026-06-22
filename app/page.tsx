@@ -1,11 +1,17 @@
-import SkillIndex from "@/components/SkillIndex";
-import { getSections } from "@/lib/skills";
+import SkillIndexClient from "@/components/SkillIndexClient";
+import { getAllSkills, getPathwayTagline, getSections } from "@/lib/skills";
 
 export default function HomePage() {
-  const sections = getSections();
+  const allSkills = getAllSkills();
   return (
     <main>
-      <SkillIndex sections={sections} />
+      <SkillIndexClient
+        pathwayTagline={getPathwayTagline()}
+        sections={getSections()}
+        allSlugs={allSkills.map((skill) => skill.slug)}
+        allSkills={allSkills}
+        totalSkills={allSkills.length}
+      />
     </main>
   );
 }

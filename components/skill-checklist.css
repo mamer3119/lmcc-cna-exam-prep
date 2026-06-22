@@ -1,4 +1,152 @@
-/* Print-only: static ☐ boxes, black text, no strike-through */
+.skill-checklist {
+  font-family: var(--font-sans);
+  color: var(--primary);
+}
+
+.skill-checklist-header {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 0.75rem;
+}
+
+.skill-checklist-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.skill-checklist-progress {
+  margin-bottom: 1rem;
+}
+
+.skill-checklist-progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.skill-checklist-progress-pct {
+  color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.skill-checklist-progress-track {
+  height: 4px;
+  border-radius: 999px;
+  background: var(--panel);
+  overflow: hidden;
+}
+
+.skill-checklist-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.skill-checklist-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.skill-checklist-section-label {
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.skill-checklist-step-num {
+  color: var(--emphasis);
+}
+
+.skill-step-label {
+  width: 100%;
+}
+
+.skill-step-segment-col {
+  flex: 0 0 3.25rem;
+  padding-top: 0.2rem;
+}
+
+.skill-step-segment-col .step-segment-badge {
+  display: block;
+  width: 100%;
+  margin-right: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.skill-step-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.skill-checklist--segment-badges .skill-checklist-note {
+  margin-left: 0;
+  padding-left: calc(1.25rem + 0.5rem + 3.25rem + 0.5rem);
+}
+
+.skill-checklist-note {
+  margin-left: 1.5rem;
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--gold);
+}
+
+.skill-checklist-reset {
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: #fff;
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.skill-checklist-reset:hover:not(:disabled) {
+  background: var(--panel);
+}
+
+.skill-checklist-reset:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.skill-checklist input[type="checkbox"] {
+  accent-color: var(--primary);
+}
+
+.skill-checklist .skill-checkbox {
+  accent-color: var(--primary);
+}
+
+.skill-checklist-footer {
+  margin-top: 2rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.skill-checklist .step-text--checked,
+.skill-checklist .substep-text--checked {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
 @media print {
   .skill-checklist .print-header {
     display: block !important;
@@ -27,12 +175,17 @@
     color: #000 !important;
   }
 
-  .skill-checklist .note-text {
+  .skill-checklist .note-text,
+  .skill-checklist-note {
     color: #000 !important;
     font-style: italic;
   }
 
-  .skill-checklist .reset-button {
+  .skill-checklist-reset,
+  .skill-checklist-progress,
+  .skill-mode-toggle,
+  .skill-quiz-toolbar,
+  .skill-reveal-btn {
     display: none !important;
   }
 
@@ -41,7 +194,8 @@
     color: #000 !important;
   }
 
-  .skill-checklist strong {
+  .skill-checklist strong,
+  .skill-checklist-step-num {
     color: #000 !important;
   }
 }

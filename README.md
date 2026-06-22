@@ -47,25 +47,29 @@ pnpm install
 pnpm dev:clean
 ```
 
-Open http://localhost:3000/lmcc-cna-exam-prep/
+Open http://localhost:3005/lmcc-cna-exam-prep/
 
 ### Fix `a[d] is not a function` (Webpack runtime)
 
-This almost always means **stale dev cache** or **orphan `node` processes** serving an old build.
+This almost always means **stale dev cache**, **orphan `node` processes**, or
+**Node 26** while the project pins **Node 22**.
 
 ```powershell
-# Stop all dev servers (close terminals or):
-Get-Process node -ErrorAction SilentlyContinue | Stop-Process -Force
-
-pnpm clean
 pnpm dev:clean
 ```
 
-Hard-refresh the browser (Ctrl+Shift+R). On GitHub Pages, wait for Actions deploy to finish after each push — old HTML + new `_next` chunks causes the same error.
+`predev` now kills port 3005 automatically. Use **`pnpm dev:clean`** (not plain
+`pnpm dev`) after any `pnpm build` or if you see `./153.js` / `a[d]` errors.
+
+Hard-refresh the browser (Ctrl+Shift+R).
+
+**Production:** after push, run `pnpm verify:live` to confirm GitHub Pages
+serves all `_next` chunks (especially `%5Bslug%5D`).
 
 ### Scoop `nodejs` update blocked
 
-Close Cursor, dev servers, and any `node` processes before `scoop update nodejs`, or use `nodejs-lts` for this project only.
+Close Cursor, dev servers, and any `node` processes before
+`scoop update nodejs`, or use `nodejs-lts` for this project only.
 
 ## Commands
 

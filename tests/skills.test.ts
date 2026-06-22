@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import fs from "node:fs";
+import path from "node:path";
 
 import { mapDbStepToChecklistStep } from "@/lib/map-checklist-step";
 import { getAllSkills, getSkillBySlug } from "@/lib/skills";
@@ -51,5 +53,15 @@ describe("skills bundle", () => {
     for (const skill of getAllSkills()) {
       expect(skill.steps.length).toBe(skill.stepCount);
     }
+  });
+});
+
+describe("SkillChecklist markup", () => {
+  it("does not hardcode checked styling on sub-step labels", () => {
+    const src = fs.readFileSync(
+      path.join(process.cwd(), "components", "SkillChecklist.tsx"),
+      "utf8",
+    );
+    expect(src).not.toContain("substep-text--checked");
   });
 });
