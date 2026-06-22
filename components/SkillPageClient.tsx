@@ -6,13 +6,11 @@ import { useCallback, useEffect, useState } from "react";
 import { SkillDrillPanel } from "@/components/SkillDrillPanel";
 import SkillBadge from "@/components/SkillBadge";
 import SkillChecklist from "@/components/SkillChecklist";
-import type { ChecklistMode } from "@/components/SkillChecklist";
 import { SkillExamNumbersSummary } from "@/components/SkillExamNumbersSummary";
-import { SkillPracticeToggle } from "@/components/SkillPracticeToggle";
 import {
-  SegmentFilterToggle,
-  useSegmentFilterMode,
-} from "@/components/SegmentFilterToggle";
+  SkillViewModeSelector,
+  useSkillViewMode,
+} from "@/components/SkillViewModeSelector";
 import { SitePrimaryNav } from "@/components/SitePrimaryNav";
 import { StudentFocusBanner } from "@/components/StudentFocusBanner";
 import SkillVideoEmbed from "@/components/SkillVideoEmbed";
@@ -20,11 +18,7 @@ import { getCurriculumMeta } from "@/data/skillCurriculum";
 import { getExamSkillBadge } from "@/lib/exam-meta";
 import { skillHasExamNumbersSummary } from "@/lib/exam-scorecard";
 import { resolveSkillPageSurfaceConfig } from "@/lib/skill-surface-config";
-import { selectSkillMode } from "@/store/mastery-selectors";
-import {
-  rehydrateMasteryStore,
-  useMasteryStore,
-} from "@/store/useMasteryStore";
+import { skillViewModeUsesCoreFilter } from "@/lib/skill-view-mode-store";
 import {
   SKILL_PROGRESS_UPDATED_EVENT,
   getSkillProgressStatus,
@@ -45,66 +39,20 @@ function notifyProgressUpdated(): void {
   window.dispatchEvent(new Event(SKILL_PROGRESS_UPDATED_EVENT));
 }
 
-function quizModeStorageKey(slug: string): string {
-  return `quiz-mode-${slug}`;
-}
-
 export default function SkillPageClient({
   skill,
   prev,
   next,
 }: SkillPageClientProps) {
-  const [mode, setMode] = useState<ChecklistMode>("study");
+  const skillViewMode = useSkillViewMode();
   const [progressStatus, setProgressStatus] = useState<
     "not-started" | "in-progress" | "reviewed"
   >("not-started");
 
-  const storeHydrated = useMasteryStore((s) => s.isHydrated);
-  const storeMode = useMasteryStore((s) => selectSkillMode(s, skill.slug));
-  const setStoreMode = useMasteryStore((s) => s.setMode);
-  const practiceMode = storeMode === "drill" ? "test-yourself" : "learn";
-  const segmentFilterMode = useSegmentFilterMode();
-
-  useEffect(() => {
-    rehydrateMasteryStore();
-  }, []);
-
   useEffect(() => {
     const progress = readSkillProgress();
     setProgressStatus(getSkillProgressStatus(progress, skill.slug));
-    try {
-      const stored = window.localStorage.getItem(
-        quizModeStorageKey(skill.slug),
-      );
-      if (stored === "quiz" || stored === "study") {
-        setMode(stored);
-      }
-    } catch {
-      // Ignore private-mode errors
-    }
   }, [skill.slug]);
-
-  const handlePracticeModeChange = useCallback(
-    (next: "learn" | "test-yourself") => {
-      if (!storeHydrated) {
-        return;
-      }
-      setStoreMode(skill.slug, next === "test-yourself" ? "drill" : "learn");
-    },
-    [skill.slug, setStoreMode, storeHydrated],
-  );
-
-  const handleModeChange = useCallback(
-    (nextMode: ChecklistMode) => {
-      setMode(nextMode);
-      try {
-        window.localStorage.setItem(quizModeStorageKey(skill.slug), nextMode);
-      } catch {
-        // Ignore private-mode errors
-      }
-    },
-    [skill.slug],
-  );
 
   const handleAnyCheckedChange = useCallback(
     (anyChecked: boolean) => {
@@ -133,7 +81,10 @@ export default function SkillPageClient({
 
   const badge = getExamSkillBadge(skill.slug);
   const organizerMeta = getCurriculumMeta(skill.slug);
-  const surface = resolveSkillPageSurfaceConfig(mode);
+  const surface = resolveSkillPageSurfaceConfig("study");
+  const isSelfCheck = skillViewMode === "self-check";
+  const segmentFilterMode =
+    skillViewModeUsesCoreFilter(skillViewMode) ? "core" : "all";
 
   return (
     <div className="site-shell">
@@ -161,51 +112,44 @@ export default function SkillPageClient({
         </span>
       </div>
 
-      {(
-        surface.showExamNumbersSummary && skillHasExamNumbersSummary(skill.slug)
-      ) ?
-        <SkillExamNumbersSummary slug={skill.slug} />
+      {!isSelfCheck &&
+      surface.showExamNumbersSummary &&
+      skillHasExamNumbersSummary(skill.slug) ?
+        <SkillExamNumbersSummary slug={skill.slug} slim />
       : null}
 
       {surface.showStudentFocus && skill.studentFocus ?
         <StudentFocusBanner focus={skill.studentFocus} />
       : null}
 
-      <SkillPracticeToggle
-        mode={practiceMode}
-        onChange={handlePracticeModeChange}
-      />
+      <SkillViewModeSelector skillSlug={skill.slug} />
 
-      {practiceMode === "test-yourself" ?
+      {isSelfCheck ?
         <SkillDrillPanel
           steps={skill.steps}
           skillSlug={skill.slug}
           title={skill.title}
         />
-      : <>
-          <SegmentFilterToggle skillSlug={skill.slug} />
-          <SkillChecklist
-            title={skill.title}
-            steps={skill.steps}
-            storageKey={skill.storageKey}
-            mode={mode}
-            onModeChange={handleModeChange}
-            showModeToggle={surface.showModeToggle}
-            onAnyCheckedChange={handleAnyCheckedChange}
-            organizerMeta={
-              surface.showSegmentOrganizer ? organizerMeta : undefined
-            }
-            skillSlug={skill.slug}
-            showSegmentBadges={surface.showSegmentBadges}
-            showCriticalBadges={surface.showCriticalBadges}
-            showExamScorecards={surface.showExamScorecards}
-            display={surface.display}
-            segmentFilterMode={segmentFilterMode}
-          />
-        </>
+      : <SkillChecklist
+          title={skill.title}
+          steps={skill.steps}
+          storageKey={skill.storageKey}
+          mode="study"
+          showModeToggle={false}
+          onAnyCheckedChange={handleAnyCheckedChange}
+          organizerMeta={
+            surface.showSegmentOrganizer ? organizerMeta : undefined
+          }
+          skillSlug={skill.slug}
+          showSegmentBadges={surface.showSegmentBadges}
+          showCriticalBadges={surface.showCriticalBadges}
+          showExamScorecards={surface.showExamScorecards}
+          display={surface.display}
+          segmentFilterMode={segmentFilterMode}
+        />
       }
 
-      {practiceMode === "learn" ?
+      {!isSelfCheck ?
         <div className="skill-reviewed-row print:hidden">
           <button
             type="button"

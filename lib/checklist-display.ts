@@ -25,6 +25,8 @@ export type ChecklistEnrichmentDisplay = {
   rendersAsEmoji: boolean;
   /** M2 Learn Mode polish — phase headings, step anatomy, HH embed, motion */
   learnPolish: boolean;
+  /** Slice-2 script row layout — primary line + demoted secondary meta */
+  scriptRows: boolean;
 };
 
 export const CHECKLIST_DISPLAY_PRESETS = {
@@ -40,6 +42,7 @@ export const CHECKLIST_DISPLAY_PRESETS = {
     examScorecards: true,
     rendersAsEmoji: false,
     learnPolish: true,
+    scriptRows: true,
   },
   /** /study/ leaf — compact but fully hydrated */
   studyCompact: {
@@ -53,6 +56,7 @@ export const CHECKLIST_DISPLAY_PRESETS = {
     examScorecards: true,
     rendersAsEmoji: false,
     learnPolish: true,
+    scriptRows: false,
   },
   /** Quiz recall — minimal chrome; scorecards when step hidden (R7) */
   quiz: {
@@ -66,6 +70,7 @@ export const CHECKLIST_DISPLAY_PRESETS = {
     examScorecards: true,
     rendersAsEmoji: false,
     learnPolish: false,
+    scriptRows: false,
   },
   /** Exam simulation modal — same as quiz, no progress chrome */
   examSim: {
@@ -79,6 +84,7 @@ export const CHECKLIST_DISPLAY_PRESETS = {
     examScorecards: true,
     rendersAsEmoji: false,
     learnPolish: false,
+    scriptRows: false,
   },
   /** Print / minimal surfaces */
   minimal: {
@@ -92,9 +98,9 @@ export const CHECKLIST_DISPLAY_PRESETS = {
     examScorecards: false,
     rendersAsEmoji: false,
     learnPolish: false,
+    scriptRows: false,
   },
 } as const satisfies Record<string, ChecklistEnrichmentDisplay>;
-
 export type ChecklistDisplayPreset = keyof typeof CHECKLIST_DISPLAY_PRESETS;
 
 export type ChecklistDisplayInput = {

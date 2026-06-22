@@ -28,7 +28,7 @@ export const SURFACE_CONFIGS = {
     display: { preset: "studyFull" },
     showStudentFocus: true,
     showExamNumbersSummary: true,
-    showModeToggle: true,
+    showModeToggle: false,
     showSegmentOrganizer: true,
     showCriticalBadges: true,
     showExamScorecards: true,
@@ -38,7 +38,7 @@ export const SURFACE_CONFIGS = {
     display: { preset: "quiz" },
     showStudentFocus: true,
     showExamNumbersSummary: true,
-    showModeToggle: true,
+    showModeToggle: false,
     showSegmentOrganizer: true,
     showCriticalBadges: true,
     showExamScorecards: true,
@@ -82,13 +82,11 @@ export function getSurfaceConfig(key: SkillSurfaceKey): SkillSurfaceConfig {
   return SURFACE_CONFIGS[key];
 }
 
-/** Skill page toggles study vs quiz surface by checklist mode. */
+/** Skill page — Slice-2 uses unified MODE_LABELS; always studyFull checklist. */
 export function resolveSkillPageSurfaceConfig(
-  mode: ChecklistMode,
+  _mode: ChecklistMode = "study",
 ): SkillSurfaceConfig {
-  return mode === "quiz" ?
-      SURFACE_CONFIGS.skillPageQuiz
-    : SURFACE_CONFIGS.skillPageStudy;
+  return SURFACE_CONFIGS.skillPageStudy;
 }
 
 /** Resolved enrichment display for a surface (tests + tooling). */

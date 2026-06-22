@@ -13,7 +13,7 @@ describe("skill surface config", () => {
     expect(display.segmentBadges).toBe(true);
     expect(display.examScorecards).toBe(true);
     expect(SURFACE_CONFIGS.skillPageStudy.showSegmentOrganizer).toBe(true);
-    expect(SURFACE_CONFIGS.skillPageStudy.showModeToggle).toBe(true);
+    expect(SURFACE_CONFIGS.skillPageStudy.showModeToggle).toBe(false);
   });
 
   it("skillPageQuiz keeps exam scorecards when segments off (R7)", () => {
@@ -24,11 +24,13 @@ describe("skill surface config", () => {
     expect(display.examScorecards).toBe(true);
   });
 
-  it("resolveSkillPageSurfaceConfig maps study and quiz modes", () => {
+  it("resolveSkillPageSurfaceConfig always returns studyFull (Slice-2)", () => {
     expect(resolveSkillPageSurfaceConfig("study").display.preset).toBe(
       "studyFull",
     );
-    expect(resolveSkillPageSurfaceConfig("quiz").display.preset).toBe("quiz");
+    expect(resolveSkillPageSurfaceConfig("quiz").display.preset).toBe(
+      "studyFull",
+    );
   });
 
   it("examSim matches quiz chrome but omits organizer and mode toggle", () => {

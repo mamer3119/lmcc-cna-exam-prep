@@ -3,10 +3,13 @@ import { getExamScorecardsForSkill } from "@/lib/exam-scorecard";
 
 type SkillExamNumbersSummaryProps = {
   slug: string;
+  /** Slice-2 — visually slim strip; tolerances stay separate from step rows */
+  slim?: boolean;
 };
 
 export function SkillExamNumbersSummary({
   slug,
+  slim = false,
 }: SkillExamNumbersSummaryProps) {
   const entries = getExamScorecardsForSkill(slug);
   if (entries.length === 0) {
@@ -19,7 +22,7 @@ export function SkillExamNumbersSummary({
 
   return (
     <section
-      className="exam-numbers-summary print:border-black"
+      className={`exam-numbers-summary print:border-black ${slim ? "exam-numbers-summary--slim" : ""}`.trim()}
       aria-label={`Exam scoring numbers for this skill: ${summaryLabel}`}
     >
       <header className="exam-numbers-summary__header">
