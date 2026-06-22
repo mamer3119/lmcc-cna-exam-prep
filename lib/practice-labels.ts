@@ -17,6 +17,13 @@ export const CHECKLIST_VIEW_LABELS = {
   reveal: "Hide & reveal",
 } as const;
 
+/** URL-driven segment filter on skill pages (?filter=core). */
+export const SEGMENT_FILTER_LABELS = {
+  groupAria: "Step segment filter",
+  all: "All",
+  coreOnly: "Core only",
+} as const;
+
 export const DRILL_TYPE_LABELS = {
   sequence: "Sequence",
   tolerance: (count: number) =>

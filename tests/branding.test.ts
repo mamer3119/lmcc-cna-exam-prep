@@ -25,4 +25,18 @@ describe("assetPath helper", () => {
       "/lmcc-cna-exam-prep/images/shield_watermark.png",
     );
   });
+
+  it("appPath omits basePath for next/link (Next prepends basePath)", async () => {
+    const { appPath } = await import("@/lib/paths");
+    expect(appPath("skills/hand-hygiene/")).toBe("/skills/hand-hygiene/");
+  });
+});
+
+describe("HandHygieneEmbedChip link", () => {
+  it("uses appPath not assetPath to avoid double basePath on GitHub Pages", async () => {
+    const fs = await import("node:fs");
+    const src = fs.readFileSync("components/HandHygieneEmbedChip.tsx", "utf8");
+    expect(src).toContain('appPath("skills/hand-hygiene/")');
+    expect(src).not.toContain("assetPath(");
+  });
 });

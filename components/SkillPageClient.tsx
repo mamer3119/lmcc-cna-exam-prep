@@ -9,6 +9,11 @@ import SkillChecklist from "@/components/SkillChecklist";
 import type { ChecklistMode } from "@/components/SkillChecklist";
 import { SkillExamNumbersSummary } from "@/components/SkillExamNumbersSummary";
 import { SkillPracticeToggle } from "@/components/SkillPracticeToggle";
+import {
+  SegmentFilterToggle,
+  useSegmentFilterMode,
+} from "@/components/SegmentFilterToggle";
+import { SitePrimaryNav } from "@/components/SitePrimaryNav";
 import { StudentFocusBanner } from "@/components/StudentFocusBanner";
 import SkillVideoEmbed from "@/components/SkillVideoEmbed";
 import { getCurriculumMeta } from "@/data/skillCurriculum";
@@ -58,6 +63,7 @@ export default function SkillPageClient({
   const storeMode = useMasteryStore((s) => selectSkillMode(s, skill.slug));
   const setStoreMode = useMasteryStore((s) => s.setMode);
   const practiceMode = storeMode === "drill" ? "test-yourself" : "learn";
+  const segmentFilterMode = useSegmentFilterMode();
 
   useEffect(() => {
     rehydrateMasteryStore();
@@ -131,6 +137,8 @@ export default function SkillPageClient({
 
   return (
     <div className="site-shell">
+      <SitePrimaryNav />
+
       <nav className="skill-nav-top">
         <Link href="/" className="skill-nav-home">
           ← All skills
@@ -174,23 +182,27 @@ export default function SkillPageClient({
           skillSlug={skill.slug}
           title={skill.title}
         />
-      : <SkillChecklist
-          title={skill.title}
-          steps={skill.steps}
-          storageKey={skill.storageKey}
-          mode={mode}
-          onModeChange={handleModeChange}
-          showModeToggle={surface.showModeToggle}
-          onAnyCheckedChange={handleAnyCheckedChange}
-          organizerMeta={
-            surface.showSegmentOrganizer ? organizerMeta : undefined
-          }
-          skillSlug={skill.slug}
-          showSegmentBadges={surface.showSegmentBadges}
-          showCriticalBadges={surface.showCriticalBadges}
-          showExamScorecards={surface.showExamScorecards}
-          display={surface.display}
-        />
+      : <>
+          <SegmentFilterToggle skillSlug={skill.slug} />
+          <SkillChecklist
+            title={skill.title}
+            steps={skill.steps}
+            storageKey={skill.storageKey}
+            mode={mode}
+            onModeChange={handleModeChange}
+            showModeToggle={surface.showModeToggle}
+            onAnyCheckedChange={handleAnyCheckedChange}
+            organizerMeta={
+              surface.showSegmentOrganizer ? organizerMeta : undefined
+            }
+            skillSlug={skill.slug}
+            showSegmentBadges={surface.showSegmentBadges}
+            showCriticalBadges={surface.showCriticalBadges}
+            showExamScorecards={surface.showExamScorecards}
+            display={surface.display}
+            segmentFilterMode={segmentFilterMode}
+          />
+        </>
       }
 
       {practiceMode === "learn" ?

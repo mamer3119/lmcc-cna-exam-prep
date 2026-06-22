@@ -36,7 +36,7 @@ def run() -> None:
             f"{BASE}/skills/weight-ambulatory-client/",
             wait_until="networkidle",
         )
-        page.get_by_role("button", name=re.compile(r"Quiz Mode", re.I)).click()
+        page.get_by_role("button", name=re.compile(r"Hide & reveal", re.I)).click()
         page.wait_for_timeout(600)
         scorecards = page.locator(".exam-scorecard")
         if scorecards.count() == 0:

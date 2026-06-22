@@ -26,8 +26,21 @@ const routes = [
     mustInclude: ["study-page", "Official Checklist"],
   },
   {
+    path: `${prefix}/framework/`,
+    mustInclude: ["Clinical Field Guide", "OPEN"],
+  },
+  {
+    path: `${prefix}/framework/pathway/`,
+    mustInclude: ["22 skills", "Infection Control"],
+  },
+  {
     path: `${prefix}/skills/hand-hygiene/`,
     mustInclude: ["Hand Hygiene (Hand Washing)", "skill-checklist"],
+  },
+  {
+    path: `${prefix}/skills/ppe-gown-gloves/`,
+    mustNotInclude: ["/lmcc-cna-exam-prep/lmcc-cna-exam-prep/"],
+    mustInclude: ["see Skill 1"],
   },
   {
     path: `${prefix}/skills/ppe-gown-gloves/?instructor=true`,
@@ -43,7 +56,7 @@ const errorPatterns = [
 
 let failed = 0;
 
-for (const { path: route, mustInclude } of routes) {
+for (const { path: route, mustInclude = [], mustNotInclude = [] } of routes) {
   const url = `${base}${route}`;
   let routeFailed = false;
   try {
@@ -68,6 +81,14 @@ for (const { path: route, mustInclude } of routes) {
     for (const needle of mustInclude) {
       if (!html.includes(needle)) {
         console.error(`FAIL ${url} — missing expected content: "${needle}"`);
+        routeFailed = true;
+      }
+    }
+    for (const forbidden of mustNotInclude) {
+      if (html.includes(forbidden)) {
+        console.error(
+          `FAIL ${url} — forbidden content present: "${forbidden}"`,
+        );
         routeFailed = true;
       }
     }
