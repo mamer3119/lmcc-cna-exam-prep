@@ -65,6 +65,7 @@ export type BoilerplateTokenDef = {
 export const BOILERPLATE_REGISTRY_NOTE =
   "Demo library: 9 templates / registry: 10 tokens (intro split: INTRO_EXPLAIN + INTRO_IDENTIFY).";
 
+// NOTE: spec token "IDENTIFY" is implemented as "INTRO_IDENTIFY" (intro family).
 export const BOILERPLATE_TOKEN_REGISTRY = {
   INTRO_EXPLAIN: {
     phase: "open",
