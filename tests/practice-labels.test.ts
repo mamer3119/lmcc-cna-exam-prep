@@ -6,6 +6,7 @@ import {
   CHECKLIST_VIEW_LABELS,
   DRILL_TYPE_LABELS,
   PRACTICE_MODE_LABELS,
+  SEGMENT_FILTER_LABELS,
 } from "@/lib/practice-labels";
 
 describe("practice-labels — centralized copy", () => {
@@ -42,5 +43,10 @@ describe("practice-labels — centralized copy", () => {
   it("drill type labels use shared helper", () => {
     expect(DRILL_TYPE_LABELS.recall(10)).toBe("Recall (10)");
     expect(DRILL_TYPE_LABELS.tolerance(0)).toBe("Tolerance");
+  });
+
+  it("segment filter labels are centralized", () => {
+    expect(SEGMENT_FILTER_LABELS.coreOnly).toBe("Core only");
+    expect(SEGMENT_FILTER_LABELS.all).toBe("All");
   });
 });

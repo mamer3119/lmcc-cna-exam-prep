@@ -5,6 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 import ExamRealityBanner from "@/components/ExamRealityBanner";
 import ExamSimulationModal from "@/components/ExamSimulationModal";
+import { SitePrimaryNav } from "@/components/SitePrimaryNav";
 import SkillBadge from "@/components/SkillBadge";
 import {
   SECTION_NAV_ITEMS,
@@ -158,6 +159,8 @@ export default function SkillIndexClient({
       <ExamRealityBanner />
 
       <div className="site-shell">
+        <SitePrimaryNav />
+
         <header className="site-intro">
           <p className="lmcc-cover-eyebrow">
             LMCC — California CNA Skills Exam Prep
@@ -165,6 +168,11 @@ export default function SkillIndexClient({
           <h1 className="lmcc-cover-title">Interactive Skill Checklists</h1>
           <p className="lmcc-cover-subtitle">Learn by official skill name</p>
           <p className="lmcc-pathway">{pathwayTagline}</p>
+          <p className="index-study-link print:hidden">
+            <Link href="/framework/" className="index-study-link__anchor">
+              Clinical field guide — OPEN · CORE · CLOSE →
+            </Link>
+          </p>
           <p className="index-study-link print:hidden">
             <Link href="/study/" className="index-study-link__anchor">
               Open continuous study path →
@@ -244,10 +252,15 @@ export default function SkillIndexClient({
               <ul className="skill-grid">
                 {skills.map((skill) => {
                   const badge = getExamSkillBadge(skill.slug);
-                  const status = getSkillProgressStatus(progressMap, skill.slug);
+                  const status = getSkillProgressStatus(
+                    progressMap,
+                    skill.slug,
+                  );
                   const cardClass = [
                     "lmcc-skill-card",
-                    badge === "always-tested" ? "lmcc-skill-card--always-tested" : "",
+                    badge === "always-tested" ?
+                      "lmcc-skill-card--always-tested"
+                    : "",
                     badge === "measurement-pool" ?
                       "lmcc-skill-card--measurement"
                     : "",
@@ -257,7 +270,10 @@ export default function SkillIndexClient({
 
                   return (
                     <li key={skill.slug}>
-                      <Link href={`/skills/${skill.slug}/`} className={cardClass}>
+                      <Link
+                        href={`/skills/${skill.slug}/`}
+                        className={cardClass}
+                      >
                         <div className="lmcc-skill-card-badges">
                           {badge ?
                             <SkillBadge badge={badge} />
@@ -272,7 +288,9 @@ export default function SkillIndexClient({
                             : "Not started"}
                           </span>
                         </div>
-                        <span className="lmcc-skill-card-title">{skill.title}</span>
+                        <span className="lmcc-skill-card-title">
+                          {skill.title}
+                        </span>
                         <span className="lmcc-skill-card-meta">
                           {skill.stepCount} checklist steps
                         </span>
@@ -291,8 +309,8 @@ export default function SkillIndexClient({
 
         <footer className="site-footer">
           <p>
-            On exam day, the evaluator reads the skill name aloud — practice each
-            checklist by name. Step wording matches the state evaluator
+            On exam day, the evaluator reads the skill name aloud — practice
+            each checklist by name. Step wording matches the state evaluator
             checklist.
           </p>
           <button

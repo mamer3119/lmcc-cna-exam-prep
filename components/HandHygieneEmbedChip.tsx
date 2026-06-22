@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { assetPath } from "@/lib/paths";
+import { appPath } from "@/lib/paths";
 
 type HandHygieneEmbedChipProps = {
   stepId: number;
@@ -32,7 +32,7 @@ export function HandHygieneEmbedChip({
             </span>
             Hand hygiene —{" "}
             <Link
-              href={assetPath("skills/hand-hygiene/")}
+              href={appPath("skills/hand-hygiene/")}
               className="skill-hh-embed__link"
             >
               see Skill 1

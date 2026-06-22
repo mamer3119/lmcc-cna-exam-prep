@@ -46,6 +46,10 @@ import { isHandHygieneEmbedStep } from "@/lib/learn-mode-display";
 import { getLearnProgressSteps, masteryStepId } from "@/lib/scored-steps";
 import { CHECKLIST_VIEW_LABELS } from "@/lib/practice-labels";
 import {
+  filterStepsBySegment,
+  type SegmentFilterMode,
+} from "@/lib/segment-filter";
+import {
   rehydrateMasteryStore,
   useMasteryStore,
 } from "@/store/useMasteryStore";
@@ -81,6 +85,8 @@ export type SkillChecklistProps = {
   display?: ChecklistDisplayInput;
   /** Explicit override — used in tests; otherwise read from ?instructor=true via provider */
   instructorView?: boolean;
+  /** URL-driven ?filter=core — hides OPEN/CLOSE bookends */
+  segmentFilterMode?: SegmentFilterMode;
 };
 
 function stepSegmentClass(segment: StepSegment): string {
@@ -168,6 +174,7 @@ export default function SkillChecklist({
   skillSlug,
   display,
   instructorView: instructorViewProp,
+  segmentFilterMode = "all",
 }: SkillChecklistProps) {
   const [checked, setChecked] = useState<Record<string, boolean>>({});
   const [hydrated, setHydrated] = useState(false);
@@ -196,9 +203,21 @@ export default function SkillChecklist({
     [mode, showSegmentBadges, showCriticalBadges, showExamScorecards, display],
   );
 
+  const resolvedSkillSlug = skillSlug ?? organizerMeta?.slug;
+
+  const visibleSteps = useMemo(
+    () => filterStepsBySegment(steps, segmentFilterMode),
+    [steps, segmentFilterMode],
+  );
+
+  const progressSteps = useMemo(
+    () => getLearnProgressSteps(visibleSteps),
+    [visibleSteps],
+  );
+
   const allRevealKeys = useMemo(() => {
     const keys: string[] = [];
-    for (const step of steps) {
+    for (const step of visibleSteps) {
       keys.push(stepRevealKey(step.id));
       if (!enrichmentDisplay.subSteps) {
         continue;
@@ -208,15 +227,11 @@ export default function SkillChecklist({
       });
     }
     return keys;
-  }, [steps, enrichmentDisplay.subSteps]);
-
-  const resolvedSkillSlug = skillSlug ?? organizerMeta?.slug;
-
-  const progressSteps = useMemo(() => getLearnProgressSteps(steps), [steps]);
+  }, [visibleSteps, enrichmentDisplay.subSteps]);
 
   const allAriaLabels = useMemo(() => {
     const labels: string[] = [];
-    for (const step of steps) {
+    for (const step of visibleSteps) {
       labels.push(mainStepAriaLabel(step, resolvedSkillSlug));
       if (!enrichmentDisplay.subSteps) {
         continue;
@@ -226,7 +241,7 @@ export default function SkillChecklist({
       });
     }
     return labels;
-  }, [steps, resolvedSkillSlug, enrichmentDisplay.subSteps]);
+  }, [visibleSteps, resolvedSkillSlug, enrichmentDisplay.subSteps]);
 
   useEffect(() => {
     rehydrateMasteryStore();
@@ -604,7 +619,7 @@ export default function SkillChecklist({
       </h2>
 
       <ul className="list-none space-y-3 p-0">
-        {steps.map((step, stepIndex) => {
+        {visibleSteps.map((step, stepIndex) => {
           const checklistSlug = organizerMeta?.slug ?? skillSlug;
           const mainLabel = mainStepAriaLabel(step, checklistSlug);
           const mainChecked = isMainStepChecked(step);
@@ -619,13 +634,13 @@ export default function SkillChecklist({
               {
                 template: organizerMeta.template,
                 stepIndex,
-                totalSteps: steps.length,
+                totalSteps: visibleSteps.length,
                 skillSlug: organizerMeta.slug,
               }
             : null;
           const stepSegment: StepSegment | null =
             segmentCtx ? resolveStepSegment(step, segmentCtx) : null;
-          const prevStep = stepIndex > 0 ? steps[stepIndex - 1] : null;
+          const prevStep = stepIndex > 0 ? visibleSteps[stepIndex - 1] : null;
           const prevSegment: StepSegment | null =
             prevStep && segmentCtx ?
               resolveStepSegment(prevStep, {
