@@ -1,17 +1,30 @@
-import SkillIndexClient from "@/components/SkillIndexClient";
-import { getAllSkills, getPathwayTagline, getSections } from "@/lib/skills";
+import GlobalDisclaimer from "@/components/GlobalDisclaimer";
+import JsonLd from "@/components/JsonLd";
+import PathwayCards from "@/components/PathwayCards";
+import SkillSearch from "@/components/SkillSearch";
+import { homeMetadata, jsonLdOrganization, jsonLdWebSite } from "@/lib/seo";
+
+export const metadata = homeMetadata();
 
 export default function HomePage() {
-  const allSkills = getAllSkills();
   return (
-    <main>
-      <SkillIndexClient
-        pathwayTagline={getPathwayTagline()}
-        sections={getSections()}
-        allSlugs={allSkills.map((skill) => skill.slug)}
-        allSkills={allSkills}
-        totalSkills={allSkills.length}
-      />
-    </main>
+    <>
+      <JsonLd data={[jsonLdWebSite(), jsonLdOrganization()]} />
+      <main className="site-shell home-page">
+        <header className="home-page__hero">
+          <p className="lmcc-cover-eyebrow">LMCC CNA exam prep</p>
+          <h1 className="lmcc-cover-title">
+            Pass the CNA state exam by practicing the 22 official skills.
+          </h1>
+          <p className="home-page__subtitle">
+            Built for Lotus Medical Career College students. No signup. Works on your phone.
+          </p>
+        </header>
+
+        <PathwayCards />
+        <SkillSearch />
+        <GlobalDisclaimer />
+      </main>
+    </>
   );
 }

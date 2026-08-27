@@ -20,7 +20,7 @@
       "detailedTagText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
       "tagCategory": "Opening",
       "phaseWord": "Approach",
-      "clinicalNote": "",
+      "clinicalNote": "⚠️ GWC step count governs on exam day. Credentia/NNAAP shortcuts will cost points — use every GWC granular step in this checklist.",
       "subSteps": [],
       "criticalCategory": "",
       "examScorecard": "",

@@ -1,5 +1,4 @@
 import {
-  isCompositeBoilerplateId,
   resolveStepDisplayText,
   type ChecklistStep,
 } from "@/lib/checklist-step";
@@ -7,14 +6,16 @@ import {
 import type { BoilerplateTokenId } from "@/lib/practice-labels";
 import { BOILERPLATE_TOKEN_REGISTRY } from "@/lib/practice-labels";
 
+/** Primary registry token — first segment before `|` (composites included). */
 export function resolveRegistryTokenId(
   boilerplateId: string | undefined,
 ): BoilerplateTokenId | null {
-  if (!boilerplateId || isCompositeBoilerplateId(boilerplateId)) {
+  if (!boilerplateId) {
     return null;
   }
-  if (boilerplateId in BOILERPLATE_TOKEN_REGISTRY) {
-    return boilerplateId as BoilerplateTokenId;
+  const primary = boilerplateId.split("|")[0]?.trim();
+  if (primary && primary in BOILERPLATE_TOKEN_REGISTRY) {
+    return primary as BoilerplateTokenId;
   }
   return null;
 }
@@ -33,8 +34,7 @@ export function stepWordingMatchesRegistry(
   }
   const canonical = BOILERPLATE_TOKEN_REGISTRY[tokenId].wording;
   const official =
-    step.detailedText?.trim() ||
-    resolveStepDisplayText(step, { slug }).trim();
+    step.detailedText?.trim() || resolveStepDisplayText(step, { slug }).trim();
   return official === canonical;
 }
 
@@ -46,5 +46,9 @@ export function shouldRenderBoilerplateChip(
   if (!tokenId) {
     return false;
   }
-  return stepWordingMatchesRegistry(step, slug);
+  if (stepWordingMatchesRegistry(step, slug)) {
+    return true;
+  }
+  /** Tagged steps show token chip even when cue text differs from registry prose. */
+  return true;
 }

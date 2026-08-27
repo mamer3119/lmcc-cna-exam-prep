@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T12:25:24.943Z",
+  "generatedAt": "2026-06-22T19:12:29.993Z",
   "source": "fixing-json/boilerplate_tags.json",
   "rowCount": 14,
   "tagsByBoilerplateId": {
@@ -7,7 +7,7 @@
       {
         "tagKey": "INTRO_IDENTIFY",
         "boilerplateId": "INTRO_IDENTIFY",
-        "rendersAs": "🟢👋",
+        "rendersAs": "👋",
         "whyRule": "always open",
         "stepTextCue": "Introduce self; verify patient identity",
         "detailedText": "Introduce yourself by name and title, and verify the patient's identity using two identifiers (name and date of birth, or wristband ID).",
@@ -23,7 +23,7 @@
       {
         "tagKey": "INTRO_EXPLAIN",
         "boilerplateId": "INTRO_EXPLAIN",
-        "rendersAs": "🟢🗣️",
+        "rendersAs": "🗣️",
         "whyRule": "always open",
         "stepTextCue": "Introduce and explain procedure",
         "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
@@ -39,7 +39,7 @@
       {
         "tagKey": "PRIVACY",
         "boilerplateId": "PRIVACY",
-        "rendersAs": "🟢🪟",
+        "rendersAs": "🪟",
         "whyRule": "always open",
         "stepTextCue": "Provide for patient privacy",
         "detailedText": "Provide for patient privacy — close the curtain, door, or privacy screen.",
@@ -55,7 +55,7 @@
       {
         "tagKey": "HAND_HYGIENE (first)",
         "boilerplateId": "HAND_HYGIENE",
-        "rendersAs": "🟢🧼",
+        "rendersAs": "🧼",
         "whyRule": "first in skill → open",
         "stepTextCue": "Perform hand hygiene",
         "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
@@ -69,7 +69,7 @@
       {
         "tagKey": "HAND_HYGIENE (middle)",
         "boilerplateId": "HAND_HYGIENE",
-        "rendersAs": "🔵🧼",
+        "rendersAs": "🧼",
         "whyRule": "middle occurrence → core",
         "stepTextCue": "Perform hand hygiene",
         "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
@@ -83,7 +83,7 @@
       {
         "tagKey": "HAND_HYGIENE (last)",
         "boilerplateId": "HAND_HYGIENE",
-        "rendersAs": "🔴🧼",
+        "rendersAs": "🧼",
         "whyRule": "last in skill → close",
         "stepTextCue": "Perform hand hygiene",
         "detailedText": "Perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or use an alcohol-based hand rub when hands are visibly clean.",
@@ -99,7 +99,7 @@
       {
         "tagKey": "WATER_CHECK (≤ openCount)",
         "boilerplateId": "WATER_CHECK",
-        "rendersAs": "🟢🌡️💧",
+        "rendersAs": "🌡️",
         "whyRule": "open phase fill",
         "stepTextCue": "Get water; check temperature",
         "detailedText": "Fill the basin with warm water. Verify the temperature is safe and comfortable — approximately 105–110°F (40–43°C) — using a thermometer, or by having the patient test with their hand or a wet washcloth on the back of their hand.",
@@ -113,7 +113,7 @@
       {
         "tagKey": "WATER_CHECK (> openCount)",
         "boilerplateId": "WATER_CHECK",
-        "rendersAs": "🔵🌡️💧",
+        "rendersAs": "🌡️",
         "whyRule": "core phase fill",
         "stepTextCue": "Check water temperature again",
         "detailedText": "Fill the basin with warm water. Verify the temperature is safe and comfortable — approximately 105–110°F (40–43°C) — using a thermometer, or by having the patient test with their hand or a wet washcloth on the back of their hand.",
@@ -129,7 +129,7 @@
       {
         "tagKey": "GLOVE_DON",
         "boilerplateId": "GLOVE_DON",
-        "rendersAs": "🔵🧤",
+        "rendersAs": "🧤",
         "whyRule": "always core",
         "stepTextCue": "Don clean gloves",
         "detailedText": "Don clean, non-sterile gloves.",
@@ -145,7 +145,7 @@
       {
         "tagKey": "GLOVE_REMOVE",
         "boilerplateId": "GLOVE_REMOVE",
-        "rendersAs": "🔵♻️🧤",
+        "rendersAs": "🧤👋",
         "whyRule": "always core",
         "stepTextCue": "Remove gloves inside out",
         "detailedText": "Remove gloves by turning them inside out — grasp the outside of one glove at the wrist and peel it off, then slide the fingers of the ungloved hand under the remaining glove at the wrist and peel it off turning inside out. Dispose of both gloves in the appropriate waste container without touching the outer surface.",
@@ -164,7 +164,7 @@
       {
         "tagKey": "GLOVE_REMOVE_THEN_HH",
         "boilerplateId": "GLOVE_REMOVE_THEN_HH",
-        "rendersAs": "🔵♻️🧤🧼",
+        "rendersAs": "🧤👋🧼",
         "whyRule": "always core; combo = remove + wash",
         "stepTextCue": "Remove gloves; perform hand hygiene",
         "detailedText": "Remove gloves by turning them inside out and dispose without touching the outer surface, then immediately perform hand hygiene using the six-step technique for a minimum of 20 seconds with soap and water, or alcohol-based hand rub if hands are visibly clean.",
@@ -180,7 +180,7 @@
       {
         "tagKey": "CALL_LIGHT (closing)",
         "boilerplateId": "CALL_LIGHT",
-        "rendersAs": "🔴🔔",
+        "rendersAs": "🔔",
         "whyRule": "closing cluster → close",
         "stepTextCue": "Place call light within reach",
         "detailedText": "Place the call light or signaling device within reach of the patient and confirm the patient knows how to use it.",
@@ -194,7 +194,7 @@
       {
         "tagKey": "CALL_LIGHT (mid-skill)",
         "boilerplateId": "CALL_LIGHT",
-        "rendersAs": "🔵🔔",
+        "rendersAs": "🔔",
         "whyRule": "mid-skill → core",
         "stepTextCue": "Place call light within reach",
         "detailedText": "Place the call light or signaling device within reach of the patient and confirm the patient knows how to use it.",
@@ -210,7 +210,7 @@
       {
         "tagKey": "BED_LOW",
         "boilerplateId": "BED_LOW",
-        "rendersAs": "🔴🛏️",
+        "rendersAs": "🛏️",
         "whyRule": "always close",
         "stepTextCue": "Lower bed; lock brakes",
         "detailedText": "Lower the bed to its lowest position and verify the bed brakes are locked.",

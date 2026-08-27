@@ -1,26 +1,47 @@
 import Link from "next/link";
 
+import railStyles from "@/components/SkillPathwayRail.module.css";
 import { getAllSkills, getSections } from "@/lib/skills";
 
 type SkillPathwayRailProps = {
   activeSlug: string;
+  /** Desktop fixed sidebar — hidden below md breakpoint. */
+  variant?: "desktop" | "inline";
 };
 
-export function SkillPathwayRail({ activeSlug }: SkillPathwayRailProps) {
+export function SkillPathwayRail({
+  activeSlug,
+  variant = "inline",
+}: SkillPathwayRailProps) {
   const sections = getSections();
   const allSkills = getAllSkills();
 
+  const isDesktop = variant === "desktop";
+
   return (
-    <aside className="skill-pathway-rail" aria-label="22-skill pathway">
-      <div className="skill-pathway-rail__inner">
-        <p className="skill-pathway-rail__kicker">Pathway</p>
-        <Link
-          href="/framework/pathway/"
-          className="skill-pathway-rail__overview"
+    <aside
+      className={`skill-pathway-rail${isDesktop ? ` ${railStyles.desktopRail}` : ""}`}
+      aria-label="22-skill pathway"
+    >
+      <div
+        className={`skill-pathway-rail__inner${isDesktop ? ` ${railStyles.railInner}` : ""}`}
+      >
+        <div
+          className={
+            isDesktop ? railStyles.railHeader : "skill-pathway-rail__header"
+          }
         >
-          All sections →
-        </Link>
-        <nav className="skill-pathway-rail__nav">
+          <p className="skill-pathway-rail__kicker">Pathway</p>
+          <Link
+            href="/framework/pathway/"
+            className="skill-pathway-rail__overview"
+          >
+            All sections →
+          </Link>
+        </div>
+        <nav
+          className={`skill-pathway-rail__nav${isDesktop ? ` ${railStyles.railNav}` : ""}`}
+        >
           {sections.map(({ section, skills }) => (
             <div key={section} className="skill-pathway-rail__group">
               <p className="skill-pathway-rail__section">{section}</p>
@@ -43,7 +64,11 @@ export function SkillPathwayRail({ activeSlug }: SkillPathwayRailProps) {
             </div>
           ))}
         </nav>
-        <p className="skill-pathway-rail__count">{allSkills.length} skills</p>
+        <p
+          className={`skill-pathway-rail__count${isDesktop ? ` ${railStyles.railCount}` : ""}`}
+        >
+          {allSkills.length} skills
+        </p>
       </div>
     </aside>
   );

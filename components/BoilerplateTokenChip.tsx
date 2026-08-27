@@ -3,10 +3,16 @@ import { BOILERPLATE_TOKEN_REGISTRY } from "@/lib/practice-labels";
 
 type BoilerplateTokenChipProps = {
   tokenId: BoilerplateTokenId;
+  /** Step-specific emoji from boilerplate_tags (circles stripped). Falls back to registry. */
+  emoji?: string | null;
 };
 
-export function BoilerplateTokenChip({ tokenId }: BoilerplateTokenChipProps) {
+export function BoilerplateTokenChip({
+  tokenId,
+  emoji,
+}: BoilerplateTokenChipProps) {
   const token = BOILERPLATE_TOKEN_REGISTRY[tokenId];
+  const displayEmoji = emoji ?? token.emoji;
 
   return (
     <span
@@ -15,9 +21,9 @@ export function BoilerplateTokenChip({ tokenId }: BoilerplateTokenChipProps) {
       data-token-id={tokenId}
       aria-label={token.label}
     >
-      {token.emoji ?
+      {displayEmoji ?
         <span className="boilerplate-token-chip__emoji" aria-hidden="true">
-          {token.emoji}
+          {displayEmoji}
         </span>
       : null}
       <span className="boilerplate-token-chip__label">{token.label}</span>

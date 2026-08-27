@@ -2,7 +2,7 @@
   "studyOrder": 12,
   "slug": "prom-knee-ankle",
   "gwcSkillNumber": 14,
-  "title": "Performs Modified Passive Range Of Motion (PROM) For One Knee And One Ankle",
+  "title": "Performs Modified Passive Range Of Motion (PROM) For One Hip And One Knee",
   "stepCount": 9,
   "sourceSection": "S12",
   "selfScore": {
@@ -75,7 +75,7 @@
       "detailedTagText": "Abduction/Adduction for Hip:",
       "tagCategory": "Core",
       "phaseWord": "Lower",
-      "clinicalNote": "",
+      "clinicalNote": "⚠️ VIDEO WARNING: RTC video demonstrates Knee/Ankle (Credentia). GWC Exam 14 tests Hip/Knee only — do not mimic the video joints.",
       "subSteps": [
         "Keeping the patient's leg straight, gently move their entire leg away from their",
         "body (i.e., abduction).",
@@ -88,7 +88,7 @@
         "Complete abduction and adduction movements of the hip according to the",
         "order in their restorative care plan.",
         "Continue to correctly support joints by keeping one hand under the patient's",
-        "knee and the other hand under the patient's ankle."
+        "knee and the other hand under the patient's hip."
       ],
       "criticalCategory": "",
       "examScorecard": "",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T16:27:08.171Z",
+  "generatedAt": "2026-08-27T15:21:46.285Z",
   "pathwayTagline": "Protect → observe → move → restore → clean → feed → eliminate",
   "sections": [
     {
@@ -893,6 +893,7 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
+          "note": "⚠️ GWC step count governs on exam day. Credentia/NNAAP shortcuts will cost points — use every GWC granular step in this checklist.",
           "boilerplateId": "INTRO_EXPLAIN",
           "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
           "tagCategory": "Opening",
@@ -1184,6 +1185,7 @@
           "id": 9,
           "text": "Position wheelchair; strong side toward it",
           "segment": "core",
+          "note": "⚠️ VIDEO WARNING: The video preps the wheelchair first. GWC requires sitting the patient and applying the gait belt BEFORE moving the chair.",
           "detailedText": "Position the wheelchair at the head or foot of the bed so the patient will move towards the wheelchair with the stronger side of their body. The wheelchair should touch the side of the bed.",
           "tagCategory": "Core",
           "phaseWord": "Transfer"
@@ -1200,6 +1202,7 @@
           "id": 11,
           "text": "Ask if patient feels dizzy",
           "segment": "core",
+          "note": "⚠️ VIDEO WARNING: The demonstrator fails to ask this in the video. You MUST ask to earn the point.",
           "detailedText": "Ask the patient if they feel dizzy or light-headed.",
           "tagCategory": "Core",
           "phaseWord": "Transfer"
@@ -1216,6 +1219,7 @@
           "id": 13,
           "text": "Patient pushes up on three",
           "segment": "core",
+          "note": "⚠️ VIDEO WARNING: Demonstrator tells patient to put hands on her shoulders. GWC strictly requires instructing the patient to push up on the BED.",
           "detailedText": "Instruct the patient to push up on the bed to aid in standing on the count of three.",
           "tagCategory": "Core",
           "phaseWord": "Transfer"
@@ -1272,6 +1276,7 @@
           "id": 20,
           "text": "Release wheelchair brakes",
           "segment": "core",
+          "note": "⚠️ VIDEO WARNING: The demonstrator forgets to release the brakes at the end of the video. Do not forget this step.",
           "detailedText": "Release the wheelchair brakes.",
           "tagCategory": "Core",
           "phaseWord": "Secure"
@@ -1404,6 +1409,7 @@
           "id": 11,
           "text": "Instruct patient to push up",
           "segment": "core",
+          "note": "⚠️ VIDEO WARNING: Demonstrator tells patient to put hands on her shoulders. GWC strictly requires instructing the patient to push up on the BED.",
           "detailedText": "Instruct the patient to push up on the bed on the count of three to assist with standing.",
           "tagCategory": "Core",
           "phaseWord": "Ambulate"
@@ -1643,7 +1649,7 @@
           "phaseWord": "Secure"
         }
       ],
-      "studentFocus": "Same pain rules as knee/ankle PROM."
+      "studentFocus": "Same pain rules as hip/knee PROM."
     },
     {
       "slug": "prom-knee-ankle",
@@ -1651,7 +1657,7 @@
       "studyOrder": 12,
       "examSkillNumber": 14,
       "examCardLabel": "California Skills Exam — Skill 14",
-      "title": "Performs Modified PROM for One Knee and One Ankle",
+      "title": "Performs Modified PROM for One Hip and One Knee",
       "section": "Restorative and Support",
       "pedagogicalReason": "Lower body, two joints. More complex; builds on the shoulder movement pattern already learned.",
       "rtcVideoUrl": "https://www.youtube.com/watch?v=8HbzT018Vt0",
@@ -1702,6 +1708,7 @@
           "id": 5,
           "text": "Hip abduction and adduction",
           "segment": "core",
+          "note": "⚠️ VIDEO WARNING: RTC video demonstrates Knee/Ankle (Credentia). GWC Exam 14 tests Hip/Knee only — do not mimic the video joints.",
           "subSteps": [
             "Keeping the patient's leg straight, gently move their entire leg away from their",
             "body (i.e., abduction).",
@@ -1714,7 +1721,7 @@
             "Complete abduction and adduction movements of the hip according to the",
             "order in their restorative care plan.",
             "Continue to correctly support joints by keeping one hand under the patient's",
-            "knee and the other hand under the patient's ankle."
+            "knee and the other hand under the patient's hip."
           ],
           "detailedText": "Abduction/Adduction for Hip:",
           "tagCategory": "Core",
@@ -1770,7 +1777,7 @@
           "phaseWord": "Secure"
         }
       ],
-      "studentFocus": "Stop ROM if patient reports pain."
+      "studentFocus": "GWC Exam 14 = Hip/Knee only. RTC video shows wrong joints (Knee/Ankle). Stop ROM if patient reports pain."
     },
     {
       "slug": "knee-high-stocking",
@@ -1908,6 +1915,7 @@
           "id": 1,
           "text": "Introduce and explain procedure",
           "segment": "open",
+          "note": "⚠️ GWC step count governs on exam day. Credentia/NNAAP shortcuts will cost points — use every GWC granular step in this checklist.",
           "boilerplateId": "INTRO_EXPLAIN",
           "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
           "tagCategory": "Opening",
@@ -3194,6 +3202,7 @@
           "id": 7,
           "text": "Position patient on bedpan correctly",
           "segment": "core",
+          "note": "Deep end toward toes; wide end under buttocks (GWC Step 7 geometry).",
           "detailedText": "Position the patient on the bedpan correctly. The deeper portion of the bedpan should be directed toward their toes, and the patient should be centered on the bedpan.",
           "tagCategory": "Core",
           "phaseWord": "Assist"
@@ -3386,6 +3395,7 @@
           "id": 1,
           "text": "Introduce self; explain procedure",
           "segment": "open",
+          "note": "⚠️ GWC step count governs on exam day. Credentia/NNAAP shortcuts will cost points — use every GWC granular step in this checklist (41 GWC steps vs ~20 Credentia).",
           "boilerplateId": "INTRO_EXPLAIN",
           "detailedText": "Introduce yourself by name and title, explain the procedure to the patient in clear, plain language, and obtain verbal consent before proceeding.",
           "tagCategory": "Opening",

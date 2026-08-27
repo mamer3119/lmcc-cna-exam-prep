@@ -5,10 +5,7 @@ import { describe, expect, it } from "vitest";
 
 import SkillPageClient from "@/components/SkillPageClient";
 import { ClientProviders } from "@/components/ClientProviders";
-import {
-  BOILERPLATE_TOKEN_REGISTRY,
-  MODE_LABELS,
-} from "@/lib/practice-labels";
+import { BOILERPLATE_TOKEN_REGISTRY, MODE_LABELS } from "@/lib/practice-labels";
 import { getSkillBySlug } from "@/lib/skills";
 import { shouldRenderBoilerplateChip } from "@/lib/boilerplate-tokens";
 import {
@@ -30,9 +27,15 @@ describe("Slice-2 mode consolidation", () => {
   it("renders exactly one mode selector with Full View / Core Only / Self-Check", () => {
     renderSkillPage("hand-hygiene");
     expect(screen.getByTestId("skill-view-mode-selector")).toBeTruthy();
-    expect(screen.getByRole("button", { name: MODE_LABELS.fullView })).toBeTruthy();
-    expect(screen.getByRole("button", { name: MODE_LABELS.coreOnly })).toBeTruthy();
-    expect(screen.getByRole("button", { name: MODE_LABELS.selfCheck })).toBeTruthy();
+    expect(
+      screen.getByRole("button", { name: MODE_LABELS.fullView }),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole("button", { name: MODE_LABELS.coreOnly }),
+    ).toBeTruthy();
+    expect(
+      screen.getByRole("button", { name: MODE_LABELS.selfCheck }),
+    ).toBeTruthy();
   });
 
   it("does not render legacy nested toggles on skill page", () => {
@@ -71,7 +74,7 @@ describe("Slice-2 mode consolidation", () => {
 
 describe("Slice-2 boilerplate token chips", () => {
   it("registry documents 9-templates vs 10-tokens reconciliation", () => {
-    expect(Object.keys(BOILERPLATE_TOKEN_REGISTRY)).toHaveLength(9);
+    expect(Object.keys(BOILERPLATE_TOKEN_REGISTRY)).toHaveLength(10);
     expect(BOILERPLATE_TOKEN_REGISTRY.INTRO_EXPLAIN.wording).toBeTruthy();
     expect(BOILERPLATE_TOKEN_REGISTRY.INTRO_IDENTIFY.wording).toBeTruthy();
   });
@@ -85,10 +88,28 @@ describe("Slice-2 boilerplate token chips", () => {
     ).toBe(true);
   });
 
-  it("does not render chip on hand-hygiene INTRO_IDENTIFY — wording mismatch", () => {
+  it("script rows omit duplicate CORE/OPENING row badges on hand-hygiene", () => {
+    renderSkillPage("hand-hygiene");
+    const secondary = document.querySelectorAll(
+      ".skill-step-script__secondary",
+    );
+    expect(secondary.length).toBeGreaterThan(0);
+    for (const row of secondary) {
+      const segmentBadges = row.querySelectorAll(".step-segment-badge");
+      expect(segmentBadges.length).toBe(0);
+      const tagBadges = row.querySelectorAll(".skill-tag-category-badge");
+      for (const badge of tagBadges) {
+        expect(badge.textContent?.toUpperCase()).not.toMatch(
+          /^(OPENING|CORE|CLOSING)$/,
+        );
+      }
+    }
+  });
+
+  it("renders chip when boilerplateId is tagged even if cue wording differs", () => {
     const skill = getSkillBySlug("hand-hygiene")!;
     const step = skill.steps.find((s) => s.boilerplateId === "INTRO_IDENTIFY")!;
-    expect(shouldRenderBoilerplateChip(step, skill.slug)).toBe(false);
+    expect(shouldRenderBoilerplateChip(step, skill.slug)).toBe(true);
   });
 
   it("chip wording matches registry const for tagged urinary-output steps", () => {

@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const basePath = "/lmcc-cna-exam-prep";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "/lmcc-cna-exam-prep";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   async redirects() {
+    if (!basePath) {
+      return [];
+    }
     return [
       {
         source: "/",

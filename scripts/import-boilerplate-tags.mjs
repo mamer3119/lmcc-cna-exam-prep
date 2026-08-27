@@ -33,6 +33,16 @@ function parseSubSteps(raw) {
   return parts.length > 0 ? parts : null;
 }
 
+/** Strip 🟢/🔵/🔴 phase circles — keep meaningful emoji for chips only. */
+function stripPhaseCircles(rendersAs) {
+  const text = str(rendersAs);
+  if (!text) {
+    return null;
+  }
+  const stripped = text.replace(/^[🟢🔵🔴]+/u, "").trim();
+  return stripped.length > 0 ? stripped : null;
+}
+
 if (!fs.existsSync(SOURCE)) {
   console.error(`Missing canonical source: ${SOURCE}`);
   process.exit(1);
@@ -53,7 +63,7 @@ for (const row of rows) {
   const entry = {
     tagKey: str(row.tag ?? row.tagKey),
     boilerplateId,
-    rendersAs: str(row.renders_as ?? row.rendersAs),
+    rendersAs: stripPhaseCircles(row.renders_as ?? row.rendersAs),
     whyRule: str(row.why_your_rule ?? row.whyRule),
     stepTextCue: str(row.step_text ?? row.stepTextCue),
     detailedText: str(row.detailed_tag_text ?? row.detailedText),

@@ -85,7 +85,7 @@
   },
   {
     "tag": "WATER_CHECK (≤ openCount)",
-    "renders_as": "🟢🌡️💧",
+    "renders_as": "🟢🌡️",
     "why_your_rule": "open phase fill",
     "step_text": "Get water; check temperature",
     "boilerplate_tag_id": "WATER_CHECK",
@@ -99,7 +99,7 @@
   },
   {
     "tag": "WATER_CHECK (> openCount)",
-    "renders_as": "🔵🌡️💧",
+    "renders_as": "🔵🌡️",
     "why_your_rule": "core phase fill",
     "step_text": "Check water temperature again",
     "boilerplate_tag_id": "WATER_CHECK",
@@ -127,7 +127,7 @@
   },
   {
     "tag": "GLOVE_REMOVE",
-    "renders_as": "🔵♻️🧤",
+    "renders_as": "🔵🧤👋",
     "why_your_rule": "always core",
     "step_text": "Remove gloves inside out",
     "boilerplate_tag_id": "GLOVE_REMOVE",
@@ -141,7 +141,7 @@
   },
   {
     "tag": "GLOVE_REMOVE_THEN_HH",
-    "renders_as": "🔵♻️🧤🧼",
+    "renders_as": "🔵🧤👋🧼",
     "why_your_rule": "always core; combo = remove + wash",
     "step_text": "Remove gloves; perform hand hygiene",
     "boilerplate_tag_id": "GLOVE_REMOVE_THEN_HH",

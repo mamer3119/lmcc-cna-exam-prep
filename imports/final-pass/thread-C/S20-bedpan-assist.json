@@ -102,7 +102,7 @@
       "detailedTagText": "Position the patient on the bedpan correctly. The deeper portion of the bedpan should be directed toward their toes, and the patient should be centered on the bedpan.",
       "tagCategory": "Core",
       "phaseWord": "Assist",
-      "clinicalNote": "",
+      "clinicalNote": "Deep end toward toes; wide end under buttocks (GWC Step 7 geometry).",
       "subSteps": [],
       "criticalCategory": "",
       "examScorecard": "",

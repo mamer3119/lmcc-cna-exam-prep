@@ -13,6 +13,17 @@ export const MODE_LABELS = {
   selfCheck: "Self-Check",
 } as const;
 
+/** Detail density — orthogonal to scope (Core Only) and Self-Check drills. */
+export type DetailDensity = "quick" | "standard" | "coach";
+
+export const DENSITY_LABELS = {
+  groupAria: "Checklist detail level",
+  quick: "Quick",
+  standard: "Standard",
+  coach: "Coach",
+  whyAffordance: "Why this matters",
+} as const;
+
 /** @deprecated Slice-2 — replaced by MODE_LABELS on skill pages. */
 export const PRACTICE_MODE_LABELS = {
   learn: "Learn",
@@ -70,25 +81,25 @@ export const BOILERPLATE_TOKEN_REGISTRY = {
   INTRO_EXPLAIN: {
     phase: "open",
     label: "INTRO_EXPLAIN",
-    emoji: null,
+    emoji: "🗣️",
     wording: CHECKLIST_BOILERPLATE.INTRO_EXPLAIN,
   },
   INTRO_IDENTIFY: {
     phase: "open",
     label: "INTRO_IDENTIFY",
-    emoji: null,
+    emoji: "👋",
     wording: CHECKLIST_BOILERPLATE.INTRO_IDENTIFY,
   },
   PRIVACY: {
     phase: "open",
     label: "PRIVACY",
-    emoji: null,
+    emoji: "🪟",
     wording: CHECKLIST_BOILERPLATE.PRIVACY,
   },
   WATER_CHECK: {
     phase: "open",
     label: "WATER_CHECK",
-    emoji: null,
+    emoji: "🌡️",
     wording: CHECKLIST_BOILERPLATE.WATER_CHECK,
   },
   HAND_HYGIENE: {
@@ -100,25 +111,31 @@ export const BOILERPLATE_TOKEN_REGISTRY = {
   GLOVE_DON: {
     phase: "core",
     label: "GLOVE_DON",
-    emoji: null,
+    emoji: "🧤",
     wording: CHECKLIST_BOILERPLATE.GLOVE_DON,
   },
   GLOVE_REMOVE: {
     phase: "core",
     label: "GLOVE_REMOVE",
-    emoji: null,
+    emoji: "🧤👋",
     wording: CHECKLIST_BOILERPLATE.GLOVE_REMOVE,
+  },
+  GLOVE_REMOVE_THEN_HH: {
+    phase: "core",
+    label: "GLOVE_REMOVE_THEN_HH",
+    emoji: "🧤👋🧼",
+    wording: CHECKLIST_BOILERPLATE.GLOVE_REMOVE_THEN_HH,
   },
   BED_LOW: {
     phase: "close",
     label: "BED_LOW",
-    emoji: null,
+    emoji: "🛏️",
     wording: CHECKLIST_BOILERPLATE.BED_LOW,
   },
   CALL_LIGHT: {
     phase: "close",
     label: "CALL_LIGHT",
-    emoji: null,
+    emoji: "🔔",
     wording: CHECKLIST_BOILERPLATE.CALL_LIGHT,
   },
 } as const satisfies Record<string, BoilerplateTokenDef>;

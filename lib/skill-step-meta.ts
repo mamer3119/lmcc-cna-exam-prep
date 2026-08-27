@@ -42,7 +42,8 @@ export function pickBoilerplateTag(
   if (!boilerplateId) {
     return undefined;
   }
-  const variants = tagsByBoilerplateId[boilerplateId];
+  const primaryId = boilerplateId.split("|")[0]?.trim() ?? boilerplateId;
+  const variants = tagsByBoilerplateId[primaryId];
   if (!variants?.length) {
     return undefined;
   }
@@ -52,7 +53,7 @@ export function pickBoilerplateTag(
 
   const why = (v: BoilerplateTagEntry) => v.whyRule?.toLowerCase() ?? "";
 
-  if (boilerplateId === "HAND_HYGIENE") {
+  if (primaryId === "HAND_HYGIENE") {
     if (segment === "open") {
       return variants.find((v) => why(v).includes("first")) ?? variants[0];
     }
@@ -62,7 +63,7 @@ export function pickBoilerplateTag(
     return variants.find((v) => why(v).includes("middle")) ?? variants[1];
   }
 
-  if (boilerplateId === "WATER_CHECK") {
+  if (primaryId === "WATER_CHECK") {
     if (segment === "open") {
       return variants.find((v) => why(v).includes("open phase")) ?? variants[0];
     }
@@ -71,7 +72,7 @@ export function pickBoilerplateTag(
     );
   }
 
-  if (boilerplateId === "CALL_LIGHT") {
+  if (primaryId === "CALL_LIGHT") {
     if (segment === "close") {
       return variants.find((v) => why(v).includes("closing")) ?? variants[0];
     }
@@ -127,7 +128,12 @@ export function resolveStepSubSteps(step: ChecklistStep): string[] | undefined {
 
 export function resolveStepRendersAs(step: ChecklistStep): string | undefined {
   const tag = pickBoilerplateTag(step.boilerplateId, step.segment);
-  return tag?.rendersAs ?? undefined;
+  const raw = tag?.rendersAs ?? undefined;
+  if (!raw) {
+    return undefined;
+  }
+  // Circles are phase metadata only — consumers use stripPhaseCirclePrefix for display.
+  return raw;
 }
 
 export function resolveStepCriticalCategory(

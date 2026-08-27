@@ -29,7 +29,7 @@ Checked via `gh repo view mamer3119/lmcc-cna-exam-prep`:
 Run in PowerShell from this folder:
 
 ```powershell
-cd "C:\Users\moham\Desktop\22 Skills TXT\local-checklist-preview"
+cd "C:\Users\moham\Desktop\22 LMCC Students\local-checklist-preview"
 
 git init
 git branch -M main
@@ -37,7 +37,7 @@ git remote add origin https://github.com/mamer3119/lmcc-cna-exam-prep.git
 
 git add .
 git status   # confirm no .env or secrets
-git commit -m "Initial deploy: Hand Hygiene interactive checklist for GitHub Pages"
+git commit -m "LMCC Student Edition: 22 California CNA skills for GitHub Pages"
 
 git push -u origin main
 ```

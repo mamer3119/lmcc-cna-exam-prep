@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 
+import railStyles from "@/components/SkillPathwayRail.module.css";
 import { SkillPathwayRail } from "@/components/SkillPathwayRail";
 import { SkillPathwayRailMobile } from "@/components/SkillPathwayRailMobile";
 
@@ -16,10 +17,8 @@ export default async function SkillSlugLayout({
 
   return (
     <div className="skill-page-layout">
-      <div className="skill-page-layout__rail skill-page-layout__rail--desktop">
-        <SkillPathwayRail activeSlug={slug} />
-      </div>
-      <div className="skill-page-layout__main">
+      <SkillPathwayRail activeSlug={slug} variant="desktop" />
+      <div className={`skill-page-layout__main ${railStyles.mainWithRail}`}>
         <SkillPathwayRailMobile activeSlug={slug} />
         {children}
       </div>
