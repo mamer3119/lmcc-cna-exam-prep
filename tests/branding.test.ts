@@ -18,11 +18,14 @@ describe("LMCC brand assets", () => {
 });
 
 describe("assetPath helper", () => {
-  it("prefixes paths with GitHub Pages basePath", async () => {
+  it("prefixes paths with the configured basePath", async () => {
     const { assetPath, BASE_PATH } = await import("@/lib/paths");
-    expect(BASE_PATH).toBe("/lmcc-cna-exam-prep");
+    const expected = process.env.NEXT_PUBLIC_BASE_PATH ?? "/lmcc-cna-exam-prep";
+    expect(BASE_PATH).toBe(expected);
     expect(assetPath("images/shield_watermark.png")).toBe(
-      "/lmcc-cna-exam-prep/images/shield_watermark.png",
+      expected
+        ? `${expected}/images/shield_watermark.png`
+        : "/images/shield_watermark.png",
     );
   });
 
