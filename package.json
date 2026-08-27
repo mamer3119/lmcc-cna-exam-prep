@@ -13,7 +13,7 @@
     "dev:direct": "node ./node_modules/next/dist/bin/next dev",
     "prebuild": "node scripts/check-node-lts.cjs && node scripts/kill-dev-port.mjs 3005 && node scripts/dev-preflight.mjs && node scripts/sync-skills.mjs && node scripts/sync-brand-assets.mjs && pnpm test",
     "build": "next build",
-    "vercel-build": "node scripts/check-node-lts.cjs && node scripts/sync-skills.mjs && node scripts/sync-brand-assets.mjs && pnpm test && next build && node scripts/fix-export-paths.mjs && node scripts/verify-export.mjs && node scripts/mark-export-build.mjs",
+    "vercel-build": "node scripts/check-node-lts.cjs && node scripts/sync-skills.mjs && node scripts/sync-brand-assets.mjs && next build && node scripts/fix-export-paths.mjs && node scripts/verify-export.mjs && node scripts/mark-export-build.mjs",
     "postbuild": "node scripts/fix-export-paths.mjs && node scripts/verify-export.mjs && node scripts/mark-export-build.mjs",
     "start": "next start",
     "test": "vitest run",
