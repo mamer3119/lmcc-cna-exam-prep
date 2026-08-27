@@ -1,7 +1,13 @@
 import { notFound } from "next/navigation";
-
-import SkillPageView from "@/components/SkillPageView";
+import Link from "next/link";
+import GlobalDisclaimer from "@/components/GlobalDisclaimer";
+import JsonLd from "@/components/JsonLd";
+import PracticeTools from "@/components/PracticeTools";
+import SimplifiedSkillChecklist from "@/components/SimplifiedSkillChecklist";
+import SkillVideoEmbed from "@/components/SkillVideoEmbed";
+import { SKILL_DISCLAIMER } from "@/lib/compliance";
 import { getAllSkills, getSkillBySlug } from "@/lib/skills";
+import { jsonLdLearningResource, skillMetadata } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
@@ -9,21 +15,22 @@ export function generateStaticParams() {
   return getAllSkills().map((skill) => ({ slug: skill.slug }));
 }
 
-type PageProps = {
+export async function generateMetadata({
+  params,
+}: {
   params: Promise<{ slug: string }>;
-};
-
-export async function generateMetadata({ params }: PageProps) {
+}) {
   const { slug } = await params;
   const skill = getSkillBySlug(slug);
   if (!skill) return { title: "Skill not found" };
-  return {
-    title: `${skill.title} — CNA Checklist`,
-    description: `${skill.examCardLabel}. ${skill.stepCount} official checklist steps.`,
-  };
+  return skillMetadata(skill);
 }
 
-export default async function SkillPage({ params }: PageProps) {
+export default async function SkillPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const skill = getSkillBySlug(slug);
   if (!skill) notFound();
@@ -32,8 +39,49 @@ export default async function SkillPage({ params }: PageProps) {
   const next = skill.nextSlug ? getSkillBySlug(skill.nextSlug) : undefined;
 
   return (
-    <main>
-      <SkillPageView skill={skill} prev={prev} next={next} />
-    </main>
+    <>
+      <JsonLd data={jsonLdLearningResource(skill)} />
+      <main className="site-shell">
+        <nav className="breadcrumb" aria-label="Breadcrumb">
+          <Link href="/">Home</Link>
+          <span aria-hidden="true"> / </span>
+          <Link href="/skills/">Skills</Link>
+          <span aria-hidden="true"> / </span>
+          <span>{skill.title}</span>
+        </nav>
+
+        <header className="skill-header">
+          <h1 className="skill-header__title">{skill.title}</h1>
+          <p className="skill-header__exam">{skill.examCardLabel}</p>
+          <p className="skill-header__context">
+            {skill.stepCount} official checklist steps. Check each step as you
+            practice.
+          </p>
+        </header>
+
+        {skill.rtcVideoUrl ?
+          <SkillVideoEmbed
+            videoUrl={skill.rtcVideoUrl}
+            title={skill.rtcVideoTitle}
+          />
+        : null}
+
+        <SimplifiedSkillChecklist skill={skill} />
+        <PracticeTools skill={skill} />
+
+        <div className="skill-nav-bottom">
+          {prev ?
+            <Link href={`/skills/${prev.slug}/`}>← {prev.title}</Link>
+          : <span />}
+          {next ?
+            <Link href={`/skills/${next.slug}/`}>{next.title} →</Link>
+          : null}
+        </div>
+
+        <p className="skill-disclaimer">{SKILL_DISCLAIMER}</p>
+
+        <GlobalDisclaimer />
+      </main>
+    </>
   );
 }

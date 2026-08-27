@@ -47,7 +47,12 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://www.youtube.com" />
       </head>
-      <body className={`${crimsonPro.variable} ${sourceSans.variable}`}>
+      <body
+        className={`${crimsonPro.variable} ${sourceSans.variable}`}
+        style={{
+          ["--watermark-url" as string]: `url("${assetPath("images/shield_watermark.png")}")`,
+        }}
+      >
         <ClientProviders>{children}</ClientProviders>
       </body>
     </html>

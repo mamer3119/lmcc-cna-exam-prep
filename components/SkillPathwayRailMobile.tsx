@@ -21,15 +21,21 @@ export function SkillPathwayRailMobile({
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-controls="skill-pathway-sheet"
+        aria-label={open ? "Close 22-skill palace" : "Browse 22-skill palace"}
       >
-        {open ? "Close skill list" : "Browse 22 skills"}
+        <span className="skill-pathway-rail-mobile__kicker">
+          22-skill palace
+        </span>
+        <span className="skill-pathway-rail-mobile__action">
+          {open ? "Close" : "Browse rooms →"}
+        </span>
       </button>
       {open ?
         <div
           id="skill-pathway-sheet"
           className="skill-pathway-rail-mobile__sheet"
           role="dialog"
-          aria-label="Skill pathway"
+          aria-label="22-skill palace"
         >
           <SkillPathwayRail activeSlug={activeSlug} />
         </div>

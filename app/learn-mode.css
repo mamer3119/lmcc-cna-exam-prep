@@ -61,7 +61,8 @@
   color: var(--text-muted);
 }
 
-.learn-segment-heading--core {
+.learn-segment-heading--core,
+.learn-segment-heading--close {
   margin-top: 1.25rem;
   padding: 0.5rem 0 0.25rem;
   border-top: 1px solid var(--border);
@@ -693,7 +694,7 @@
 .skill-step-script__primary {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: 0.35rem 0.5rem;
   font-family: var(--font-sans);
   font-size: 0.9375rem;
@@ -722,11 +723,57 @@
   opacity: 0.92;
 }
 
+/* ── Critical step rail (left column) ── */
+.skill-step-row--critical {
+  align-items: flex-start;
+}
+
+.skill-step-critical-rail {
+  flex: 0 0 4.25rem;
+  padding-top: 0.45rem;
+}
+
+.skill-critical-badge--rail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  margin: 0;
+  padding: 0.3rem 0.4rem;
+  max-width: 4.25rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  color: var(--critical, #c2371f);
+  background: #fee2e2;
+  border-radius: 6px;
+  border-left: 3px solid var(--critical, #c2371f);
+  white-space: normal;
+}
+
+.skill-checklist-step-num--critical {
+  color: var(--critical, #c2371f);
+}
+
+@media (max-width: 480px) {
+  .skill-step-critical-rail {
+    flex-basis: 3.5rem;
+    max-width: 3.5rem;
+  }
+
+  .skill-critical-badge--rail {
+    max-width: 3.5rem;
+    font-size: 0.5625rem;
+    padding: 0.25rem 0.3rem;
+  }
+}
+
 .boilerplate-token-chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 0.15rem 0.45rem;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem 0.2rem 0.3rem;
   border-radius: var(--radius-chip, 999px);
   font-family: var(--font-sans);
   font-size: 0.625rem;
@@ -734,6 +781,7 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   vertical-align: middle;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
 }
 
 .boilerplate-token-chip--open {
@@ -752,12 +800,194 @@
 }
 
 .boilerplate-token-chip__emoji {
-  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 1.75rem;
+  min-height: 1.75rem;
+  padding: 0.15rem 0.25rem;
+  border-radius: 0.45rem;
+  font-size: 1.35rem;
   line-height: 1;
+  letter-spacing: -0.04em;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+  filter: drop-shadow(0 1px 1px rgba(15, 23, 42, 0.12));
+}
+
+.boilerplate-token-chip__label {
+  font-size: 0.5625rem;
+  line-height: 1.2;
+  opacity: 0.92;
 }
 
 @media (max-width: 375px) {
   .skill-step-script__primary {
     font-size: 0.875rem;
   }
+
+  .boilerplate-token-chip__emoji {
+    min-width: 1.55rem;
+    min-height: 1.55rem;
+    font-size: 1.2rem;
+  }
+}
+
+/* ── Detail density toggle (Quick | Standard | Coach) ── */
+.detail-density-selector {
+  display: inline-flex;
+  gap: 0.2rem;
+  margin: 0 0 0.85rem;
+  padding: 0.2rem;
+  border-radius: var(--radius-btn);
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+}
+
+.detail-density-selector__btn {
+  min-height: 36px;
+  padding: 0.35rem 0.75rem;
+  border: none;
+  border-radius: calc(var(--radius-btn) - 2px);
+  background: transparent;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.detail-density-selector__btn--active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.skill-checklist-density {
+  display: flex;
+}
+
+/* ── Three text layers (Header / Detail / Coaching) ── */
+.skill-checklist--text-layers .skill-step-script {
+  gap: 0.45rem;
+}
+
+.step-header-text {
+  flex: 1;
+  min-width: 0;
+  font-weight: 500;
+  color: var(--text, var(--primary));
+  font-style: normal;
+}
+
+.step-header-text--checked {
+  opacity: 0.72;
+}
+
+.skill-step-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-left: 0.15rem;
+}
+
+.step-detail-body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--text, var(--primary));
+}
+
+.step-detail-body strong {
+  font-weight: 700;
+  color: var(--text, var(--primary));
+}
+
+.step-coaching-block {
+  margin-top: 0.1rem;
+}
+
+.step-coaching-block__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0;
+  border: none;
+  background: none;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--text-muted) 45%, transparent);
+  text-underline-offset: 2px;
+}
+
+.step-coaching-block__toggle:hover {
+  color: var(--text);
+}
+
+.step-coaching-block__body {
+  margin-top: 0.35rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 8px;
+  border-left: 3px solid #d97706;
+  background: #fffbeb;
+}
+
+.step-coaching-block__note,
+.step-coaching-block__fail-rule,
+.step-coaching-block__scorecard {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-style: normal;
+  line-height: 1.5;
+  color: #92400e;
+}
+
+.step-coaching-block__note + .step-coaching-block__note,
+.step-coaching-block__fail-rule + .step-coaching-block__note {
+  margin-top: 0.35rem;
+}
+
+.step-coaching-block .exam-authority-badge {
+  margin-top: 0.35rem;
+}
+
+.step-quick-accordion {
+  margin-top: 0.15rem;
+}
+
+.step-quick-accordion__summary {
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  list-style: none;
+}
+
+.step-quick-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.step-quick-accordion[open] .step-quick-accordion__summary {
+  margin-bottom: 0.35rem;
+}
+
+/* Red reserved for Critical badge only — not whole step body */
+.skill-checklist--text-layers .skill-step-script.step-critical,
+.skill-checklist--text-layers .step-critical {
+  background: transparent;
+  border-left: none;
+  padding: 0;
+  margin-left: 0;
 }

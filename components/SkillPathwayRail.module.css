@@ -1,0 +1,130 @@
+/**
+ * Desktop pathway rail — layout locks live here.
+ * Paint tokens come from .skill-pathway-rail in framework.css.
+ */
+.desktopRail {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .desktopRail {
+    position: fixed;
+    z-index: 40;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: var(--skill-rail-width, 17.5rem);
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border-right: 1px solid var(--cx-hair, #e6e5e0);
+    background: var(--cx-canvas, #f7f7f4);
+    box-shadow: none;
+  }
+
+  .desktopRail .railInner {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+  }
+
+  .desktopRail .railHeader {
+    flex-shrink: 0;
+    padding: 0.75rem 0.85rem 0.7rem;
+    border-bottom: 1px solid var(--cx-hair, #e6e5e0);
+    background: transparent;
+  }
+
+  /* No inner scroll — all 22 skills visible; groups share vertical space */
+  .desktopRail .railNav {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+    overflow: hidden;
+    padding: 0.25rem 0.45rem;
+  }
+
+  .desktopRail :global(.skill-pathway-rail__group) {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 0;
+  }
+
+  .desktopRail .railCount {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0.55rem 0.85rem;
+    border-top: 1px solid var(--cx-hair, #e6e5e0);
+    background: transparent;
+  }
+
+  .desktopRail :global(.skill-pathway-rail__kicker) {
+    font-size: 0.625rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.3rem;
+  }
+
+  .desktopRail :global(.skill-pathway-rail__overview) {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .desktopRail :global(.skill-pathway-rail__overview:hover) {
+    border-color: transparent;
+    background: transparent;
+  }
+
+  .desktopRail :global(.skill-pathway-rail__section) {
+    font-size: 0.68rem;
+    letter-spacing: -0.01em;
+    margin: 0 0 0.08rem;
+    padding: 0 0.4rem;
+    line-height: 1.2;
+  }
+
+  .desktopRail :global(.skill-pathway-rail__link--active) {
+    background: var(--cx-surface, #f2f1ed);
+    box-shadow: none;
+  }
+
+  .desktopRail :global(.skill-pathway-rail__link) {
+    font-size: 0.72rem;
+    line-height: 1.28;
+    padding: 0.14rem 0.4rem;
+  }
+
+  .desktopRail :global(.skill-pathway-rail__count) {
+    font-size: 0.625rem;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.mainWithRail {
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .mainWithRail {
+    margin-left: var(--skill-rail-width, 17.5rem);
+    min-height: 100dvh;
+  }
+}
