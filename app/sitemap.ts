@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_ORIGIN}${canonicalPath("/")}`, priority: 1.0 },
     { url: `${SITE_ORIGIN}${canonicalPath("/skills/")}`, priority: 0.9 },
     { url: `${SITE_ORIGIN}${canonicalPath("/for-graduates/")}`, priority: 0.8 },
+    { url: `${SITE_ORIGIN}${canonicalPath("/study-method/")}`, priority: 0.8 },
   ];
 
   const skillPages = getAllSkills().map((skill) => ({

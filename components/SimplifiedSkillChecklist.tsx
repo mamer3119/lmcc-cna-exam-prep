@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import type { WebSkill } from "@/lib/skills";
 import {
@@ -8,6 +9,9 @@ import {
   writeSkillProgress,
 } from "@/lib/skill-progress";
 import { resolveStepDetailedText } from "@/lib/skill-step-meta";
+
+import PatternToggle, { type ChecklistView } from "@/components/PatternToggle";
+import StepBand from "@/components/StepBand";
 
 type SimplifiedSkillChecklistProps = {
   skill: WebSkill;
@@ -54,6 +58,7 @@ export default function SimplifiedSkillChecklist({
   const [checked, setChecked] = useState<Record<number, boolean>>({});
   const [hydrated, setHydrated] = useState(false);
   const [reviewed, setReviewed] = useState(false);
+  const [view, setView] = useState<ChecklistView>("list");
 
   useEffect(() => {
     setChecked(readStoredState(skill));
@@ -87,6 +92,19 @@ export default function SimplifiedSkillChecklist({
     setReviewed(true);
   }, [skill.storageKey]);
 
+  const stepsBySegment = useMemo(() => {
+    const grouped: Record<"open" | "core" | "close", typeof skill.steps> = {
+      open: [],
+      core: [],
+      close: [],
+    };
+    for (const step of skill.steps) {
+      const segment = step.segment ?? "core";
+      grouped[segment].push(step);
+    }
+    return grouped;
+  }, [skill.steps]);
+
   return (
     <div className="simplified-skill-checklist">
       <div className="simplified-skill-checklist__progress" role="status" aria-live="polite">
@@ -107,37 +125,76 @@ export default function SimplifiedSkillChecklist({
         )}
       </div>
 
-      <ul className="simplified-skill-checklist__list">
-        {skill.steps.map((step) => {
-          const detailedText = resolveStepDetailedText(step);
-          const isChecked = Boolean(checked[step.id]);
+      <div className="mb-4 flex items-center justify-between gap-4">
+        <PatternToggle view={view} onChange={setView} />
+        <Link
+          href="/study-method/"
+          className="text-sm font-semibold text-[var(--primary-accent)] hover:underline"
+        >
+          How to study →
+        </Link>
+      </div>
 
-          return (
-            <li
-              key={step.id}
-              className={`simplified-skill-checklist__item ${
-                isChecked ? "simplified-skill-checklist__item--checked" : ""
-              }`}
-            >
-              <label className="simplified-skill-checklist__label">
-                <input
-                  type="checkbox"
-                  checked={isChecked}
-                  onChange={() => toggleStep(step.id)}
-                  className="simplified-skill-checklist__checkbox"
-                  aria-label={`Step ${step.id}: ${step.text}`}
-                />
-                <span className="simplified-skill-checklist__text">
-                  <strong>{step.id}.</strong> {step.text}
-                </span>
-              </label>
-              {detailedText && detailedText !== step.text && (
-                <p className="simplified-skill-checklist__rubric">{detailedText}</p>
-              )}
-            </li>
-          );
-        })}
-      </ul>
+      {view === "list" ? (
+        <ul className="simplified-skill-checklist__list">
+          {skill.steps.map((step) => {
+            const detailedText = resolveStepDetailedText(step);
+            const isChecked = Boolean(checked[step.id]);
+
+            return (
+              <li
+                key={step.id}
+                className={`simplified-skill-checklist__item ${
+                  isChecked ? "simplified-skill-checklist__item--checked" : ""
+                }`}
+              >
+                <label className="simplified-skill-checklist__label">
+                  <input
+                    type="checkbox"
+                    checked={isChecked}
+                    onChange={() => toggleStep(step.id)}
+                    className="simplified-skill-checklist__checkbox"
+                    aria-label={`Step ${step.id}: ${step.text}`}
+                  />
+                  <span className="simplified-skill-checklist__text">
+                    <strong>{step.id}.</strong> {step.text}
+                  </span>
+                </label>
+                {detailedText && detailedText !== step.text && (
+                  <p className="simplified-skill-checklist__rubric">{detailedText}</p>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
+        <div className="memory-palace">
+          <StepBand
+            segment="open"
+            steps={stepsBySegment.open}
+            checked={checked}
+            onToggle={toggleStep}
+            skillSlug={skill.slug}
+            totalSteps={skill.steps.length}
+          />
+          <StepBand
+            segment="core"
+            steps={stepsBySegment.core}
+            checked={checked}
+            onToggle={toggleStep}
+            skillSlug={skill.slug}
+            totalSteps={skill.steps.length}
+          />
+          <StepBand
+            segment="close"
+            steps={stepsBySegment.close}
+            checked={checked}
+            onToggle={toggleStep}
+            skillSlug={skill.slug}
+            totalSteps={skill.steps.length}
+          />
+        </div>
+      )}
     </div>
   );
 }

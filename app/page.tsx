@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import GlobalDisclaimer from "@/components/GlobalDisclaimer";
 import JsonLd from "@/components/JsonLd";
 import PathwayCards from "@/components/PathwayCards";
@@ -18,6 +20,14 @@ export default function HomePage() {
           </h1>
           <p className="home-page__subtitle">
             Built for Lotus Medical Career College students. No signup. Works on your phone.
+          </p>
+          <p className="mb-8 text-center text-sm">
+            <Link
+              href="/study-method/"
+              className="font-semibold text-[var(--primary-accent)] hover:underline"
+            >
+              New? Read the study method first →
+            </Link>
           </p>
         </header>
 

@@ -886,3 +886,318 @@ main {
     display: none !important;
   }
 }
+
+/* Memory-palace study-method layer (Phase 1) */
+.memory-palace {
+  --mp-open: #f59e0b;
+  --mp-open-bg: #fffbeb;
+  --mp-open-text: #78350f;
+  --mp-core: #3b82f6;
+  --mp-core-bg: #eff6ff;
+  --mp-core-text: #1e3a8a;
+  --mp-close: #22c55e;
+  --mp-close-bg: #f0fdf4;
+  --mp-close-text: #14532d;
+
+  --mp-flame-f: #f59e0b;
+  --mp-flame-l: #06b6d4;
+  --mp-flame-a: #6366f1;
+  --mp-flame-m: #ef4444;
+  --mp-flame-e: #22c55e;
+
+  --mp-radius: 16px;
+  --mp-card-shadow: 0 10px 20px 4px rgba(35, 35, 35, 0.1);
+  --mp-card-hover-shadow: 0 14px 28px 4px rgba(35, 35, 35, 0.12);
+  --mp-touch: 48px;
+  --mp-check: 24px;
+}
+
+.mp-toggle {
+  display: inline-flex;
+  gap: 0.25rem;
+  border: 1px solid var(--rule);
+  border-radius: 9999px;
+  padding: 0.25rem;
+  background: var(--panel);
+}
+
+.mp-toggle__btn {
+  min-height: 36px;
+  padding: 0 0.875rem;
+  border-radius: 9999px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mp-toggle__btn--active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.mp-toggle__btn:focus-visible {
+  outline: 2px solid var(--primary-accent);
+  outline-offset: 2px;
+}
+
+.mp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-radius: var(--mp-radius);
+  border: 1px solid var(--rule);
+  background: #fff;
+  padding: 1.25rem;
+  box-shadow: var(--mp-card-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mp-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--mp-card-hover-shadow);
+}
+
+.mp-card__badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+}
+
+.mp-card__badge--open {
+  background: var(--mp-open-bg);
+  color: var(--mp-open-text);
+}
+
+.mp-card__badge--core {
+  background: var(--mp-core-bg);
+  color: var(--mp-core-text);
+}
+
+.mp-card__badge--close {
+  background: var(--mp-close-bg);
+  color: var(--mp-close-text);
+}
+
+.mp-card__title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+}
+
+.mp-card__body {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 0;
+}
+
+.mp-card__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--primary);
+}
+
+.mp-card__list li {
+  margin-bottom: 0.35rem;
+}
+
+.mp-band {
+  border-radius: 0 var(--mp-radius) var(--mp-radius) 0;
+  border-left: 4px solid var(--rule);
+  background: var(--panel);
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mp-band--open {
+  border-color: var(--mp-open);
+  background: var(--mp-open-bg);
+}
+
+.mp-band--core {
+  border-color: var(--mp-core);
+  background: var(--mp-core-bg);
+}
+
+.mp-band--close {
+  border-color: var(--mp-close);
+  background: var(--mp-close-bg);
+}
+
+.mp-band__header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.mp-band__label {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: #fff;
+  background: var(--rule);
+}
+
+.mp-band--open .mp-band__label {
+  background: var(--mp-open);
+}
+
+.mp-band--core .mp-band__label {
+  background: var(--mp-core);
+}
+
+.mp-band--close .mp-band__label {
+  background: var(--mp-close);
+}
+
+.mp-band__count {
+  font-size: 0.8125rem;
+  color: var(--muted);
+}
+
+.mp-band__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mp-step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mp-step__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-height: var(--mp-touch);
+}
+
+.mp-step__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex: 1;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--primary);
+}
+
+.mp-step__checkbox {
+  appearance: none;
+  flex-shrink: 0;
+  width: var(--mp-check);
+  height: var(--mp-check);
+  margin: 0.15rem 0 0;
+  border: 2px solid var(--rule);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.mp-step__checkbox:checked {
+  background: var(--primary-accent);
+  border-color: var(--primary-accent);
+}
+
+.mp-step__label:has(.mp-step__checkbox:checked) .mp-step__text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.mp-step__checkbox:focus-visible {
+  outline: 2px solid var(--primary-accent);
+  outline-offset: 2px;
+}
+
+.mp-step__checkbox:checked {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 75%;
+}
+
+.mp-step__text {
+  flex: 1;
+}
+
+.mp-step__text strong {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.mp-step__rubric {
+  margin: 0.25rem 0 0 2.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.mp-step__flame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.625rem;
+  height: 1.625rem;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #fff;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.mp-flame--f {
+  background: var(--mp-flame-f);
+}
+
+.mp-flame--l {
+  background: var(--mp-flame-l);
+}
+
+.mp-flame--a {
+  background: var(--mp-flame-a);
+}
+
+.mp-flame--m {
+  background: var(--mp-flame-m);
+}
+
+.mp-flame--e {
+  background: var(--mp-flame-e);
+}
+
+@media (max-width: 640px) {
+  .mp-card {
+    padding: 1rem;
+  }
+
+  .mp-step__rubric {
+    margin-left: 2rem;
+  }
+}

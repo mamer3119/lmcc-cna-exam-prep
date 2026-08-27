@@ -100,6 +100,28 @@ export function graduatesMetadata(): Metadata {
   };
 }
 
+export function studyMethodMetadata(): Metadata {
+  const title = "How to Study the 22 CNA Skills | LMCC Navigator";
+  const description =
+    "Learn the memory-palace study method: the sandwich, FLAME, and confusion pairs.";
+  const url = `${SITE_ORIGIN}${canonicalPath("/study-method/")}`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: SITE_NAME,
+      type: "website",
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
+}
+
 export function jsonLdWebSite(): Record<string, unknown> {
   return {
     "@context": "https://schema.org",

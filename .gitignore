@@ -7,6 +7,8 @@ dist/
 .env*
 .DS_Store
 .local-serve/
+.slice2-serve/
 test-results/
+audit-screenshots/
 NUL
 .cursor/

@@ -58,4 +58,31 @@ describe("SimplifiedSkillChecklist", () => {
     const parsed = JSON.parse(stored!);
     expect(parsed[skill.steps[0].id]).toBe(true);
   });
+
+  it("switches to pattern view and shows OPEN / CORE / CLOSE bands", () => {
+    render(<SimplifiedSkillChecklist skill={skill} />);
+
+    const patternButton = screen.getByRole("button", { name: /Pattern view/i });
+    fireEvent.click(patternButton);
+
+    expect(screen.getByRole("region", { name: /OPEN steps/i })).toBeTruthy();
+    expect(screen.getByRole("region", { name: /CORE steps/i })).toBeTruthy();
+  });
+
+  it("shows FLAME badges in pattern view", () => {
+    render(<SimplifiedSkillChecklist skill={skill} />);
+
+    fireEvent.click(screen.getByRole("button", { name: /Pattern view/i }));
+
+    expect(screen.getAllByLabelText("FLAME F").length).toBeGreaterThan(0);
+    expect(screen.getAllByLabelText("FLAME A").length).toBeGreaterThan(0);
+  });
+
+  it("links to the study-method page", () => {
+    render(<SimplifiedSkillChecklist skill={skill} />);
+
+    const link = screen.getByRole("link", { name: /How to study/i });
+    expect(link).toBeTruthy();
+    expect(link.getAttribute("href")).toMatch(/study-method/);
+  });
 });
