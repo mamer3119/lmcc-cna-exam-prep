@@ -83,8 +83,8 @@ Committed to this repo so builds do not require the full skills TXT workspace.
 ## Features
 
 - LMCC-focused home page with one front door: "I study at LMCC"
-- Per-skill simplified checklist with nested sub-steps where the official checklist has
-  them
+- `/study-method` hub explaining the memory-palace study method: the sandwich, FLAME, and confusion pairs
+- Per-skill simplified checklist with an optional Pattern view that bands steps into OPEN / CORE / CLOSE with FLAME badges
 - Practice-tools disclosure and inline RTC video where available
 - `localStorage` persistence per skill
 - Print stylesheet: ☐ boxes, LMCC header, black text
